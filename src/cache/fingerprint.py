@@ -10,6 +10,7 @@ toàn bộ cache miss mà không cần một lệnh dọn nào.
 import hashlib
 import os
 from typing import List, Optional
+from src.paths import project_root
 
 # Ba tệp chỉ mục quyết định kết quả truy xuất, cộng tên mô hình nhúng.
 INDEX_FILES = (
@@ -20,7 +21,7 @@ INDEX_FILES = (
 
 
 def _default_base_dir() -> str:
-    return os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    return project_root()
 
 
 def compute_index_fingerprint(

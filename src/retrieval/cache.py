@@ -13,6 +13,7 @@ import threading
 from typing import Optional
 
 import numpy as np
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +33,7 @@ class QueryVectorCache:
 
     def __init__(self, db_path: Optional[str] = None):
         if not db_path:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
             db_path = os.path.join(base_dir, "data", "runtime", "embed_cache.sqlite")
         self.db_path = db_path
         self._local = threading.local()

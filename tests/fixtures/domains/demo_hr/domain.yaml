@@ -1,0 +1,77 @@
+# Domain Pack tối giản dùng cho kiểm thử: quy chế nhân sự nội bộ.
+#
+# Mục đích duy nhất: chứng minh engine trong src/ thật sự không biết gì về giao thông đường bộ.
+# Pack này không dùng lại một dòng code nào của miền giao thông.
+
+id: demo_hr
+name: Quy chế Nhân sự Nội bộ (pack kiểm thử)
+language: vi
+system_prompt_file: prompts/system.md
+
+corpus:
+  index_dir: data/processed
+  documents:
+    - id: qc_01_noi_quy_lao_dong
+      code: QC-01
+      short_title: Nội quy lao động
+      doc_type: noi_quy
+      aliases: [noi_quy, qc_01]
+      summary: Giờ làm việc, nghỉ phép, kỷ luật lao động.
+    - id: qc_02_quy_che_luong
+      code: QC-02
+      short_title: Quy chế lương thưởng
+      doc_type: quy_che
+      aliases: [quy_che_luong, qc_02]
+      summary: Thang bảng lương, phụ cấp, thưởng theo hiệu quả công việc.
+
+lexicon:
+  colloquial_aliases:
+    - ["nghỉ đẻ", "nghỉ thai sản"]
+    - ["tăng ca", "làm thêm giờ"]
+  entity_hints:
+    - match: ["nhân viên", "chuyên viên"]
+      groups: ["Nhân viên"]
+    - match: ["quản lý", "trưởng phòng"]
+      groups: ["Quản lý"]
+  stopwords: ["công", "ty"]
+  intent_patterns:
+    leave: nghỉ\s*phép|thai\s*sản|nghỉ\s*ốm
+    salary: lương|thưởng|phụ\s*cấp
+    policy: nội\s*quy|quy\s*chế|kỷ\s*luật
+  entity_patterns:
+    nhan_vien: nhân\s*viên|chuyên\s*viên
+    quan_ly: quản\s*lý|trưởng\s*phòng
+  default_intent: policy
+
+guard:
+  figure_classes:
+    - id: money
+      kind: money
+      label: số tiền
+      min_value: 1000
+    - id: leave_days
+      kind: contextual_count
+      label: ngày nghỉ
+      unit: ngày
+      context: nghỉ|phép|thai sản
+      min_value: 0
+  citation_marker: Điều\s*\d|Mục\s*\d|QC-\d
+  no_data_markers:
+    - "=== KHÔNG TÌM THẤY QUY ĐỊNH:"
+
+policy:
+  cache_similarity: 0.9
+  cache_ttl_days: 7
+  max_tool_turns: 3
+
+tools:
+  - name: policy_search
+    description: Tra cứu quy định trong bộ quy chế nhân sự nội bộ.
+    handler: tests.fixtures.domains.demo_hr.tools:policy_search
+    parameters:
+      type: object
+      properties:
+        question:
+          type: string
+          description: Câu hỏi cần tra cứu
+      required: [question]

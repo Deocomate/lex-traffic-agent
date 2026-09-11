@@ -132,7 +132,7 @@ def test_tra_muc_phat_khong_tra_loi_cau_lac_de():
     Một con số tiền phạt sai nguy hiểm hơn hẳn câu "chưa tra được", vì người dùng có thể hành
     động theo nó mà không có cách nào tự phát hiện là nó bịa.
     """
-    from src.tools.penalty_lookup import PenaltyLookup
+    from domains.vietnam_traffic.lib.penalty_lookup import PenaltyLookup
 
     lookup = PenaltyLookup(BASE_DIR)
     if not lookup.chunks:

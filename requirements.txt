@@ -1,3 +1,6 @@
+# Domain Pack: khai báo miền (kho tài liệu, persona, từ điển, quy tắc kiểm chứng) dạng YAML
+PyYAML>=6.0
+
 # Lõi AI Agent & RAG
 openai>=1.40.0
 python-dotenv>=1.0.0

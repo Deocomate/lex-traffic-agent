@@ -1,11 +1,17 @@
 """
-API Server cho giao diện web LexTraffic AI.
+Lớp ỨNG DỤNG: máy chủ web của trợ lý giao thông (FastAPI + SSE).
 
-Nhiệm vụ:
-- Phục vụ giao diện web chuẩn Jinja2 Templates (templates/layouts, partials, views)
-- Cung cấp API tra cứu cho cả 6 văn bản pháp luật giao thông
-- Cung cấp API Kho Tiện Ích Giao Thông Chuẩn (Biển báo, Tốc độ, 12 Điểm GPLX, Vạch kẻ, CSGT)
-- Nối giao diện web với AI Agent thật (src/agent.py, đồ thị LangGraph, qua Server-Sent Events SSE)
+Vì sao nằm ngoài `src/`: đây không phải engine mà là một ứng dụng dựng TRÊN engine, cho đúng
+miền giao thông. Nó phục vụ các trang chuyên biệt — tra mức phạt, biển báo, ma trận tốc độ,
+6 bộ văn bản — nên nó ĐƯỢC PHÉP phụ thuộc vào `domains/vietnam_traffic/`.
+
+Chiều phụ thuộc của cả dự án:
+
+    app/  ->  domains/<miền>/  ->  src/   (engine, không biết gì về miền)
+       \_______________________^
+
+Engine không bao giờ import ngược lên `domains/` hay `app/`; nó chỉ nạp hàm của miền qua chuỗi
+'module:hàm' khai báo trong `domain.yaml`.
 """
 
 import os
@@ -20,7 +26,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from src.paths import project_root
+
+BASE_DIR = project_root()
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
@@ -28,9 +36,9 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 from src.agent import astream_agent, get_agent, LegalAgent
-from src.tools.tool_contract import PENALTY_DECREE_NAME
-from src.tools.document_provider import get_document_provider
-from src.tools.penalty_lookup import PenaltyLookup
+from domains.vietnam_traffic.lib.tool_contract import PENALTY_DECREE_NAME
+from domains.vietnam_traffic.lib.document_provider import get_document_provider
+from domains.vietnam_traffic.lib.penalty_lookup import PenaltyLookup
 
 app = FastAPI(title="LexTraffic AI - Legal & Traffic Intelligence Platform API")
 

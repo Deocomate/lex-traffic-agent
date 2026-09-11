@@ -15,7 +15,7 @@ import os
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-from src.tools.tool_contract import (
+from domains.vietnam_traffic.lib.tool_contract import (
     AGENT_ONLY_TAG,
     FIGURE_LOCK_NOTE,
     NO_PENALTY_DATA_HEADER,
@@ -42,13 +42,11 @@ COVERAGE_FLOOR = 0.40
 from src.retrieval.fusion import select_by_separation
 from src.retrieval.scope import get_scope_reference
 from src.retrieval.vi_text import (
-    COLLOQUIAL_ALIASES,
-    VEHICLE_QUERY_HINTS,
-    STOPWORDS,
-    tokens,
     bigrams,
     expand_query,
-    preferred_vehicles,
+    preferred_entities,
+    stopwords,
+    tokens,
 )
 
 
@@ -129,7 +127,7 @@ class PenaltyLookup:
     _expand_query = staticmethod(expand_query)
     _tokens = staticmethod(tokens)
     _bigrams = staticmethod(bigrams)
-    _preferred_vehicles = staticmethod(preferred_vehicles)
+    _preferred_vehicles = staticmethod(preferred_entities)
 
 
     # ------------------------------------------------------------------

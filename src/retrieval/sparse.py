@@ -15,7 +15,7 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 
 from src.retrieval.vi_text import bigrams, expand_query, tokens
-from src.semantic_index import DOC_ALIASES, DOC_GROUPS
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ class SparseIndex:
 
     def __init__(self, base_dir: Optional[str] = None):
         if not base_dir:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
         self.base_dir = base_dir
         self.chunks_path = os.path.join(base_dir, "data", "processed", "semantic_chunks.json")
         self.index_path = os.path.join(base_dir, "data", "processed", "bm25_index.pkl")
@@ -97,19 +97,10 @@ class SparseIndex:
         return self._loaded
 
     def _resolve_doc_ids(self, raw_doc_ids: Optional[Iterable[str]]) -> Optional[Set[str]]:
-        """Phân giải tên viết tắt / alias hoặc nhóm sang mã văn bản chuẩn."""
-        if not raw_doc_ids:
-            return None
-        resolved: Set[str] = set()
-        for d in raw_doc_ids:
-            d_clean = d.strip().lower()
-            if d_clean in DOC_GROUPS:
-                resolved.update(DOC_GROUPS[d_clean])
-            elif d_clean in DOC_ALIASES:
-                resolved.add(DOC_ALIASES[d_clean])
-            else:
-                resolved.add(d)
-        return resolved
+        """Phân giải tên tài liệu hoặc nhóm sang mã chuẩn, theo khai báo của Domain Pack."""
+        from src.domain.registry import get_active_domain
+
+        return get_active_domain().resolve_doc_ids(raw_doc_ids)
 
     def tokenize_query(self, query: str) -> List[str]:
         """Tokenize câu hỏi, có mở rộng các thuật ngữ thông tục sang thuật ngữ pháp lý."""

@@ -29,6 +29,7 @@ from src.graph.state import LegalAgentState
 from src.graph.verify import cancel_node, verify_node, verify_router
 from src.observability.langsmith import configure_langsmith
 from src.observability.tracer import new_run_tracer
+from src.paths import project_root
 
 _compiled_graph = None
 _checkpointer_conn: sqlite3.Connection | None = None
@@ -61,7 +62,7 @@ def build_run_config(thread_id: str = "") -> dict:
 
 
 def _default_checkpoint_path() -> str:
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    base_dir = project_root()
     return os.path.join(base_dir, "data", "runtime", "checkpoints.sqlite")
 
 

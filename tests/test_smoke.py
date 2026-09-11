@@ -7,9 +7,9 @@ Bao quát 3 thành phần cốt lõi:
 """
 
 import pytest
-from src.tools.law_search_tools import TrafficLawTools
+from domains.vietnam_traffic.lib.law_search_tools import TrafficLawTools
 from src.graph.build import create_legal_graph
-from src.api_server import app
+from app.server import app
 from fastapi.testclient import TestClient
 
 

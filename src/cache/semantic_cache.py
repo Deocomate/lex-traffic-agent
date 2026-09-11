@@ -25,6 +25,7 @@ from typing import Any, Dict, List, Optional
 
 import numpy as np
 from pydantic import BaseModel, Field
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
@@ -95,7 +96,7 @@ class SemanticAnswerCache:
         ttl_days: Optional[int] = None,
     ):
         if not db_path:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
             db_path = os.getenv("ANSWER_CACHE_DB_PATH") or os.path.join(
                 base_dir, "data", "runtime", "answer_cache.sqlite"
             )

@@ -1,78 +1,66 @@
 """
 Nhận diện tín hiệu tất định từ câu hỏi (Deterministic Query Signals).
 
-Chỉ còn đúng một chỗ dùng: dựng khoá cache ngữ nghĩa trong `src/graph/turn.py`. Khoá cache
-BẮT BUỘC phải tất định — bộ định tuyến LLM cũ không tất định (cùng một câu hỏi cho ra
-`vehicles` khác nhau giữa các lượt chạy, nên cache không bao giờ trúng), còn regex thì luôn
-cho cùng một kết quả.
+Chỉ còn đúng một chỗ dùng: dựng khoá cache ngữ nghĩa trong `src/graph/turn.py`. Khoá cache BẮT
+BUỘC phải tất định — bộ định tuyến LLM cũ không tất định (cùng một câu hỏi cho ra `vehicles`
+khác nhau giữa các lượt chạy, nên cache không bao giờ trúng), còn regex thì luôn cho cùng kết quả.
 
-Việc CHỌN công cụ tra cứu nào không còn thuộc về đây: Agent tự quyết trong vòng ReAct.
+Việc CHỌN công cụ tra cứu nào không thuộc về đây: Agent tự quyết trong vòng ReAct.
 
-Các biểu thức dưới đây là tri thức của miền giao thông đường bộ Việt Nam; Phase 3 sẽ chuyển
-chúng sang phần `lexicon` của Domain Pack và để lõi chỉ giữ bộ so khớp tổng quát.
+Các biểu thức nhận diện do Domain Pack khai báo (`lexicon.intent_patterns` và
+`lexicon.entity_patterns`), nên module này không biết gì về giao thông đường bộ.
 """
 
-import re
 from typing import List, Tuple
 
-# Biển báo & vạch kẻ đường (QCVN 41:2019)
-_SIGN_PATTERN = re.compile(
-    r'\b(biển\s*(?:báo|cấm|hiệu\s*lệnh|chỉ\s*dẫn|nguy\s*hiểm|phụ)?|[pwiros]\.\d+[a-z]?|vạch\s*(?:kẻ)?(?:đường)?)\b',
-    re.IGNORECASE,
-)
 
-# Tốc độ & khoảng cách an toàn (Thông tư 31/2019)
-_SPEED_PATTERN = re.compile(
-    r'\b(tốc\s*độ|km/h|chạy\s*bao\s*nhiêu|khoảng\s*cách\s*an\s*toàn|cự\s*ly)\b',
-    re.IGNORECASE,
-)
+def _domain():
+    from src.domain.registry import get_active_domain
 
-# Mức phạt, trừ điểm, tước bằng (Nghị định 168/2024)
-_PENALTY_PATTERN = re.compile(
-    r'\b(phạt|tiền\s*phạt|mức\s*phạt|bị\s*phạt|nhiêu\s*tiền|tước|trừ\s*điểm|gplx|bằng\s*lái|'
-    r'nồng\s*độ\s*cồn|rượu|bia|quá\s*tải|vượt\s*đèn|đèn\s*đỏ|lấn\s*làn|đi\s*ngược\s*chiều|'
-    r'nghị\s*định\s*168|nghị\s*định|chế\s*tài|giam\s*xe|tạm\s*giữ)\b',
-    re.IGNORECASE,
-)
-
-# Điều luật, quy tắc, thẩm quyền
-_LAW_PATTERN = re.compile(
-    r'\b(điều\s*\d+|luật\s*36|luật\s*35|luật|nguyên\s*tắc|hành\s*vi\s*bị\s*cấm|quy\s*tắc|'
-    r'độ\s*tuổi|hạng\s*bằng|hạng\s*gplx|a1|a|b1|b|c1|c|d1|d2|d|csgt|cảnh\s*sát\s*giao\s*thông|'
-    r'dừng\s*xe|tuần\s*tra|vneid|giấy\s*tờ|đăng\s*ký|đăng\s*kiểm)\b',
-    re.IGNORECASE,
-)
-
-# Nhóm phương tiện. Tách bạch đúng cái cần tách: "ô tô vượt đèn đỏ" và "xe máy vượt đèn đỏ"
-# phải ra hai khoá cache khác nhau, vì trả mức phạt của loại xe này cho loại xe kia là cái
-# bẫy nguy hiểm nhất của hệ thống.
-_VEHICLE_PATTERNS: List[Tuple[str, re.Pattern]] = [
-    ("o_to", re.compile(r'\b(ô\s*tô|xe\s*con|xe\s*tải|xe\s*khách|xe\s*hơi|container|xe\s*ben)\b')),
-    ("xe_may", re.compile(r'\b(xe\s*máy|mô\s*tô|xe\s*gắn\s*máy|xe\s*điện|xe\s*máy\s*điện)\b')),
-    ("xe_dap", re.compile(r'\b(xe\s*đạp|xe\s*thô\s*sơ)\b')),
-    ("khac", re.compile(r'\b(máy\s*kéo|xe\s*chuyên\s*dùng)\b')),
-]
+    return get_active_domain()
 
 
-def detect_by_regex(query: str) -> Tuple[List[str], List[str]]:
+def detect_signals(query: str) -> Tuple[List[str], List[str]]:
     """
-    Trả về `(intents, vehicles)` cho một câu hỏi. Tất định và không bao giờ ném ngoại lệ.
+    Trả về `(intents, entities)` cho một câu hỏi. Tất định và không bao giờ ném ngoại lệ.
+
+    `intents` là loại thông tin câu hỏi nhắm tới; `entities` là nhóm đối tượng liên quan (miền
+    giao thông: loại phương tiện). Cả hai đi vào khoá cache, nên việc tách bạch chúng chính là
+    thứ ngăn hệ thống trả mức phạt của ô tô cho câu hỏi về xe máy.
     """
     if not query:
-        return ["law"], []
+        return _default_intents(), []
 
-    q = query.lower()
-    intents = set()
+    lowered = query.lower()
 
-    if _SIGN_PATTERN.search(q):
-        intents.add("sign")
-    if _SPEED_PATTERN.search(q):
-        intents.add("speed")
-    if _PENALTY_PATTERN.search(q):
-        intents.add("penalty")
-    if _LAW_PATTERN.search(q) or not intents:
-        intents.add("law")
+    try:
+        domain = _domain()
+        intent_patterns = domain.intent_patterns
+        entity_patterns = domain.entity_patterns
+        default_intent = domain.default_intent
+    except Exception:
+        return _default_intents(), []
 
-    vehicles = {name for name, pattern in _VEHICLE_PATTERNS if pattern.search(q)}
+    intents = {name for name, pattern in intent_patterns.items() if pattern.search(lowered)}
 
-    return list(intents), list(vehicles)
+    # Ý định mặc định luôn được thêm khi nó tự khớp, hoặc khi không ý định nào khớp — để mọi
+    # câu hỏi đều có ít nhất một tín hiệu và khoá cache không bao giờ rỗng.
+    if default_intent and (default_intent in intents or not intents):
+        intents.add(default_intent)
+    if not intents:
+        intents = set(_default_intents())
+
+    entities = {name for name, pattern in entity_patterns.items() if pattern.search(lowered)}
+
+    return sorted(intents), sorted(entities)
+
+
+def _default_intents() -> List[str]:
+    try:
+        return [_domain().default_intent or "general"]
+    except Exception:
+        return ["general"]
+
+
+# Tên cũ, giữ cho mã đã dùng.
+detect_by_regex = detect_signals

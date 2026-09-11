@@ -1,0 +1,183 @@
+# Từ điển ngôn ngữ của miền: bắc cầu giữa cách nói đời thường và thuật ngữ văn bản.
+# Phần tách từ tiếng Việt vẫn nằm trong engine — đó là xử lý ngôn ngữ, không phải tri thức miền.
+
+colloquial_aliases:
+- - vượt đèn đỏ
+  - không chấp hành hiệu lệnh của đèn tín hiệu giao thông
+- - đèn đỏ
+  - không chấp hành hiệu lệnh của đèn tín hiệu giao thông
+- - vượt đèn vàng
+  - không chấp hành hiệu lệnh của đèn tín hiệu giao thông
+- - nhậu
+  - nồng độ cồn
+- - uống bia
+  - nồng độ cồn
+- - uống rượu
+  - nồng độ cồn
+- - say xỉn
+  - nồng độ cồn
+- - thổi cồn
+  - nồng độ cồn
+- - kẹp 3
+  - chở theo 02 người trên xe
+- - kẹp ba
+  - chở theo 02 người trên xe
+- - chở 3
+  - chở theo 02 người trên xe
+- - leo vỉa hè
+  - điều khiển xe đi trên vỉa hè
+- - lên vỉa hè
+  - điều khiển xe đi trên vỉa hè
+- - bấm điện thoại
+  - dùng tay cầm và sử dụng điện thoại
+- - nghe điện thoại
+  - dùng tay cầm và sử dụng điện thoại
+- - lướt điện thoại
+  - dùng tay cầm và sử dụng điện thoại
+- - bắn tốc độ
+  - chạy quá tốc độ quy định
+- - phóng nhanh
+  - chạy quá tốc độ quy định
+- - chạy quá tốc độ
+  - chạy quá tốc độ quy định
+- - không đội mũ
+  - không đội mũ bảo hiểm
+- - quên mũ
+  - không đội mũ bảo hiểm
+- - đi ngược chiều
+  - đi ngược chiều của đường một chiều
+- - lấn làn
+  - không đi đúng phần đường, làn đường
+- - không gương
+  - không có gương chiếu hậu
+- - không bằng lái
+  - không có giấy phép lái xe
+- - quên bằng lái
+  - không mang theo giấy phép lái xe
+- - đua xe
+  - đua xe trái phép
+- - bốc đầu
+  - điều khiển xe bằng một bánh
+- - dàn hàng ngang
+  - đi dàn hàng ngang
+- - làn khẩn cấp
+  - chạy ở làn dừng xe khẩn cấp
+- - làn dừng khẩn cấp
+  - chạy ở làn dừng xe khẩn cấp
+- - làn dừng xe khẩn cấp
+  - chạy ở làn dừng xe khẩn cấp
+- - vào cao tốc
+  - đi vào đường cao tốc
+- - lên cao tốc
+  - đi vào đường cao tốc
+- - chạy vào cao tốc
+  - đi vào đường cao tốc
+- - dừng ở làn khẩn cấp
+  - dừng xe, đỗ xe ở làn dừng xe khẩn cấp
+- - đỗ ở làn khẩn cấp
+  - dừng xe, đỗ xe ở làn dừng xe khẩn cấp
+entity_hints:
+- match:
+  - ô tô
+  - oto
+  - xe hơi
+  - xe con
+  - xe 4 chỗ
+  - xe bốn chỗ
+  groups:
+  - Ô tô
+  - Ô tô tải
+  - Ô tô chở khách
+- match:
+  - xe máy
+  - mô tô
+  - xe gắn máy
+  - xe số
+  - tay ga
+  - xe côn
+  groups:
+  - Xe máy / Xe mô tô
+- match:
+  - xe đạp
+  - xe thô sơ
+  - xe đạp điện
+  groups:
+  - Xe đạp / Xe thô sơ
+- match:
+  - đi bộ
+  - người đi bộ
+  groups:
+  - Người đi bộ
+- match:
+  - xe tải
+  groups:
+  - Ô tô tải
+- match:
+  - xe khách
+  - xe buýt
+  - chở khách
+  groups:
+  - Ô tô chở khách
+- match:
+  - máy chuyên dùng
+  groups:
+  - Xe máy chuyên dùng
+stopwords:
+- bao
+- bạn
+- bị
+- cho
+- các
+- có
+- của
+- hay
+- hoặc
+- hỏi
+- khi
+- khiển
+- không
+- là
+- lái
+- lỗi
+- mà
+- một
+- mức
+- người
+- nhiêu
+- nhỉ
+- những
+- này
+- nếu
+- phạm
+- phạt
+- ra
+- sẽ
+- thì
+- tiền
+- trong
+- trên
+- tôi
+- vi
+- và
+- vậy
+- về
+- với
+- xe
+- xử
+- đi
+- điều
+- đó
+- được
+- để
+- ạ
+intent_patterns:
+  sign: \b(biển\s*(?:báo|cấm|hiệu\s*lệnh|chỉ\s*dẫn|nguy\s*hiểm|phụ)?|[pwiros]\.\d+[a-z]?|vạch\s*(?:kẻ)?(?:đường)?)\b
+  speed: \b(tốc\s*độ|km/h|chạy\s*bao\s*nhiêu|khoảng\s*cách\s*an\s*toàn|cự\s*ly)\b
+  penalty: \b(phạt|tiền\s*phạt|mức\s*phạt|bị\s*phạt|nhiêu\s*tiền|tước|trừ\s*điểm|gplx|bằng\s*lái|nồng\s*độ\s*cồn|rượu|bia|quá\s*tải|vượt\s*đèn|đèn\s*đỏ|lấn\s*làn|đi\s*ngược\s*chiều|nghị\s*định\s*168|nghị\s*định|chế\s*tài|giam\s*xe|tạm\s*giữ)\b
+  law: \b(điều\s*\d+|luật\s*36|luật\s*35|luật|nguyên\s*tắc|hành\s*vi\s*bị\s*cấm|quy\s*tắc|độ\s*tuổi|hạng\s*bằng|hạng\s*gplx|a1|a|b1|b|c1|c|d1|d2|d|csgt|cảnh\s*sát\s*giao\s*thông|dừng\s*xe|tuần\s*tra|vneid|giấy\s*tờ|đăng\s*ký|đăng\s*kiểm)\b
+entity_patterns:
+  o_to: \b(ô\s*tô|xe\s*con|xe\s*tải|xe\s*khách|xe\s*hơi|container|xe\s*ben)\b
+  xe_may: \b(xe\s*máy|mô\s*tô|xe\s*gắn\s*máy|xe\s*điện|xe\s*máy\s*điện)\b
+  xe_dap: \b(xe\s*đạp|xe\s*thô\s*sơ)\b
+  khac: \b(máy\s*kéo|xe\s*chuyên\s*dùng)\b
+default_intent: law

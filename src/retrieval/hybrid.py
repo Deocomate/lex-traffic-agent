@@ -37,7 +37,7 @@ from src.retrieval.scope import (
     get_scope_reference,
 )
 from src.retrieval.sparse import SparseIndex
-from src.semantic_index import DOC_ALIASES, DOC_GROUPS
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +60,7 @@ class HybridSearch:
         k: int = RRF_K,
     ):
         if not base_dir:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
         self.base_dir = base_dir
         self.dense_index = dense_index or get_cached_semantic_index(base_dir)
         self.sparse_index = sparse_index or SparseIndex(base_dir)
@@ -78,19 +78,10 @@ class HybridSearch:
         return getattr(self.dense_index, "chunks", [])
 
     def _resolve_doc_ids(self, raw_doc_ids: Optional[Iterable[str]]) -> Optional[Set[str]]:
-        """Phân giải tên văn bản hoặc nhóm sang mã văn bản chuẩn."""
-        if not raw_doc_ids:
-            return None
-        resolved: Set[str] = set()
-        for d in raw_doc_ids:
-            d_clean = d.strip().lower()
-            if d_clean in DOC_GROUPS:
-                resolved.update(DOC_GROUPS[d_clean])
-            elif d_clean in DOC_ALIASES:
-                resolved.add(DOC_ALIASES[d_clean])
-            else:
-                resolved.add(d)
-        return resolved
+        """Phân giải tên tài liệu hoặc nhóm sang mã chuẩn, theo khai báo của Domain Pack."""
+        from src.domain.registry import get_active_domain
+
+        return get_active_domain().resolve_doc_ids(raw_doc_ids)
 
     def search_fused_chunks(
         self,

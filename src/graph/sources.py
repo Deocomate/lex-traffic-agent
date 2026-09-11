@@ -23,7 +23,6 @@ from src.answer_guard import (
 )
 from src.graph.events import emit
 from src.graph.state import Evidence, LegalAgentState
-from src.tools.document_provider import get_document_provider
 
 # Câu trả lời tự tuyên bố câu hỏi nằm ngoài lĩnh vực của trợ lý.
 #
@@ -83,19 +82,25 @@ def _article_number(evidence: Evidence) -> Optional[int]:
 
 
 def _article_exists(doc_id: str, number: int) -> bool:
-    """Điều luật này có thật trong văn bản không (đối chiếu qua DocumentProvider)."""
-    provider = get_document_provider()
+    """
+    Mục tài liệu được trích dẫn có thật trong kho không.
+
+    Việc tra này phụ thuộc cách tổ chức kho của từng miền nên do miền cung cấp qua
+    `corpus.article_exists`. Miền không khai báo thì coi như có thật: khối nguồn hiển thị thừa
+    một mục còn hơn giấu mất căn cứ mà câu trả lời thật sự đã dùng.
+    """
+    from src.domain.registry import get_active_domain
+
     try:
-        if number in (provider._articles_content.get(doc_id) or {}):
-            return True
-        tree = provider._trees.get(doc_id) or {}
-        for chapter in tree.get("chapters", []):
-            for article in chapter.get("articles", []):
-                if int(article.get("article_number", -1)) == number:
-                    return True
-        return False
+        checker = get_active_domain().article_exists
     except Exception:
-        # Thiếu dữ liệu đối chiếu thì tin vào tầng truy xuất, không loại bỏ nguồn hợp lệ
+        return True
+    if checker is None:
+        return True
+
+    try:
+        return bool(checker(doc_id=doc_id, number=number))
+    except Exception:
         return True
 
 

@@ -1,17 +1,10 @@
 """
-CHỈ MỤC NGỮ NGHĨA HỢP NHẤT CHO TOÀN BỘ 6 VĂN BẢN PHÁP LUẬT GIAO THÔNG
-Model: google/gemini-embedding-2 (3072 chiều)
+Chỉ mục ngữ nghĩa (Dense Vector Index) trên kho tài liệu của Domain Pack đang hoạt động.
 
-Bao phủ 6 văn bản:
-  1. 01_luat_36_2024_qh15   : Luật Trật tự, an toàn giao thông đường bộ (quy tắc, GPLX, điểm)
-  2. 02_luat_35_2024_qh15   : Luật Đường bộ (hạ tầng, cao tốc, kinh doanh vận tải)
-  3. 03_nghi_dinh_168_2024_nd_cp: Nghị định 168/2024/NĐ-CP (mức tiền phạt, trừ điểm, tạm giữ xe)
-  4. 04_thong_tu_31_2019_tt_bgtvt: Thông tư 31/2019/TT-BGTVT (tốc độ tối đa, khoảng cách an toàn)
-  5. 05_thong_tu_73_2024_tt_bca : Thông tư 73/2024/TT-BCA (tuần tra CSGT, dừng xe, kiểm tra VNeID)
-  6. 06_qcvn_41_2019_bgtvt  : QCVN 41:2019/BGTVT (báo hiệu đường bộ, biển báo, vạch kẻ kèm ảnh)
+Danh sách tài liệu, alias và nhóm do pack khai báo, không còn hardcode ở đây.
 
-Truy xuất phân cấp (small-to-big): khớp ở mức Khoản/hành vi/biển báo cho chính xác ngữ nghĩa,
-rồi trả toàn văn mục cha (kèm hình ảnh minh họa nếu có) để LLM có đủ ngữ cảnh kết luận.
+Truy xuất phân cấp (small-to-big): khớp ở mức đoạn con cho chính xác ngữ nghĩa, rồi trả toàn
+văn mục cha (kèm hình ảnh minh họa nếu có) để mô hình có đủ ngữ cảnh kết luận.
 """
 
 import json
@@ -22,47 +15,34 @@ import numpy as np
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
+from src.paths import project_root
+
+load_dotenv(os.path.join(project_root(), ".env"))
 
 CHILD_POOL_SIZE = 16
 MULTI_MATCH_BONUS = 0.05
 
-# Bảng phân giải tên viết tắt / alias sang mã văn bản chuẩn
-DOC_ALIASES: Dict[str, str] = {
-    "luat_36": "01_luat_36_2024_qh15",
-    "luat_36_2024": "01_luat_36_2024_qh15",
-    "01_luat_36": "01_luat_36_2024_qh15",
-    "luat_35": "02_luat_35_2024_qh15",
-    "luat_35_2024": "02_luat_35_2024_qh15",
-    "02_luat_35": "02_luat_35_2024_qh15",
-    "nghi_dinh_168": "03_nghi_dinh_168_2024_nd_cp",
-    "nd_168": "03_nghi_dinh_168_2024_nd_cp",
-    "03_nghi_dinh_168": "03_nghi_dinh_168_2024_nd_cp",
-    "thong_tu_31": "04_thong_tu_31_2019_tt_bgtvt",
-    "tt_31": "04_thong_tu_31_2019_tt_bgtvt",
-    "04_thong_tu_31": "04_thong_tu_31_2019_tt_bgtvt",
-    "thong_tu_73": "05_thong_tu_73_2024_tt_bca",
-    "tt_73": "05_thong_tu_73_2024_tt_bca",
-    "05_thong_tu_73": "05_thong_tu_73_2024_tt_bca",
-    "qcvn_41": "06_qcvn_41_2019_bgtvt",
-    "qcvn_41_2019": "06_qcvn_41_2019_bgtvt",
-    "06_qcvn_41": "06_qcvn_41_2019_bgtvt"
-}
+# Bảng phân giải tên tài liệu KHÔNG còn nằm ở đây.
+#
+# Trước đây module này chứa cứng `DOC_ALIASES` (18 alias) và `DOC_GROUPS` (5 nhóm) của đúng 6
+# văn bản giao thông. Giờ chúng do Domain Pack khai báo (`domains/<id>/domain.yaml`), nên thêm
+# hay bớt tài liệu là sửa cấu hình chứ không sửa mã nguồn engine.
+#
+# Hai hàm dưới giữ lại đúng hình dạng dữ liệu cũ cho mã đã dùng chúng.
 
-DOC_GROUPS: Dict[str, List[str]] = {
-    "luat": ["01_luat_36_2024_qh15", "02_luat_35_2024_qh15"],
-    "nghi_dinh": ["03_nghi_dinh_168_2024_nd_cp"],
-    "thong_tu": ["04_thong_tu_31_2019_tt_bgtvt", "05_thong_tu_73_2024_tt_bca"],
-    "quy_chuan": ["06_qcvn_41_2019_bgtvt"],
-    "all": [
-        "01_luat_36_2024_qh15",
-        "02_luat_35_2024_qh15",
-        "03_nghi_dinh_168_2024_nd_cp",
-        "04_thong_tu_31_2019_tt_bgtvt",
-        "05_thong_tu_73_2024_tt_bca",
-        "06_qcvn_41_2019_bgtvt"
-    ]
-}
+
+def doc_aliases() -> Dict[str, str]:
+    """Alias -> mã tài liệu chuẩn, lấy từ Domain Pack đang hoạt động."""
+    from src.domain.registry import get_active_domain
+
+    return get_active_domain().aliases
+
+
+def doc_groups() -> Dict[str, List[str]]:
+    """Tên nhóm -> danh sách mã tài liệu, lấy từ Domain Pack đang hoạt động."""
+    from src.domain.registry import get_active_domain
+
+    return get_active_domain().groups
 
 
 class SemanticIndex:
@@ -124,10 +104,10 @@ class SemanticIndex:
         resolved: Set[str] = set()
         for d in raw_doc_ids:
             d_clean = d.strip().lower()
-            if d_clean in DOC_GROUPS:
-                resolved.update(DOC_GROUPS[d_clean])
-            elif d_clean in DOC_ALIASES:
-                resolved.add(DOC_ALIASES[d_clean])
+            if d_clean in doc_groups():
+                resolved.update(doc_groups()[d_clean])
+            elif d_clean in doc_aliases():
+                resolved.add(doc_aliases()[d_clean])
             else:
                 resolved.add(d)
         return resolved

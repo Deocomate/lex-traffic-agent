@@ -31,6 +31,7 @@ import logging
 import os
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Sequence
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
@@ -151,7 +152,7 @@ def get_scope_reference(base_dir: Optional[str] = None) -> ScopeReference:
     global _shared_reference
     if _shared_reference is None:
         if not base_dir:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
         _shared_reference = ScopeReference(os.path.join(base_dir, "data", "processed"))
     return _shared_reference
 

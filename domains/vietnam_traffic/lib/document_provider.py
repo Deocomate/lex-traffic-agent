@@ -9,121 +9,45 @@ import json
 import re
 from typing import List, Dict, Any, Optional
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.paths import project_root
+
+BASE_DIR = project_root()
 PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processed")
 PDF_DIR = os.path.join(BASE_DIR, "data", "digitized_pdf")
 
 
-DOCUMENTS_METADATA = [
-    {
-        "id": "01_luat_36_2024_qh15",
-        "code": "36/2024/QH15",
-        "short_title": "Luật Trật tự ATGTĐB 2024",
-        "full_title": "Luật Trật tự, an toàn giao thông đường bộ",
-        "doc_type": "Luật",
-        "authority": "Quốc hội khóa XV",
-        "date_issued": "27/06/2024",
-        "effective_date": "01/01/2025",
-        "total_chapters": 9,
-        "total_articles": 89,
-        "badge_color": "emerald",
-        "icon": "📜",
-        "structure_file": "01_luat_36_2024_qh15_trat_tu_an_toan_giao_thong_structured.json",
-        "articles_file": "rag_chunks.jsonl",
-        "pdf_file": "01_luat_36_2024_qh15_trat_tu_an_toan_giao_thong_searchable.pdf",
-        "summary": "Quy định quy tắc, phương tiện, người tham gia giao thông; điểm GPLX; chỉ huy, giải quyết TNGT."
-    },
-    {
-        "id": "02_luat_35_2024_qh15",
-        "code": "35/2024/QH15",
-        "short_title": "Luật Đường bộ 2024",
-        "full_title": "Luật Đường bộ",
-        "doc_type": "Luật",
-        "authority": "Quốc hội khóa XV",
-        "date_issued": "27/06/2024",
-        "effective_date": "01/01/2025",
-        "total_chapters": 6,
-        "total_articles": 86,
-        "badge_color": "sky",
-        "icon": "🛣️",
-        "structure_file": "02_luat_35_2024_qh15_duong_bo_structured.json",
-        "articles_file": "luat_35_articles.jsonl",
-        "pdf_file": "02_luat_35_2024_qh15_duong_bo_searchable.pdf",
-        "summary": "Quy định về kết cấu hạ tầng đường bộ, đường cao tốc, phương tiện và vận tải đường bộ."
-    },
-    {
-        "id": "03_nghi_dinh_168_2024_nd_cp",
-        "code": "168/2024/NĐ-CP",
-        "short_title": "Nghị định xử phạt VPHC 2024",
-        "full_title": "Nghị định quy định xử phạt vi phạm hành chính về trật tự, ATGT trong lĩnh vực giao thông đường bộ",
-        "doc_type": "Nghị định",
-        "authority": "Chính phủ",
-        "date_issued": "26/12/2024",
-        "effective_date": "01/01/2025",
-        "total_chapters": 4,
-        "total_articles": 55,
-        "badge_color": "rose",
-        "icon": "⚖️",
-        "structure_file": "03_nghi_dinh_168_2024_nd_cp_xu_phat_vi_pham_structured.json",
-        "articles_file": None,
-        "pdf_file": "03_nghi_dinh_168_2024_nd_cp_xu_phat_vi_pham_searchable.pdf",
-        "summary": "Chế tài tiền phạt, mức trừ điểm GPLX, hình thức xử phạt bổ sung cho hơn 634 hành vi vi phạm."
-    },
-    {
-        "id": "04_thong_tu_31_2019_tt_bgtvt",
-        "code": "31/2019/TT-BGTVT",
-        "short_title": "Thông tư tốc độ & khoảng cách",
-        "full_title": "Thông tư quy định về tốc độ và khoảng cách an toàn của xe cơ giới, xe máy chuyên dùng",
-        "doc_type": "Thông tư",
-        "authority": "Bộ Giao thông vận tải",
-        "date_issued": "29/08/2019",
-        "effective_date": "15/10/2019",
-        "total_chapters": 3,
-        "total_articles": 13,
-        "badge_color": "amber",
-        "icon": "⚡",
-        "structure_file": "04_thong_tu_31_2019_tt_bgtvt_toc_do_khoang_cach_structured.json",
-        "articles_file": "tt_31_articles.jsonl",
-        "pdf_file": "04_thong_tu_31_2019_tt_bgtvt_toc_do_khoang_cach_searchable.pdf",
-        "summary": "Tốc độ tối đa trong/ngoài khu đông dân cư, đường cao tốc và cự ly an toàn tối thiểu giữa các xe."
-    },
-    {
-        "id": "05_thong_tu_73_2024_tt_bca",
-        "code": "73/2024/TT-BCA",
-        "short_title": "Thông tư tuần tra CSGT 2024",
-        "full_title": "Thông tư quy định công tác tuần tra, kiểm soát, xử lý vi phạm pháp luật về trật tự, ATGT của CSGT",
-        "doc_type": "Thông tư",
-        "authority": "Bộ Công an",
-        "date_issued": "15/11/2024",
-        "effective_date": "01/01/2025",
-        "total_chapters": 5,
-        "total_articles": 33,
-        "badge_color": "indigo",
-        "icon": "👮",
-        "structure_file": "05_thong_tu_73_2024_tt_bca_tuan_tra_csgt_structured.json",
-        "articles_file": "tt_73_articles.jsonl",
-        "pdf_file": "05_thong_tu_73_2024_tt_bca_tuan_tra_csgt_searchable.pdf",
-        "summary": "Quy định 4 trường hợp dừng xe, quyền hạn CSGT, kiểm tra nồng độ cồn và giấy tờ trên VNeID."
-    },
-    {
-        "id": "06_qcvn_41_2019_bgtvt",
-        "code": "QCVN 41:2019/BGTVT",
-        "short_title": "Quy chuẩn báo hiệu đường bộ",
-        "full_title": "Quy chuẩn kỹ thuật quốc gia về báo hiệu đường bộ",
-        "doc_type": "Quy chuẩn kỹ thuật",
-        "authority": "Bộ Giao thông vận tải",
-        "date_issued": "31/12/2019",
-        "effective_date": "01/07/2020",
-        "total_chapters": 16,
-        "total_articles": 90,
-        "badge_color": "teal",
-        "icon": "🛑",
-        "structure_file": "06_qcvn_41_2019_bgtvt_quy_chuan_bao_hieu_duong_bo_structured.json",
-        "articles_file": "qcvn_41_articles.jsonl",
-        "pdf_file": "06_qcvn_41_2019_bgtvt_quy_chuan_bao_hieu_duong_bo_searchable.pdf",
-        "summary": "Hệ thống biển báo cấm, nguy hiểm, hiệu lệnh, chỉ dẫn, biển phụ, vạch kẻ đường và đèn tín hiệu."
-    }
-]
+def _documents_metadata() -> List[Dict[str, Any]]:
+    """
+    Danh mục tài liệu cho lớp ứng dụng (trang tra cứu văn bản, API /api/documents).
+
+    Trước đây là một hằng số 110 dòng liệt kê cứng 6 văn bản giao thông. Giờ dựng từ Domain Pack
+    đang hoạt động: thêm hay bớt tài liệu chỉ cần sửa `domains/<id>/domain.yaml`.
+    """
+    from src.domain.registry import get_active_domain
+
+    documents = []
+    for doc in get_active_domain().spec.corpus.documents:
+        entry: Dict[str, Any] = {
+            "id": doc.id,
+            "code": doc.code,
+            "short_title": doc.short_title,
+            "full_title": doc.full_title,
+            "doc_type": _DOC_TYPE_LABELS.get(doc.doc_type, doc.doc_type),
+            "summary": doc.summary,
+        }
+        entry.update(doc.metadata)
+        documents.append(entry)
+    return documents
+
+
+# Nhãn hiển thị của từng loại tài liệu. Miền khai báo mã loại (`luat`, `nghi_dinh`...); lớp
+# giao diện cần tên đầy đủ tiếng Việt.
+_DOC_TYPE_LABELS = {
+    "luat": "Luật",
+    "nghi_dinh": "Nghị định",
+    "thong_tu": "Thông tư",
+    "quy_chuan": "Quy chuẩn",
+}
 
 
 class DocumentProvider:
@@ -134,7 +58,7 @@ class DocumentProvider:
         self.processed_dir = os.path.join(base_dir, "data", "processed")
         self.pdf_dir = os.path.join(base_dir, "data", "digitized_pdf")
 
-        self.documents_meta = {d["id"]: d for d in DOCUMENTS_METADATA}
+        self.documents_meta = {d["id"]: d for d in _documents_metadata()}
         self._trees: Dict[str, dict] = {}
         self._articles_content: Dict[str, Dict[int, dict]] = {}
         self._traffic_signs: Optional[dict] = None
@@ -146,7 +70,7 @@ class DocumentProvider:
 
     def _load_all(self):
         """Khởi nạp toàn bộ cấu trúc và bài viết của 6 văn bản vào RAM"""
-        for doc_meta in DOCUMENTS_METADATA:
+        for doc_meta in _documents_metadata():
             doc_id = doc_meta["id"]
             st_file = doc_meta["structure_file"]
             st_path = os.path.join(self.processed_dir, st_file)
@@ -230,7 +154,7 @@ class DocumentProvider:
     def list_documents(self) -> List[dict]:
         """Trả về metadata danh sách 6 văn bản kèm số lượng thực tế đã nạp"""
         results = []
-        for d in DOCUMENTS_METADATA:
+        for d in _documents_metadata():
             doc_id = d["id"]
             tree = self._trees.get(doc_id, {})
             loaded_arts = len(self._articles_content.get(doc_id, {}))
@@ -249,7 +173,7 @@ class DocumentProvider:
         meta = self.documents_meta.get(doc_id)
         if not meta:
             # Fallback nếu truyền short id như 'luat_36'
-            for d in DOCUMENTS_METADATA:
+            for d in _documents_metadata():
                 if doc_id in d["id"]:
                     meta = d
                     doc_id = d["id"]
@@ -294,7 +218,7 @@ class DocumentProvider:
         """Trả về toàn văn và metadata của một Điều luật cụ thể"""
         # Resolve doc_id alias
         if doc_id not in self.documents_meta:
-            for d in DOCUMENTS_METADATA:
+            for d in _documents_metadata():
                 if doc_id in d["id"]:
                     doc_id = d["id"]
                     break
@@ -600,7 +524,7 @@ class DocumentProvider:
 
     def get_pdf_path(self, doc_id: str) -> Optional[str]:
         """Trả về đường dẫn tệp PDF tuyệt đối của văn bản"""
-        for d in DOCUMENTS_METADATA:
+        for d in _documents_metadata():
             if doc_id == d["id"] or doc_id == d["code"] or doc_id in d["id"]:
                 path = os.path.join(self.pdf_dir, d["pdf_file"])
                 if os.path.exists(path):

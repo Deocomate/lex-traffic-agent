@@ -16,12 +16,13 @@ import re
 from typing import List, Dict, Any, Optional
 import numpy as np
 
-from src.tools.penalty_lookup import PenaltyLookup
-from src.tools.tool_contract import (
+from domains.vietnam_traffic.lib.penalty_lookup import PenaltyLookup
+from domains.vietnam_traffic.lib.tool_contract import (
     AGENT_ONLY_TAG,
     NO_ARTICLE_MATCH_HEADER,
     NO_KEYWORD_MATCH_HEADER,
 )
+from src.paths import project_root
 
 if sys.platform == 'win32':
     try:
@@ -37,7 +38,7 @@ DEFAULT_SEARCH_DOCS = "all"
 
 class TrafficLawTools:
     def __init__(self):
-        self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.base_dir = project_root()
         self.processed_dir = os.path.join(self.base_dir, "data", "processed")
 
         self.structured_json_path = os.path.join(self.processed_dir, "law_36_2024_structured.json")
@@ -509,127 +510,12 @@ class TrafficLawTools:
 
 
 # SCHEMA FUNCTION CALLING DÀNH CHO AI AGENT
-TOOLS_SCHEMA = [
-    {
-        "type": "function",
-        "function": {
-            "name": "penalty_lookup",
-            "description": "Tra cứu mức phạt tiền (VNĐ), số điểm giấy phép lái xe bị trừ và hình thức xử phạt bổ sung trên toàn văn Nghị định 168/2024/NĐ-CP (634 hành vi vi phạm, hiệu lực 01/01/2025). Dùng cho mọi câu hỏi về chế tài: nồng độ cồn, vượt đèn đỏ, quá tốc độ, mũ bảo hiểm, điện thoại, chở quá số người, đi ngược chiều, vỉa hè, cao tốc...",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "violation_keyword": {
-                        "type": "string",
-                        "description": "Tên hành vi vi phạm hoặc từ khóa kèm loại xe (ví dụ: 'nồng độ cồn ô tô', 'uống bia lái xe máy', 'vượt đèn đỏ ô tô', 'chạy quá tốc độ ô tô', 'không đội mũ bảo hiểm')"
-                    }
-                },
-                "required": ["violation_keyword"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "traffic_sign_lookup",
-            "description": "Tra cứu biển báo giao thông hoặc vạch kẻ đường theo Quy chuẩn QCVN 41:2019/BGTVT. Cung cấp tên biển, nhóm biển (cấm, hiệu lệnh, nguy hiểm, chỉ dẫn, phụ, vạch kẻ đường), ý nghĩa sử dụng và HÌNH ẢNH MINH HỌA MARKDOWN để người dùng xem trực quan. Dùng khi hỏi: 'biển P.106a', 'biển cấm xe tải', 'biển W.201', 'vạch 1.1', 'biển này có ý nghĩa gì'...",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "sign_code_or_name": {
-                        "type": "string",
-                        "description": "Mã biển báo (P.106a, W.201, R.403a, Vạch 1.1...) hoặc tên biển ('cấm rẽ trái', 'cấm xe tải', 'hết hạn chế tốc độ')"
-                    }
-                },
-                "required": ["sign_code_or_name"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "speed_limit_lookup",
-            "description": "Tra cứu quy định về tốc độ tối đa cho phép (km/h) và khoảng cách an toàn (mét) của xe ô tô, xe máy, xe tải theo Thông tư 31/2019/TT-BGTVT. Phân biệt rõ: trong khu vực đông dân cư vs ngoài khu vực đông dân cư, đường đôi vs đường hai chiều, đường cao tốc.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {
-                        "type": "string",
-                        "description": "Nội dung câu hỏi về tốc độ hoặc khoảng cách an toàn (ví dụ: 'tốc độ xe máy trong khu đông dân cư', 'khoảng cách an toàn chạy 80km/h', 'tốc độ xe ô tô ngoài đô thị')"
-                    }
-                },
-                "required": ["query"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "keyword_search",
-            "description": "Tìm kiếm chính xác các Điều luật trong Luật Giao thông 2024 chứa từ khóa, tên hạng bằng lái xe (A1, C1, B, C, D), số tuổi (16 tuổi, 18 tuổi), con số (50cc, 12 điểm), hoặc thuật ngữ pháp lý.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "keywords": {
-                        "type": "string",
-                        "description": "Từ khóa hoặc cụm từ cần tìm (ví dụ: 'hạng C1', 'nồng độ cồn', 'xe 50cc', '12 điểm bằng lái', 'trẻ em ngồi ghế trước')"
-                    }
-                },
-                "required": ["keywords"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "semantic_search",
-            "description": "Tìm kiếm ngữ nghĩa sâu (Dense Vector Search 3072 chiều) trên toàn bộ 6 văn bản: Luật 36/2024 (quy tắc, GPLX), Luật 35/2024 (đường bộ, cao tốc, vận tải), Thông tư 31/2019 (tốc độ), Thông tư 73/2024 (tuần tra CSGT, quyền dừng xe, giấy tờ VNeID), QCVN 41:2019 (báo hiệu, biển báo). Dùng khi câu hỏi mô tả tình huống đời thường hoặc hỏi về quyền hạn CSGT.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "question": {
-                        "type": "string",
-                        "description": "Mô tả tình huống hoặc câu hỏi đầy đủ bằng tiếng Việt (ví dụ: 'CSGT được dừng xe trong những trường hợp nào', 'kiểm tra giấy tờ qua VNeID có được không', 'chở con nhỏ ngồi trước xe máy')"
-                    },
-                    "doc_scope": {
-                        "type": "string",
-                        "enum": ["all", "luat", "nghi_dinh", "thong_tu", "quy_chuan"],
-                        "description": "Phạm vi văn bản cần tìm (mặc định 'all' để tìm trong toàn bộ kho luật)"
-                    }
-                },
-                "required": ["question"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "get_article",
-            "description": "Lấy toàn văn một Điều luật cụ thể theo số hiệu Điều và mã văn bản.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "article_number": {
-                        "type": "integer",
-                        "description": "Số hiệu của Điều luật cần tra cứu (ví dụ: 9, 10, 31, 56, 57, 58, 89)"
-                    },
-                    "doc_id": {
-                        "type": "string",
-                        "description": "Mã văn bản (mặc định '01_luat_36_2024_qh15', hoặc '02_luat_35_2024_qh15', '04_thong_tu_31_2019_tt_bgtvt', '05_thong_tu_73_2024_tt_bca')"
-                    }
-                },
-                "required": ["article_number"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "list_chapters",
-            "description": "Xem danh mục 9 Chương của Luật 36/2024/QH15 để định hướng khu vực cần tra cứu.",
-            "parameters": {
-                "type": "object",
-                "properties": {}
-            }
-        }
-    }
-]
+
+
+# TOOLS_SCHEMA KHÔNG còn ở đây.
+#
+# Khai báo công cụ (tên, mô tả, JSON Schema tham số) đã chuyển sang `domains/vietnam_traffic/
+# domain.yaml`, và hàm thực thi sang `domains/vietnam_traffic/tools.py`. Nhờ vậy engine không
+# giữ danh sách công cụ cố định nào: đổi miền là đổi cả bộ công cụ mà không sửa mã engine.
+#
+# Lớp `TrafficLawTools` ở trên vẫn là nơi chứa dữ liệu và nghiệp vụ tra cứu của miền giao thông.

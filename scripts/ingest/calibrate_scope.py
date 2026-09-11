@@ -131,7 +131,7 @@ def calibrate_penalty_keyword(samples: int, seed: int) -> List[float]:
     Truy vấn giả cắt ra từ chính mô tả hành vi vi phạm — thứ gần nhất với một câu hỏi chắc chắn
     thuộc phạm vi — nhưng rút ngắn về đúng độ dài người dùng thật hay hỏi.
     """
-    from src.tools.penalty_lookup import PenaltyLookup
+    from domains.vietnam_traffic.lib.penalty_lookup import PenaltyLookup
 
     lookup = PenaltyLookup(base_dir)
     if not lookup.chunks:
@@ -181,7 +181,7 @@ def _top_score(branch: str, query: str) -> float:
         hits = get_cached_semantic_index(base_dir).search_chunks(query, top_k=1)
         return float(hits[0].get("score", 0.0)) if hits else 0.0
 
-    from src.tools.penalty_lookup import PenaltyLookup
+    from domains.vietnam_traffic.lib.penalty_lookup import PenaltyLookup
 
     scored = PenaltyLookup(base_dir).score_by_keyword(query)
     return float(scored[0][0]) if scored else 0.0

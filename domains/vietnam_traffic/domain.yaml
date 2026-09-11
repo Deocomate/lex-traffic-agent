@@ -1,0 +1,255 @@
+# Domain Pack: Pháp luật Giao thông Đường bộ Việt Nam
+# Toàn bộ phần 'biết về miền' của hệ thống. Engine trong src/ không chứa tri thức nào ở đây.
+# Tạo miền mới = chép thư mục này rồi thay nội dung, không sửa code engine.
+
+id: vietnam_traffic
+name: Pháp luật Giao thông Đường bộ Việt Nam
+language: vi
+system_prompt_file: prompts/system.md
+lexicon_file: lexicon.yaml
+guard_file: guard.yaml
+corpus:
+  index_dir: data/processed
+  documents:
+  - id: 01_luat_36_2024_qh15
+    code: 36/2024/QH15
+    short_title: Luật Trật tự ATGTĐB 2024
+    full_title: Luật Trật tự, an toàn giao thông đường bộ
+    doc_type: luat
+    aliases:
+    - 01_luat_36
+    - luat_36
+    - luat_36_2024
+    summary: Quy định quy tắc, phương tiện, người tham gia giao thông; điểm GPLX; chỉ huy, giải quyết TNGT.
+    metadata:
+      authority: Quốc hội khóa XV
+      date_issued: 27/06/2024
+      effective_date: 01/01/2025
+      total_chapters: 9
+      total_articles: 89
+      badge_color: emerald
+      icon: 📜
+      structure_file: 01_luat_36_2024_qh15_trat_tu_an_toan_giao_thong_structured.json
+      articles_file: rag_chunks.jsonl
+      pdf_file: 01_luat_36_2024_qh15_trat_tu_an_toan_giao_thong_searchable.pdf
+  - id: 02_luat_35_2024_qh15
+    code: 35/2024/QH15
+    short_title: Luật Đường bộ 2024
+    full_title: Luật Đường bộ
+    doc_type: luat
+    aliases:
+    - 02_luat_35
+    - luat_35
+    - luat_35_2024
+    summary: Quy định về kết cấu hạ tầng đường bộ, đường cao tốc, phương tiện và vận tải đường bộ.
+    metadata:
+      authority: Quốc hội khóa XV
+      date_issued: 27/06/2024
+      effective_date: 01/01/2025
+      total_chapters: 6
+      total_articles: 86
+      badge_color: sky
+      icon: 🛣️
+      structure_file: 02_luat_35_2024_qh15_duong_bo_structured.json
+      articles_file: luat_35_articles.jsonl
+      pdf_file: 02_luat_35_2024_qh15_duong_bo_searchable.pdf
+  - id: 03_nghi_dinh_168_2024_nd_cp
+    code: 168/2024/NĐ-CP
+    short_title: Nghị định xử phạt VPHC 2024
+    full_title: Nghị định quy định xử phạt vi phạm hành chính về trật tự, ATGT trong lĩnh vực giao thông đường bộ
+    doc_type: nghi_dinh
+    aliases:
+    - 03_nghi_dinh_168
+    - nd_168
+    - nghi_dinh_168
+    summary: Chế tài tiền phạt, mức trừ điểm GPLX, hình thức xử phạt bổ sung cho hơn 634 hành vi vi phạm.
+    metadata:
+      authority: Chính phủ
+      date_issued: 26/12/2024
+      effective_date: 01/01/2025
+      total_chapters: 4
+      total_articles: 55
+      badge_color: rose
+      icon: ⚖️
+      structure_file: 03_nghi_dinh_168_2024_nd_cp_xu_phat_vi_pham_structured.json
+      articles_file: null
+      pdf_file: 03_nghi_dinh_168_2024_nd_cp_xu_phat_vi_pham_searchable.pdf
+  - id: 04_thong_tu_31_2019_tt_bgtvt
+    code: 31/2019/TT-BGTVT
+    short_title: Thông tư tốc độ & khoảng cách
+    full_title: Thông tư quy định về tốc độ và khoảng cách an toàn của xe cơ giới, xe máy chuyên dùng
+    doc_type: thong_tu
+    aliases:
+    - 04_thong_tu_31
+    - thong_tu_31
+    - tt_31
+    summary: Tốc độ tối đa trong/ngoài khu đông dân cư, đường cao tốc và cự ly an toàn tối thiểu giữa các xe.
+    metadata:
+      authority: Bộ Giao thông vận tải
+      date_issued: 29/08/2019
+      effective_date: 15/10/2019
+      total_chapters: 3
+      total_articles: 13
+      badge_color: amber
+      icon: ⚡
+      structure_file: 04_thong_tu_31_2019_tt_bgtvt_toc_do_khoang_cach_structured.json
+      articles_file: tt_31_articles.jsonl
+      pdf_file: 04_thong_tu_31_2019_tt_bgtvt_toc_do_khoang_cach_searchable.pdf
+  - id: 05_thong_tu_73_2024_tt_bca
+    code: 73/2024/TT-BCA
+    short_title: Thông tư tuần tra CSGT 2024
+    full_title: Thông tư quy định công tác tuần tra, kiểm soát, xử lý vi phạm pháp luật về trật tự, ATGT của CSGT
+    doc_type: thong_tu
+    aliases:
+    - 05_thong_tu_73
+    - thong_tu_73
+    - tt_73
+    summary: Quy định 4 trường hợp dừng xe, quyền hạn CSGT, kiểm tra nồng độ cồn và giấy tờ trên VNeID.
+    metadata:
+      authority: Bộ Công an
+      date_issued: 15/11/2024
+      effective_date: 01/01/2025
+      total_chapters: 5
+      total_articles: 33
+      badge_color: indigo
+      icon: 👮
+      structure_file: 05_thong_tu_73_2024_tt_bca_tuan_tra_csgt_structured.json
+      articles_file: tt_73_articles.jsonl
+      pdf_file: 05_thong_tu_73_2024_tt_bca_tuan_tra_csgt_searchable.pdf
+  - id: 06_qcvn_41_2019_bgtvt
+    code: QCVN 41:2019/BGTVT
+    short_title: Quy chuẩn báo hiệu đường bộ
+    full_title: Quy chuẩn kỹ thuật quốc gia về báo hiệu đường bộ
+    doc_type: quy_chuan
+    aliases:
+    - 06_qcvn_41
+    - qcvn_41
+    - qcvn_41_2019
+    summary: Hệ thống biển báo cấm, nguy hiểm, hiệu lệnh, chỉ dẫn, biển phụ, vạch kẻ đường và đèn tín hiệu.
+    metadata:
+      authority: Bộ Giao thông vận tải
+      date_issued: 31/12/2019
+      effective_date: 01/07/2020
+      total_chapters: 16
+      total_articles: 90
+      badge_color: teal
+      icon: 🛑
+      structure_file: 06_qcvn_41_2019_bgtvt_quy_chuan_bao_hieu_duong_bo_structured.json
+      articles_file: qcvn_41_articles.jsonl
+      pdf_file: 06_qcvn_41_2019_bgtvt_quy_chuan_bao_hieu_duong_bo_searchable.pdf
+  article_exists: domains.vietnam_traffic.corpus:article_exists
+policy:
+  cache_similarity: 0.97
+  cache_ttl_days: 30
+  max_tool_turns: 4
+tools:
+- name: penalty_lookup
+  description: 'Tra cứu mức phạt tiền (VNĐ), số điểm giấy phép lái xe bị trừ và hình thức xử phạt bổ sung trên toàn
+    văn Nghị định 168/2024/NĐ-CP (634 hành vi vi phạm, hiệu lực 01/01/2025). Dùng cho mọi câu hỏi về chế tài: nồng
+    độ cồn, vượt đèn đỏ, quá tốc độ, mũ bảo hiểm, điện thoại, chở quá số người, đi ngược chiều, vỉa hè, cao tốc...'
+  handler: domains.vietnam_traffic.tools:penalty_lookup
+  parameters:
+    type: object
+    properties:
+      violation_keyword:
+        type: string
+        description: 'Tên hành vi vi phạm hoặc từ khóa kèm loại xe (ví dụ: ''nồng độ cồn ô tô'', ''uống bia lái
+          xe máy'', ''vượt đèn đỏ ô tô'', ''chạy quá tốc độ ô tô'', ''không đội mũ bảo hiểm'')'
+    required:
+    - violation_keyword
+  evidence_builder: domains.vietnam_traffic.evidence:penalty_lookup
+- name: traffic_sign_lookup
+  description: 'Tra cứu biển báo giao thông hoặc vạch kẻ đường theo Quy chuẩn QCVN 41:2019/BGTVT. Cung cấp tên biển,
+    nhóm biển (cấm, hiệu lệnh, nguy hiểm, chỉ dẫn, phụ, vạch kẻ đường), ý nghĩa sử dụng và HÌNH ẢNH MINH HỌA MARKDOWN
+    để người dùng xem trực quan. Dùng khi hỏi: ''biển P.106a'', ''biển cấm xe tải'', ''biển W.201'', ''vạch 1.1'',
+    ''biển này có ý nghĩa gì''...'
+  handler: domains.vietnam_traffic.tools:traffic_sign_lookup
+  parameters:
+    type: object
+    properties:
+      sign_code_or_name:
+        type: string
+        description: Mã biển báo (P.106a, W.201, R.403a, Vạch 1.1...) hoặc tên biển ('cấm rẽ trái', 'cấm xe tải',
+          'hết hạn chế tốc độ')
+    required:
+    - sign_code_or_name
+  evidence_builder: domains.vietnam_traffic.evidence:traffic_sign_lookup
+- name: speed_limit_lookup
+  description: 'Tra cứu quy định về tốc độ tối đa cho phép (km/h) và khoảng cách an toàn (mét) của xe ô tô, xe máy,
+    xe tải theo Thông tư 31/2019/TT-BGTVT. Phân biệt rõ: trong khu vực đông dân cư vs ngoài khu vực đông dân cư,
+    đường đôi vs đường hai chiều, đường cao tốc.'
+  handler: domains.vietnam_traffic.tools:speed_limit_lookup
+  parameters:
+    type: object
+    properties:
+      query:
+        type: string
+        description: 'Nội dung câu hỏi về tốc độ hoặc khoảng cách an toàn (ví dụ: ''tốc độ xe máy trong khu đông
+          dân cư'', ''khoảng cách an toàn chạy 80km/h'', ''tốc độ xe ô tô ngoài đô thị'')'
+    required:
+    - query
+  evidence_builder: domains.vietnam_traffic.evidence:speed_limit_lookup
+- name: keyword_search
+  description: Tìm kiếm chính xác các Điều luật trong Luật Giao thông 2024 chứa từ khóa, tên hạng bằng lái xe (A1,
+    C1, B, C, D), số tuổi (16 tuổi, 18 tuổi), con số (50cc, 12 điểm), hoặc thuật ngữ pháp lý.
+  handler: domains.vietnam_traffic.tools:keyword_search
+  parameters:
+    type: object
+    properties:
+      keywords:
+        type: string
+        description: 'Từ khóa hoặc cụm từ cần tìm (ví dụ: ''hạng C1'', ''nồng độ cồn'', ''xe 50cc'', ''12 điểm bằng
+          lái'', ''trẻ em ngồi ghế trước'')'
+    required:
+    - keywords
+  evidence_builder: domains.vietnam_traffic.evidence:keyword_search
+- name: semantic_search
+  description: 'Tìm kiếm ngữ nghĩa sâu (Dense Vector Search 3072 chiều) trên toàn bộ 6 văn bản: Luật 36/2024 (quy
+    tắc, GPLX), Luật 35/2024 (đường bộ, cao tốc, vận tải), Thông tư 31/2019 (tốc độ), Thông tư 73/2024 (tuần tra
+    CSGT, quyền dừng xe, giấy tờ VNeID), QCVN 41:2019 (báo hiệu, biển báo). Dùng khi câu hỏi mô tả tình huống đời
+    thường hoặc hỏi về quyền hạn CSGT.'
+  handler: domains.vietnam_traffic.tools:semantic_search
+  parameters:
+    type: object
+    properties:
+      question:
+        type: string
+        description: 'Mô tả tình huống hoặc câu hỏi đầy đủ bằng tiếng Việt (ví dụ: ''CSGT được dừng xe trong những
+          trường hợp nào'', ''kiểm tra giấy tờ qua VNeID có được không'', ''chở con nhỏ ngồi trước xe máy'')'
+      doc_scope:
+        type: string
+        enum:
+        - all
+        - luat
+        - nghi_dinh
+        - thong_tu
+        - quy_chuan
+        description: Phạm vi văn bản cần tìm (mặc định 'all' để tìm trong toàn bộ kho luật)
+    required:
+    - question
+  evidence_builder: domains.vietnam_traffic.evidence:semantic_search
+- name: get_article
+  description: Lấy toàn văn một Điều luật cụ thể theo số hiệu Điều và mã văn bản.
+  handler: domains.vietnam_traffic.tools:get_article
+  parameters:
+    type: object
+    properties:
+      article_number:
+        type: integer
+        description: 'Số hiệu của Điều luật cần tra cứu (ví dụ: 9, 10, 31, 56, 57, 58, 89)'
+      doc_id:
+        type: string
+        description: Mã văn bản (mặc định '01_luat_36_2024_qh15', hoặc '02_luat_35_2024_qh15', '04_thong_tu_31_2019_tt_bgtvt',
+          '05_thong_tu_73_2024_tt_bca')
+    required:
+    - article_number
+  evidence_builder: domains.vietnam_traffic.evidence:get_article
+- name: list_chapters
+  description: Xem danh mục 9 Chương của Luật 36/2024/QH15 để định hướng khu vực cần tra cứu.
+  handler: domains.vietnam_traffic.tools:list_chapters
+  parameters:
+    type: object
+    properties: {}
+presentation:
+  describe_call: domains.vietnam_traffic.presentation:describe_call
+  summarize_result: domains.vietnam_traffic.presentation:summarize_result
