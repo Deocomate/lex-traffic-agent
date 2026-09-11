@@ -101,7 +101,10 @@ def run_offline_eval(
     for item in items:
         targets = _targets(item)
         # `semantic_floor=0.0`: nhánh dense rỗng nên ngưỡng cosine không áp dụng được ở đây.
-        retrieved = retriever.retrieve_articles(item.question, top_k=top_k, semantic_floor=0.0)
+        # `adaptive=False`: đo xếp hạng thuần trên danh sách độ dài cố định (Hit@k, MRR, nDCG@k
+        # cần đúng `top_k` ứng viên). Việc cắt theo vách rơi là quyết định trình bày cho Agent,
+        # đo ở đây sẽ trộn lẫn hai thứ khác nhau.
+        retrieved = retriever.retrieve_articles(item.question, top_k=top_k, adaptive=False)
         pids = [d.get("parent_id") for d in retrieved]
 
         for k in (1, 3, 5):

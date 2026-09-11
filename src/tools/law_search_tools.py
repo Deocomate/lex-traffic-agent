@@ -29,10 +29,6 @@ if sys.platform == 'win32':
     except Exception:
         pass
 
-# Ngưỡng lọc độ liên quan của tìm kiếm ngữ nghĩa (thang 0-100)
-# Hiệu chuẩn trên 95 câu benchmark và câu hỏi thực tế (câu ngoài ngành < 58.0%, câu trong ngành >= 60.0%)
-RELEVANCE_FLOOR = float(os.getenv("HYBRID_RELEVANCE_FLOOR", "60.0"))
-
 PARENT_CONTENT_LIMIT = 3500
 
 # Phạm vi văn bản mặc định cho semantic_search: toàn bộ 6 văn bản pháp luật giao thông
@@ -403,6 +399,10 @@ class TrafficLawTools:
         - Thông tư 73/2024 (Tuần tra CSGT, dừng xe, VNeID)
         - QCVN 41:2019 (Biển báo, vạch kẻ đường kèm ảnh)
         - Nghị định 168/2024 (Chế tài mức phạt)
+
+        Kết quả LUÔN kèm dòng độ tin cậy ở đầu. Tầng truy xuất không tự ý trả rỗng khi thấy
+        điểm thấp nữa — nó báo tín hiệu và để Agent quyết định tra lại, mở rộng phạm vi, hay
+        nói thẳng là kho tài liệu không bao phủ câu hỏi.
         """
         if not question:
             return "Không có nội dung để tìm kiếm."
@@ -416,38 +416,34 @@ class TrafficLawTools:
 
         try:
             scope = None if doc_scope == "all" else [doc_scope]
-            fetch_k = min(max(top_k * 2, 6), 12)
-            results = retriever.retrieve_articles(question, doc_ids=scope, top_k=fetch_k)
-
-            # Xếp hạng lại danh sách ứng viên bằng mô hình nhỏ qua rerank.py
-            from src.retrieval.rerank import get_reranker
-            reranker = get_reranker()
-            results = reranker.rerank(question, results, top_k=top_k)
+            kept, confidence, scope_signal = retriever.retrieve_articles_with_confidence(
+                question, doc_ids=scope, top_k=top_k
+            )
         except Exception as e:
             return (
                 f"[Chú ý: Lỗi truy xuất ({e}), chuyển sang tìm kiếm từ khóa]\n"
                 + self.keyword_search(question)
             )
 
-
-        kept = [r for r in results if r["score"] >= RELEVANCE_FLOOR]
         if not kept:
-            best = max((r["score"] for r in results), default=0)
             return (
                 f"{NO_ARTICLE_MATCH_HEADER} '{question}' ===\n"
                 f"{AGENT_ONLY_TAG}\n"
-                f"Độ liên quan cao nhất chỉ đạt {best}%, dưới ngưỡng tin cậy. Câu hỏi nhiều khả năng nằm ngoài "
-                "phạm vi pháp luật giao thông đường bộ Việt Nam. Hãy thông báo rõ ràng là chưa tìm thấy quy định liên quan."
+                "Chỉ mục không trả về ứng viên nào. Hãy thử lại bằng thuật ngữ pháp lý khác, "
+                "hoặc nói rõ với người dùng là chưa tìm thấy quy định liên quan."
             )
 
-        output = [f"=== KẾT QUẢ TRA CỨU NGỮ NGHĨA CHO: '{question}' ==="]
+        output = [f"=== KẾT QUẢ TRA CỨU NGỮ NGHĨA CHO: '{question}' ===", confidence.header_vi()]
+        scope_header = scope_signal.header_vi()
+        if scope_header:
+            output.append(scope_header)
         for rank, r in enumerate(kept):
             doc_name = r.get("doc_name", "")
             header = r.get("article_header", "")
             score = r.get("score", 0)
             img_path = r.get("image_path")
 
-            head_str = f"\n📖 [{doc_name}] {header} — độ liên quan {score}%"
+            head_str = f"\n📖 [{doc_name}] {header} — độ liên quan tương đối {score}%"
             if img_path:
                 clean_img = img_path if img_path.startswith("/") else f"/{img_path}"
                 head_str += f"\n  📷 Ảnh minh họa: ![{header}]({clean_img})"
