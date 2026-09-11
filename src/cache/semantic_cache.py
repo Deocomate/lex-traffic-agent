@@ -43,8 +43,19 @@ class CacheSignals(BaseModel):
     vehicles: List[str] = Field(default_factory=list)
     doc_scope: str = "all"
 
-DEFAULT_THRESHOLD = float(os.getenv("SEMANTIC_CACHE_THRESHOLD", "0.97"))
-DEFAULT_TTL_DAYS = int(os.getenv("CACHE_TTL_DAYS", "30"))
+# Dung sai trúng cache và thời hạn sống là quyết định RỦI RO của từng miền, không phải tham số
+# vận hành: miền pháp lý đòi rất chặt (0.97) vì trả nhầm một câu hỏi "tương tự" có thể cho ra
+# mức phạt của loại xe khác; một miền hỏi đáp nội bộ nới hơn được. Vì vậy chúng nằm trong
+# `policy` của Domain Pack chứ không phải trong .env.
+FALLBACK_THRESHOLD = 0.97
+FALLBACK_TTL_DAYS = 30
+
+
+def _policy():
+    """Chính sách cache của miền đang hoạt động."""
+    from src.domain.registry import get_active_domain
+
+    return get_active_domain().policy
 
 
 def is_semantic_cache_enabled() -> bool:
@@ -101,8 +112,17 @@ class SemanticAnswerCache:
                 base_dir, "data", "runtime", "answer_cache.sqlite"
             )
         self.db_path = db_path
-        self.threshold = DEFAULT_THRESHOLD if threshold is None else threshold
-        self.ttl_days = DEFAULT_TTL_DAYS if ttl_days is None else ttl_days
+        if threshold is None or ttl_days is None:
+            try:
+                policy = _policy()
+                default_threshold, default_ttl = policy.cache_similarity, policy.cache_ttl_days
+            except Exception:
+                default_threshold, default_ttl = FALLBACK_THRESHOLD, FALLBACK_TTL_DAYS
+            threshold = default_threshold if threshold is None else threshold
+            ttl_days = default_ttl if ttl_days is None else ttl_days
+
+        self.threshold = threshold
+        self.ttl_days = ttl_days
         self._local = threading.local()
         self._init_db()
 
