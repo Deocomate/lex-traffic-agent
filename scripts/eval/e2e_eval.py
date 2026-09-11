@@ -34,7 +34,8 @@ from scripts.eval.metrics import (
     estimate_token_cost,
 )
 from scripts.eval.adapters import get_adapter
-from src.answer_guard import find_ungrounded_figures, _money_values
+from src.answer_guard import find_ungrounded_figures
+from src.guard_figures import money_values
 
 
 def run_e2e_eval(
@@ -138,7 +139,7 @@ def run_e2e_eval(
             ungrounded_count += 1
 
         # 3. Kiểm tra từ chối đúng khi hỏi ngoài phạm vi
-        money_in_ans = len(_money_values(answer)) if answer else 0
+        money_in_ans = len(money_values(answer)) if answer else 0
         is_refusal_ok = check_out_of_scope_refusal(item.is_out_of_scope, needs_search, answer, money_in_ans)
         if is_refusal_ok is not None:
             refusal_checks.append(is_refusal_ok)

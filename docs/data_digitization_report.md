@@ -63,7 +63,7 @@ Tệp hợp nhất `data/processed/all_legal_chunks.jsonl` (1,308 chunks) đã �
 
 ## ✅ 5. Xác Nhận Kiểm Thử Tự Động (Verification Summary)
 
-Toàn bộ 4 bài test trong `scripts/verify_digitized_corpus.py` đã chạy thành công 100%:
+Toàn bộ 4 bài test trong `scripts/ingest/verify_digitized_corpus.py` đã chạy thành công 100%:
 1. **Searchable Text Layer:** 506/506 trang (100%) của 6 file PDF trích xuất được text tiếng Việt có dấu.
 2. **JSON Cấu Trúc Toàn Diện:** 100% các Điều từ 1..N trong cả 6 văn bản đều liên tục, không khuyết thiếu.
 3. **Toàn Vẹn Hình Ảnh:** 461/461 file ảnh tồn tại trên đĩa, không có bất kỳ đường link 404 nào.
