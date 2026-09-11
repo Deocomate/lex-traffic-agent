@@ -1,7 +1,14 @@
 """
 Node Suy luận Trung tâm của Agent (Agent Node) trong LangGraph.
-Sử dụng mô hình chính (LLM_MODEL) gắn trực tiếp 7 công cụ tra cứu.
-Agent tự chủ suy luận, quyết định gọi công cụ hoặc tổng hợp câu trả lời cuối cùng.
+
+Mô hình chính được gắn trực tiếp bộ công cụ tra cứu và tự quyết định: gọi công cụ nào, với
+tham số gì, bao nhiêu vòng, và khi nào đã đủ dữ liệu để trả lời.
+
+Ngân sách lượt được NÓI THẲNG cho Agent thay vì cắt câm. Bản trước chỉ có `agent_router` lặng
+lẽ chuyển sang `verify` khi chạm `MAX_TURNS`: nếu lượt cuối Agent vẫn phát tool call thì câu
+trả lời rỗng, `verify` bắt lỗi "câu trả lời trống" rồi phải chạy thêm một vòng `repair` — tốn
+một lệnh gọi mô hình chỉ để sửa hậu quả của việc không báo trước. Biết còn mấy lượt thì Agent
+tự cân đối được: tra tiếp hay chốt lại với dữ liệu đang có.
 """
 
 import json
@@ -19,7 +26,26 @@ from src.tools.law_search_tools import TOOLS_SCHEMA
 
 logger = logging.getLogger(__name__)
 
+# Trần cứng số vòng suy luận. Đây là lưới an toàn chống lặp vô hạn, KHÔNG phải nút điều chỉnh
+# chất lượng: Agent được cho biết còn bao nhiêu lượt và tự quyết định dừng sớm hơn.
 MAX_TURNS = 4
+
+
+def _turn_budget_notice(turn: int) -> str:
+    """Nhắc Agent còn bao nhiêu lượt tra cứu, để nó tự cân đối thay vì bị cắt giữa chừng."""
+    remaining = MAX_TURNS - turn
+    if remaining <= 0:
+        return (
+            "\n\nNGÂN SÁCH TRA CỨU: đây là lượt CUỐI CÙNG. Không gọi thêm công cụ nào nữa. "
+            "Hãy trả lời ngay bằng dữ liệu đã thu thập được. Nếu dữ liệu chưa đủ để kết luận, "
+            "hãy nói thẳng là chưa tra cứu được và nêu rõ còn thiếu thông tin gì — tuyệt đối "
+            "không suy đoán số liệu."
+        )
+    return (
+        f"\n\nNGÂN SÁCH TRA CỨU: bạn còn {remaining} lượt gọi công cụ sau lượt này. "
+        "Hãy tự cân đối: nếu đã đủ căn cứ thì trả lời luôn, nếu còn thiếu thì gọi công cụ cho "
+        "đúng chỗ thiếu."
+    )
 
 
 def agent_node(state: LegalAgentState) -> Dict[str, Any]:
@@ -42,7 +68,7 @@ def agent_node(state: LegalAgentState) -> Dict[str, Any]:
 
     model_with_tools = base_model.bind_tools(TOOLS_SCHEMA)
 
-    system_prompt = get_system_prompt_vi()
+    system_prompt = get_system_prompt_vi() + _turn_budget_notice(turn)
     prompt_messages: List[BaseMessage] = [SystemMessage(content=system_prompt)]
     for msg in messages:
         if not isinstance(msg, SystemMessage):
@@ -111,7 +137,13 @@ def agent_node(state: LegalAgentState) -> Dict[str, Any]:
 
 
 def agent_router(state: LegalAgentState) -> Literal["tools", "verify"]:
-    """Định tuyến sau node agent: Nếu có tool call và chưa quá giới hạn -> gọi tools, ngược lại -> kiểm chứng."""
+    """
+    Định tuyến sau node agent: còn tool call và còn ngân sách thì chạy công cụ, ngược lại sang
+    kiểm chứng.
+
+    Trần `MAX_TURNS` ở đây là lưới an toàn cuối. Đường đi thông thường là Agent tự dừng gọi
+    công cụ khi thấy đủ dữ liệu, vì nó đã được cho biết còn bao nhiêu lượt.
+    """
     messages = state.get("messages", [])
     turn = state.get("turn_count", 0)
 
