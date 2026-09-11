@@ -80,8 +80,6 @@ def launch_eval():
     """Khởi động Benchmark Evaluation mới"""
     eval_script = os.path.join(BASE_DIR, "scripts", "eval", "retrieval_eval.py")
     if not os.path.exists(eval_script):
-        eval_script = os.path.join(BASE_DIR, "scripts", "evaluate_rag.py")
-    if not os.path.exists(eval_script):
         print(f"❌ Không tìm thấy script: {eval_script}")
         return
     os.system(f'"{sys.executable}" "{eval_script}"')

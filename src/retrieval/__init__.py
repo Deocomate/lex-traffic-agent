@@ -5,8 +5,7 @@ Bao gồm:
 - cache: Cache vector nhúng truy vấn SQLite trên đĩa
 - dense: BaseRetriever LangChain bọc SemanticIndex hiện hữu
 - sparse: Chỉ mục BM25Okapi trên corpus 2114 chunk
-- hybrid: Hợp nhất RRF (Reciprocal Rank Fusion) có trọng số và gộp về parent chunk
-- rerank: Xếp hạng lại ứng viên bằng mô hình nhỏ qua structured output
+- hybrid: Hợp nhất RRF (Reciprocal Rank Fusion) và gộp về parent chunk
 """
 
 from src.retrieval.vi_text import (

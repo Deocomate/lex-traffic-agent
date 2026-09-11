@@ -6,7 +6,7 @@ Vì sao tra cache ở ĐÂY chứ không phải trong đồ thị: khoá cache c
 `doc_scope` từ node `route`, nhưng lợi ích lớn nhất của cache là bỏ qua được cả truy xuất lẫn
 sinh văn bản. Nên lượt chạy định tuyến trước, ngoài đồ thị — chỉ tốn đúng một lệnh gọi router
 rẻ — rồi mới quyết định có chạy đồ thị hay không. Khi trượt cache, quyết định định tuyến được
-truyền thẳng vào state để `route_node` không phải gọi LLM lần thứ hai.
+dùng lại làm khoá cache, không tốn thêm một lệnh gọi LLM nào.
 
 Cả hai façade `stream_agent()` và `astream_agent()` của `src/agent.py` dùng chung đúng hàm này.
 """
@@ -17,11 +17,16 @@ from typing import Any, Dict, List, Optional
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 
 from src.cache.fingerprint import get_index_fingerprint
-from src.cache.semantic_cache import build_cache_key, get_semantic_cache, is_cacheable
+from src.cache.semantic_cache import (
+    CacheSignals,
+    build_cache_key,
+    get_semantic_cache,
+    is_cacheable,
+)
 from src.graph.build import build_run_config, get_legal_graph
 from src.graph.events import emit
-from src.graph.router import detect_by_regex, normalize_node, route_node
-from src.graph.state import LegalAgentState, RouteDecision
+from src.graph.query_signals import detect_by_regex
+from src.graph.state import LegalAgentState
 
 CACHE_HIT_NOTICE = "♻️ Dùng lại kết quả đã kiểm chứng cho câu hỏi tương tự"
 
@@ -75,12 +80,11 @@ def _embed_query(text: str):
         return None
 
 
-def _deterministic_cache_route(grounding_query: str) -> RouteDecision:
+def _deterministic_cache_route(grounding_query: str) -> CacheSignals:
     """
     Quyết định định tuyến TẤT ĐỊNH, chỉ dùng để dựng khoá cache.
 
-    Không được dùng `route` thật của lượt chạy làm khoá: nó là phép hợp giữa regex prior và
-    LLM router, mà LLM router không tất định. Đo trực tiếp trên cùng một câu hỏi cho ba lượt
+    Không được dùng quyết định của LLM làm khoá: bộ định tuyến LLM cũ không tất định. Đo trực tiếp trên cùng một câu hỏi cho ba lượt
     chạy: hai lượt trả `vehicles=['o_to','xe_may']`, lượt còn lại trả `vehicles=[]` — ba lượt
     ra hai khoá khác nhau, nên cache không bao giờ trúng dù câu hỏi y hệt.
 
@@ -95,7 +99,7 @@ def _deterministic_cache_route(grounding_query: str) -> RouteDecision:
     hỏi có cosine >= 0.97, nên rủi ro là thiếu một khía cạnh phụ, không phải sai số liệu.
     """
     intents, vehicles = detect_by_regex(grounding_query)
-    return RouteDecision(intents=intents, vehicles=vehicles, doc_scope="all")
+    return CacheSignals(intents=intents, vehicles=vehicles, doc_scope="all")
 
 
 def _emit_cached_answer(answer: str, sources: List[Dict[str, Any]], thread_id: str) -> None:
@@ -212,7 +216,7 @@ def _collect_tool_outputs(final_state: Dict[str, Any]) -> List[str]:
 
 def _lookup_cache(
     grounding_query: str,
-    decision: Optional[RouteDecision],
+    decision: Optional[CacheSignals],
 ) -> Optional[Dict[str, Any]]:
     """Tra cache theo khoá tổ hợp. Mọi sự cố đều quy về 'trượt cache' để đồ thị chạy bình thường."""
     if decision is None:
@@ -233,7 +237,7 @@ def _lookup_cache(
 
 def _store_cache(
     grounding_query: str,
-    decision: Optional[RouteDecision],
+    decision: Optional[CacheSignals],
     final_state: Dict[str, Any],
     tool_outputs: Optional[List[str]] = None,
 ) -> bool:

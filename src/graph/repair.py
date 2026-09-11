@@ -15,7 +15,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 from src.graph.events import emit
 from src.graph.state import LegalAgentState
-from src.graph.synthesize import clean_text_output, polish_answer
+from src.graph.answer_text import clean_text_output, polish_answer
 from src.graph.verify import EMPTY_ANSWER_ISSUE, MISSING_CITATION_ISSUE
 from src.llm.provider import get_synthesize_llm
 from src.prompts.system_vi import get_system_prompt_vi

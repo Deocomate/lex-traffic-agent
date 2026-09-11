@@ -4,7 +4,7 @@ trừ điểm & phục hồi điểm GPLX — hiệu lực 01/01/2025, thay th�
 
 Vì sao không parse thẳng từ PDF: data/raw_data/03_nghi_dinh_168_2024_nd_cp_xu_phat_vi_pham.pdf
 là bản scan ảnh (111 trang, 0 lớp text), OCR sẽ sai lệch chính con số tiền phạt. Script dùng
-bản số hóa trên vi.wikisource — cùng nguồn mà scripts/prepare_data.py đã dùng cho Luật 36/2024.
+bản số hóa trên vi.wikisource — cùng nguồn mà scripts/ingest/prepare_data.py đã dùng cho Luật 36/2024.
 
 Xuất ra:
 1. data/processed/nghi_dinh_168_2024_structured.json  — cây Chương / Điều / Khoản / Điểm

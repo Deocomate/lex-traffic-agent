@@ -34,7 +34,6 @@ MULTI_MATCH_BONUS = 0.05
 # Chọn SEMANTIC_FLOOR = 0.58 (RELEVANCE_FLOOR = 60.0%) loại bỏ 100% câu hỏi ngoài ngành,
 # bảo toàn 100% câu hỏi luật giao thông (kể cả câu ngắn như GPLX C1 đạt 68.6%).
 DEFAULT_SEMANTIC_FLOOR = float(os.getenv("SEMANTIC_FLOOR", "0.58"))
-DEFAULT_HYBRID_FLOOR = float(os.getenv("HYBRID_RELEVANCE_FLOOR", "60.0"))
 
 
 

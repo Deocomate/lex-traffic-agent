@@ -1,7 +1,7 @@
 """
-Module LangGraph StateGraph cho LexTraffic AI (Phase 4).
+Gói StateGraph (LangGraph) của LexTraffic AI.
 """
 
-from src.graph.state import Evidence, LegalAgentState, RouteDecision
+from src.graph.state import Evidence, LegalAgentState
 
-__all__ = ["Evidence", "LegalAgentState", "RouteDecision"]
+__all__ = ["Evidence", "LegalAgentState"]

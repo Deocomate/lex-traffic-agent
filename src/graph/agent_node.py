@@ -12,7 +12,7 @@ from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, System
 
 from src.graph.events import emit
 from src.graph.state import LegalAgentState
-from src.graph.synthesize import clean_text_output, polish_answer
+from src.graph.answer_text import clean_text_output, polish_answer
 from src.llm.provider import get_model_tracker, get_synthesize_llm
 from src.prompts.system_vi import get_system_prompt_vi
 from src.tools.law_search_tools import TOOLS_SCHEMA

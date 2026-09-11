@@ -1,14 +1,15 @@
 """
-Lắp ráp và biên dịch Đồ thị LangGraph StateGraph (Phase 4, mở rộng ở Phase 6).
-Khung kiến trúc:
-START -> normalize -> memory -> route -> (fan-out song song 1-4 nodes) -> rerank -> compact
-      -> synthesize -> verify -> (repair -> verify | cancel) -> build_sources -> END.
+Lắp ráp và biên dịch Đồ thị LangGraph StateGraph.
+
+Khung kiến trúc (vòng ReAct đa lượt):
+START -> agent -> (tools -> agent)* -> verify -> (repair -> verify | cancel)
+      -> build_sources -> END.
 
 Vòng sửa bị chặn cứng ở MAX_REPAIR_ROUNDS bằng `repair_count` trong state: không có đường đi
 nào trong đồ thị cho phép quá một vòng `repair`.
 
-Phase 6 gắn thêm checkpointer SQLite: mỗi cuộc hội thoại là một `thread_id`, lịch sử sống qua
-F5 trình duyệt và qua cả lần khởi động lại server.
+Checkpointer SQLite: mỗi cuộc hội thoại là một `thread_id`, lịch sử sống qua F5 trình duyệt
+và qua cả lần khởi động lại server.
 """
 
 import atexit
@@ -91,13 +92,9 @@ def get_checkpointer() -> SqliteSaver | None:
             _checkpointer_conn.execute("PRAGMA journal_mode=WAL;")
             _checkpointer_conn.execute("PRAGMA synchronous=NORMAL;")
             atexit.register(close_checkpointer)
-        # `route` trong state là một model Pydantic, nên nó đi vào checkpoint như một kiểu
-        # ngoài danh sách cho phép của msgpack. LangGraph hiện chỉ cảnh báo nhưng đã báo trước
-        # sẽ CHẶN ở phiên bản sau — khai báo tường minh ngay để lần nâng cấp đó không biến
-        # mọi cuộc hội thoại đang lưu thành lỗi giải mã.
-        _checkpointer = SqliteSaver(_checkpointer_conn).with_allowlist(
-            [("src.graph.state", "RouteDecision")]
-        )
+        # Không còn model Pydantic nào đi vào state, nên checkpoint chỉ chứa các kiểu nằm
+        # trong danh sách cho phép mặc định của msgpack — không cần khai báo allowlist riêng.
+        _checkpointer = SqliteSaver(_checkpointer_conn)
         return _checkpointer
     except Exception as e:
         # Không có checkpointer thì mất bộ nhớ đa lượt, nhưng vẫn trả lời được câu hỏi hiện tại.

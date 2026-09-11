@@ -24,10 +24,23 @@ import threading
 from typing import Any, Dict, List, Optional
 
 import numpy as np
-
-from src.graph.state import RouteDecision
+from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
+
+
+class CacheSignals(BaseModel):
+    """
+    Tín hiệu tất định dùng để dựng khoá cache ngữ nghĩa.
+
+    Trước đây đây là `RouteDecision` trong state của đồ thị, phục vụ một node router LLM đã bị
+    gỡ bỏ. Giờ nó chỉ còn đúng một vai trò — thành phần của khoá cache — nên nó sống ở đây,
+    cạnh chỗ dùng, thay vì trong state.
+    """
+
+    intents: List[str] = Field(default_factory=list)
+    vehicles: List[str] = Field(default_factory=list)
+    doc_scope: str = "all"
 
 DEFAULT_THRESHOLD = float(os.getenv("SEMANTIC_CACHE_THRESHOLD", "0.97"))
 DEFAULT_TTL_DAYS = int(os.getenv("CACHE_TTL_DAYS", "30"))
@@ -38,9 +51,9 @@ def is_semantic_cache_enabled() -> bool:
     return os.getenv("ENABLE_SEMANTIC_CACHE", "true").strip().lower() not in ("false", "0", "no")
 
 
-def build_cache_key(route: RouteDecision, index_fingerprint: str) -> str:
+def build_cache_key(route: CacheSignals, index_fingerprint: str) -> str:
     """
-    Dựng khoá tổ hợp từ quyết định định tuyến và vân tay chỉ mục.
+    Dựng khoá tổ hợp từ tín hiệu tất định của câu hỏi và vân tay chỉ mục.
 
     `intents` và `vehicles` đến từ tập hợp (set) nên thứ tự không ổn định giữa hai lần chạy —
     phải sắp xếp trước khi băm, nếu không cùng một câu hỏi sẽ sinh hai khoá khác nhau và cache

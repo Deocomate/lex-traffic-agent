@@ -1,0 +1,1219 @@
+{
+  "summary": {
+    "harness": "offline_sparse_only",
+    "dataset": "qa_testset_v2.json",
+    "total_questions": 79,
+    "hit@1": 0.4937,
+    "hit@3": 0.6835,
+    "hit@5": 0.7342,
+    "mrr": 0.5852,
+    "ndcg@5": 0.6226
+  },
+  "items": [
+    {
+      "id": "qa_001",
+      "question": "Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15 có hiệu lực thi hành từ ngày nào và có điều khoản nào có hiệu lực muộn hơn không?",
+      "targets": [
+        "01_luat_36_dieu_89"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_88",
+        "02_luat_35_dieu_85",
+        "01_luat_36_dieu_89",
+        "01_luat_36_dieu_05",
+        "04_tt31_dieu_12"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_002",
+      "question": "Quy định về nồng độ cồn đối với người điều khiển phương tiện tham gia giao thông trong Luật mới 2024 như thế nào?",
+      "targets": [
+        "01_luat_36_dieu_09"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_77",
+        "01_luat_36_dieu_34",
+        "01_luat_36_dieu_09",
+        "01_luat_36_dieu_59",
+        "03_nd168_Điểm_c_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_003",
+      "question": "Hành vi bấm còi, rú ga liên tục trong đô thị và khu đông dân cư bị xử lý như thế nào theo Luật 2024?",
+      "targets": [
+        "01_luat_36_dieu_09"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_k_Khoản_9_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_3_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_28",
+        "06_qcvn41_R_420"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_004",
+      "question": "Người lái xe chỉ được phép vượt xe khác khi đáp ứng những điều kiện an toàn nào?",
+      "targets": [
+        "01_luat_36_dieu_14"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_35",
+        "02_luat_35_dieu_69",
+        "02_luat_35_dieu_16",
+        "03_nd168_Điểm_d_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_29"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_005",
+      "question": "Khi muốn chuyển hướng (rẽ trái, rẽ phải), người lái xe phải thực hiện những thao tác gì?",
+      "targets": [
+        "01_luat_36_dieu_15"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_15",
+        "03_nd168_Điểm_a_Khoản_3_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_S_507",
+        "06_qcvn41_R_308B",
+        "06_qcvn41_R_308A"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_006",
+      "question": "Luật giao thông cấm lùi xe ở những vị trí và cung đường nào?",
+      "targets": [
+        "01_luat_36_dieu_17"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_16",
+        "02_luat_35_dieu_24",
+        "06_qcvn41_I_418",
+        "01_luat_36_dieu_89",
+        "06_qcvn41_P_136"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_007",
+      "question": "Khung giờ bắt buộc bật đèn chiếu sáng phía trước và các trường hợp thời tiết đặc biệt?",
+      "targets": [
+        "01_luat_36_dieu_20"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_20",
+        "03_nd168_Điểm_g_Khoản_1_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_g_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_1_Điều_14_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_008",
+      "question": "Ý nghĩa hiệu lệnh của đèn tín hiệu giao thông (Xanh, Vàng, Đỏ) được quy định như thế nào?",
+      "targets": [
+        "01_luat_36_dieu_11"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_23",
+        "03_nd168_Điểm_đ_Khoản_2_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_11"
+      ],
+      "rr": 0.2
+    },
+    {
+      "id": "qa_009",
+      "question": "Thứ tự quyền ưu tiên của các loại xe khi cùng đến nơi giao nhau?",
+      "targets": [
+        "01_luat_36_dieu_27"
+      ],
+      "retrieved": [
+        "06_qcvn41_W_208",
+        "06_qcvn41_W_205D",
+        "06_qcvn41_W_205A",
+        "06_qcvn41_W_205B",
+        "06_qcvn41_W_205C"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_010",
+      "question": "Xe gặp sự cố trên đường cao tốc phải xử lý dừng đỗ như thế nào để đảm bảo an toàn?",
+      "targets": [
+        "01_luat_36_dieu_25"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_c_Khoản_5_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_25",
+        "02_luat_35_dieu_51",
+        "03_nd168_Điểm_đ_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_011",
+      "question": "Người từ đủ 16 tuổi và từ đủ 18 tuổi được phép điều khiển những loại xe nào?",
+      "targets": [
+        "01_luat_36_dieu_59"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_59",
+        "03_nd168_Khoản_6_Điều_18_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_4_Điều_18_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_17",
+        "01_luat_36_dieu_56"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_012",
+      "question": "Bằng lái xe máy hạng A1 theo Luật 2024 áp dụng cho xe có dung tích bao nhiêu?",
+      "targets": [
+        "01_luat_36_dieu_57"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_57",
+        "01_luat_36_dieu_59",
+        "03_nd168_Điểm_a_Khoản_4_Điều_18_Nghị_định_168/2024/NĐ-CP",
+        "04_tt31_dieu_02",
+        "02_luat_35_dieu_45"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_013",
+      "question": "Bằng lái xe máy hạng A theo quy định mới cấp cho đối tượng xe nào?",
+      "targets": [
+        "01_luat_36_dieu_57"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_02",
+        "01_luat_36_dieu_89",
+        "03_nd168_Điểm_đ_Khoản_5_Điều_20_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_57",
+        "06_qcvn41_S_502"
+      ],
+      "rr": 0.25
+    },
+    {
+      "id": "qa_014",
+      "question": "Cơ chế quản lý và phục hồi điểm của Giấy phép lái xe (12 điểm) hoạt động ra sao?",
+      "targets": [
+        "01_luat_36_dieu_58"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_58",
+        "02_luat_35_dieu_82",
+        "03_nd168_Điểm_a_Khoản_7_Điều_13_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_81",
+        "03_nd168_Khoản_3_Điều_28_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_015",
+      "question": "Đối tượng nào bắt buộc phải đội mũ bảo hiểm khi tham gia giao thông?",
+      "targets": [
+        "01_luat_36_dieu_31"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_31",
+        "03_nd168_Điểm_b_Khoản_5_Điều_12_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_h_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_32"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_016",
+      "question": "Quy định về thắt dây an toàn trên xe ô tô áp dụng cho những vị trí ngồi nào?",
+      "targets": [
+        "01_luat_36_dieu_10"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_10",
+        "03_nd168_Điểm_l_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Khoản_4_Điều_12_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_k_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_4_Điều_26_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_017",
+      "question": "Quy định bảo đảm an toàn cho trẻ em dưới 10 tuổi và dưới 1,35m khi đi trên ô tô?",
+      "targets": [
+        "01_luat_36_dieu_10"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_10",
+        "03_nd168_Điểm_m_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_31",
+        "01_luat_36_dieu_46",
+        "03_nd168_Điểm_h_Khoản_9_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_018",
+      "question": "Thời gian làm việc tối đa trong ngày và thời gian lái xe liên tục của tài xế ô tô?",
+      "targets": [
+        "01_luat_36_dieu_64"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_64",
+        "03_nd168_Điểm_b_Khoản_5_Điều_21_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_6_Điều_20_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_S_508",
+        "03_nd168_Điểm_g_Khoản_1_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_019",
+      "question": "Cảnh sát giao thông được quyền dừng phương tiện để kiểm soát trong những trường hợp nào?",
+      "targets": [
+        "01_luat_36_dieu_66"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_66",
+        "05_tt73_dieu_13",
+        "05_tt73_dieu_01",
+        "05_tt73_dieu_12",
+        "05_tt73_dieu_14"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_020",
+      "question": "Người lái xe liên quan trực tiếp đến vụ tai nạn giao thông phải làm gì ngay tại hiện trường?",
+      "targets": [
+        "01_luat_36_dieu_81"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_80",
+        "03_nd168_Điểm_d_Khoản_5_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_g_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_5_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_81"
+      ],
+      "rr": 0.2
+    },
+    {
+      "id": "qa_021",
+      "question": "Người đi bộ phải tuân thủ những quy tắc nào khi qua đường?",
+      "targets": [
+        "01_luat_36_dieu_30"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_26",
+        "01_luat_36_dieu_25",
+        "01_luat_36_dieu_30",
+        "02_luat_35_dieu_13",
+        "02_luat_35_dieu_74"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_022",
+      "question": "Khái niệm và nguyên tắc quản lý biển số xe định danh theo Luật 2024?",
+      "targets": [
+        "01_luat_36_dieu_37"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_03",
+        "01_luat_36_dieu_37",
+        "02_luat_35_dieu_68",
+        "02_luat_35_dieu_03",
+        "02_luat_35_dieu_15"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_023",
+      "question": "Các loại biển số xe nào được đưa ra đấu giá và quyền của người trúng đấu giá?",
+      "targets": [
+        "01_luat_36_dieu_38"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_38",
+        "01_luat_36_dieu_37",
+        "06_qcvn41_P_109",
+        "06_qcvn41_P_104",
+        "03_nd168_Điểm_h_Khoản_8_Điều_32_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_024",
+      "question": "Quy tắc nhường đường tại nơi đường giao nhau không có vòng xuyến và có vòng xuyến?",
+      "targets": [
+        "01_luat_36_dieu_18"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_22",
+        "03_nd168_Điểm_o_Khoản_5_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_6_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_R_303",
+        "03_nd168_Điểm_đ_Khoản_1_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_025",
+      "question": "Người lái xe phải duy trì khoảng cách an toàn với xe chạy liền trước như thế nào?",
+      "targets": [
+        "01_luat_36_dieu_13"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_i_Khoản_3_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "04_tt31_dieu_11",
+        "03_nd168_Điểm_l_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_e_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_5_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_026",
+      "question": "Phân biệt khái niệm Dừng xe và Đỗ xe theo Luật 2024?",
+      "targets": [
+        "01_luat_36_dieu_16"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_18",
+        "03_nd168_Điểm_a_Khoản_3_Điều_37_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_52",
+        "03_nd168_Điểm_d_Khoản_2_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_2_Điều_8_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_027",
+      "question": "Những điều kiện cấm khi kéo xe khác và xe chở hàng hóa cồng kềnh?",
+      "targets": [
+        "01_luat_36_dieu_29"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_31",
+        "03_nd168_Điểm_c_Khoản_2_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_2_Điều_12_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_e_Khoản_3_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_5_Điều_12_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_028",
+      "question": "Điều kiện để xe máy chuyên dùng được phép tham gia giao thông đường bộ?",
+      "targets": [
+        "01_luat_36_dieu_40"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_39",
+        "01_luat_36_dieu_42",
+        "01_luat_36_dieu_35",
+        "04_tt31_dieu_08",
+        "01_luat_36_dieu_09"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_029",
+      "question": "Quy định về việc kiểm định an toàn kỹ thuật và bảo vệ môi trường đối với xe cơ giới?",
+      "targets": [
+        "01_luat_36_dieu_42"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_42",
+        "02_luat_35_dieu_83",
+        "03_nd168_Điểm_b_Khoản_9_Điều_32_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_18_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_41"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_030",
+      "question": "Các quy tắc bắt buộc khi điều khiển phương tiện lưu thông trong hầm đường bộ?",
+      "targets": [
+        "01_luat_36_dieu_24"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_24",
+        "01_luat_36_dieu_26",
+        "01_luat_36_dieu_10",
+        "02_luat_35_dieu_50",
+        "02_luat_35_dieu_11"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_031",
+      "question": "Quy định về khám sức khỏe định kỳ và quản lý dữ liệu sức khỏe của người lái xe?",
+      "targets": [
+        "01_luat_36_dieu_61"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_59",
+        "03_nd168_Điểm_a_Khoản_8_Điều_26_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_57",
+        "02_luat_35_dieu_61",
+        "03_nd168_Khoản_3_Điều_33_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_032",
+      "question": "Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ bao gồm những hệ thống thông tin nào?",
+      "targets": [
+        "01_luat_36_dieu_07"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_07",
+        "02_luat_35_dieu_06",
+        "01_luat_36_dieu_71",
+        "05_tt73_dieu_05",
+        "01_luat_36_dieu_58"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_033",
+      "question": "Các trường hợp bị cấm sử dụng còi xe theo quy định của Luật?",
+      "targets": [
+        "01_luat_36_dieu_21"
+      ],
+      "retrieved": [
+        "06_qcvn41_P_128",
+        "03_nd168_Điểm_b_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_3_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_5_Điều_13_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_P_107"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_034",
+      "question": "Người lái xe mô tô hai bánh, xe gắn máy chỉ được chở tối đa bao nhiêu người và các trường hợp ngoại lệ?",
+      "targets": [
+        "01_luat_36_dieu_31"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_33",
+        "02_luat_35_dieu_65",
+        "01_luat_36_dieu_31",
+        "02_luat_35_dieu_78",
+        "04_tt31_dieu_03"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_035",
+      "question": "Trách nhiệm của nhà trường và cơ sở giáo dục trong việc giáo dục pháp luật an toàn giao thông?",
+      "targets": [
+        "01_luat_36_dieu_06"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_06",
+        "01_luat_36_dieu_87",
+        "02_luat_35_dieu_81",
+        "01_luat_36_dieu_43",
+        "02_luat_35_dieu_70"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_036",
+      "question": "Người lái ô tô không chấp hành hiệu lệnh của đèn tín hiệu giao thông (vượt đèn đỏ) bị phạt bao nhiêu tiền và trừ mấy điểm GPLX?",
+      "targets": [
+        "03_nd168_Điểm_b_Khoản_9_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_đ_Khoản_2_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_9_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_23"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_037",
+      "question": "Lái xe ô tô mà trong máu hoặc hơi thở có nồng độ cồn chưa vượt quá 50 miligam/100 mililít máu hoặc chưa vượt quá 0,25 miligam/1 lít khí thở bị xử phạt thế nào?",
+      "targets": [
+        "03_nd168_Điểm_c_Khoản_6_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_c_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_6_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_p_Khoản_1_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_6_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_038",
+      "question": "Lái xe ô tô có nồng độ cồn vượt quá 80 miligam/100 mililít máu hoặc vượt quá 0,4 miligam/1 lít khí thở (mức kịch khung) bị phạt bao nhiêu tiền và trừ mấy điểm?",
+      "targets": [
+        "03_nd168_Điểm_a_Khoản_11_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_d_Khoản_9_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_11_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_9_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_039",
+      "question": "Người điều khiển xe mô tô, xe gắn máy (xe máy) vượt đèn đỏ thì bị xử phạt bao nhiêu tiền và trừ mấy điểm?",
+      "targets": [
+        "03_nd168_Điểm_c_Khoản_7_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_c_Khoản_7_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_9_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_2_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_11"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_040",
+      "question": "Điều khiển xe máy có nồng độ cồn ở mức thấp nhất (chưa vượt quá 50 mg/100 ml máu hoặc 0,25 mg/1 lít khí thở) bị phạt tiền và trừ điểm thế nào?",
+      "targets": [
+        "03_nd168_Điểm_a_Khoản_6_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_a_Khoản_6_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_6_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_p_Khoản_1_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_041",
+      "question": "Lái xe ô tô đi ngược chiều trên đường cao tốc hoặc lùi xe trên đường cao tốc bị phạt bao nhiêu tiền và trừ mấy điểm?",
+      "targets": [
+        "03_nd168_Điểm_a_Khoản_11_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_đ_Khoản_11_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_9_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_10_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_e_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_51"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_042",
+      "question": "Người đi xe máy không đội mũ bảo hiểm hoặc đội mũ không cài quai đúng quy cách bị phạt bao nhiêu tiền?",
+      "targets": [
+        "03_nd168_Điểm_m_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_b_Khoản_5_Điều_12_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_h_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_i_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_043",
+      "question": "Người lái xe ô tô dùng tay cầm và sử dụng điện thoại khi đang lái xe bị phạt bao nhiêu?",
+      "targets": [
+        "03_nd168_Điểm_a_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_h_Khoản_5_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_4_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_h_Khoản_1_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_I_430",
+        "03_nd168_Điểm_b_Khoản_3_Điều_39_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_044",
+      "question": "Người đi xe máy sử dụng điện thoại hoặc thiết bị âm thanh (tai nghe) khi đang lái xe bị phạt bao nhiêu tiền?",
+      "targets": [
+        "03_nd168_Điểm_h_Khoản_4_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_đ_Khoản_4_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_h_Khoản_1_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_h_Khoản_5_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_k_Khoản_7_Điều_32_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_32_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_045",
+      "question": "Ô tô không bật đèn chiếu sáng khi trời tối (từ 18h đến 06h sáng hôm sau) bị xử phạt bao nhiêu?",
+      "targets": [
+        "03_nd168_Điểm_g_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_20"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_20",
+        "03_nd168_Điểm_g_Khoản_1_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_g_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_1_Điều_14_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_046",
+      "question": "Chở 3 người trên xe máy (kẹp 3) bị phạt bao nhiêu tiền và có bị trừ điểm bằng lái không?",
+      "targets": [
+        "03_nd168_Điểm_l_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_31"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_31",
+        "03_nd168_Điểm_g_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_3_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_P_106C",
+        "03_nd168_Điểm_i_Khoản_5_Điều_20_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_047",
+      "question": "Xe máy không có gương chiếu hậu bên trái hoặc có nhưng không có tác dụng bị phạt bao nhiêu tiền?",
+      "targets": [
+        "03_nd168_Điểm_a_Khoản_1_Điều_14_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_a_Khoản_1_Điều_14_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_2_Điều_13_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_1_Điều_14_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_1_Điều_16_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_1_Điều_14_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_048",
+      "question": "Không chấp hành hiệu lệnh hoặc hướng dẫn của Cảnh sát giao thông (người điều khiển giao thông) khi lái ô tô bị phạt bao nhiêu và trừ mấy điểm?",
+      "targets": [
+        "03_nd168_Điểm_a_Khoản_11_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_c_Khoản_9_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_7_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_1_Điều_10_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_2_Điều_11_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_049",
+      "question": "Lái xe ô tô chạy quá tốc độ quy định từ 10 km/h đến 20 km/h bị xử phạt bao nhiêu tiền và trừ mấy điểm GPLX?",
+      "targets": [
+        "03_nd168_Điểm_i_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_đ_Khoản_5_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_4_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_4_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_050",
+      "question": "Người đi bộ vượt đèn đỏ hoặc đi vào đường cao tốc bị xử phạt thế nào?",
+      "targets": [
+        "03_nd168_Điểm_b_Khoản_1_Điều_11_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_2_Điều_11_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_11"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_11",
+        "03_nd168_Điểm_đ_Khoản_2_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_23"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_051",
+      "question": "Vậy nếu chở trẻ em dưới 6 tuổi đi cùng mà không đội mũ bảo hiểm cho trẻ thì có bị phạt không và phạt bao nhiêu?",
+      "targets": [
+        "03_nd168_Điểm_m_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_31"
+      ],
+      "retrieved": [
+        "03_nd168_Điểm_i_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_31",
+        "03_nd168_Điểm_đ_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_5_Điều_12_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_46"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_052",
+      "question": "Biển báo P.106a có ý nghĩa gì và cấm những phương tiện nào?",
+      "targets": [
+        "06_qcvn41_P_106A"
+      ],
+      "retrieved": [
+        "06_qcvn41_P_106A",
+        "06_qcvn41_P_106B",
+        "06_qcvn41_P_106C",
+        "06_qcvn41_P_127C",
+        "03_nd168_Điểm_k_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_053",
+      "question": "Biển báo DP.135 'Hết tất cả các lệnh cấm' có tác dụng gì?",
+      "targets": [
+        "06_qcvn41_DP_135"
+      ],
+      "retrieved": [
+        "06_qcvn41_DP_135",
+        "06_qcvn41_P_128",
+        "06_qcvn41_DP_133",
+        "06_qcvn41_R_307",
+        "06_qcvn41_P_120"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_054",
+      "question": "Biển P.130 và P.131 khác nhau như thế nào về quy định dừng, đỗ xe?",
+      "targets": [
+        "06_qcvn41_P_130"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_34",
+        "03_nd168_Điểm_e_Khoản_2_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "06_qcvn41_P_129",
+        "03_nd168_Điểm_d_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_l_Khoản_1_Điều_9_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_055",
+      "question": "Biển báo P.103a có cấm xe ô tô khách và xe ô tô tải không?",
+      "targets": [
+        "06_qcvn41_P_103A"
+      ],
+      "retrieved": [
+        "06_qcvn41_P_103A",
+        "06_qcvn41_P_124F",
+        "06_qcvn41_P_124E",
+        "06_qcvn41_P_103C",
+        "06_qcvn41_P_103B"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_056",
+      "question": "Ý nghĩa của vạch kẻ đường nét liền màu trắng phân chia các làn xe cùng chiều (Vạch 1.2 / 2.2)?",
+      "targets": [
+        "06_qcvn41_2_2",
+        "06_qcvn41_I_408"
+      ],
+      "retrieved": [
+        "06_qcvn41_2_2",
+        "06_qcvn41_2_4",
+        "06_qcvn41_2_1",
+        "06_qcvn41_5_1",
+        "06_qcvn41_1_2"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_057",
+      "question": "Biển hiệu lệnh R.301a yêu cầu các phương tiện giao thông phải đi như thế nào?",
+      "targets": [
+        "06_qcvn41_R_301A"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_34",
+        "06_qcvn41_R_301A",
+        "01_luat_36_dieu_11",
+        "05_tt73_dieu_12",
+        "06_qcvn41_S_508"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_058",
+      "question": "Biển cảnh báo nguy hiểm hình tam giác viền đỏ nền vàng có tác dụng gì đối với người lái xe?",
+      "targets": [
+        "06_qcvn41_W_219",
+        "06_qcvn41_S_502"
+      ],
+      "retrieved": [
+        "06_qcvn41_I_443",
+        "06_qcvn41_W_228D",
+        "01_luat_36_dieu_25",
+        "06_qcvn41_7_2",
+        "06_qcvn41_W_222B"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_059",
+      "question": "Thế còn biển P.106b thì cấm xe tải theo tiêu chí nào?",
+      "targets": [
+        "06_qcvn41_P_106B"
+      ],
+      "retrieved": [
+        "06_qcvn41_P_106B",
+        "06_qcvn41_P_106A",
+        "06_qcvn41_P_106C",
+        "01_luat_36_dieu_58",
+        "01_luat_36_dieu_11"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_060",
+      "question": "Tốc độ tối đa cho phép của xe ô tô con và xe máy khi chạy trong khu vực đông dân cư trên đường đôi (hoặc đường một chiều có từ 2 làn xe cơ giới trở lên) là bao nhiêu km/h?",
+      "targets": [
+        "04_tt31_dieu_06"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_06",
+        "04_tt31_dieu_07",
+        "06_qcvn41_R_420",
+        "04_tt31_dieu_09",
+        "06_qcvn41_R_306"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_061",
+      "question": "Trong khu vực đông dân cư, đường hai chiều không có dải phân cách giữa thì xe máy và ô tô được chạy tối đa bao nhiêu km/h?",
+      "targets": [
+        "04_tt31_dieu_06"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_06",
+        "04_tt31_dieu_07",
+        "06_qcvn41_R_420",
+        "06_qcvn41_W_204",
+        "04_tt31_dieu_03"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_062",
+      "question": "Tốc độ tối đa cho phép của xe máy chuyên dùng, xe gắn máy (kể cả xe máy điện) khi tham gia giao thông trên đường bộ là bao nhiêu?",
+      "targets": [
+        "04_tt31_dieu_08"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_08",
+        "04_tt31_dieu_09",
+        "04_tt31_dieu_06",
+        "06_qcvn41_P_127",
+        "04_tt31_dieu_07"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_063",
+      "question": "Khi chạy xe với tốc độ từ trên 60 km/h đến 80 km/h trong điều kiện mặt đường khô ráo, khoảng cách an toàn tối thiểu giữa hai xe phải là bao nhiêu mét?",
+      "targets": [
+        "04_tt31_dieu_07",
+        "04_tt31_dieu_11"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_11",
+        "04_tt31_dieu_04",
+        "01_luat_36_dieu_12",
+        "02_luat_35_dieu_26",
+        "04_tt31_dieu_09"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_064",
+      "question": "Khi chạy xe với tốc độ trên 100 km/h đến 120 km/h (như trên đường cao tốc), khoảng cách an toàn tối thiểu là bao nhiêu mét?",
+      "targets": [
+        "04_tt31_dieu_11",
+        "01_luat_36_dieu_12"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_09",
+        "04_tt31_dieu_06",
+        "04_tt31_dieu_08",
+        "01_luat_36_dieu_12",
+        "04_tt31_dieu_04"
+      ],
+      "rr": 0.25
+    },
+    {
+      "id": "qa_065",
+      "question": "Nếu chạy ngoài khu vực đông dân cư trên đường đôi thì xe ô tô con được chạy tối đa bao nhiêu km/h?",
+      "targets": [
+        "04_tt31_dieu_07"
+      ],
+      "retrieved": [
+        "04_tt31_dieu_07",
+        "04_tt31_dieu_06",
+        "06_qcvn41_R_420",
+        "06_qcvn41_R_306",
+        "06_qcvn41_P_101"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_066",
+      "question": "Cảnh sát giao thông được dừng phương tiện giao thông để kiểm soát trong những trường hợp cụ thể nào?",
+      "targets": [
+        "05_tt73_dieu_12",
+        "01_luat_36_dieu_66"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_66",
+        "05_tt73_dieu_13",
+        "05_tt73_dieu_01",
+        "05_tt73_dieu_12",
+        "05_tt73_dieu_09"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_067",
+      "question": "Người tham gia giao thông xuất trình giấy phép lái xe và đăng ký xe qua tài khoản định danh điện tử VNeID có được chấp nhận thay thế bản giấy không?",
+      "targets": [
+        "05_tt73_dieu_05",
+        "03_nd168_Điểm_b_Khoản_2_Điều_14_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_43",
+        "02_luat_35_dieu_68",
+        "03_nd168_Điểm_e_Khoản_8_Điều_32_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_8_Điều_32_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_9_Điều_32_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 0.0
+    },
+    {
+      "id": "qa_068",
+      "question": "Cán bộ Cảnh sát giao thông thực hiện nhiệm vụ tuần tra kiểm soát công khai phải có trang phục và phương tiện như thế nào?",
+      "targets": [
+        "05_tt73_dieu_09"
+      ],
+      "retrieved": [
+        "05_tt73_dieu_09",
+        "05_tt73_dieu_07",
+        "05_tt73_dieu_03",
+        "05_tt73_dieu_02",
+        "05_tt73_dieu_12"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_069",
+      "question": "CSGT kiểm soát những nội dung gì đối với người lái xe và phương tiện khi dừng xe?",
+      "targets": [
+        "05_tt73_dieu_08",
+        "01_luat_36_dieu_66"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_66",
+        "05_tt73_dieu_08",
+        "05_tt73_dieu_11",
+        "01_luat_36_dieu_70",
+        "01_luat_36_dieu_69"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_070",
+      "question": "CSGT có được lập chốt tuần tra công khai kết hợp hóa trang bắn tốc độ không?",
+      "targets": [
+        "05_tt73_dieu_07"
+      ],
+      "retrieved": [
+        "05_tt73_dieu_07",
+        "05_tt73_dieu_10",
+        "03_nd168_Điểm_p_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_a_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_071",
+      "question": "Thế nếu giấy phép lái xe trên VNeID đang hiển thị trạng thái 'Đã bị tạm giữ' do vi phạm trước đó thì CSGT xử lý như thế nào?",
+      "targets": [
+        "05_tt73_dieu_05",
+        "01_luat_36_dieu_58"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_34",
+        "01_luat_36_dieu_58",
+        "01_luat_36_dieu_11",
+        "05_tt73_dieu_18",
+        "02_luat_35_dieu_54"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_072",
+      "question": "Luật Đường bộ số 35/2024/QH15 quy định phạm vi kết cấu hạ tầng đường bộ bao gồm những thành phần nào?",
+      "targets": [
+        "02_luat_35_dieu_02",
+        "02_luat_35_dieu_10",
+        "02_luat_35_dieu_35"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_13",
+        "02_luat_35_dieu_21",
+        "02_luat_35_dieu_35",
+        "02_luat_35_dieu_05",
+        "02_luat_35_dieu_41"
+      ],
+      "rr": 0.3333
+    },
+    {
+      "id": "qa_073",
+      "question": "Luật Đường bộ 2024 quy định những yêu cầu gì đối với việc đầu tư xây dựng và quản lý đường cao tốc?",
+      "targets": [
+        "02_luat_35_dieu_47",
+        "02_luat_35_dieu_45"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_47",
+        "02_luat_35_dieu_42",
+        "02_luat_35_dieu_28",
+        "02_luat_35_dieu_53",
+        "02_luat_35_dieu_52"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_074",
+      "question": "Hình thức thu phí sử dụng đường bộ theo cơ chế điện tử không dừng (ETC) được quy định như thế nào trong Luật Đường bộ?",
+      "targets": [
+        "02_luat_35_dieu_84",
+        "02_luat_35_dieu_50"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_43",
+        "02_luat_35_dieu_50",
+        "03_nd168_Điểm_a_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_47",
+        "01_luat_36_dieu_34"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_075",
+      "question": "Những hành vi nào bị nghiêm cấm đối với bảo vệ kết cấu hạ tầng đường bộ theo Luật Đường bộ 2024?",
+      "targets": [
+        "02_luat_35_dieu_07",
+        "02_luat_35_dieu_21"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_21",
+        "02_luat_35_dieu_07",
+        "02_luat_35_dieu_49",
+        "02_luat_35_dieu_41",
+        "02_luat_35_dieu_11"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_076",
+      "question": "Kinh doanh vận tải bằng xe ô tô gồm những loại hình nào theo Luật Đường bộ số 35/2024/QH15?",
+      "targets": [
+        "02_luat_35_dieu_56"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_56",
+        "02_luat_35_dieu_80",
+        "02_luat_35_dieu_04",
+        "02_luat_35_dieu_07",
+        "02_luat_35_dieu_78"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_077",
+      "question": "Điều kiện lưu hành đối với xe quá khổ giới hạn hoặc xe quá tải trọng trên đường bộ là gì?",
+      "targets": [
+        "02_luat_35_dieu_53",
+        "01_luat_36_dieu_52",
+        "02_luat_35_dieu_62"
+      ],
+      "retrieved": [
+        "01_luat_36_dieu_52",
+        "02_luat_35_dieu_27",
+        "03_nd168_Điểm_b_Khoản_5_Điều_34_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_34_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_63"
+      ],
+      "rr": 1.0
+    },
+    {
+      "id": "qa_078",
+      "question": "Quy định về quy hoạch và xây dựng trạm dừng nghỉ trên các tuyến quốc lộ và đường cao tốc?",
+      "targets": [
+        "02_luat_35_dieu_52"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_47",
+        "02_luat_35_dieu_52",
+        "02_luat_35_dieu_44",
+        "02_luat_35_dieu_39",
+        "02_luat_35_dieu_08"
+      ],
+      "rr": 0.5
+    },
+    {
+      "id": "qa_079",
+      "question": "Đất hành lang an toàn đường bộ được quản lý và sử dụng như thế nào theo Luật Đường bộ?",
+      "targets": [
+        "02_luat_35_dieu_16"
+      ],
+      "retrieved": [
+        "02_luat_35_dieu_16",
+        "02_luat_35_dieu_15",
+        "02_luat_35_dieu_21",
+        "01_luat_36_dieu_34",
+        "02_luat_35_dieu_36"
+      ],
+      "rr": 1.0
+    }
+  ]
+}

@@ -1,19 +1,20 @@
 """
-Định nghĩa cấu trúc State cho Đồ thị LangGraph (Phase 4).
-Bao gồm bằng chứng (Evidence), quyết định định tuyến (RouteDecision),
-và trạng thái xuyên suốt của phiên hỏi đáp (LegalAgentState).
+Cấu trúc State luân chuyển qua các node của StateGraph.
+
+Chỉ khai báo những trường mà đồ thị đang chạy thật sự đọc/ghi. Đồ thị hiện tại là một vòng
+ReAct: `agent ⇄ tools → verify → (repair → verify | cancel) → build_sources → END`.
 """
 
 import operator
-from typing import Annotated, Any, Dict, List, Literal, Optional, TypedDict
-from pydantic import BaseModel, Field
+from typing import Annotated, Any, Dict, List, Optional, TypedDict
+
 from langchain_core.messages import AnyMessage
 from langgraph.graph.message import add_messages
 
 
 class Evidence(TypedDict, total=False):
-    """Một mục bằng chứng pháp lý thu thập từ các công cụ tra cứu."""
-    source: Literal["penalty", "law", "sign", "speed"]
+    """Một mục bằng chứng thu thập từ các công cụ tra cứu."""
+    source: str
     parent_id: str
     doc_id: str
     citation: str
@@ -25,44 +26,21 @@ class Evidence(TypedDict, total=False):
     raw_tool_output: str  # Dữ liệu nguyên văn để đối chiếu số liệu và căn cứ
 
 
-class RouteDecision(BaseModel):
-    """Quyết định định tuyến truy xuất tài liệu từ regex và LLM."""
-    intents: List[Literal["penalty", "law", "sign", "speed"]] = Field(
-        default_factory=list,
-        description="Các mục đích tra cứu cần kích hoạt: penalty (mức phạt), law (điều luật), sign (biển báo/vạch kẻ), speed (tốc độ/cự ly)"
-    )
-    doc_scope: Literal["all", "luat", "nghi_dinh", "thong_tu", "quy_chuan"] = Field(
-        default="all",
-        description="Phạm vi nhóm văn bản cần tra cứu"
-    )
-    vehicles: List[Literal["o_to", "xe_may", "xe_dap", "khac"]] = Field(
-        default_factory=list,
-        description="Nhóm phương tiện liên quan đến câu hỏi"
-    )
-    search_query: str = Field(
-        default="",
-        description="Truy vấn tìm kiếm cốt lõi đã được tối ưu hóa"
-    )
-
-
 class LegalAgentState(TypedDict, total=False):
     """
-    Trạng thái luân chuyển qua các node trong StateGraph của LexTraffic AI.
-    - evidence: sử dụng operator.add làm reducer để các node truy xuất song song ghi dồn an toàn
-    - agent_steps: sử dụng operator.add để ghi nhận các bước thực thi công cụ
-    - messages: sử dụng add_messages để quản lý lịch sử hội thoại
+    Trạng thái luân chuyển qua các node trong StateGraph.
+
+    - `messages`: dùng `add_messages` để quản lý lịch sử hội thoại
+    - `evidence` / `agent_steps`: dùng `operator.add` làm reducer để nhiều tool call trong
+      cùng một lượt ghi dồn an toàn thay vì ghi đè lẫn nhau
     """
     messages: Annotated[List[AnyMessage], add_messages]
     question: str
     grounding_query: str
-    history_summary: str
     thread_id: str
     turn_count: int
-    route: RouteDecision
     evidence: Annotated[List[Evidence], operator.add]
-    reranked_evidence: List[Evidence]
     agent_steps: Annotated[List[Dict[str, Any]], operator.add]
-    packed_context: str
     answer: str
     issues: List[str]
     repair_count: int

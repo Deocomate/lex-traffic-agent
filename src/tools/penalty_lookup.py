@@ -2,7 +2,7 @@
 CÔNG CỤ TRA CỨU MỨC PHẠT THEO NGHỊ ĐỊNH 168/2024/NĐ-CP
 
 Nguồn dữ liệu: data/processed/penalty_chunks.jsonl — 634 hành vi vi phạm bóc tách từ toàn văn
-Nghị định (sinh bởi scripts/prepare_penalties.py). Mỗi bản ghi giữ nguyên văn mô tả hành vi,
+Nghị định (sinh bởi scripts/ingest/prepare_penalties.py). Mỗi bản ghi giữ nguyên văn mô tả hành vi,
 khung tiền phạt, hình thức xử phạt bổ sung, số điểm GPLX bị trừ và trích dẫn Điểm/Khoản/Điều.
 
 Trước đây phần này là một bảng 10 mục viết tay trong mã nguồn: số tiền đã lạc hậu theo
@@ -331,7 +331,7 @@ class PenaltyLookup:
             return (
                 f"{NO_PENALTY_DATA_HEADER} '{query}' ===\n"
                 "Chưa nạp được dữ liệu Nghị định 168/2024/NĐ-CP. "
-                "Chạy: python scripts/prepare_penalties.py để tạo data/processed/penalty_chunks.jsonl.\n\n"
+                "Chạy: python scripts/ingest/prepare_penalties.py để tạo data/processed/penalty_chunks.jsonl.\n\n"
                 f"{AGENT_ONLY_TAG}\nKhông được nêu bất kỳ mức phạt nào khi chưa có dữ liệu."
             )
         return self.format_results(query, self.search(query))

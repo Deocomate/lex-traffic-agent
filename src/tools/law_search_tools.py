@@ -32,7 +32,6 @@ if sys.platform == 'win32':
 # Ngưỡng lọc độ liên quan của tìm kiếm ngữ nghĩa (thang 0-100)
 # Hiệu chuẩn trên 95 câu benchmark và câu hỏi thực tế (câu ngoài ngành < 58.0%, câu trong ngành >= 60.0%)
 RELEVANCE_FLOOR = float(os.getenv("HYBRID_RELEVANCE_FLOOR", "60.0"))
-RELEVANCE_WEAK = float(os.getenv("HYBRID_RELEVANCE_FLOOR", "60.0"))
 
 PARENT_CONTENT_LIMIT = 3500
 

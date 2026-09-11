@@ -2,6 +2,7 @@
 
 from src.cache.fingerprint import compute_index_fingerprint, get_index_fingerprint
 from src.cache.semantic_cache import (
+    CacheSignals,
     SemanticAnswerCache,
     build_cache_key,
     get_semantic_cache,
@@ -11,6 +12,7 @@ from src.cache.semantic_cache import (
 __all__ = [
     "compute_index_fingerprint",
     "get_index_fingerprint",
+    "CacheSignals",
     "SemanticAnswerCache",
     "build_cache_key",
     "get_semantic_cache",
