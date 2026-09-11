@@ -1,0 +1,25 @@
+<!-- ---- Văn Bản Gốc (PDF Trực Quan 6 Tài Liệu) ---- -->
+<section class="view" id="view-pdf" hidden>
+  <div class="pdf-toolbar">
+    <div class="pdf-doc-select-wrap">
+      <label for="pdf-doc-select-trigger" class="pdf-label">Tài liệu PDF:</label>
+      <div id="pdf-doc-select" class="select" data-select></div>
+    </div>
+    <div class="pdf-actions">
+      <a class="btn btn--secondary btn--sm" id="btn-pdf-external" href="/api/pdf?doc=01_luat_36_2024_qh15" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <path d="M15 3h6v6"/>
+          <path d="M10 14 21 3"/>
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        </svg>
+        Mở tab mới
+      </a>
+    </div>
+  </div>
+  <div class="pdf-frame" id="pdf-frame">
+    <div class="pdf-loading-placeholder state state--empty" id="pdf-placeholder">
+      <div class="spinner"></div>
+      <p class="state__desc">Đang nạp văn bản PDF có Text Layer tìm kiếm được…</p>
+    </div>
+  </div>
+</section>

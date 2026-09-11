@@ -1,0 +1,125 @@
+{
+  "baseline_name": "baseline-graph-phase7-260910",
+  "created_at": "2026-09-10 17:30:00",
+  "description": "Baseline quan trac (Phase 7) do tu chinh bo trace JSONL cua harness LangGraph moi. Do tren 43/95 cau dau tien cua qa_testset_v2 — lan chay bi dung som theo yeu cau nguoi dung. Chi so do tre/chi phi la CHINH THUC cho Phase 7; chi so chat luong E2E (citation, refusal) KHONG co trong tep nay vi e2e_eval.py chi ghi bao cao khi chay het bo.",
+  "source": {
+    "trace_file": "data/runtime/traces/trace-2026-09-10.jsonl",
+    "generator": "scripts/eval/summarize_traces.py --since 2026-09-10",
+    "dataset": "qa_testset_v2.json",
+    "questions_run": 43,
+    "questions_total": 95,
+    "semantic_cache": "da xoa truoc khi chay — moi cau di duong lanh (cold path)"
+  },
+  "system_info": {
+    "python": "3.12.10",
+    "os": "Windows",
+    "model": "z-ai/glm-5.3-flash (OpenRouter)",
+    "embedding": "google/gemini-embedding-2 (3072 dims)",
+    "langgraph": "1.2.11",
+    "langgraph_checkpoint_sqlite": "3.1.1"
+  },
+  "metrics": {
+    "latency_p50_ms": 96105.7,
+    "latency_p90_ms": 182529.4,
+    "latency_p95_ms": 219082.0,
+    "latency_mean_ms": 104691.7,
+    "latency_min_ms": 30943.9,
+    "latency_max_ms": 287483.0,
+    "cost_per_query_usd": 0.001664,
+    "cost_total_usd": 0.07154,
+    "llm_calls_per_query": 2.33,
+    "prompt_tokens_total": 231592,
+    "completion_tokens_total": 133921,
+    "cache_hit_rate": 0.0317,
+    "cache_lookups": 63,
+    "fallback_rate": 0.0,
+    "error_events": 11
+  },
+  "node_latency_ms": {
+    "build_sources": {
+      "count": 42,
+      "p50_ms": 0.73,
+      "p95_ms": 2.31
+    },
+    "cancel": {
+      "count": 3,
+      "p50_ms": 0.16,
+      "p95_ms": 0.18
+    },
+    "compact": {
+      "count": 43,
+      "p50_ms": 4.55,
+      "p95_ms": 10.71
+    },
+    "memory": {
+      "count": 43,
+      "p50_ms": 0.12,
+      "p95_ms": 0.18
+    },
+    "normalize": {
+      "count": 43,
+      "p50_ms": 0.2,
+      "p95_ms": 0.31
+    },
+    "repair": {
+      "count": 13,
+      "p50_ms": 39148.87,
+      "p95_ms": 77784.47
+    },
+    "rerank": {
+      "count": 43,
+      "p50_ms": 26542.36,
+      "p95_ms": 139443.44
+    },
+    "retrieve_law": {
+      "count": 43,
+      "p50_ms": 1490.2,
+      "p95_ms": 2289.11
+    },
+    "retrieve_penalty": {
+      "count": 20,
+      "p50_ms": 3300.47,
+      "p95_ms": 9290.67
+    },
+    "retrieve_sign": {
+      "count": 7,
+      "p50_ms": 3.79,
+      "p95_ms": 4.91
+    },
+    "retrieve_speed": {
+      "count": 8,
+      "p50_ms": 0.25,
+      "p95_ms": 0.36
+    },
+    "route": {
+      "count": 43,
+      "p50_ms": 0.4,
+      "p95_ms": 1.15
+    },
+    "synthesize": {
+      "count": 43,
+      "p50_ms": 35854.28,
+      "p95_ms": 107490.45
+    },
+    "verify": {
+      "count": 56,
+      "p50_ms": 22.53,
+      "p95_ms": 52.18
+    }
+  },
+  "structured_tier_distribution": {
+    "1": 83,
+    "2": 2,
+    "4": 1
+  },
+  "model_distribution": {
+    "z-ai/glm-5.3-flash": 100
+  },
+  "known_issues": [
+    "rerank: 11/43 luot (25.6%) tier-1 json_schema that bai voi LengthFinishReasonError — model dot 4000 reasoning token roi cham tran do dai, phai retry bang function_calling. Day la nguyen nhan chinh lam rerank p95 len 139s.",
+    "repair chay 13/43 luot (30.2%), p50 39.1s — moi lan repair them mot luot LLM dat tien.",
+    "cancel chay 3/43 luot (7.0%) — 3 cau bi huy.",
+    "Do tre p50 96.1s so voi baseline legacy 28.5s: cham hon 3.4 lan. Cong chan Phase 8 yeu cau khong tang qua 10% — day la rui ro hoi quy lon nhat con lai.",
+    "43 lenh goi khong duoc provider bao gia (cost_source unknown) va 43 lenh phai uoc luong token — chi phi thuc te cao hon con so ghi o day."
+  ]
+}

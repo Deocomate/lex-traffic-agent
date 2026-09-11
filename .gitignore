@@ -1,0 +1,67 @@
+# ==============================================================================
+# Trạng thái chạy & Dữ liệu phát sinh lúc chạy (Runtime data & caches)
+# ==============================================================================
+data/runtime/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# ==============================================================================
+# Bí mật & Cấu hình môi trường (Secrets & Environment configs)
+# ==============================================================================
+# Khóa OpenRouter / LangSmith nằm trong .env, chỉ đưa .env.example lên repository
+.env
+.env.*
+!.env.example
+
+# ==============================================================================
+# Môi trường ảo Python (Virtual Environments)
+# ==============================================================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================================================================
+# Sản phẩm phụ & Cache của Python (Python bytecode, builds, caches)
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Kiểm thử & độ bao phủ mã nguồn (Testing & Coverage)
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Đóng gói & Bản build
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ==============================================================================
+# Thư mục tạm & Scratchpad phát triển (Temporary & Scratch files)
+# ==============================================================================
+scratch/
+tmp/
+temp/
+
+# ==============================================================================
+# Cấu hình IDE, Trình soạn thảo & Tệp hệ điều hành (Editor & OS artifacts)
+# ==============================================================================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~

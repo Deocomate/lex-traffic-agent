@@ -1,0 +1,26 @@
+# Lõi AI Agent & RAG
+openai>=1.40.0
+python-dotenv>=1.0.0
+numpy>=1.26.0
+
+# Máy chủ web cho giao diện LexTraffic AI
+fastapi>=0.110.0
+uvicorn>=0.27.0
+jinja2>=3.1.2
+
+# Bóc tách văn bản pháp luật từ nguồn số hóa (scripts/prepare_data.py, prepare_penalties.py)
+beautifulsoup4>=4.12.0
+
+# Agent harness (LangChain 1.x + LangGraph 1.x)
+langchain>=1.0,<2
+langchain-core>=1.0,<2
+langchain-openai>=1.0,<2
+langgraph>=1.2,<2
+# Checkpointer SQLite cho bộ nhớ đa lượt (Phase 6).
+# Phải là 3.1+: bản 2.x gọi JsonPlusSerializer.dumps(), API đã bị bỏ trong
+# langgraph-checkpoint 4.x, nên ghép 2.x với langgraph 1.2 làm mọi lượt ghi checkpoint
+# ném AttributeError.
+langgraph-checkpoint-sqlite>=3.1,<4
+aiosqlite>=0.20.0
+rank-bm25>=0.2.2
+

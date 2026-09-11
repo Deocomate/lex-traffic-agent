@@ -1,0 +1,15 @@
+100
+
+9. Người có thẩm quyền xử phạt được sử dụng các thông tin trong Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ theo quy định của Luật Trật tự, an toàn giao thông đường bộ, Luật Xử lý vi phạm hành chính, pháp luật về đo lường để làm căn cứ xác định hành vi vi phạm đối với cá nhân, tổ chức khi thực hiện một trong các hành vi vi phạm quy định tại Nghị định này.
+
+10. Việc xác minh để phát hiện hành vi vi phạm quy định tại điểm a khoản 3, điểm h khoản 7 Điều 32 của Nghị định này được thực hiện thông qua công tác điều tra, giải quyết vụ tai nạn giao thông; qua công tác đăng ký xe; qua công tác xử lý vụ việc vi phạm hành chính tại trụ sở đơn vị.
+
+11. Trường hợp quá thời hạn hẹn đến giải quyết vụ việc vi phạm được ghi trong biên bản vi phạm hành chính hoặc trong thông báo của người có thẩm quyền xử phạt hoặc quá thời hạn thi hành quyết định xử phạt mà chủ phương tiện vi phạm, người vi phạm chưa thực hiện giải quyết vụ việc vi phạm theo quy định hoặc chưa chấp hành quyết định xử phạt thì người có thẩm quyền xử phạt gửi thông báo cho cơ quan đăng kiểm (đối với phương tiện có quy định phải kiểm định), cơ quan đăng ký xe, cơ quan cấp giấy phép lái xe (nếu đã xác định được người vi phạm). Việc gửi thông báo được thực hiện bằng văn bản hoặc thực hiện thông báo bằng phương thức điện tử thông qua kết nối, chia sẻ dữ liệu khi đáp ứng điều kiện về cơ sở hạ tầng, kỹ thuật, thông tin.
+
+a) Cơ quan đăng kiểm, cơ quan đăng ký xe, cơ quan cấp giấy phép lái xe trước khi thực hiện đăng kiểm, đăng ký xe, cấp, đổi, cấp lại giấy phép lái xe có trách nhiệm tra cứu dữ liệu phương tiện vi phạm, người vi phạm được cơ quan Cảnh sát giao thông gửi thông báo đến;
+
+b) Trường hợp khi tra cứu dữ liệu theo quy định tại điểm a khoản này nếu có thông tin về phương tiện vi phạm, người vi phạm thì chưa giải quyết việc đăng kiểm, đăng ký phương tiện vi phạm, chưa cấp, đổi, cấp lại giấy phép lái xe đối với người vi phạm;
+
+c) Sau khi chủ phương tiện, người vi phạm đã giải quyết vụ việc vi phạm theo quy định, người có thẩm quyền xử phạt phải gửi thông báo ngay cho cơ quan đăng kiểm, cơ quan đăng ký xe, cơ quan cấp giấy phép lái xe bằng văn bản hoặc theo hình thức kết nối, chia sẻ dữ liệu khi đáp ứng điều kiện về cơ sở hạ tầng, kỹ thuật, thông tin để thực hiện việc đăng kiểm, đăng ký xe, cấp, đổi, cấp lại giấy phép lái xe theo quy định.
+
+12. Việc gửi quyết định xử phạt vi phạm hành chính, quyết định tạm giữ tang vật, phương tiện, giấy phép, chứng chỉ hành nghề theo thủ tục hành chính và các biểu mẫu khác trong xử phạt vi phạm hành chính thực hiện theo quy định của Luật Xử lý vi phạm hành chính và có thể gửi cho người vi phạm theo tài khoản đã đăng ký trên Cổng dịch vụ công Quốc gia, Cổng dịch vụ công Bộ Công an (sau đây viết gọn là Cổng dịch vụ công), tài khoản định danh điện tử trên ứng dụng định danh quốc gia, Ứng dụng giao thông trên thiết bị di động khi đáp ứng điều kiện về cơ sở hạ tầng, kỹ thuật, thông tin.

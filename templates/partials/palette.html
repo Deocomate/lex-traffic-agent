@@ -1,0 +1,38 @@
+<!-- Command Palette Ctrl+K (WAI-ARIA Search Dialog) -->
+<div class="palette-overlay" id="command-palette-modal" aria-hidden="true" role="presentation">
+  <div class="palette" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+    <h2 id="palette-title" class="visually-hidden">Tra cứu nhanh toàn ứng dụng</h2>
+
+    <!-- Ô tìm kiếm -->
+    <div class="palette__search-box">
+      <svg class="palette__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+      </svg>
+      <input type="search" id="palette-search-input" class="palette__input"
+             placeholder="Tra cứu nhanh Điều luật, Mức phạt, Biển báo, Vạch kẻ… (Ctrl+K)"
+             autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="palette-results-list" />
+      <button class="btn btn--ghost btn--sm btn--icon" id="btn-palette-close" type="button" aria-label="Đóng">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Danh sách kết quả -->
+    <div class="palette__results" id="palette-results-list" role="listbox" aria-label="Kết quả tìm kiếm">
+      <!-- Inject động từ palette.js -->
+    </div>
+
+    <!-- Chân palette hướng dẫn phím tắt -->
+    <div class="palette__footer">
+      <div class="palette__shortcuts">
+        <span class="palette__shortcut-item"><kbd class="palette-kbd">↑</kbd> <kbd class="palette-kbd">↓</kbd> Di chuyển</span>
+        <span class="palette__shortcut-item"><kbd class="palette-kbd">↵</kbd> Chọn</span>
+        <span class="palette__shortcut-item"><kbd class="palette-kbd">esc</kbd> Đóng</span>
+      </div>
+      <span class="palette__status-hint">Tra cứu chéo 4 nguồn dữ liệu</span>
+    </div>
+  </div>
+</div>

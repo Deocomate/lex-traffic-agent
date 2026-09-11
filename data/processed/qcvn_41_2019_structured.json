@@ -1,0 +1,2246 @@
+{
+ "doc_id": "qcvn_41_2019",
+ "doc_name": "QCVN 41:2019/BGTVT",
+ "doc_full_name": "Quy chuẩn kỹ thuật quốc gia về báo hiệu đường bộ QCVN 41:2019/BGTVT (ban hành kèm Thông tư 54/2019/TT-BGTVT)",
+ "doc_type": "quy_chuan",
+ "date_effective": "01/07/2020",
+ "source": "Lớp text số hóa của 06_qcvn_41_2019_bgtvt_quy_chuan_bao_hieu_duong_bo.pdf",
+ "chapters": [
+  {
+   "chapter_number": 0,
+   "chapter_title": "NHỮNG QUY ĐỊNH CHUNG",
+   "articles": [
+    {
+     "article_number": 1,
+     "article_title": "Phạm vi điều chỉnh",
+     "chapter_number": 0,
+     "chapter_title": "NHỮNG QUY ĐỊNH CHUNG",
+     "intro": "Quy chuẩn này quy định về hệ thống báo hiệu đường bộ, bao gồm: hiệu lệnh của người điều khiển giao thông, tín hiệu đèn giao thông, chiếu sáng, biển báo hiệu, vạch kẻ đường, cọc tiêu, tường bảo vệ và rào chắn, cột kilômét, cọc H, mốc lộ giới, gương cầu lồi, dải phân cách và các thiết bị an toàn giao thông khác. Quy chuẩn này quy định về hệ thống báo hiệu áp dụng cho tất cả các tuyến đường bộ trong mạng lưới đường bộ Việt Nam bao gồm: đường cao tốc, đường quốc lộ, đường tỉnh, đường huyện, đường xã, đường đô thị, đường chuyên dùng và các đường nằm trong hệ thống đường bộ tham gia Điều ước quốc tế mà Việt Nam là thành viên (Hiệp định GMS-CBTA, các thỏa thuận trong ASEAN và các thỏa thuận quốc tế khác) - sau đây gọi là các tuyến đường đối ngoại.",
+     "clauses": []
+    },
+    {
+     "article_number": 2,
+     "article_title": "Đối tượng áp dụng",
+     "chapter_number": 0,
+     "chapter_title": "NHỮNG QUY ĐỊNH CHUNG",
+     "intro": "Quy chuẩn này áp dụng đối với người tham gia giao thông trên mạng lưới đường bộ của Việt Nam và các tổ chức, cá nhân liên quan đến quản lý, đầu tư xây dựng, bảo vệ, bảo trì, khai thác, sử dụng kết cấu hạ tầng giao thông đường bộ.",
+     "clauses": []
+    },
+    {
+     "article_number": 3,
+     "article_title": "Giải thích từ ngữ",
+     "chapter_number": 0,
+     "chapter_title": "NHỮNG QUY ĐỊNH CHUNG",
+     "intro": "Trong Quy chuẩn này, các từ ngữ dưới đây được hiểu như sau:",
+     "clauses": [
+      {
+       "clause_number": "3.1",
+       "text": "Đường đô thị (ĐĐT) là đường nằm trong phạm vi địa giới hành chính nội thành, nội thị xã và thị trấn."
+      },
+      {
+       "clause_number": "3.2",
+       "text": "Đường qua khu đông dân cư là đoạn đường bộ nằm trong khu vực nội thành phố, nội thị xã, nội thị trấn và những đoạn đường có dân cư sinh sống sát dọc theo đường, có các hoạt động có thể ảnh hưởng đến an toàn giao thông đường bộ và được xác định bằng biển báo là đường qua khu đông dân cư (khi cần thiết có thể xác định riêng cho từng chiều đường)."
+      },
+      {
+       "clause_number": "3.3",
+       "text": "Đường dành riêng cho các loại phương tiện cơ giới là tuyến đường, phần đường hoặc làn đường dành riêng cho phương tiện cơ giới lưu thông, tách biệt với phần đường dành riêng cho các phương tiện thô sơ và người đi bộ bằng dải phân cách hoặc vạch sơn dọc liền và được chỉ dẫn bằng biển báo hiệu hoặc vạch sơn."
+      },
+      {
+       "clause_number": "3.4",
+       "text": "Đường dành riêng cho một số loại phương tiện là tuyến đường, phần đường hoặc làn đường dành riêng cho một hoặc một vài loại phương tiện được lưu thông tách biệt với phần đường cho các phương tiện khác và được chỉ dẫn bằng biển báo hiệu hoặc vạch sơn."
+      },
+      {
+       "clause_number": "3.5",
+       "text": "Đường dành riêng cho các phương tiện thô sơ và người đi bộ là tuyến đường, phần đường hoặc làn đường được phân biệt với phần đường dành riêng cho phương tiện cơ giới bằng các dải phân cách hoặc vạch sơn dọc liền."
+      },
+      {
+       "clause_number": "3.6",
+       "text": "Đường ưu tiên là đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ hướng khác nhường đường khi qua nơi đường giao nhau, được đặt biển báo hiệu đường ưu tiên."
+      },
+      {
+       "clause_number": "3.7",
+       "text": "Làn đường ưu tiên là làn đường mà trên đó phương tiện tham gia giao thông được quy định là ưu tiên sẽ được các phương tiện khác nhường đường khi cùng tham gia giao thông."
+      },
+      {
+       "clause_number": "3.8",
+       "text": "Đường không ưu tiên là đường giao cùng mức với đường ưu tiên."
+      },
+      {
+       "clause_number": "3.9",
+       "text": "Đường một chiều là đường chỉ cho đi một chiều."
+      },
+      {
+       "clause_number": "3.10",
+       "text": "Đường hai chiều là đường dùng chung cho cả chiều đi và về trên cùng một phần đường xe chạy mà không có dải phân cách."
+      },
+      {
+       "clause_number": "3.11",
+       "text": "Đường đôi là đường mà chiều đi và về được phân biệt bằng dải phân cách (trường hợp phân biệt bằng vạch sơn thì không phải đường đôi)."
+      },
+      {
+       "clause_number": "3.12",
+       "text": "Phần đường xe chạy là phần của đường bộ được sử dụng cho phương tiện giao thông qua lại."
+      },
+      {
+       "clause_number": "3.13",
+       "text": "Phần đường dành cho xe cơ giới là phần của đường bộ được sử dụng cho các phương tiện giao thông cơ giới đường bộ và xe máy chuyên dùng qua lại."
+      },
+      {
+       "clause_number": "3.14",
+       "text": "Phần đường dành cho xe thô sơ là phần của đường bộ được sử dụng cho các phương tiện giao thông thô sơ đường bộ qua lại."
+      },
+      {
+       "clause_number": "3.15",
+       "text": "Làn đường là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có đủ bề rộng cho xe chạy an toàn. Một phần đường xe chạy có thể có một hoặc nhiều làn đường."
+      },
+      {
+       "clause_number": "3.16",
+       "text": "Dải phân cách là bộ phận của đường mà xe không chạy trên đó được và để phân chia phần đường xe chạy thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường dành cho xe cơ giới và xe thô sơ hoặc của nhiều loại xe khác nhau trên cùng một chiều giao thông."
+      },
+      {
+       "clause_number": "3.17",
+       "text": "Nơi đường giao nhau cùng mức (nơi đường giao nhau hoặc nút giao) là nơi hai hay nhiều đường bộ gặp nhau trên cùng một mặt phẳng, gồm cả mặt bằng hình thành vị trí giao nhau đó."
+      },
+      {
+       "clause_number": "3.18",
+       "text": "Xe cơ giới là chỉ các loại xe ôtô; máy kéo; rơ-moóc hoặc sơ-mi rơ-moóc được kéo bởi xe ôtô; xe máy 2 bánh; xe máy 3 bánh; xe gắn máy (kể cả xe máy điện) và các loại xe tương tự được thiết kế để chở người và hàng hóa trên đường bộ. Xe cơ giới bao gồm cả tàu điện bánh lốp (là loại tàu dùng điện nhưng không chạy trên đường ray)."
+      },
+      {
+       "clause_number": "3.19",
+       "text": "Trọng tải bản thân xe là khối lượng bản thân của xe, đo bằng kilôgam (kg) hoặc tấn (t) ở trạng thái tĩnh được ghi theo thông số quy định trong Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ không kể đến khối lượng người trong xe và khối lượng hàng hóa trên xe."
+      },
+      {
+       "clause_number": "3.20",
+       "text": "Trọng tải toàn bộ xe (tổng trọng tải) là bằng khối lượng bản thân xe cộng với khối lượng của người, hành lý và hàng hóa xếp trên xe (nếu có)."
+      },
+      {
+       "clause_number": "3.21",
+       "text": "Trọng tải toàn bộ xe cho phép là bằng trọng tải bản thân xe cộng với khối lượng chuyên chở cho phép xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ."
+      },
+      {
+       "clause_number": "3.22",
+       "text": "Tải trọng trục xe là phần của trọng tải toàn bộ xe phân bổ trên mỗi trục xe (trục đơn, cụm trục kép, cụm trục ba)."
+      },
+      {
+       "clause_number": "3.23",
+       "text": "Xe ôtô con (hay còn gọi là xe con) là xe ôtô được xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ, để chở người không quá 9 chỗ ngồi (kể cả chỗ người lái)."
+      },
+      {
+       "clause_number": "3.24",
+       "text": "Xe bán tải (xe pickup), xe tải VAN có khối lượng hàng chuyên chở cho phép tham gia giao thông dưới 950 kg, xe 3 bánh có khối lượng bản thân lớn hơn 400 kg, trong tổ chức giao thông, được xem là xe con."
+      },
+      {
+       "clause_number": "3.25",
+       "text": "Ôtô tải (hay còn gọi là xe tải) là xe ôtô có kết cấu và trang bị chủ yếu để chuyên chở hàng hóa (bao gồm cả ô tô đầu kéo, ô tô kéo rơ moóc và các loại xe như xe PICK UP, xe tải VAN có khối lượng hàng chuyên chở cho phép tham gia giao thông từ 950 kg trở lên)."
+      },
+      {
+       "clause_number": "3.26",
+       "text": "Ôtô khách (hay còn gọi là xe khách) là xe ôtô được xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ để chở người với số lượng lớn hơn 9 người."
+      },
+      {
+       "clause_number": "3.27",
+       "text": "Ôtô đầu kéo kéo sơ-mi rơ-moóc là xe cơ giới chuyên chở hàng hóa mà thùng xe là sơ-mi rơ-moóc được thiết kế nối với ôtô đầu kéo và truyền một phần trọng lượng đáng kể lên ôtô đầu kéo và ôtô đầu kéo không có bộ phận chở hàng hóa hoặc chở người (ôtô đầu kéo là ôtô được thiết kế để kéo sơ-mi rơ-moóc)."
+      },
+      {
+       "clause_number": "3.28",
+       "text": "Ôtô kéo rơ-moóc là xe ôtô được thiết kế để dành riêng kéo rơ-moóc hoặc là xe có kết cấu để kéo thêm rơ-moóc, có khối lượng cho phép kéo theo được xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ."
+      },
+      {
+       "clause_number": "3.29",
+       "text": "Rơ-moóc là tổng hợp gồm hệ thống trục và lốp xe có kết cấu vững chắc được kết nối với xe ô tô sao cho khối lượng toàn bộ của rơ moóc không đặt lên ô tô kéo."
+      },
+      {
+       "clause_number": "3.30",
+       "text": "Máy kéo là chỉ đầu máy tự di chuyển bằng xích hay bánh lốp để thực hiện các công việc đào, xúc, nâng, ủi, gạt, kéo, đẩy."
+      },
+      {
+       "clause_number": "3.31",
+       "text": "Xe mô tô (hay còn gọi là xe máy) là xe cơ giới hai hoặc ba bánh và các loại xe tương tự, di chuyển bằng động cơ có dung tích xy lanh từ 50 cm3 trở lên, trọng tải bản thân xe không quá 400 kg."
+      },
+      {
+       "clause_number": "3.32",
+       "text": "Xe gắn máy là chỉ phương tiện chạy bằng động cơ, có hai bánh hoặc ba bánh và vận tốc thiết kế lớn nhất không lớn hơn 50 km/h. Nếu dẫn động là động cơ nhiệt thì dung tích làm việc hoặc dung tích tương đương dưới 50 cm3."
+      },
+      {
+       "clause_number": "3.33",
+       "text": "Xe thô sơ gồm xe đạp (kể cả xe đạp máy, xe đạp điện), xe xích lô, xe súc vật kéo, xe lăn dùng cho người khuyết tật và các loại xe tương tự không sử dụng động cơ gây ra sức kéo."
+      },
+      {
+       "clause_number": "3.34",
+       "text": "Xe đạp là phương tiện có hai bánh xe hoặc ba bánh và di chuyển được bằng sức người đạp hoặc bằng tay quay, kể cả xe chuyên dùng của người khuyết tật có tính năng tương tự."
+      },
+      {
+       "clause_number": "3.35",
+       "text": "Xe đạp thồ là xe đạp chở hàng trên giá đèo hàng hoặc chằng buộc hai bên thành xe."
+      },
+      {
+       "clause_number": "3.36",
+       "text": "Xe người kéo là những loại phương tiện thô sơ có một hoặc nhiều bánh và chuyển động được nhờ sức người kéo hoặc đẩy trừ xe nôi trẻ em và phương tiện chuyên dùng đi lại của người tàn tật."
+      },
+      {
+       "clause_number": "3.37",
+       "text": "Xe súc vật kéo là những phương tiện thô sơ chuyển động được do súc vật kéo."
+      },
+      {
+       "clause_number": "3.38",
+       "text": "Người tham gia giao thông là người điều khiển; người sử dụng phương tiện tham gia giao thông đường bộ; người điều khiển, dẫn dắt súc vật; người đi bộ trên đường."
+      },
+      {
+       "clause_number": "3.39",
+       "text": "Xe ưu tiên là xe được quyền ưu tiên theo quy định của Luật Giao thông đường bộ."
+      },
+      {
+       "clause_number": "3.40",
+       "text": "Mốc lộ giới là cọc mốc được đặt ở mép ngoài cùng xác định ranh giới của đất dành cho đường bộ theo chiều ngang đường."
+      },
+      {
+       "clause_number": "3.41",
+       "text": "Giá long môn là một dạng kết cấu ngang qua đường ở phía trên phần đường xe chạy."
+      },
+      {
+       "clause_number": "3.42",
+       "text": "Cột cần vươn là một dạng kết cấu có cần vươn ra phía trên phần đường xe chạy."
+      },
+      {
+       "clause_number": "3.43",
+       "text": "Hàng nguy hiểm là hàng nguy hiểm là hàng hóa có chứa các chất nguy hiểm khi chở trên đường có khả năng gây nguy hại tới tính mạng, sức khỏe con người, kết cấu hạ tầng công trình giao thông, môi trường, an toàn và an ninh quốc gia."
+      },
+      {
+       "clause_number": "3.44",
+       "text": "Tốc độ vận hành là tốc độ mà người lái vận hành chiếc xe của mình."
+      },
+      {
+       "clause_number": "3.45",
+       "text": "Tốc độ thiết kế là tốc độ được lựa chọn để thiết kế các yếu tố cơ bản của đường trong các điều kiện khó khăn."
+      },
+      {
+       "clause_number": "3.46",
+       "text": "Tốc độ suất tích lũy 85% (V85) là tốc độ vận hành mà ở đó 85% các lái xe vận hành xe chạy từ tốc độ này trở xuống."
+      },
+      {
+       "clause_number": "3.47",
+       "text": "Tốc độ tối đa cho phép là tốc độ lớn nhất trên một tuyến đường, đoạn đường hoặc làn đường được cấp có thẩm quyền quy định. Người điều khiển phương tiện không được phép vận hành xe ở tốc độ cao hơn."
+      },
+      {
+       "clause_number": "3.48",
+       "text": "Tốc độ tối thiểu cho phép là tốc độ nhỏ nhất trên một tuyến đường, đoạn đường hoặc làn đường được cấp có thẩm quyền quy định. Người điều khiển phương tiện không được phép vận hành xe ở tốc độ nhỏ hơn khi có điều kiện giao thông đảm bảo an toàn cho phép xe chạy với tốc độ cao hơn."
+      },
+      {
+       "clause_number": "3.49",
+       "text": "Tầm nhìn là khoảng cách đo dọc theo mặt đường tính từ mũi xe của một chiếc xe đang chạy đến một vật thể ở phía trước."
+      },
+      {
+       "clause_number": "3.50",
+       "text": "Tầm nhìn dừng xe an toàn là khoảng cách đo dọc theo đường tính từ mũi xe để một chiếc xe đang chạy có thể dừng lại an toàn trước một vật thể tĩnh bất ngờ xuất hiện trên cùng một làn đường ở phía trước."
+      },
+      {
+       "clause_number": "3.51",
+       "text": "Tầm nhìn vượt xe an toàn là khoảng cách đo dọc theo mặt đường tính từ mũi xe để một chiếc xe đang chạy trên đường 2 làn xe hai chiều có thể vượt qua một chiếc xe khác chạy chậm hơn cùng chiều bằng cách chiếm dụng làn xe chạy phía chiều ngược lại và quay trở về làn cũ của mình một cách an toàn."
+      },
+      {
+       "clause_number": "3.52",
+       "text": "Vượt xe là tình huống giao thông mà xe đi sau vượt xe đi trước; khi vượt, các xe phải vượt về bên trái (trừ các trường hợp được quy định trong Luật Giao thông đường bộ). Xe đi với tốc độ thấp hơn phải đi về bên phải, khi có xe xin vượt, nếu đủ điều kiện an toàn, người điều khiển phương tiện phía trước phải giảm tốc độ, đi sát về phần đường bên phải của phần xe chạy cho đến khi xe sau đã vượt qua, không được gây trở ngại đối với xe xin vượt."
+      },
+      {
+       "clause_number": "3.53",
+       "text": "Xe trên các làn chạy nhanh hơn nhau: Trên đường có từ hai làn xe cơ giới mỗi chiều trở lên (được phân biệt bằng vạch kẻ phân làn đường), người điều khiển phương tiện phải cho xe đi trong một làn đường. Khi lưu thông, phương tiện trên các làn khác nhau có thể chạy nhanh hơn nhau miễn là tuân thủ quy định về tốc độ và loại phương tiện sử dụng làn đường và khi chuyển làn phải tuân thủ theo quy tắc giao thông đường bộ."
+      },
+      {
+       "clause_number": "3.54",
+       "text": "Nhường đường cho phương tiện khác là tình huống giao thông mà phương tiện nhường đường không tiếp tục di chuyển như hiện tại để phương tiện được nhường đường không phải chuyên hướng hoặc phải phanh đột ngột."
+      },
+      {
+       "clause_number": "3.55",
+       "text": "Nút giao khác mức liên thông là nơi giao nhau của đường bộ bằng tổ hợp các công trình vượt hoặc chui và nhánh nối mà ở đó cho phép các phương tiện tham gia giao thông chuyển hướng đến đường ở các cao độ khác nhau."
+      },
+      {
+       "clause_number": "3.56",
+       "text": "Nhánh nối là đường dùng để kết nối các hướng đường trong nút giao."
+      },
+      {
+       "clause_number": "3.57",
+       "text": "Lối ra là nơi các phương tiện tham gia giao thông tách ra khỏi dòng giao thông trên đường chính."
+      },
+      {
+       "clause_number": "3.58",
+       "text": "Lối vào là nơi các phương tiện tham gia giao thông nhập vào dòng giao thông trên đường chính. PHẦN 2: QUY ĐỊNH KỸ THUẬT"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 1,
+   "chapter_title": "THỨ TỰ HIỆU LỰC CỦA HỆ THỐNG BÁO HIỆU VÀ THỨ TỰ ĐƯỜNG ƯU TIÊN",
+   "articles": [
+    {
+     "article_number": 4,
+     "article_title": "Thứ tự hiệu lực của hệ thống báo hiệu",
+     "chapter_number": 1,
+     "chapter_title": "THỨ TỰ HIỆU LỰC CỦA HỆ THỐNG BÁO HIỆU VÀ THỨ TỰ ĐƯỜNG ƯU TIÊN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "4.1",
+       "text": "Khi đồng thời bố trí các hình thức báo hiệu có ý nghĩa khác nhau cùng ở một khu vực, người tham gia giao thông phải chấp hành loại hiệu lệnh theo thứ tự như sau: 4.1.1. Hiệu lệnh của người điều khiển giao thông; 4.1.2. Hiệu lệnh của đèn tín hiệu; 4.1.3. Hiệu lệnh của biển báo hiệu; 4.1.4. Hiệu lệnh của vạch kẻ đường và các dấu hiệu khác trên mặt đường."
+      },
+      {
+       "clause_number": "4.2",
+       "text": "Khi ở một vị trí đã có biển báo hiệu đặt cố định lại có biển báo hiệu khác đặt có tính chất tạm thời mà hai biển có ý nghĩa khác nhau thì người tham gia giao thông phải chấp hành hiệu lệnh của biển báo hiệu có tính chất tạm thời. Biển có tính chất tạm thời là biển sử dụng mang tính tình huống nhằm tổ chức điều khiển giao thông có tính chất ngắn hạn như trong các sự kiện, sự cố giao thông hay sử dụng trong quá trình thi công hoặc sửa chữa đường."
+      }
+     ]
+    },
+    {
+     "article_number": 5,
+     "article_title": "Thứ tự đường ưu tiên",
+     "chapter_number": 1,
+     "chapter_title": "THỨ TỰ HIỆU LỰC CỦA HỆ THỐNG BÁO HIỆU VÀ THỨ TỰ ĐƯỜNG ƯU TIÊN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "5.1",
+       "text": "Quy định về thứ tự đường ưu tiên như sau: - Đường cao tốc; - Quốc lộ; - Đường đô thị; - Đường tỉnh; - Đường huyện; - Đường xã; - Đường chuyên dùng."
+      },
+      {
+       "clause_number": "5.2",
+       "text": "Nếu hai đường cùng thứ tự, giao nhau cùng mức, việc xác định đường nào là đường ưu tiên được xem xét lần lượt theo quy định sau: 5.2.1. Được cấp có thẩm quyền quy định là đường ưu tiên; 5.2.2. Đường có cấp kỹ thuật cao hơn thì được ưu tiên; 5.2.3. Khi lưu lượng xe khác nhau, đường có lưu lượng xe trung bình ngày đêm lớn hơn thì được ưu tiên; 5.2.4. Khi lưu lượng xe trung bình ngày đêm bằng nhau, đường có nhiều xe ôtô vận tải công cộng lớn hơn thì được ưu tiên; 5.2.5. Đường nào có mặt đường cấp cao hơn thì được ưu tiên."
+      },
+      {
+       "clause_number": "5.3",
+       "text": "Không được quy định cả hai đường giao nhau cùng mức cùng đồng thời là đường ưu tiên."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 2,
+   "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+   "articles": [
+    {
+     "article_number": 6,
+     "article_title": "Các phương pháp điều khiển giao thông",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "6.1",
+       "text": "Các phương tiện điều khiển giao thông: 6.1.1. Bằng tay; 6.1.2. Bằng cờ; 6.1.3. Bằng gậy điều khiển giao thông có màu đen trắng xen kẽ (có đèn hoặc không có đèn ở bên trong); 6.1.4. Bằng đèn tín hiệu ánh sáng."
+      },
+      {
+       "clause_number": "6.2",
+       "text": "Phương pháp chỉ huy giao thông: 6.2.1. Người điều khiển; 6.2.2. Bằng hệ thống tín hiệu ánh sáng tự động."
+      }
+     ]
+    },
+    {
+     "article_number": 7,
+     "article_title": "Hiệu lệnh của người điều khiển giao thông",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "7.1",
+       "text": "Hiệu lệnh của người điều khiển được thể hiện bằng tay, cờ, gậy hoặc đèn tín hiệu ánh sáng điều khiển giao thông. Để thu hút sự chú ý của người tham gia giao thông, người điều khiển giao thông ngoài sử dụng các phương pháp nêu trên còn dùng thêm còi."
+      },
+      {
+       "clause_number": "7.2",
+       "text": "Hiệu lệnh của người điều khiển giao thông: 7.2.1. Tay giơ thẳng đứng để báo hiệu cho người tham gia giao thông ở các hướng đều phải dừng lại; 7.2.2. Hai tay hoặc một tay dang ngang để báo hiệu cho người tham gia giao thông ở phía trước và ở phía sau người điều khiển phải dừng lại; người tham gia giao thông ở phía bên phải và bên trái người điều khiển được đi tất cả các hướng; cánh tay trái người điều khiển gập đi gập lại sau gáy để báo hiệu người tham gia giao thông bên trái người điều khiển đi nhanh hơn hoặc cánh tay phải người điều khiển gập đi gập lại trước ngực để báo hiệu người tham gia giao thông bên phải người điều khiển đi nhanh hơn; bàn tay trái hoặc phải của người điều khiển ở vị trí ngang thắt lưng và đưa lên, xuống báo hiệu người tham gia giao thông ở bên trái hoặc bên phải người điều khiển đi chậm lại; bàn tay trái hoặc phải của người điều khiển giơ thẳng đứng vuông góc với mặt đất báo hiệu người tham gia giao thông ở bên trái hoặc bên phải người điều khiển dừng lại; 7.2.3. Tay phải giơ về phía trước để báo hiệu cho người tham gia giao thông ở phía sau và bên phải người điều khiển dừng lại; người tham gia giao thông ở phía trước người điều khiển được rẽ phải; người tham gia giao thông ở phía bên trái người điều khiển được đi tất cả các hướng; người đi bộ qua đường phía sau lưng người điều khiển giao thông được phép đi; đồng thời tay trái giơ về phía trước lặp đi lặp lại nhiều lần, song song với tay phải báo hiệu người tham gia giao thông ở phía bên trái người điều khiển được rẽ trái qua trước mặt người điều khiển."
+      },
+      {
+       "clause_number": "7.3",
+       "text": "Quy định về việc sử dụng âm hiệu còi trong điều khiển giao thông của cảnh sát điều khiển giao thông như sau: 7.3.1. Một tiếng còi dài, mạnh là ra lệnh dừng lại; 7.3.2. Một tiếng còi ngắn là cho phép đi; 7.3.3. Một tiếng còi dài và một tiếng còi ngắn là cho phép rẽ trái; 7.3.4. Hai tiếng còi ngắn, thổi mạnh là ra hiệu nguy hiểm đi chậm lại; 7.3.5. Ba tiếng còi ngắn thổi nhanh là báo hiệu đi nhanh lên; 7.3.6. Thổi liên tiếp tiếng một, nhiều lần, mạnh là báo hiệu phương tiện dừng lại để kiểm tra hoặc báo hiệu phương tiện vi phạm."
+      },
+      {
+       "clause_number": "7.4",
+       "text": "Quy định về việc sử dụng ánh sáng trong hiệu lệnh dừng xe của người điều khiển giao thông như sau: cầm đèn ánh sáng có mặt đỏ giơ cao hướng về phía phương tiện đang chạy tới."
+      },
+      {
+       "clause_number": "7.5",
+       "text": "Trường hợp khi có tín hiệu hoặc hiệu lệnh phải dừng lại, nếu đã đi vượt qua vạch dừng tại các nơi đường giao nhau mà dừng lại sẽ gây mất an toàn giao thông thì được phép đi tiếp; người đi bộ còn đang đi ở lòng đường thì nhanh chóng đi hết hoặc dừng lại ở đảo an toàn, nếu không có đảo thì dừng lại ở vạch phân chia hai dòng phương tiện giao thông đi ngược chiều."
+      },
+      {
+       "clause_number": "7.6",
+       "text": "Trường hợp người điều khiển chỉ gậy chỉ huy giao thông vào hướng xe nào thì xe ở hướng đó phải dừng lại."
+      }
+     ]
+    },
+    {
+     "article_number": 8,
+     "article_title": "Hiệu lực của người điều khiển giao thông",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "Người tham gia giao thông đều phải chấp hành nghiêm chỉnh hiệu lệnh của người điều khiển giao thông, kể cả trong trường hợp hiệu lệnh trái với tín hiệu của đèn điều khiển giao thông, biển báo hiệu hoặc vạch kẻ đường.",
+     "clauses": []
+    },
+    {
+     "article_number": 9,
+     "article_title": "Người điều khiển giao thông",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "Người điều khiển giao thông là cảnh sát giao thông mặc sắc phục theo quy định; người được giao nhiệm vụ hướng dẫn giao thông.",
+     "clauses": []
+    },
+    {
+     "article_number": 10,
+     "article_title": "Điều khiển giao thông bằng tín hiệu đèn",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "10.1",
+       "text": "Đèn tín hiệu chính điều khiển giao thông được áp dụng ba loại màu tín hiệu: xanh, vàng và đỏ; chủ yếu có dạng hình tròn, lắp theo chiều thẳng đứng hoặc nằm ngang. 10.1.1. Thứ tự tín hiệu lắp theo chiều thẳng đứng: đèn đỏ ở trên, đèn vàng ở giữa và đèn xanh ở dưới. 10.1.2. Thứ tự tín hiệu lắp đặt theo chiều ngang: đèn đỏ ở phía bên trái, đèn vàng ở giữa và đèn xanh ở phía bên phải theo chiều lưu thông."
+      },
+      {
+       "clause_number": "10.2",
+       "text": "Đèn tín hiệu ngoài ba dạng đèn chính còn được bổ sung một số đèn khác tuỳ thuộc vào quy mô nút giao và tổ chức giao thông. 10.2.1. Đèn có hình mũi tên hoặc các hình có ký hiệu phù hợp với quy định của Quy chuẩn này, được lắp đặt trên mặt phẳng ngang với đèn tín hiệu. Các hình trên đèn có thể là hình một loại phương tiện giao thông hoặc hình người đi bộ. 10.2.2. Trong từng tín hiệu của đèn có thể có hình mũi tên. Nếu mũi tên chỉ hướng cho phép rẽ trái thì đồng thời cho phép quay đầu, trừ khi có đặt biển báo số P.124 (a,b) \"Cấm quay đầu xe\". 10.2.3. Đồng hồ đếm ngược (khi đang hoạt động bình thường) có tác dụng báo hiệu thời gian có hiệu lực của đèn. 10.2.4. Đèn tín hiệu có hình chữ thập màu đỏ báo hiệu xe phải dừng lại. Trong trường hợp xe đã ở trong nút giao thì phải nhanh chóng đi ra khỏi nút giao."
+      },
+      {
+       "clause_number": "10.3",
+       "text": "Ý nghĩa của đèn tín hiệu: 10.3.1. Tín hiệu xanh: cho phép đi. 10.3.2.Tín hiệu vàng báo hiệu thay đổi tín hiệu của đèn xanh sang đỏ. Tín hiệu vàng bật sáng, phải dừng lại trước vạch dừng, trường hợp đã đi quá vạch dừng hoặc đã quá gần vạch dừng nếu dừng lại thấy nguy hiểm thì được đi tiếp. Trong trường hợp tín hiệu vàng nhấp nháy là được đi nhưng phải giảm tốc độ, chú ý quan sát, nhường đường cho người đi bộ qua đường hoặc các phương tiện khác theo quy định của Luật Giao thông đường bộ. 10.3.3. Tín hiệu đỏ: báo hiệu phải dừng lại trước vạch dừng. Nếu không có vạch dừng thì phải dừng trước đèn tín hiệu theo chiều đi. 10.3.4. Trường hợp không có vạch dừng, thì vị trí đặt đèn tín hiệu gần nhất theo chiều đi coi như là vạch dừng. 10.3.5. Tại một thời điểm, trên cùng một bộ đèn tín hiệu chỉ được sáng một trong ba màu: xanh, vàng hoặc đỏ."
+      },
+      {
+       "clause_number": "10.4",
+       "text": "Ý nghĩa của đèn hình mũi tên: 10.4.1. Nếu đèn có lắp đèn hình mũi tên màu xanh thì các loại phương tiện giao thông chỉ được đi khi tín hiệu mũi tên bật sáng cho phép. Tín hiệu mũi tên cho phép rẽ trái thì đồng thời cho phép quay đầu nếu không có báo hiệu cấm quay đầu khác. 10.4.2. Nếu đèn có hình của một loại phương tiện giao thông nào đó xanh thì chỉ loại phương tiện đó được phép đi. 10.4.3. Khi tín hiệu mũi tên màu xanh được bật sáng cùng một lúc với tín hiệu đỏ hoặc vàng thì các phương tiện đi theo hướng mũi tên nhưng phải nhường đường cho các loại phương tiện đi từ các hướng khác đang được phép đi. 10.4.4. Khi tín hiệu mũi tên màu đỏ được bật sáng cùng lúc với tín hiệu đèn chính màu xanh thì phương tiện không được đi theo hướng mũi tên. Những nơi bố trí mũi tên màu đỏ cần bố trí làn chờ cho các xe đi hướng đang có đèn màu đỏ. 10.4.5. Khi tín hiệu màu đỏ có hình của một loại phương tiện nào đó bật sáng cùng lúc với tín hiệu đèn chính màu xanh thì loại phương tiện đó không được đi. Những nơi có bố trí đèn hình phương tiện màu đỏ thì cần bố trí làn chờ cho phương tiện đó."
+      },
+      {
+       "clause_number": "10.5",
+       "text": "Điều khiển giao thông bằng loại đèn hai màu: 10.5.1. Điều khiển giao thông đối với người đi bộ bằng loại đèn hai màu: khi tín hiệu màu đỏ có tín hiệu hình người tư thế đứng hoặc chữ viết \"Dừng lại\"; khi tín hiệu màu xanh, có hình người tư thế đi hoặc chữ viết \"Đi\". Người đi bộ chỉ được phép đi qua đường khi tín hiệu đèn xanh bật sáng và đi trong hàng đinh gắn trên mặt đường hoặc vạch sơn dành cho người đi bộ qua đường. Tín hiệu đèn xanh nhấp nháy báo hiệu chuẩn bị chuyển sang tín hiệu màu đỏ; người đi bộ lúc này không được bắt đầu đi ngang qua đường. 10.5.2. Loại đèn hai màu xanh và đỏ không nhấp nháy dùng để điều khiển giao thông ở những nơi giao nhau với đường sắt, bến phà, cầu cất, dải cho máy bay lên xuống ở độ cao không lớn v.v... Đèn xanh bật sáng: cho phép các phương tiện giao thông được đi. Đèn đỏ bật sáng: cấm đi. Hai đèn xanh và đỏ không được cùng bật sáng một lúc. 10.5.3. Loại đèn đỏ hai bên thay nhau nhấp nháy nơi giao nhau với đường sắt, khi bật sáng thì mọi phương tiện phải dừng lại và chỉ được đi khi đèn tắt. Ngoài ra để gây chú ý, ngoài đèn đỏ nhấp nháy còn trang bị thêm chuông điện hoặc tiếng nói nhắc nhở có tàu hỏa."
+      },
+      {
+       "clause_number": "10.6",
+       "text": "Để điều khiển giao thông trên từng làn đường riêng có thể áp dụng bộ đèn tín hiệu gồm 2 màu treo trên phần đường xe chạy, tín hiệu xanh có hình mũi tên phải đặt phía trên làn đường cần điều khiển, tín hiệu đỏ có hình hai gạch chéo. Những tín hiệu của đèn này có ý nghĩa như sau: 10.6.1. Tín hiệu xanh cho phép đi ở trên làn đường có mũi tên chỉ; 10.6.2. Tín hiệu đỏ phải dừng lại theo điểm 10.3.3 khoản 10.3 Điều này trên làn đường có đèn treo tín hiệu màu đỏ."
+      }
+     ]
+    },
+    {
+     "article_number": 11,
+     "article_title": "Xe ưu tiên và tín hiệu của xe ưu tiên",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "11.1",
+       "text": "Những xe sau đây được quyền ưu tiên đi trước xe khác khi qua đường giao nhau từ bất kỳ hướng nào tới theo thứ tự: 11.1.1. Xe chữa cháy đi làm nhiệm vụ; 11.1.2. Xe quân sự, xe công an đi làm nhiệm vụ khẩn cấp; đoàn xe có xe cảnh sát dẫn đường; 11.1.3. Xe cứu thương đang thực hiện nhiệm vụ cấp cứu; 11.1.4. Xe hộ đê, xe đi làm nhiệm vụ khắc phục sự cố thiên tai, dịch bệnh hoặc xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật; 11.1.5. Đoàn xe tang."
+      },
+      {
+       "clause_number": "11.2",
+       "text": "Xe quy định tại các điểm từ 11.1.1 đến 11.1.4 của khoản 11.1 Điều này khi làm nhiệm vụ có tín hiệu theo quy định không bị hạn chế tốc độ; được phép đi vào đường ngược chiều, các đường khác có thể đi được, kể cả khi có tín hiệu đèn đỏ và chỉ phải tuân theo chỉ dẫn của người điều khiển giao thông."
+      },
+      {
+       "clause_number": "11.3",
+       "text": "Tín hiệu của xe chữa cháy đi làm nhiệm vụ: 11.3.1. Xe chữa cháy có đèn quay hoặc đèn chớp phát sáng màu đỏ hoặc xanh gắn trên nóc xe và có còi phát tín hiệu ưu tiên."
+      },
+      {
+       "clause_number": "11.4",
+       "text": "Tín hiệu của xe quân sự đi làm nhiệm vụ khẩn cấp: 11.4.1. Xe ôtô có đèn quay hoặc đèn chớp phát sáng màu đỏ gắn trên nóc xe, cờ hiệu quân sự đặt ở đầu xe phía bên trái người lái; có còi phát tín hiệu ưu tiên. 11.4.2. Xe máy có đèn quay hoặc đèn chớp phát sáng màu đỏ gắn ở càng xe phía trước hoặc phía sau; cờ hiệu quân sự đặt ở đầu xe; có còi phát tín hiệu ưu tiên."
+      },
+      {
+       "clause_number": "11.5",
+       "text": "Tín hiệu của xe công an đi làm nhiệm vụ khẩn cấp: 11.5.1. Xe ôtô có đèn quay hoặc đèn chớp phát sáng màu xanh hoặc đỏ gắn trên nóc xe, cờ hiệu công an đặt ở đầu xe phía bên trái người lái; có còi phát tín hiệu ưu tiên. 11.5.2. Xe máy có đèn quay hoặc đèn chớp phát sáng màu xanh hoặc đỏ gắn ở càng xe phía trước hoặc phía sau, cờ hiệu công an đặt ở đầu xe; có còi phát tín hiệu ưu tiên."
+      },
+      {
+       "clause_number": "11.6",
+       "text": "Tín hiệu của xe cảnh sát giao thông dẫn đường: 11.6.1. Xe ôtô có đèn quay hoặc đèn chớp phát sáng màu xanh - đỏ gắn trên nóc xe, cờ hiệu Công an đặt ở đầu xe phía bên trái người lái; có còi phát tín hiệu ưu tiên; 11.6.2. Xe máy có đèn quay hoặc đèn chớp phát sáng màu xanh hoặc đỏ gắn ở càng xe phía trước hoặc phía sau; cờ hiệu công an đặt ở đầu xe; có còi phát tín hiệu ưu tiên."
+      },
+      {
+       "clause_number": "11.7",
+       "text": "Tín hiệu của xe cứu thương đang thực hiện nhiệm vụ cấp cứu Xe cứu thương có đèn quay hoặc đèn chớp phát sáng màu đỏ gắn trên nóc xe; có còi phát tín hiệu ưu tiên."
+      },
+      {
+       "clause_number": "11.8",
+       "text": "Tín hiệu của xe hộ đê, xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật. 11.8.1. Xe làm nhiệm vụ cứu hộ đê có cờ hiệu \"HỘ ĐÊ\" đặt ở đầu xe phía bên trái người lái. 11.8.2. Xe đi làm nhiệm vụ khắc phục sự cố thiên tai, dịch bệnh hoặc xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật thực hiện như sau: a) Xe đi làm nhiệm vụ khắc phục sự cố thiên tai, dịch bệnh, có biển hiệu riêng. b) Xe đi làm nhiệm vụ trong tình trạng khẩn cấp theo quy định của pháp luật có cờ"
+      },
+      {
+       "clause_number": "11.9",
+       "text": "Sử dụng tín hiệu của xe ưu tiên: 11.9.1. Xe được quyền ưu tiên chỉ được sử dụng tín hiệu ưu tiên khi đi làm nhiệm vụ và thiết bị phát tín hiệu ưu tiên trên xe phải được cơ quan có thẩm quyền cấp giấy phép sử dụng. 11.9.2. Các phương tiện giao thông cơ giới đường bộ không thuộc loại xe được quyền ưu tiên thì không được lắp đặt, sử dụng còi, cờ, đèn phát tín hiệu ưu tiên. Xe được quyền ưu tiên phải lắp đặt, sử dụng tín hiệu còi, cờ, đèn ưu tiên theo quy định tại các khoản 11.3, 11.4, 11.5, 11.6, 11.7 và khoản 11.8 của Điều này."
+      },
+      {
+       "clause_number": "11.10",
+       "text": "Khi có tín hiệu của xe được quyền ưu tiên, người tham gia giao thông phải nhanh chóng giảm tốc độ, tránh hoặc dừng lại sát lề đường bên phải để nhường đường. Không được gây cản trở xe được quyền ưu tiên."
+      }
+     ]
+    },
+    {
+     "article_number": 12,
+     "article_title": "Hiệu lực của đèn tín hiệu",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "Ở nơi đường giao nhau vừa có đèn tín hiệu vừa có biển báo hiệu và vạch sơn thì lái xe phải tuân theo hiệu lệnh của đèn tín hiệu. Trong trường hợp không sử dụng đèn tín hiệu để điều khiển giao thông theo từng làn đường riêng thì tín hiệu đèn có tác dụng cho toàn bộ phần đường xe chạy theo hướng xe đến. Trong trường hợp đèn tín hiệu tắt hoặc có đèn tín hiệu vàng nhấp nháy thì lái xe phải tuân theo biển báo hiệu và vạch sơn theo thứ tự hiệu lực đã quy định.",
+     "clauses": []
+    },
+    {
+     "article_number": 13,
+     "article_title": "Vị trí và độ cao đặt đèn tín hiệu",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "13.1",
+       "text": "Mặt đèn quay về hướng đi của người tham gia giao thông."
+      },
+      {
+       "clause_number": "13.2",
+       "text": "Khi đèn bố trí theo chiều thẳng đứng trên cột đặt trên lề đường, dải phân cách, đảo giao thông: chiều cao vị trí thấp nhất của đèn từ 1,7m đến 5,8m, khoảng cách từ bộ đèn đến mép phần đường xe chạy từ 0,5 đến 2m."
+      },
+      {
+       "clause_number": "13.3",
+       "text": "Khi đèn được đặt theo chiều ngang trên cần vươn thì chiều cao tối thiểu là 5,2 m, tối đa là 7,8m tính từ điểm thấp nhất của đèn đến mặt đường hoặc mặt vỉa hè;"
+      },
+      {
+       "clause_number": "13.4",
+       "text": "Đèn được bố trí sao cho người tham gia giao thông nhìn thấy được từ xa đủ để giảm tốc độ và dừng xe được an toàn. Trong một số trường hợp có thể cho phép kết hợp đặt đèn trên cột điện hoặc những vật kiến trúc nhưng phải đảm bảo những tiêu chuẩn kỹ thuật đặt đèn về vị trí, độ cao, khoảng cách nhìn thấy đèn theo Quy chuẩn này và đảm bảo thẩm mỹ."
+      },
+      {
+       "clause_number": "13.5",
+       "text": "Đèn tín hiệu đặt trên từng nhánh đường ngay trước nút giao theo chiều đi; Tùy từng trường hợp, có thể bổ sung đèn tín hiệu trên cột cần vươn hoặc giá long môn phía bên kia nút giao theo chiều đi để nhắc lại và thuận tiện cho việc quan sát."
+      },
+      {
+       "clause_number": "13.6",
+       "text": "Ở trong khu đông dân cư, khu đô thị có đường chật hẹp, đèn có thể bố trí trên thân cột thẳng đứng đặt bên đường về phía tay phải của chiều đường theo quy định tại điểm 13.3.1 khoản 13.3 Điều này ngay trước vạch dừng."
+      },
+      {
+       "clause_number": "13.7",
+       "text": "Độ lớn (kích thước) và độ sáng của đèn tín hiệu phải được thiết kế phù hợp với điều kiện khai thác đặc biệt phải nhìn thấy được trong điều kiện người tham gia giao thông bị ngược ánh sáng mặt trời."
+      }
+     ]
+    },
+    {
+     "article_number": 14,
+     "article_title": "Kích thước, hình dạng và các quy định khác của đèn tín hiệu",
+     "chapter_number": 2,
+     "chapter_title": "HIỆU LỆNH ĐIỀU KHIỂN GIAO THÔNG",
+     "intro": "Kích thước, hình dạng và các quy định khác của đèn tín hiệu tham khảo ở Phụ lục A của Quy chuẩn này.",
+     "clauses": []
+    }
+   ]
+  },
+  {
+   "chapter_number": 3,
+   "chapter_title": "BIỂN BÁO HIỆU",
+   "articles": [
+    {
+     "article_number": 15,
+     "article_title": "Phân loại biển báo hiệu",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "Biển báo hiệu đường bộ trong Quy chuẩn này được chia thành 5 nhóm cơ bản sau đây: biển báo cấm; biển hiệu lệnh; biển báo nguy hiểm và cảnh báo; biển chỉ dẫn; biển phụ, biển viết bằng chữ. Biển báo hiệu trên đường cao tốc và đường đối ngoại phải phù hợp với các quy định nêu tại các Điều ước quốc tế mà Việt Nam là thành viên.",
+     "clauses": [
+      {
+       "clause_number": "15.1",
+       "text": "Nhóm biển báo cấm là nhóm biển biểu thị các điều cấm mà người tham gia giao thông không được vi phạm. Biển báo cấm chủ yếu có dạng hình tròn, viền đỏ, nền màu trắng, trên nền có hình vẽ hoặc chữ số, chữ viết màu đen thể hiện điều cấm, trừ một số trường hợp đặc biệt."
+      },
+      {
+       "clause_number": "15.2",
+       "text": "Nhóm biển hiệu lệnh là nhóm biển để báo các hiệu lệnh phải chấp hành. Người tham gia giao thông phải chấp hành các hiệu lệnh trên biển báo (trừ một số biển đặc biệt). Các biển có dạng hình tròn trên nền xanh lam có hình vẽ màu trắng đặc trưng cho hiệu lệnh nhằm báo cho người tham gia giao thông đường biết."
+      },
+      {
+       "clause_number": "15.3",
+       "text": "Nhóm biển báo nguy hiểm và cảnh báo là nhóm biển báo cho người tham gia giao thông biết trước các nguy hiểm trên đường để chủ động phòng ngừa kịp thời. Biển chủ yếu có hình tam giác đều, viền đỏ, nền màu vàng, trên có hình vẽ màu đen mô tả sự việc cần báo hiệu."
+      },
+      {
+       "clause_number": "15.4",
+       "text": "Nhóm biển chỉ dẫn là nhóm biển báo dùng để cung cấp thông tin và các chỉ dẫn cần thiết cho người tham gia giao thông. Biển chỉ dẫn chủ yếu có hình chữ nhật hoặc hình vuông hoặc hình mũi tên, nền màu xanh."
+      },
+      {
+       "clause_number": "15.5",
+       "text": "Nhóm biển phụ, biển viết bằng chữ là nhóm biển nhằm thuyết minh bổ sung nội dung nhóm biển tại khoản 15.1, 15.2, 15.3, 15.4 Điều này hoặc được sử dụng độc lập."
+      }
+     ]
+    },
+    {
+     "article_number": 16,
+     "article_title": "Kích thước của biển báo",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "16.1",
+       "text": "Quy chuẩn này quy định các thông số về kích thước biển, hình vẽ trong biển và chữ viết tương ứng với đường đô thị có hệ số là 1 (xem Hình 1 và Bảng 1). Trường hợp đặc biệt, kích thước biển có thể được điều chỉnh để đảm bảo cân đối, đáp ứng tính thẩm mỹ và rõ ràng thông tin."
+      },
+      {
+       "clause_number": "16.2",
+       "text": "Đối với các đường khác, kích thước biển, hình vẽ trong biển và chữ viết phải nhân với hệ số tương ứng trong Bảng 2, kích thước biển được làm tròn theo nguyên tắc: a) Số hàng đơn vị ≤ 5 thì lấy bằng 5; b) Số hàng đơn vị  5 thì lấy bằng 0 và tăng số hàng chục lên 1 đơn vị. C Đơn vị tính: cm Loại biển Kích thước Độ lớn Biển tròn Đường kính ngoài của biển báo, D Chiều rộng của mép viền đỏ, B Chiều rộng của vạch đỏ, A Biển bát giác Đường kính ngoài biển báo, D Độ rộng viền trắng xung quanh, B Biển tam giác Chiều dài cạnh của hình tam giác, L Chiều rộng của viền mép đỏ, B Bán kính lượn tròn của viền mép đỏ, R Khoảng cách đỉnh cung tròn đến đỉnh tam giác cơ bản, C Biển vuông, chữ nhật Khoảng cách đỉnh cung tròn đến đỉnh chữ nhật cơ bản, C 45o B A D L B R B L D B R C C Loại đường Đường cao tốc Đường đôi ngoài đô thị Đường ôtô thông thường (*) Đường đô thị (***) Biển báo cấm, biển hiệu lệnh, biển báo nguy hiểm và cảnh báo Biển chỉ dẫn (**) Ghi chú: (*) Đường ô tô thông thường là các đường ô tô không phải là đường ô tô cao tốc, đường đôi, đường đô thị. (**) Hệ số kích thước biển chỉ dẫn trong Bảng 2 không áp dụng cho các đường cao tốc. Đường cao tốc có quy định riêng tại Chương 9 của Quy chuẩn này. (***) Đối với các biển báo lắp đặt trên giá long môn, giá cần vươn của đường đôi trong đô thị sử dụng hệ số kích thước như quy định cho đường đôi ngoài đô thị. Trong một số trường hợp đặc biệt, chẳng hạn để đồng bộ trên đoạn toàn tuyến có chiều rộng mặt đường như nhau nhưng có đoạn có dải phân cách có đoạn không có dải phân cách, hoặc các đoạn ngắn xen kẹp thì kích thước biển báo được bố trí giống nhau theo hướng thuận tiện cho việc quan sát của người tham gia giao thông và mỹ quan."
+      },
+      {
+       "clause_number": "16.3",
+       "text": "Chi tiết thông số về chữ viết, kích thước biển, hình vẽ trong biển được quy định tại các Phụ lục K, M và Phụ lục P của Quy chuẩn này. Đối với biển chỉ dẫn, tùy theo điều kiện thực tế, kích thước biển có thể được điều chỉnh để đảm bảo tính rõ ràng thông tin, cân đối và thẩm mỹ của biển báo."
+      },
+      {
+       "clause_number": "16.4",
+       "text": "Đối với các đường cấp kỹ thuật thấp (đường cấp V, cấp VI hoặc chưa vào cấp), đường giao thông nông thôn tùy theo quy mô và điều kiện khai thác mà vận dụng các hệ số kích thước là: 1,25; 1,00 hoặc 0,75."
+      },
+      {
+       "clause_number": "16.5",
+       "text": "Biển di động, biển đặt tạm thời trong thời gian ngắn và các biển sử dụng trong các trường hợp đặc biệt (vị trí biển ở dải phân cách hẹp, lề đường hẹp, hoặc ảnh hưởng tầm nhìn biển đặt trên các ngõ, ngách, hẻm; các hình biển trong biển ghép) có thể điều chỉnh kích thước với hệ số bằng 0,5 hoặc 0,75 (có làm tròn số theo quy định)."
+      },
+      {
+       "clause_number": "16.6",
+       "text": "Đối với các tuyến đường đối ngoại thì biển bằng chữ được điều chỉnh kích thước biển để bố trí đủ chữ viết trên cơ sở quy định của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 17,
+     "article_title": "Chữ viết, màu sắc và biểu tượng trên biển",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "17.1",
+       "text": "Chữ viết trên biển phù hợp với quy định về kiểu chữ nêu tại Phụ lục K của Quy chuẩn này, trường hợp đặc biệt có thể điều chỉnh cho cân đối, phù hợp và đáp ứng thông tin rõ ràng, trong đó: 17.1.1. Sử dụng kiểu chữ tiêu chuẩn \"gt1 - Kiểu chữ nén\" và \"gt2 - Kiểu chữ thường\" để ghi thông tin bằng chữ trên biển. 17.1.2. Chữ viết hoa kiểu chữ thường hoặc kiểu chữ nén sử dụng để viết các thông tin chỉ dẫn về hướng đi, các danh từ riêng hoặc các thông tin có tính chất nhấn mạnh, gây chú ý cho người tham gia giao thông. Chỉ nên sử dụng kiểu chữ nén trong trường hợp phải hạn chế kích thước của biển. 17.1.3. Chữ viết thường được sử dụng để viết tên địa danh bằng tiếng Anh, các thông tin dịch vụ và trên các biển phụ. 17.1.4. Trên cùng một hàng chữ chỉ sử dụng một loại nét chữ. 17.1.5. Chữ viết trên biển phải là tiếng Việt đủ dấu. Khoảng cách giữa các chữ cái từ 25% - 40% chiều cao chữ, khoảng cách giữa các chữ bất kỳ trên cùng một hàng chữ từ 75% - 100% chiều cao chữ. Khoảng cách theo chiều đứng giữa các hàng chữ tối thiểu 50% - 75% chiều cao chữ lớn nhất của hàng sau. Khoảng cách giữa hàng chữ trên và dưới cùng với mép biển tối thiểu bằng 40% chiều cao chữ cao nhất trong hàng. Khoảng cách theo chiều ngang của các chữ ở góc trên cùng và dưới cùng đến mép biển tối thiểu bằng 60% chiều cao chữ với chữ viết hoa và 100% với chữ viết thường. 17.1.6. Khoảng cách giữa chữ ghi đơn vị đo lường (t, m, km) và chữ số phía trước lấy bằng 50% chiều cao chữ ghi đơn vị đo lường. 17.1.7. Chiều cao chữ được lựa chọn căn cứ trên tốc độ xe chạy sao cho người tham gia giao thông có thể đọc được rõ ràng cả ban ngày và ban đêm. Chiều cao chữ tối thiểu trên các biển chỉ dẫn là 100 mm với đường thông thường và đường đô thị; 150 mm với đường đôi ngoài đô thị và 300 mm đối với đường cao tốc. Chữ viết chỉ địa danh và hướng đường có chiều cao tối thiểu là 150 mm. Khuyến khích sử dụng kích thước chữ viết lớn nhưng phải đảm bảo tính cân đối và thẩm mỹ đối với biển báo. 17.1.8. Chữ viết phải lựa chọn câu, từ ngắn gọn, dễ hiểu nhất; thông tin trên biển phải thống nhất với các thông tin báo hiệu khác. 17.1.9. Chỉ sử dụng màu của chữ như sau: màu trắng trên nền đen, xanh hoặc đỏ; màu đen trên nền trắng hoặc vàng hoặc màu vàng trên các nền xanh. 17.1.10. Chữ viết trên biển chỉ dẫn trên đường cao tốc ngoài việc tuân thủ các quy định trong khoản 17.1 Điều 17 còn tuân thủ khoản 49.3 Điều 49 của Quy chuẩn này."
+      },
+      {
+       "clause_number": "17.2",
+       "text": "Màu sắc trên biển Màu sắc trên biển phải tuân theo quy định kỹ thuật về màu sắc và thống nhất trong các nhóm biển sử dụng trên mạng lưới đường bộ."
+      },
+      {
+       "clause_number": "17.3",
+       "text": ". Biểu tượng, hình vẽ trên biển Biểu tượng, hình vẽ được quy định chi tiết đối với từng biển báo. Riêng hình vẽ thể hiện cho các loại phương tiện được thể hiện theo nguyên tắc: biểu thị ô tô nói chung, xe buýt thì dùng biểu tượng hình chiếu đối diện, đối với từng loại xe thì dùng biểu tượng là hình chiếu cạnh. Căn cứ vào thực tiễn tổ chức giao thông, từ các biển đã có trong Quy chuẩn, khi muốn vận dụng cho các đối tượng khác thì chỉ cần thay thế đối tượng (biểu tượng phương tiện) cũ bằng đối tượng (biểu tượng phương tiện) mới. Đối với xe taxi, sử dụng biểu tượng ô tô có bổ sung chữ \"TAXI\" phía trên; xe buýt nhanh, sử dụng biểu tượng xe buýt có bổ sung chữ \"BRT\" phía trên; xe có gắn thiết bị thu phí tự động ETC, sử dụng biểu tượng của xe đó có bổ sung ký hiệu \"ETC\" phía trên. Đối với các loại xe chưa có biểu tượng quy định thì có thể viết bằng chữ. Ô tô Xe con Xe tải Xe buýt Xe khách Xe sơ-mi rơ-moóc Xe kéo rơ-moóc Xe mô tô (Xe máy) Xe gắn máy Xe đạp Khi cần biểu thị trọng tải hoặc số chỗ ngồi cho các loại xe tải, xe khách thì bổ sung chữ viết số tấn, số chỗ ngồi (chẳng hạn, xe tải >3,5 tấn thì viết chữ >3,5t lên hình vẽ xe tải, xe khách dưới 16 chỗ thì viết chữ <16c lên hình vẽ xe khách)."
+      }
+     ]
+    },
+    {
+     "article_number": 18,
+     "article_title": "Biển báo giao thông có thông tin thay đổi, biển báo tạm thời",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "18.1",
+       "text": "Biển báo giao thông có thông tin thay đổi (biển báo VMS): là biển báo điện tử có thể thay đổi thông tin trên cùng một mặt biển. Biển được sử dụng khi thông tin hiển thị trên biển báo cần phải thay đổi tùy theo tình huống giao thông. Tùy theo mục đích, thông tin trên biển có thể là chỉ dẫn, cấm, hiệu lệnh hoặc báo nguy hiểm và cảnh báo. Biển không được dùng để quảng cáo, sử dụng hình hoạt họa, nhấp nháy, các hình có tính chất di chuyển. Khi ở một vị trí đã có biển báo có thông tin tĩnh đồng thời lại có thêm biển báo có thông tin thay đổi mà hai biển này có ý nghĩa khác nhau thì người tham gia giao thông phải chấp hành hiệu lệnh của biển báo hiệu có thông tin thay đổi."
+      },
+      {
+       "clause_number": "18.2",
+       "text": "Thể hiện thông tin trên biển báo VMS 18.2.1. Thông tin trên biển báo có thể là chữ viết, hình vẽ hoặc ký hiệu phù hợp với ý nghĩa báo hiệu. 18.2.2. Khi thông tin hiển thị dạng chữ viết, không bố trí quá ba dòng chữ, mỗi dòng không quá 20 ký tự. Khoảng cách giữa các chữ, ký tự từ 25 % - 40 % chiều cao chữ. Khoảng cách giữa các từ trong dòng thông tin từ 75 % - 100 % chiều cao chữ. Khoảng cách giữa các dòng chữ từ 50 % - 75 % chiều cao chữ. Các thông tin phải là tiếng Việt đủ dấu. Chiều cao chữ tối thiểu là 450 mm cho các đường có tốc độ hạn chế tối đa từ 70 km/h trở lên và 300 mm với các tốc độ hạn chế tối đa dưới 70 km/h. Nội dung trên biển phải rõ ràng, chính xác. 18.2.3. Tỷ lệ bề rộng và chiều cao chữ từ 0,7 - 1,0; đối với kiểu chữ nén có thể giảm tỷ lệ này xuống giá trị nhỏ nhất là 0,2. 18.2.4. Độ sáng của biển báo điện tử phải đáp ứng yêu cầu về kỹ thuật và phải được nhìn rõ vào ban ngày và ban đêm. Chữ phải sáng trên nền đen hoặc trên nền tối hơn. 18.2.5. Chữ màu đỏ thể hiện thông tin cấm, chữ màu vàng thể hiện thông tin cảnh báo, chữ màu trắng thể hiện các thông tin hiệu lệnh, chữ màu xanh lam dùng để cung cấp thông tin chỉ dẫn, chữ màu da cam để thể hiện hiệu lệnh tạm thời, chữ màu hồng huỳnh quang thể hiện sự điều tiết giao thông theo điều kiện khai thác thực tế, và màu vàng - xanh lá cây huỳnh quang cho người đi xe đạp, đi bộ. 18.2.6. Mỗi thông tin không được quá hai câu. Mỗi câu không được quá ba dòng chữ trên biển. Câu phải rõ nghĩa, dễ hiểu và không gây hiểu nhầm. 18.2.7. Nội dung thông tin được hiển thị tức thì, không sử dụng các hiệu ứng như: nhấp nháy, mờ dần hoặc rõ dần, cuốn trượt ngang, trượt dọc, hoạt hoạ."
+      },
+      {
+       "clause_number": "18.3",
+       "text": "Biển có tính chất tạm thời: là biển sử dụng mang tính tình huống nhằm tổ chức điều khiển giao thông có tính chất ngắn hạn như trong các sự kiện, sự cố giao thông hay sử dụng trong quá trình thi công hoặc sửa chữa đường. Khi mà biển tạm có ý nghĩa khác nhau với biển đã có thì người tham gia giao thông phải chấp hành hiệu lệnh của biển báo hiệu có tính chất tạm thời, khi đó biển báo bố trí biển phụ ghi chữ \"TẠM THỜI\"."
+      }
+     ]
+    },
+    {
+     "article_number": 19,
+     "article_title": "Hiệu lực của biển báo",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "19.1",
+       "text": "Hiệu lực của các loại biển báo nguy hiểm và cảnh báo và biển chỉ dẫn có giá trị trên các làn đường của chiều xe chạy."
+      },
+      {
+       "clause_number": "19.2",
+       "text": "Hiệu lực của các loại biển báo cấm và biển hiệu lệnh có giá trị trên tất cả các làn đường hoặc chỉ có giá trị trên một hoặc một số làn đường theo biển báo trên đường."
+      },
+      {
+       "clause_number": "19.3",
+       "text": "Biển báo khi sử dụng độc lập thì người tham gia giao thông phải tuân theo ý nghĩa của biển báo. Biển báo khi sử dụng kết hợp với đèn tín hiệu thì người tham gia giao thông phải tuân theo ý nghĩa, hiệu lệnh của cả biển báo và đèn tín hiệu theo thứ tự quy định tại Điều 4 của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 20,
+     "article_title": "Vị trí đặt biển báo theo chiều dọc và ngang đường",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "20.1",
+       "text": "Biển báo hiệu đặt ở vị trí để người tham gia giao thông dễ nhìn thấy và có đủ thời gian để chuẩn bị đề phòng, thay đổi tốc độ hoặc thay đổi hướng nhưng không được làm cản trở tầm nhìn và sự đi lại của người tham gia giao thông."
+      },
+      {
+       "clause_number": "20.2",
+       "text": "Biển được đặt thẳng đứng, mặt biển quay về hướng đối diện chiều đi; Biển được đặt về phía tay phải hoặc phía trên phần đường xe chạy (trừ các trường hợp đặc biệt). Ngoài ra, tùy từng trường hợp, có thể đặt bổ sung biển báo ở bên trái theo chiều đi."
+      },
+      {
+       "clause_number": "20.3",
+       "text": "Trường hợp biển báo đặt trên cột (có thể đặt trên trụ chiếu sáng, trụ điện) thì khoảng cách mép ngoài của biển theo phương ngang đường cách mép phần đường xe chạy tối thiểu là 0,5 m và tối đa là 1,7 m. Trường hợp không có lề đường, hè đường, khuất tầm nhìn hoặc các trường hợp đặc biệt khác được phép điều chỉnh theo phương ngang nhưng mép biển phía phần xe chạy không được chờm lên mép phần đường xe chạy và cách mép phần đường xe chạy không quá 3,5 m."
+      }
+     ]
+    },
+    {
+     "article_number": 21,
+     "article_title": "Giá long môn và cột cần vươn",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "21.1",
+       "text": "Giá long môn và cột cần vươn là kết cấu chịu được trọng lượng bản thân, trọng lượng biển báo và chịu được cấp gió bão theo vùng, do Bộ Tài nguyên- Môi trường công bố."
+      },
+      {
+       "clause_number": "21.2",
+       "text": "Chân trụ giá long môn và chân cột cần vươn đặt ở lề đường, vỉa hè, dải phân cách, đảo giao thông cách mép ngoài phần đường xe chạy (kể cả những nơi bố trí làn đường dừng xe khẩn cấp, làn đường tăng, giảm tốc) ít nhất là 0,5 m."
+      },
+      {
+       "clause_number": "21.3",
+       "text": "Khi treo biển trên giá long môn, cột cần vươn thì cạnh dưới của biển (hoặc mép dưới của dầm nếu thấp hơn cạnh dưới biển) cách mặt đường ít nhất là 5,2 m đối với đường cao tốc và 5,0 m đối với các đường khác (xem Hình 2)."
+      }
+     ]
+    },
+    {
+     "article_number": 22,
+     "article_title": "Độ cao đặt biển và ghép biển",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "22.1",
+       "text": "Biển báo được đặt chắc chắn cố định trên cột như quy định ở Điều 24 của Quy chuẩn này. Trong một số trường hợp có thể cho phép kết hợp đặt biển trên cột điện, cây cối hoặc những vật kiến trúc nhưng phải dễ quan sát và đảm bảo thẩm mỹ."
+      },
+      {
+       "clause_number": "22.2",
+       "text": "Trường hợp biển báo đặt trên cột: độ cao đặt biển tính từ mép dưới của biển đến mặt đường là 1,8 m đối với đường ngoài khu đông dân cư và 2,0 m đối với đường trong khu đông dân cư, theo phương thẳng đứng. Biển số S.507 \"Hướng rẽ\" đặt cao từ 1,2 m đến 1,5 m. Loại biển áp dụng riêng cho xe thô sơ và người đi bộ đặt cao hơn mặt, lề đường hoặc hè đường là 1,8 m. Trường hợp đặc biệt có thể thay đổi cho phù hợp nhưng không nhỏ hơn 1,2 m, không quá 5,0 m, do Cơ quan quản lý đường bộ quyết định."
+      },
+      {
+       "clause_number": "22.3",
+       "text": "Nếu có nhiều biển cần đặt cùng một vị trí, cho phép đặt kết hợp trên cùng một cột nhưng không quá 3 biển và theo thứ tự ưu tiên như sau: biển báo cấm, biển hiệu lệnh, biển báo nguy hiểm hoặc cảnh báo, biển chỉ dẫn (xem minh họa trên Hình 3). Ghi chú: con số ghi trên hình biểu thị thứ tự ưu tiên Khoảng cách giữa các mép biển với nhau là 5 cm, độ cao từ mép thấp nhất của các biển trong nhóm biển đến mặt đường là 1,7 m đối với đường ngoài phạm vi khu đông dân cư và 2,0 m đối với đường trong phạm vi khu đông dân cư."
+      },
+      {
+       "clause_number": "22.4",
+       "text": "Trường hợp khó bố trí như quy định tại khoản 22.3 Điều này và số lượng nhiều cho phép dùng 1 biển ghép hình vuông hoặc hình chữ nhật có kích thước đủ rộng, trên đó có vẽ các hình biển (các biển đơn) cần có theo thứ tự đã nêu. Khoảng cách giữa các mép gần nhất của các biển đơn và từ mép biển đơn đến mép biển ghép là 10 cm"
+      },
+      {
+       "clause_number": "22.5",
+       "text": "Trường hợp cần kết hợp một hoặc nhiều biển thuộc các nhóm biển: biển báo cấm, biển báo nguy hiểm hoặc cảnh báo, biển hiệu lệnh với biển phụ thì có thể cho phép bố trí hình hoặc biểu tượng biển phụ vào với hình biển báo chính trên cùng một mặt biển của một biển ghép có hình vuông hoặc hình chữ nhật có kích thước đủ rộng."
+      }
+     ]
+    },
+    {
+     "article_number": 23,
+     "article_title": "Phản quang trên mặt biển báo",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "Tùy theo điều kiện khai thác mà lựa chọn bề mặt biển báo cho phù hợp. Trong trường hợp biển báo có dán màng phản quang thì được thực hiện theo tiêu chuẩn kỹ thuật màng phản quang.",
+     "clauses": []
+    },
+    {
+     "article_number": 24,
+     "article_title": "Quy định về cột biển",
+     "chapter_number": 3,
+     "chapter_title": "BIỂN BÁO HIỆU",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "24.1",
+       "text": "Cột biển báo hiệu phải làm bằng vật liệu chắc chắn (bằng thép hoặc bằng vật liệu khác có độ bền tương đương) có đường kính tiết diện cột tối thiểu 8 cm (± 5mm)."
+      },
+      {
+       "clause_number": "24.2",
+       "text": "Tại các nơi thường xuyên bị hạn chế tầm nhìn do sương mù hoặc có khả năng dễ bị xe va chạm vào ban đêm, các cột biển báo cần sử dụng vật liệu phản quang để tăng khả năng nhìn rõ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 4,
+   "chapter_title": "BIỂN BÁO CẤM",
+   "articles": [
+    {
+     "article_number": 25,
+     "article_title": "Tác dụng của biển báo cấm",
+     "chapter_number": 4,
+     "chapter_title": "BIỂN BÁO CẤM",
+     "intro": "Biển báo cấm để biểu thị các điều cấm. Người tham gia giao thông phải chấp hành những điều cấm mà biển đã báo.",
+     "clauses": []
+    },
+    {
+     "article_number": 26,
+     "article_title": "Ý nghĩa sử dụng các biển báo cấm",
+     "chapter_number": 4,
+     "chapter_title": "BIỂN BÁO CẤM",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "26.1",
+       "text": "Biển báo cấm có mã P (cấm) và DP (hết cấm) với tên các biển như sau: - Biển số P.101: Đường cấm; - Biển số P.102: Cấm đi ngược chiều; - Biển số P.103a: Cấm xe ôtô; - Biển số P.103(b,c): Cấm xe ôtô rẽ trái; Cấm xe ôtô rẽ phải; - Biển số P.104: Cấm xe máy; - Biển số P.105: Cấm xe ôtô và xe máy; - Biển số P.106(a,b): Cấm xe ôtô tải; - Biển số P.106c: Cấm các xe chở hàng nguy hiểm; - Biển số P.107: Cấm xe ôtô khách và xe ôtô tải; - Biển số P.107a: Cấm xe ôtô khách; - Biển số P.107b: Cấm xe ôtô taxi; - Biển số P.108: Cấm xe kéo rơ-moóc; - Biển số P.108a: Cấm xe sơ-mi rơ-moóc; - Biển số P.109: Cấm máy kéo; - Biển số P.110a: Cấm xe đạp; - Biển số P.110b: Cấm xe đạp thồ; - Biển số P.111a: Cấm xe gắn máy; - Biển số P.111(b) hoặc (c): Cấm xe ba bánh loại có động cơ (xe lam, xích lô máy); - Biển số P.111d: Cấm xe ba bánh loại không có động cơ (xích lô); - Biển số P.112: Cấm người đi bộ; - Biển số P.113: Cấm xe người kéo, đẩy; - Biển số P.114: Cấm xe súc vật kéo; - Biển số P.115: Hạn chế trọng tải toàn bộ xe; - Biển số P.116: Hạn chế tải trọng trên trục xe; - Biển số P.117: Hạn chế chiều cao; - Biển số P.118: Hạn chế chiều ngang xe; - Biển số P.119: Hạn chế chiều dài xe; - Biển số P.120: Hạn chế chiều dài xe cơ giới kéo theo rơ-moóc hoặc sơ-mi rơ moóc; - Biển số P.121: Cự ly tối thiểu giữa hai xe; - Biển số P.123(a,b): Cấm rẽ trái; Cấm rẽ phải; - Biển số P.124(a,b): Cấm quay đầu xe; Cấm ô tô quay đầu xe; - Biển số P.124(c,d): Cấm rẽ trái và quay đầu xe; Cấm rẽ phải và quay đầu xe; - Biển số P.124(e,f): Cấm ô tô rẽ trái và quay đầu xe; Cấm ô tô rẽ phải và quay đầu xe; - Biển số P.125: Cấm vượt; - Biển số P.126: Cấm xe ôtô tải vượt; - Biển số P.127: Tốc độ tối đa cho phép; - Biển số P.127a: Tốc độ tối đa cho phép về ban đêm; - Biển số P.127b: Biển ghép tốc độ tối đa cho phép trên từng làn đường; - Biển số P.127c: Biển ghép tốc độ tối đa cho phép theo phương tiện, trên từng làn đường; - Biển số DP.127: Biển hết tốc độ tối đa cho phép theo biển ghép; - Biển số P.128: Cấm sử dụng còi; - Biển số P.129: Kiểm tra; - Biển số P.130: Cấm dừng xe và đỗ xe; - Biển số P.131(a,b,c): Cấm đỗ xe; - Biển số P.132: Nhường đường cho xe cơ giới đi ngược chiều qua đường hẹp; - Biển số DP.133: Hết cấm vượt; - Biển số DP.134: Hết tốc độ tối đa cho phép; - Biển số DP.135: Hết tất cả các lệnh cấm; - Biển số P.136: Cấm đi thẳng; - Biển số P.137: Cấm rẽ trái, rẽ phải; - Biển số P.138: Cấm đi thẳng, rẽ trái; - Biển số P.139: Cấm đi thẳng, rẽ phải; - Biển số P.140: Cấm xe công nông và các loại xe tương tự."
+      },
+      {
+       "clause_number": "26.2",
+       "text": "Ý nghĩa sử dụng của từng biển được giải thích chi tiết ở Phụ lục B."
+      }
+     ]
+    },
+    {
+     "article_number": 27,
+     "article_title": "Biển báo cấm theo thời gian",
+     "chapter_number": 4,
+     "chapter_title": "BIỂN BÁO CẤM",
+     "intro": "Khi cần thiết cấm theo thời gian phải đặt biển phụ số S.508 dưới biển cấm, có thể viết thêm chú thích bằng tiếng Việt và phụ đề tiếng Anh trong biển này (nếu khu vực đó có nhiều người nước ngoài tham gia giao thông hoặc tuyến đường đối ngoại).",
+     "clauses": []
+    },
+    {
+     "article_number": 28,
+     "article_title": "Biển báo cấm nhiều loại phương tiện, đối tượng",
+     "chapter_number": 4,
+     "chapter_title": "BIỂN BÁO CẤM",
+     "intro": "Để báo đường cấm nhiều loại phương tiện, đối tượng có thể kết hợp đặt các ký hiệu bị cấm trên một biển theo quy định như sau:",
+     "clauses": [
+      {
+       "clause_number": "28.1",
+       "text": "Các loại phương tiện cơ giới kết hợp trên một biển;"
+      },
+      {
+       "clause_number": "28.2",
+       "text": "Các loại phương tiện thô sơ hoặc đối tượng cấm khác kết hợp trên một biển;"
+      },
+      {
+       "clause_number": "28.3",
+       "text": "Mỗi biển chỉ kết hợp nhiều nhất hai loại phương tiện."
+      }
+     ]
+    },
+    {
+     "article_number": 29,
+     "article_title": "Kích thước, hình dạng và màu sắc của biển báo cấm",
+     "chapter_number": 4,
+     "chapter_title": "BIỂN BÁO CẤM",
+     "intro": "Kích thước, hình dạng và màu sắc của biển được quy định chi tiết ở Điều 16, Điều 17 và Phụ lục B của Quy chuẩn này.",
+     "clauses": []
+    },
+    {
+     "article_number": 30,
+     "article_title": "Vị trí đặt biển báo cấm theo chiều đi và hướng hiệu lực của biển",
+     "chapter_number": 4,
+     "chapter_title": "BIỂN BÁO CẤM",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "30.1",
+       "text": "Biển báo cấm được đặt ở nơi đường giao nhau hoặc trước một vị trí trên đường cần cấm. Biển có hiệu lực bắt đầu từ vị trí đặt biển trở đi. Nếu vì lý do nào đó, biển đặt cách xa vị trí định cấm thì phải đặt biển phụ số S.502 để chỉ rõ khoảng cách từ sau biển cấm đến vị trí biển bắt đầu có hiệu lực."
+      },
+      {
+       "clause_number": "30.2",
+       "text": "Khi cần thiết để chỉ rõ hướng tác dụng của biển và chỉ vị trí bắt đầu hay vị trí kết thúc hiệu lực của biển phải đặt biển phụ số S.503 \"Hướng tác dụng của biển\"."
+      },
+      {
+       "clause_number": "30.3",
+       "text": "Các biển báo cấm từ biển số P.101 đến biển số P.120 không cần quy định phạm vi có hiệu lực của biển, không có biển báo hết cấm."
+      },
+      {
+       "clause_number": "30.4",
+       "text": "Khi cần thiết, trong trường hợp cấm vì lý do cầu đường bị tắc, hư hỏng thì kèm theo các biển báo cấm nêu tại khoản 30.3 Điều này đặt các biển chỉ dẫn lối đi cho xe bị cấm."
+      },
+      {
+       "clause_number": "30.5",
+       "text": "Biển số P.121 và biển số P.128 có hiệu lực đến hết khoảng cách cấm ghi trên biển phụ số S.501 hoặc đến vị trí đặt biển số DP.135 \"Hết tất cả các lệnh cấm\"."
+      },
+      {
+       "clause_number": "30.6",
+       "text": "Biển số P.123 (a,b) và biển số P.129 có hiệu lực tại khu vực đặt biển."
+      },
+      {
+       "clause_number": "30.7",
+       "text": "Biển số P.124 (a,b,c,d, e, f) có hiệu lực ở vị trí nơi đường giao nhau, chỗ mở dải phân cách nhưng không cho phép quay đầu xe hoặc căn cứ vào biển phụ số S.503."
+      },
+      {
+       "clause_number": "30.8",
+       "text": "Biển số P.125, P.126, P.127(a,b,c), P.130, P.131(a,b,c) có hiệu lực đến nơi đường giao nhau tiếp giáp hoặc đến vị trí đặt biển hết cấm (các biển số DP.133, DP.134, DP.135, DP.127d). Các biển số P.130 và P.131(a,b,c) còn căn cứ vào các biển phụ."
+      },
+      {
+       "clause_number": "30.9",
+       "text": "Nếu đoạn đường phải thi hành biển cấm đi qua các nút giao (trừ giao với các ngõ, ngách, hẻm hoặc lối ra vào cơ quan, đơn vị; hoặc khu đất lân cận mà phương tiện chỉ có thể ra, vào khu đất bằng một lối đi chung), biển cấm phải được nhắc lại đặt phía sau nút giao theo hướng đường đang có biển cấm, trừ các trường hợp có qui định riêng hoặc có biển phụ kèm theo."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 5,
+   "chapter_title": "BIỂN BÁO NGUY HIỂM VÀ CẢNH BÁO",
+   "articles": [
+    {
+     "article_number": 31,
+     "article_title": "Tác dụng của biển báo nguy hiểm và cảnh báo",
+     "chapter_number": 5,
+     "chapter_title": "BIỂN BÁO NGUY HIỂM VÀ CẢNH BÁO",
+     "intro": "Biển báo nguy hiểm và cảnh báo được dùng để báo cho người tham gia giao thông biết trước tính chất của sự nguy hiểm hoặc các điều cần chú ý phòng ngừa trên tuyến đường. Khi gặp biển báo nguy hiểm và cảnh báo, người tham gia giao thông phải giảm tốc độ đến mức cần thiết, chú ý quan sát và chuẩn bị sẵn sàng xử lý những tình huống có thể xẩy ra để phòng ngừa tai nạn.",
+     "clauses": []
+    },
+    {
+     "article_number": 32,
+     "article_title": "Ý nghĩa sử dụng các biển báo nguy hiểm và cảnh báo",
+     "chapter_number": 5,
+     "chapter_title": "BIỂN BÁO NGUY HIỂM VÀ CẢNH BÁO",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "32.1",
+       "text": "Biển báo nguy hiểm và cảnh báo có mã W với tên các biển như sau: - Biển số W.201(a,b): Chỗ ngoặt nguy hiểm; - Biển số W.201(c,d): Chỗ ngoặt nguy hiểm có nguy cơ lật xe; - Biển số W.202(a,b): Nhiều chỗ ngoặt nguy hiểm liên tiếp; - Biển số W.203(a,b,c): Đường bị thu hẹp; - Biển số W.204: Đường hai chiều; - Biển số W.205(a,b,c,d,e): Đường giao nhau; - Biển số W.206: Giao nhau chạy theo vòng xuyến; - Biển số W.207(a,b,c,d,e,f,g,h,i,k,l): Giao nhau với đường không ưu tiên (đường nhánh); - Biển số W.208: Giao nhau với đường ưu tiên (đường chính); - Biển số W.209: Giao nhau có tín hiệu đèn; - Biển số W.210: Giao nhau với đường sắt có rào chắn; - Biển số W.211a: Giao nhau với đường sắt không có rào chắn; - Biển số W.211b: Giao nhau với đường tàu điện; - Biển số W.212: Cầu hẹp; - Biển số W.213: Cầu tạm; - Biển số W.214: Cầu quay - cầu cất; - Biển số W.215a: Kè, vực sâu phía trước; - Biển số W.215(b,c): Kè, vực sâu bên đường phía bên phải; Kè, vực sâu bên đường phía bên trái; - Biển số W.216a: Đường ngầm; - Biển số W.216b: Đường ngầm có nguy cơ lũ quét; - Biển số W.217: Bến phà; - Biển số W.218: Cửa chui; - Biển số W.219: Dốc xuống nguy hiểm; - Biển số W.220: Dốc lên nguy hiểm; - Biển số W.221a: Đường lồi lõm; - Biển số W.221b: Đường có gồ giảm tốc; - Biển số W.222a: Đường trơn; - Biển số W.222b: Lề đường nguy hiểm; - Biển số W.223(a,b): Vách núi nguy hiểm; - Biển số W.224: Đường người đi bộ cắt ngang; - Biển số W.225: Trẻ em; - Biển số W.226: Đường người đi xe đạp cắt ngang; - Biển số W.227: Công trường; - Biển số W.228(a,b): Đá lở; - Biển số W.228c: Sỏi đá bắn lên; - Biển số W.228d: Nền đường yếu; - Biển số W.229: Dải máy bay lên xuống; - Biển số W.230: Gia súc; - Biển số W.231: Thú rừng vượt qua đường; - Biển số W.232: Gió ngang; - Biển số W.233: Nguy hiểm khác; - Biển số W.234: Giao nhau với đường hai chiều; - Biển số W.235: Đường đôi; - Biển số W.236: Kết thúc đường đôi; - Biển số W.237: Cầu vồng; - Biển số W.238: Đường cao tốc phía trước; - Biển số W.239a: Đường cáp điện ở phía trên; - Biển số W.239b: Chiều cao tĩnh không thực tế; - Biển số W.240: Đường hầm; - Biển số W.241: Ùn tắc giao thông; - Biển số W.242(a,b): Nơi đường sắt giao vuông góc với đường bộ; - Biển số W.243(a,b,c): Nơi đường sắt giao không vuông góc với đường bộ; - Biển số W.244: Đoạn đường hay xảy ra tai nạn; - Biển số W.245(a,b): Đi chậm (a), Đi chậm có chỉ dẫn tiếng Anh (b); - Biển số W.246(a,b,c): Chú ý chướng ngại vật; - Biển số W.247: Chú ý xe đỗ."
+      },
+      {
+       "clause_number": "32.2",
+       "text": "Ý nghĩa sử dụng từng biển được giải thích chi tiết ở Phụ lục C."
+      }
+     ]
+    },
+    {
+     "article_number": 33,
+     "article_title": "Kích thước, hình dạng và màu sắc của biển báo nguy hiểm",
+     "chapter_number": 5,
+     "chapter_title": "BIỂN BÁO NGUY HIỂM VÀ CẢNH BÁO",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "33.1",
+       "text": "Biển báo nguy hiểm hoặc cảnh báo chủ yếu có hình tam giác đều, ba đỉnh lượn tròn; một cạnh nằm ngang, đỉnh tương ứng hướng lên trên, trừ biển số W.208 \"Giao nhau với đường ưu tiên\" thì đỉnh tương ứng hướng xuống dưới."
+      },
+      {
+       "clause_number": "33.2",
+       "text": "Kích thước cụ thể của hình vẽ và màu sắc được quy định chi tiết ở Phụ lục C và Điều 16 và Điều 17 của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 34,
+     "article_title": "Vị trí đặt biển báo nguy hiểm và cảnh báo theo chiều đi và hiệu lực",
+     "chapter_number": 5,
+     "chapter_title": "BIỂN BÁO NGUY HIỂM VÀ CẢNH BÁO",
+     "intro": "tác dụng của biển",
+     "clauses": [
+      {
+       "clause_number": "34.1",
+       "text": "Biển báo nguy hiểm và cảnh báo được đặt trước nơi định báo một khoảng cách phù hợp với phương tiện tham gia giao thông và thực tế hiện trường đảm bảo dễ quan sát, không ảnh hưởng tới tầm nhìn."
+      },
+      {
+       "clause_number": "34.2",
+       "text": "Khoảng cách từ biển đến nơi định báo nên thống nhất trên cả đoạn đường có tốc độ trung bình xe như nhau. Trường hợp đặc biệt cần thiết, có thể đặt biển xa hoặc gần hơn, cần thiết có thêm biển phụ số S.502 \"Khoảng cách đến đối tượng báo hiệu\"."
+      },
+      {
+       "clause_number": "34.3",
+       "text": "Biển số W.208 \"Giao nhau với đường ưu tiên\": trong khu đông dân cư đặt trực tiếp trước vị trí giao nhau với đường ưu tiên, ngoài khu đông dân cư thì tùy theo khoảng cách đặt xa hay gần vị trí giao nhau với đường ưu tiên mà có thêm biển phụ số S.502."
+      },
+      {
+       "clause_number": "34.4",
+       "text": "Mỗi kiểu biển báo báo một yếu tố nguy hiểm có thể xảy ra ở một vị trí hoặc một đoạn đường. Nếu yếu tố nguy hiểm xảy ra trên một đoạn đường, đặt biển phụ số S.501 \"Phạm vi tác dụng của biển\" để chỉ rõ chiều dài đoạn đường nguy hiểm bên dưới các biển số W.202(a,b), W.219, W.220, W.221a, W.225, W.228, W.231, W.232. Nếu chiều dài có cùng yếu tố nguy hiểm lớn thì đặt biển nhắc lại kèm biển phụ số S.501 ghi chiều dài yếu tố nguy hiểm còn lại tiếp đó."
+      },
+      {
+       "clause_number": "34.5",
+       "text": "Hạn chế sử dụng biển báo nguy hiểm và cảnh báo tràn lan nếu các tính chất không thực sự gây nguy hiểm cho người tham gia giao thông."
+      },
+      {
+       "clause_number": "34.6",
+       "text": "Trong phạm vi những đoạn đường hạn chế tốc độ: 34.6.1. Trường hợp chỗ ngoặt nguy hiểm đã có biển hạn chế tốc độ tối đa nhỏ hơn hoặc bằng 40 km/h thì không phải đặt biển báo chỗ ngoặt nguy hiểm (biển số W.201 (a,b) và biển số W.202 (a,b)); 34.6.2. Trường hợp đường xấu, trơn, không bằng phẳng, nếu đã đặt biển hạn chế tốc độ tối đa dưới 50 km/h thì không phải đặt biển báo về đường không bằng phẳng, đường trơn (biển số W.221(a,b) và biển số W.222a); 34.6.3 Đường trong khu đông dân cư, tốc độ xe đi chậm, liên tục có đường giao nhau tại ngã ba, ngã tư thì không nhất thiết đặt biển số W.205(a,b,c,d,e) \"Đường giao nhau\"."
+      },
+      {
+       "clause_number": "34.7",
+       "text": "Tại các nơi đường được ưu tiên giao với các đường khác mà không được xem là nơi đường giao nhau theo quy định của Quy chuẩn này thì không cần đặt các biển W.207, W.208. Tuy nhiên, có thể sử dụng các biển này hoặc sử dụng vạch sơn kiểu mắt võng khi thấy cần thiết."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 6,
+   "chapter_title": "BIỂN HIỆU LỆNH",
+   "articles": [
+    {
+     "article_number": 35,
+     "article_title": "Tác dụng của biển hiệu lệnh",
+     "chapter_number": 6,
+     "chapter_title": "BIỂN HIỆU LỆNH",
+     "intro": "Biển hiểu lệnh là biển báo cho người tham gia giao thông biết các điều bắt buộc phải chấp hành.",
+     "clauses": []
+    },
+    {
+     "article_number": 36,
+     "article_title": "Ý nghĩa sử dụng các biển hiệu lệnh",
+     "chapter_number": 6,
+     "chapter_title": "BIỂN HIỆU LỆNH",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "36.1",
+       "text": "Biển hiệu lệnh có mã R và R.E với tên các biển như sau: - Biển số R.122: Dừng lại; - Biển số R.301(a,b,c,d,e,f,g,h): Hướng đi phải theo; - Biển số R.302(a,b,c): Hướng phải đi vòng chướng ngại vật; - Biển số R.303: Nơi giao nhau chạy theo vòng xuyến; - Biển số R.304: Đường dành cho xe thô sơ; - Biển số R.305: Đường dành cho người đi bộ; - Biển số R.306: Tốc độ tối thiểu cho phép; - Biển số R.307: Hết tốc độ tối thiểu; - Biển số R.308(a,b): Tuyến đường cầu vượt cắt qua; - Biển số R.309: Ấn còi; - Biển số R.310(a,b,c): Hướng đi phải theo cho các xe chở hàng nguy hiểm; - Biển số R.403a: Đường dành cho xe ôtô; - Biển số R.403b: Đường dành cho xe ôtô, xe máy; - Biển số R.403c: Đường dành cho xe buýt; - Biển số R.403d: Đường dành cho xe ôtô con; - Biển số R.403e: Đường dành cho xe máy; - Biển số R.403f: Đường dành cho xe máy và xe đạp; - Biển số R.404a: Hết đoạn đường dành cho xe ôtô; - Biển số R.404b: Hết đoạn đường dành cho xe ôtô, xe máy; - Biển số R.404c: Hết đoạn đường dành cho xe buýt; - Biển số R.404d: Hết đoạn đường dành cho xe ôtô con; - Biển số R.404e: Hết đoạn đường dành cho xe máy; - Biển số R.404f: Hết đoạn đường dành cho xe máy và xe đạp; - Biển số R.411: Hướng đi trên mỗi làn đường phải theo; - Biển số R.412a: Làn đường dành cho xe ôtô khách; - Biển số R.412b: Làn đường dành cho xe ôtô con; - Biển số R.412c: Làn đường dành cho xe ôtô tải; - Biển số R.412d: Làn đường dành cho xe máy; - Biển số R.412e: Làn đường dành cho xe buýt; - Biển số R.412f: Làn đường dành cho xe ôtô; - Biển số R.412g: Làn đường dành cho xe máy và xe đạp; - Biển số R.412h: Làn đường dành cho xe đạp; - Biển số R.412i: Kết thúc làn đường dành cho xe ôtô khách; - Biển số R.412j: Kết thúc làn đường dành cho xe ôtô con; - Biển số R.412k: Kết thúc làn đường dành cho xe ôtô tải; - Biển số R.412l: Kết thúc làn đường dành cho xe máy; - Biển số R.412m: Kết thúc làn đường dành cho xe buýt; - Biển số R.412n: Kết thúc làn đường dành cho xe ôtô; - Biển số R.412o: Kết thúc làn đường dành cho xe máy và xe đạp; - Biển số R.412p: Kết thúc làn đường dành cho xe đạp; - Biển số R.415: Biển gộp làn đường theo phương tiện; - Biển số R.420: Bắt đầu khu đông dân cư; - Biển số R.421: Hết khu đông dân cư; - Biển số R.E,9a: Cấm đỗ xe trong khu vực; - Biển số R.E,9b: Cấm đỗ xe theo giờ trong khu vực; - Biển số R.E,9c: Khu vực đỗ xe; - Biển số R.E,9d: Tốc độ tối đa trong khu vực; - Biển số R.E,10a: Hết cấm đỗ xe trong khu vực; - Biển số R.E,10b: Hết cấm đỗ xe theo giờ trong khu vực; - Biển số R.E,10c: Hết khu vực đỗ xe; - Biển số R.E,10d: Hết tốc độ tối đa trong khu vực; - Biển số R.E,11a: Đường hầm; - Biển số R.E,11b: Kết thúc đường hầm."
+      },
+      {
+       "clause_number": "36.2",
+       "text": "Ý nghĩa sử dụng của từng kiểu biển được giải thích chi tiết ở Phụ lục D."
+      }
+     ]
+    },
+    {
+     "article_number": 37,
+     "article_title": "Kích thước, hình dạng và màu sắc của biển hiệu lệnh",
+     "chapter_number": 6,
+     "chapter_title": "BIỂN HIỆU LỆNH",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "37.1",
+       "text": "Các biển hiệu lệnh chủ yếu có quy cách hình tròn, hình chữ nhật màu xanh, hình vẽ màu trắng. Khi hết hiệu lệnh thường sử dụng vạch chéo màu đỏ kẻ từ trên xuống và từ phải qua trái đè lên hình màu trắng."
+      },
+      {
+       "clause_number": "37.2",
+       "text": "Kích thước cụ thể của hình vẽ trên các biển được quy định chi tiết ở Điều 16, 17 và Phụ lục D của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 38,
+     "article_title": "Vị trí đặt biển hiệu lệnh theo chiều đi và hiệu lực tác dụng của biển",
+     "chapter_number": 6,
+     "chapter_title": "BIỂN HIỆU LỆNH",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "38.1",
+       "text": "Các biển hiệu lệnh phải đặt tại vị trí cần báo hiệu lệnh. Do điều kiện khó khăn nếu đặt xa hơn phải đặt kèm biển phụ số S.502."
+      },
+      {
+       "clause_number": "38.2",
+       "text": "Các biển hiệu lệnh có hiệu lực kể từ vị trí đặt biển. Riêng biển số R.301a nếu đặt ở sau nơi đường giao nhau tiếp theo thì hiệu lực của biển kể từ vị trí đặt biển đến nơi đường giao nhau tiếp theo. Các biển R.301(a,b,c,d,e,f,g,h), R.302(a,b,c), R.411, R.412(a,b,c,d,e,f,g,h) và biển R.415 không cấm xe rẽ phải, rẽ trái để ra, vào cổng nhà hoặc ngõ, ngách, hẻm hoặc lối ra vào cơ quan, đơn vị trên đoạn đường có hiệu lực của biển."
+      },
+      {
+       "clause_number": "38.3",
+       "text": "Nếu đoạn đường phải thi hành biển hiệu lệnh đi qua các nút giao (trừ giao với các ngõ, ngách, hẻm hoặc lối ra vào cơ quan, đơn vị; hoặc khu đất lân cận mà phương tiện chỉ có thể ra, vào khu đất bằng một lối đi chung), biển hiệu lệnh phải được nhắc lại đặt phía sau nút giao theo hướng đường đang có biển hiệu lệnh, trừ các biển R.420, R.421, các biển hiệu lệnh có tác dụng trong khu vực và các trường hợp có qui định riêng."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 7,
+   "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+   "articles": [
+    {
+     "article_number": 39,
+     "article_title": "Tác dụng của biển chỉ dẫn",
+     "chapter_number": 7,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+     "intro": "Các biển chỉ dẫn để chỉ dẫn hướng đi hoặc các điều cần thiết nhằm giúp người tham gia giao thông trong việc điều khiển phương tiện và hướng dẫn giao thông trên đường được thuận lợi, đảm bảo an toàn.",
+     "clauses": []
+    },
+    {
+     "article_number": 40,
+     "article_title": "Ý nghĩa sử dụng các biển chỉ dẫn",
+     "chapter_number": 7,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "40.1",
+       "text": "Biển chỉ dẫn trên các đường ôtô không phải là đường cao tốc có mã \"I\" với tên các biển như sau: - Biển số I.401: Bắt đầu đường ưu tiên; - Biển số I.402: Hết đoạn đường ưu tiên; - Biển số I.405(a,b,c): Đường cụt; - Biển số I.406: Được ưu tiên qua đường hẹp; - Biển số I.407(a,b,c): Đường một chiều; - Biển số I.408: Nơi đỗ xe; - Biển số I.408a: Nơi đỗ xe một phần trên hè phố; - Biển số I.409: Chỗ quay xe; - Biển số I.410: Khu vực quay xe; - Biển số I.413a: Đường phía trước có làn đường dành cho ôtô khách; - Biển số I.413(b,c): Rẽ ra đường có làn đường dành cho ôtô khách; - Biển số I.414(a,b,c,d): Chỉ hướng đường; - Biển số I.415: Mũi tên chỉ hướng đi; - Biển số I.416: Đường tránh; - Biển số I.417(a,b,c): Chỉ hướng đường phải đi cho từng loại xe; - Biển số I.418: Lối đi ở những vị trí cấm rẽ; - Biển số I.419a: Chỉ dẫn địa giới; - Biển số I.419b: Chỉ dẫn địa giới trên tuyến đường đối ngoại; - Biển số I.422a: Di tích lịch sử; - Biển số I.422b: Di tích lịch sử trên tuyến đường đối ngoại; - Biển số I.423(a,b): Vị trí người đi bộ sang ngang; - Biển số I.423c: Điểm bắt đầu đường đi bộ; - Biển số I.424(a,b): Cầu vượt qua đường cho người đi bộ; - Biển số I.424(c,d): Hầm chui qua đường cho người đi bộ; - Biển số I.425: Bệnh viện; - Biển số I.426: Trạm cấp cứu; - Biển số I.427a: Trạm sửa chữa; - Biển số I.427b: Trạm kiểm tra tải trọng xe; - Biển số I.428: Cửa hàng xăng dầu; - Biển số I.429: Nơi rửa xe; - Biển số I.430: Điện thoại; - Biển số I.431: Trạm dừng nghỉ; - Biển số I.432: Khách sạn; - Biển số I.433a: Nơi nghỉ mát; - Biển số I.433(b,c,d): Báo hiệu nơi cắm trại, nhà nghỉ lưu động; - Biển số I.433e: Báo hiệu nhà trọ; - Biển số I.434a: Bến xe buýt; - Biển số I.434b: Bến xe tải; - Biển số I.435: Bến xe điện; - Biển số I.436: Trạm cảnh sát giao thông; - Biển số I.439: Tên cầu; - Biển số I.440: Đoạn đường thi công; - Biển số I.441(a,b,c): Báo hiệu phía trước có công trường thi công; - Biển số I.442: Chợ; - Biển số I.443: Xe kéo rơ-moóc; - Biển số I.444(a,b,c,d,e,f,g,h,i,j,k,l,m): Biển báo chỉ dẫn địa điểm; - Biển số I.445(a,b,c,d,e,f,g,h): Biển báo kiểu mô tả tình trạng đường; - Biển số I.446: Nơi đỗ xe dành cho người khuyết tật; - Biển số I.447(a,b,c,d): Cầu vượt liên thông; - Biển số I.448: Làn đường cứu nạn hay làn thoát xe khẩn cấp; - Biển số I.449: Biển tên đường."
+      },
+      {
+       "clause_number": "40.2",
+       "text": "Ý nghĩa sử dụng của từng biển được giải thích chi tiết ở Phụ lục E của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 41,
+     "article_title": "Chú thích về chữ viết trên biển chỉ dẫn",
+     "chapter_number": 7,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+     "intro": "Biển chỉ dẫn viết bằng chữ đặt trong thành phố, thị xã và những tuyến quốc lộ có nhiều phương tiện do người nước ngoài điều khiển thêm phụ đề tiếng Anh bên dưới hàng chữ tiếng Việt. Chữ tiếng Anh sử dụng loại chữ viết thường.",
+     "clauses": []
+    },
+    {
+     "article_number": 42,
+     "article_title": "Kích thước, hình dạng và màu sắc của biển chỉ dẫn",
+     "chapter_number": 7,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "42.1",
+       "text": "Biển chỉ dẫn có hình dạng là hình vuông, hình chữ nhật."
+      },
+      {
+       "clause_number": "42.2",
+       "text": "Các biển có nền là màu xanh lam, hình vẽ và chữ viết màu trắng. Nếu nền màu trắng thì hình vẽ và chữ viết màu đen trừ một số biển chỉ dẫn khác với quy định này được cụ thể ở Phụ lục E của Quy chuẩn này."
+      },
+      {
+       "clause_number": "42.3",
+       "text": "Kích thước chi tiết của hình vẽ, chữ viết, con số và màu sắc của các biển ở Điều 16, Điều 17 và Phụ lục E của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 43,
+     "article_title": "Vị trí đặt biển chỉ dẫn theo chiều đi trên đường ôtô không phải là",
+     "chapter_number": 7,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+     "intro": "đường cao tốc Tùy theo tính chất, mỗi kiểu biển được đặt ở một vị trí quy định như sau:",
+     "clauses": [
+      {
+       "clause_number": "43.1",
+       "text": "Biển số I.401 và biển số I.402 đặt tương ứng ngay tại vị trí bắt đầu và vị trí cuối của đường ưu tiên và đường dành cho xe ôtô."
+      },
+      {
+       "clause_number": "43.2",
+       "text": "Biển số I.407(a,b,c), I.413(a,b,c) và I.418 đặt ở nơi đường bộ giao nhau: - Biển số I.407a và I.413a đặt sau nơi đường bộ giao nhau; - Biển số I.407(b,c), I.413(b,c) đặt trước nơi đường bộ giao nhau; - Biển số I.418 đặt trước biển báo cấm rẽ và cách nơi đường bộ giao nhau được chỉ dẫn trên biển ít nhất 30 m."
+      },
+      {
+       "clause_number": "43.3",
+       "text": "Biển số I.405(a,b,c), I.414(a,b,c,d), I.416, I.417(a,b) nhằm mục đích chỉ dẫn cho các loại xe cơ giới là chủ yếu, phải đặt biển báo ở vị trí cách nơi đường giao nhau từ 20 m đến 50 m. Trường hợp không đặt biển nguy hiểm và cảnh báo thì biển chỉ dẫn trên có thể đặt cách nơi đường giao nhau định chỉ dẫn một khoảng cách như quy định của biển cảnh báo ở Điều 34 của Quy chuẩn này."
+      },
+      {
+       "clause_number": "43.4",
+       "text": "Biển số I.406, I.408, I.409, I.410, I.417c và các biển từ biển số I.422 đến biển số I.436 được đặt ngay tại vị trí trước và sát đoạn đường cần chỉ dẫn, nếu đặt cách xa hơn phải kèm biển số S.502."
+      }
+     ]
+    },
+    {
+     "article_number": 44,
+     "article_title": "Quy định về biển chỉ dẫn chỉ hướng đường trên đường ô tô không",
+     "chapter_number": 7,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG ÔTÔ KHÔNG PHẢI LÀ ĐƯỜNG CAO TỐC",
+     "intro": "phải là đường cao tốc",
+     "clauses": [
+      {
+       "clause_number": "44.1",
+       "text": "Biển chỉ hướng đường (biển số I.414(a,b,c,d)) đặt tại nơi đường giao nhau. Trong khu dân cư thì có thể chỉ đặt biển trên các hướng chủ yếu nối khu dân cư đó với địa danh lịch sử, đô thị, khu dân cư, khu du lịch, khu công nghiệp lân cận tiếp theo."
+      },
+      {
+       "clause_number": "44.2",
+       "text": "Biển số I.414(a,b) dùng trong trường hợp chỉ có một địa danh khu dân cư trên hướng đường cần chỉ dẫn. Biển số I.414(c,d) dùng trong trường hợp có từ hai địa danh khu dân cư cần chỉ dẫn."
+      },
+      {
+       "clause_number": "44.3",
+       "text": "Trên mỗi hướng đường ghi nhiều nhất là ba địa danh cần chỉ dẫn. Địa danh ở xa hơn viết phía dưới, lần lượt những địa danh đã ghi trên biển được giữ nguyên trên những biển chỉ đường tiếp theo cho đến vị trí của địa danh gần nhất đã ghi trên biển."
+      },
+      {
+       "clause_number": "44.4",
+       "text": "Địa danh và khoảng cách ghi trên biển quy định như sau: 44.4.1. Những địa danh được chỉ dẫn phải là địa danh mà tuyến đường đi qua. Việc lựa chọn địa danh để chỉ dẫn theo thứ tự ưu tiên sau đây và được sử dụng trên tất cả các loại hệ thống đường (CT,QL, ĐT, ĐH, ĐX, ĐĐT) trừ hệ thống đường chuyên dùng: - Tên thành phố trực thuộc Trung ương; - Tên thành phố trực thuộc tỉnh; - Tên tỉnh lỵ (trung tâm hành chính cấp tỉnh): không báo tên tỉnh trừ trường hợp tên tỉnh trùng với tên tỉnh lỵ; - Tên thị xã; - Tên huyện lỵ (trung tâm hành chính cấp huyện): không báo tên huyện trừ trường hợp tên huyện trùng với tên huyện lỵ; - Tên thị trấn; - Di tích lịch sử hoặc danh lam thắng cảnh; - Tên ngã ba, ngã tư quan trọng, tên điểm đầu hoặc điểm cuối tuyến đường; 44.4.2. Trên đường chuyên dùng chỉ ghi địa danh nơi đường giao nhau, điểm đầu hoặc điểm cuối tuyến đường. 44.4.3. Khoảng cách ghi trên biển là cự ly từ vị trí đặt biển đến trung tâm địa danh chỉ dẫn (phù hợp với thông tin trên cột kilômét) và ghi số chẵn đến kilômét nếu cự ly ≥ 1,0 km và ghi số chẵn đến 100 m nếu cự ly < 1,0 km. Cự ly từng đoạn phù hợp với cự ly toàn bộ và thống nhất cả hai chiều xe chạy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 8,
+   "chapter_title": "BIỂN PHỤ, BIỂN VIẾT BẰNG CHỮ",
+   "articles": [
+    {
+     "article_number": 45,
+     "article_title": "Biển phụ",
+     "chapter_number": 8,
+     "chapter_title": "BIỂN PHỤ, BIỂN VIẾT BẰNG CHỮ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "45.1",
+       "text": "Tác dụng của biển phụ: Biển phụ thường được đặt kết hợp với các biển báo chính nhằm thuyết minh, bổ sung để hiểu rõ, trừ biển số S.507 \"Hướng rẽ\" được sử dụng độc lập."
+      },
+      {
+       "clause_number": "45.2",
+       "text": "Ý nghĩa sử dụng biển phụ: 45.2.1. Biển phụ có mã S, S.G và S.H với tên các biển phổ biến như sau: - Biển số S.501: Phạm vi tác dụng của biển; - Biển số S.502: Khoảng cách đến đối tượng báo hiệu; - Biển số S.503 (a,b,c,d,e,f): Hướng tác dụng của biển; - Biển S.H,3 (a,b,c): Hướng tác dụng của biển; - Biển số S.504: Làn đường; - Biển số S.505a: Loại xe; - Biển số S.505b: Loại xe hạn chế qua cầu; - Biển số S.505c: Tải trọng trục hạn chế qua cầu; - Biển số S.506(a,b): Hướng đường ưu tiên; - Biển số S.507: Hướng rẽ; - Biển số S.508(a,b): Biểu thị thời gian; - Biển số S.509(a,b): Thuyết minh biển chính; - Biển số S.510a: Chú ý đường trơn có băng tuyết; - Biển số S.510b: Chú ý đường sắt; - Biển số S.G,7: Địa điểm cắm trại; - Biển số S.G,8: Địa điểm nhà trọ; - Biển số S.G,9b: Chỉ dẫn tới điểm đỗ xe dành cho lái xe muốn sử dụng phương tiện công cộng; - Biển số S.G,11a; S.G,11c: Chỉ dẫn số lượng làn và hướng đi cho từng làn; - Biển số S.G,12a; S.G,12b: Chỉ dẫn làn đường không lưu thông; - Biển số S.H,6: Ngoại lệ. Ngoài ra, tùy theo các tình huống giao thông khác để có thể bố trí các biển phụ khác cho phù hợp. 45.2.2. Ý nghĩa sử dụng của từng biển được giải thích tham khảo ở Phụ lục F của Quy chuẩn này."
+      },
+      {
+       "clause_number": "45.3",
+       "text": "Kích thước, hình dạng và màu sắc biển phụ: 45.3.1. Biển phụ có hình dạng là hình chữ nhật hoặc hình vuông. 45.3.2. Các biển có nền là màu trắng, hình vẽ và chữ viết màu đen hoặc có nền là màu xanh lam, chữ viết màu trắng. Biển số S.507 và S.508 (a,b) có đặc điểm riêng chỉ dẫn ở Phụ lục F của Quy chuẩn này; 45.3.3. Kích thước chi tiết của hình vẽ và màu sắc của các biển quy định ở Điều 16, Điều 17 và Phụ lục K của Quy chuẩn này."
+      },
+      {
+       "clause_number": "45.4",
+       "text": "Vị trí đặt biển phụ: Các biển phụ đều được đặt ngay phía dưới biển chính trừ biển số S.507 sử dụng độc lập được đặt ở phía lưng đường cong đối diện với hướng đi hoặc đặt ở giữa đảo an toàn nơi đường giao nhau."
+      }
+     ]
+    },
+    {
+     "article_number": 46,
+     "article_title": "Biển viết bằng chữ",
+     "chapter_number": 8,
+     "chapter_title": "BIỂN PHỤ, BIỂN VIẾT BẰNG CHỮ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "46.1",
+       "text": "Biển viết bằng chữ thường dùng trong trường hợp không áp dụng được các kiểu biển đã quy định hoặc trong trường hợp cần thiết khác."
+      },
+      {
+       "clause_number": "46.2",
+       "text": "Biển viết bằng chữ có hình chữ nhật. Biển dùng để chỉ dẫn có nền màu xanh chữ viết màu trắng, biển dùng để cảnh báo có nền vàng chữ đen, biển dùng để báo cấm hay hiệu lệnh có nền màu đỏ chữ viết màu trắng."
+      },
+      {
+       "clause_number": "46.3",
+       "text": "Hàng chữ viết trên biển tùy theo nội dung chỉ dẫn, cảnh báo, cấm hoặc hiệu lệnh nhưng phải ngắn gọn. Biển dùng để báo cấm bắt đầu bằng chữ \"Cấm\"."
+      },
+      {
+       "clause_number": "46.4",
+       "text": "Có thể sử dụng biển ghép hình chữ nhật để thể hiện các thông tin trong trường hợp có nhiều thông tin cần thể hiện và việc bố trí các biển đơn là phức tạp."
+      }
+     ]
+    },
+    {
+     "article_number": 47,
+     "article_title": "Hình dạng, kích thước, hình vẽ của biển phụ, biển viết bằng chữ",
+     "chapter_number": 8,
+     "chapter_title": "BIỂN PHỤ, BIỂN VIẾT BẰNG CHỮ",
+     "intro": "Hình dạng, kích thước, hình vẽ của biển quy định tại Điều 16, Điều 17 và Phụ lục K của Quy chuẩn này. Hình dạng biển viết bằng chữ là hình chữ nhật có chiều cao tối thiểu 20 cm.",
+     "clauses": []
+    },
+    {
+     "article_number": 48,
+     "article_title": "Chữ viết và chữ số của biển phụ, biển viết bằng chữ",
+     "chapter_number": 8,
+     "chapter_title": "BIỂN PHỤ, BIỂN VIẾT BẰNG CHỮ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "48.1",
+       "text": "Tất cả những chữ viết, chữ số ghi trên biển và cột kilômét dùng thống nhất theo hai kiểu: kiểu chữ thường và kiểu chữ nén theo quy định tại Điều 17 và Phụ lục K;"
+      },
+      {
+       "clause_number": "48.2",
+       "text": "Kiểu chữ thường dùng trong trường hợp hàng chữ ngắn và trung bình;"
+      },
+      {
+       "clause_number": "48.3",
+       "text": "Kiểu chữ nén dùng trong trường hợp hàng chữ dài;"
+      },
+      {
+       "clause_number": "48.4",
+       "text": "Trên một hàng chữ bao giờ cũng phải dùng thống nhất một kiểu chữ;"
+      },
+      {
+       "clause_number": "48.5",
+       "text": "Chiều cao chữ viết của biển viết bằng chữ nhỏ nhất là 10 cm (ứng với hệ số 1). Với biển ghép cho phép sử dụng chữ nhỏ nhất là 5 cm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 9,
+   "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG CAO TỐC",
+   "articles": [
+    {
+     "article_number": 49,
+     "article_title": "Quy định chung đối với biển chỉ dẫn trên đường cao tốc",
+     "chapter_number": 9,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG CAO TỐC",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "49.1",
+       "text": "Chức năng biển chỉ dẫn trên đường cao tốc Cung cấp thông tin đầy đủ, chính xác cho người điều khiển phương tiện nhằm lái xe an toàn trên đường cao tốc và đi đến địa điểm mong muốn, cụ thể: 49.1.1. Chỉ dẫn tên đường và hướng tuyến; 49.1.2. Chỉ dẫn địa điểm, hướng đi, khoảng cách đến các thành phố, thị xã, thị trấn và các tuyến đường; 49.1.3. Chỉ dẫn đến các địa điểm khu công nghiệp, dịch vụ công cộng như: sân bay, bến tàu, bến xe khách, bến tàu thuỷ, bến phà, trạm kiểm tra tải trọng xe, trạm dừng nghỉ, nơi nghỉ mát, nơi danh lam thắng cảnh và giải trí; 49.1.4. Thông báo chuẩn bị tới nút giao, lối ra phía trước; 49.1.5. Chỉ dẫn tách, nhập làn khi ra, vào đường cao tốc; 49.1.6. Chỉ dẫn tốc độ tối đa, tốc độ tối thiểu khi tham gia giao thông trên đường cao tốc; 49.1.7. Chỉ dẫn giữ khoảng cách lái xe an toàn cho người điều khiển phương tiện; 49.1.8. Cung cấp tần số sóng radio nhằm giúp người tham gia giao thông trên đường cao tốc nắm bắt thông tin về tình trạng giao thông, thời tiết và các thông tin tiện ích trên đường cao tốc. 49.1.9. Các biển chỉ dẫn khác: biển chỉ dẫn địa danh; địa phận hành chính cấp tỉnh, thành phố; biển tên cầu, tên công trình lớn. 49.1.10. Các biển chỉ dẫn trên đường cao tốc có mã là IE."
+      },
+      {
+       "clause_number": "49.2",
+       "text": "Yêu cầu đối với biển chỉ dẫn trên đường cao tốc Biển chỉ dẫn trên đường cao tốc phải đáp ứng được các yêu cầu sau: 49.2.1. Nội dung ghi trên biển chỉ dẫn phải ngắn gọn, đơn giản, dễ hiểu; ưu tiên sử dụng các ký hiệu, số hiệu và hình vẽ minh hoạ; 49.2.2.Kích cỡ chữ viết, chữ số và ký hiệu phải đảm bảo để người điều khiển phương tiện nhìn rõ và nắm bắt được nội dung từ khoảng cách ít nhất là 150 m trong điều kiện thời tiết bình thường; 49.2.3. Phải được dán màng phản quang, đảm bảo yêu cầu theo tiêu chuẩn quốc gia về \"Màng phản quang dùng cho báo hiệu đường bộ\"."
+      },
+      {
+       "clause_number": "49.3",
+       "text": "Kích thước biển chỉ dẫn trên đường cao tốc Kích thước biển chỉ dẫn trên đường cao tốc được xác định trên cơ sở diện tích cần thiết để bố trí nội dung thông tin chỉ dẫn. Kích thước biển chỉ dẫn loại A (áp dụng cho đường có tốc độ thiết kế 100 km/h và 120 km/h) được quy định chi tiết tại Phụ lục P của Quy chuẩn này. Kích thước biển chỉ dẫn loại B (áp dụng cho đường có tốc độ thiết kế 60 km/h và 80 km/h) được điều chỉnh trên cơ sở chiều cao chữ quy định trong Bảng 4 của Quy chuẩn này cho phù hợp. Trường hợp đặc biệt có thể điều chỉnh cục bộ cho cân đối, phù hợp và đáp ứng thông tin rõ ràng."
+      }
+     ]
+    },
+    {
+     "article_number": 50,
+     "article_title": "Nội dung biển chỉ dẫn trên đường cao tốc",
+     "chapter_number": 9,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG CAO TỐC",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "50.1",
+       "text": "Nội dung biển chỉ dẫn trên đường cao tốc 50.1.1. Nội dung biển chỉ dẫn đường cao tốc được tổ hợp từ một hoặc nhiều thông tin sau: địa danh, ký hiệu đường bộ, mũi tên chỉ hướng, mũi tên chỉ làn xe, chữ viết, chữ số, hình vẽ và các ký hiệu khác. 50.1.2. Trình bày nội dung biển chỉ dẫn trên đường cao tốc được thực hiện theo quy tắc sau đây: a) Địa danh, tên đoạn tuyến đường cao tốc, ký hiệu đường bộ được viết bằng chữ in hoa; b) Trong biển chỉ dẫn, không ghi quá ba tên điểm đến trên cùng một biển chỉ dẫn thông báo trước hoặc trên biển chỉ dẫn chỉ lối ra; c) Không ghi tên tuyến đường và tên thành phố nằm trên tuyến đường đó trên cùng một biển chỉ dẫn; d) Trong biển chỉ dẫn, không viết quá ba hàng chữ tiếng Việt; đ) Biển chỉ dẫn trên đường cao tốc gồm hai thứ tiếng: tiếng Việt và tiếng Anh. Chiều cao tối thiểu chữ tiếng Việt và chữ tiếng Anh được quy định trong Bảng 4. Trong một số trường hợp đặc biệt, có thể điều chỉnh kích thước biển, cỡ chữ cho phù hợp quy mô phân mặt cắt ngang đường và tiết kiệm chi phí đầu tư nhưng không nhỏ hơn kích cỡ tối thiểu trong Bảng 4. Loại biển chỉ dẫn Loại B Loại A Tốc độ thiết kế, km/h Chiều cao chữ tiếng Việt, cm Chiều cao chữ tiếng Anh, cm"
+      },
+      {
+       "clause_number": "50.2",
+       "text": "Bố trí chữ viết và kích thước chữ viết trên biển chỉ dẫn trên đường cao tốc 50.2.1. Nguyên tắc bố trí chữ viết trên biển chỉ dẫn trên đường cao tốc quy định như sau: a) Khoảng cách giữa dòng chữ tiếng Việt và dòng chữ tiếng Anh bằng chiều cao chữ tiếng Anh; b) Khoảng cách giữa dòng chữ tiếng Anh đến dòng chữ tiếng Việt tiếp theo bằng chiều cao chữ tiếng Anh; c) Khoảng trống ở phía trên, phía dưới biển chỉ dẫn có kích thước bằng chiều cao chữ tiếng Việt lớn nhất trong biển; d) Khoảng trống ở phía bên trái và bên phải biển chỉ dẫn (của dòng dài nhất) có kích thước bằng chiều cao của chữ tiếng Việt lớn nhất trong biển; đ) Thông thường, dòng chữ của biển chỉ dẫn được bố trí căn chính giữa theo chiều ngang của biển chỉ dẫn. Khi bố trí biểu tượng, sơ đồ nút giao, dòng chữ trên biển chỉ dẫn được bố trí sao cho phù hợp, tuân thủ theo quy định tại các Phụ lục của Quy chuẩn này. 50.2.2. Kích thước chữ viết, chữ số và khoảng cách giữa các chữ được quy định chi tiết trong Phụ lục K của Quy chuẩn này."
+      },
+      {
+       "clause_number": "50.3",
+       "text": "Màu sắc của biển chỉ dẫn trên đường cao tốc 50.3.1. Màu nền, màu chữ và đường viền của biển chỉ dẫn trên đường cao tốc được quy định như sau: a) Đối với biển có tính chất chỉ dẫn giao thông, chữ viết, chữ số và hình vẽ trên biển chỉ dẫn được thể hiện bằng màu trắng trên nền màu xanh lá cây và đường viền mép biển là màu trắng; b) Đối với biển có tính chất chỉ dẫn dịch vụ công cộng, chữ viết, chữ số và hình vẽ trên biển chỉ dẫn được thể hiện bằng màu trắng trên nền màu xanh lam và đường viền mép biển là màu trắng; c) Đối với biển có tính chất chỉ dẫn cảnh báo, chữ viết, chữ số và hình vẽ trên biển chỉ dẫn được thể hiện bằng màu đen trên nền màu vàng huỳnh quang và đường viền mép biển là màu đen; d) Đối với biển có tính chất chỉ dẫn giải trí, chữ viết, chữ số và hình vẽ trên biển chỉ dẫn được thể hiện bằng màu trắng trên nền màu nâu và đường viền mép biển là màu trắng; đ) Trừ những quy định khác, chữ viết, chữ số và hình vẽ trên biển chỉ dẫn được thể hiện bằng màu trắng trên nền màu xanh lá cây và đường viền mép biển là màu trắng. 50.3.2. Chi tiết cụ thể về màu nền, màu chữ và đường viền được quy định cụ thể cho từng biển chỉ dẫn tại Phụ lục P của Quy chuẩn này. Kiểu chữ viết, màu chữ viết và màu nền của biển chỉ dẫn trên đường cao tốc được quy định trong Bảng 5. TT Mô tả biển chỉ dẫn Kiểu chữ Màu chữ, số Màu nền Màu viền Ký hiệu đường cao tốc gt2 đen vàng huỳnh quang đen Ký hiệu quốc lộ, đường tỉnh, đường huyện gt2 đen trắng đen Biển số IE.450 (a,b) chỉ dẫn sơ đồ, khoảng cách đến nút giao với đường dẫn vào đường cao tốc gt2 trắng xanh lam Trắng Biển số IE.451 (a,b) chỉ dẫn lối vào, khoảng cách đến lối vào đường cao tốc gt2 trắng xanh lam trắng Biển số IE.452 chỉ dẫn bắt đầu đường cao tốc gt2 trắng xanh lá cây trắng Biển số IE.453 (a,b) chỉ dẫn điểm kết thúc, khoảng cách đến điểm kết thúc đường cao tốc gt2 trắng xanh lá cây trắng Biển số IE.454 chỉ dẫn khoảng cách đến lối ra phía trước gt2 trắng xanh lá cây trắng Biển số IE.455 (a,b) chỉ dẫn khoảng cách đến các lối ra tiếp theo gt2 trắng xanh lá cây trắng Biển số IE.456 (a,b,c) chỉ dẫn khoảng cách, hướng rẽ đến trạm dừng nghỉ gt2 trắng xanh lá cây trắng Biển số IE.457 (a,b) chỉ dẫn nơi đỗ xe trong trạm dừng nghỉ gt2 trắng xanh lá cây trắng Biển số IE.458 chỉ dẫn khoảng cách đến các trạm dừng nghỉ tiếp theo gt2 trắng xanh lá cây trắng Biển số IE.459 (a,b) chỉ dẫn khoảng cách đến khu tham quan, du lịch gt2 trắng xanh lá cây trắng TT Mô tả biển chỉ dẫn Kiểu chữ Màu chữ, số Màu nền Màu viền Biển số IE.460 chỉ dẫn cột lý trình kilômét gt2 trắng xanh lá cây trắng Biển số IE.461 (a,b,c) chỉ dẫn khoảng cách đến khu dịch vụ công cộng, giải trí gt2 trắng xanh lá cây trắng Biển số IE.461d chỉ dẫn hướng rẽ vào khu giải trí gt2 trắng nâu trắng Biển số IE.462 chỉ dẫn tần số trên sóng radio gt2 trắng xanh lá cây trắng Biển số IE.463 (a,b,c) chỉ dẫn khoảng cách, hướng rẽ vào trạm kiểm tra tải trọng xe gt2 trắng xanh lá cây trắng Biển số IE.464 (a,b) chỉ dẫn địa điểm và phương hướng gt2 trắng xanh lá cây trắng Biển số IE.465 (a,b) chỉ dẫn địa điểm và khoảng cách gt2 trắng xanh lá cây trắng Biển số IE.466 chỉ dẫn sơ đồ lối ra một chiều gt2 trắng xanh lá cây trắng Biển số IE.467 (a,b) chỉ dẫn vị trí nhập làn, khoảng cách đến vị trí nhập làn gt2 trắng xanh lá cây trắng Biển số IE.468 (a,b,c) chỉ dẫn chướng ngại vật phía trước vàng huỳnh quang đen Biển số IE.469 chỉ dẫn hướng rẽ vàng huỳnh quang đen Biển số IE.470 chỉ dẫn số điện thoại khẩn cấp gt2 trắng xanh lá cây trắng Biển số IE.471 chỉ dẫn giữ khoảng cách lái xe an toàn gt2 đen vàng huỳnh quang đen Biển số IE.472 (a,b,c,d,e) chỉ dẫn khoảng cách đến trạm thu phí, trạm thu phí, thu phí không dừng, rút thẻ, thu phí gt2 trắng xanh lá cây trắng Biển số IE.473 chỉ dẫn giảm tốc độ gt2 đen vàng huỳnh quang đen Biển số IE.474 chỉ dẫn lối ra gt2 trắng xanh lá cây trắng TT Mô tả biển chỉ dẫn Kiểu chữ Màu chữ, số Màu nền Màu viền Các biển chỉ dẫn khác: biển chỉ dẫn địa danh; địa phận hành chính cấp tỉnh, thành phố; biển tên cầu, tên công trình lớn. (Thiết kế chi tiết các biển chỉ dẫn khác có thể vận dụng các quy định về biển chỉ dẫn cho đường ô tô không phải là đường cao tốc ngoại trừ các quy định nêu trong Bảng này) gt2 trắng xanh lá cây trắng"
+      },
+      {
+       "clause_number": "50.4",
+       "text": "Đường viền của biển chỉ dẫn trên đường cao tốc 50.4.1. Chiều rộng đường viền xung quanh biển chỉ dẫn được quy định như sau: a) Lấy bằng 5,0 cm đối với biển chỉ dẫn có kích thước ≥ 300,0 x 100,0 cm; b) Lấy bằng 3,0 cm đối với biển chỉ dẫn có kích thước < 300,0 x 100,0 cm. 50.4.2. Bán kính cong của đường viền xung quanh biển chỉ dẫn được lấy bằng 2% cạnh dài nhất của biển chỉ dẫn."
+      },
+      {
+       "clause_number": "50.5",
+       "text": "Ký hiệu mũi tên trên biển chỉ dẫn trên đường cao tốc 50.5.1. Đối với các biển chỉ dẫn chỉ lối ra, mũi tên xiên hướng lên phía trên được dùng để chỉ lối ra; hướng mũi tên phù hợp với hướng của lối ra. 50.5.2. Đối với mũi tên chỉ làn, mũi tên thẳng, hướng xuống dưới (chỉ sử dụng ở biển lắp đặt trên giá long môn, cần vươn) để quy định làn xe đi tới một địa điểm hay một tuyến đường nào đó. 50.5.3. Kích thước của mũi tên được quy định chi tiết như sau: a) Mũi tên chỉ làn: Kích thước mũi tên Đơn vị: cm A B C D E R b) Mũi tên chỉ hướng: C D R R E B A Kích thước mũi tên Đơn vị: cm A B C D E R Mũi tên chỉ hướng phải có hướng trùng với hướng cần chỉ dẫn."
+      },
+      {
+       "clause_number": "50.6",
+       "text": "Mã hiệu đường bộ trong biển chỉ dẫn trên đường cao tốc 50.6.1. Mã hiệu đường bộ được đặt trong một khuôn hình chữ nhật có kích thước cố định, gồm hai phần: tên đường bộ viết tắt và số hiệu đường bộ. Tên đường bộ viết tắt (Đường cao tốc - CT, Quốc lộ - QL, Đường tỉnh - ĐT, Đường huyện - ĐH). Số hiệu đường bộ được quy định cụ thể tại Nghị định số 11/2010/NĐ-CP ngày 24/02/2010 của Chính phủ Quy định về quản lý và bảo vệ kết cấu hạ tầng giao thông đường bộ. Tên đường bộ viết tắt và số hiệu đường bộ được phân cách bằng một dấu chấm. Sử dụng kiểu chữ gt2 (kiểu chữ thường) để ghi ký hiệu đường bộ, trong đó tùy theo độ dài của ký hiệu đường bộ, cho phép điều chỉnh chiều rộng của ký tự và khoảng cách giữa các ký tự cho sao phù hợp với khuôn hình chữ nhật định sẵn. Căn cứ quy hoạch phát triển mạng lưới đường bộ cao tốc Việt Nam đến năm 2020 và định hướng đến năm 2030 đã được phê duyệt, mã hiệu đường cao tốc theo quy hoạch được quy định tại Phụ lục N của Quy chuẩn này. Kích thước mã hiệu đường cao tốc được quy định cụ thể tại Phụ lục O của Quy chuẩn này. 50.6.2. Quy định màu nền, chữ viết và chữ số trong mã hiệu đường bộ như sau: a) Mã hiệu đường cao tốc được thể hiện trên nền màu vàng huỳnh quang, chữ màu đen và viền màu đen trong Hình 4a; b) Mã hiệu quốc lộ, đường tỉnh và đường huyện được thể hiện trên nền màu trắng, chữ màu đen và viền màu đen (các Hình 4b, 4c, 4d). a) Mã hiệu đường cao tốc b) Mã hiệu quốc lộ c) Mã hiệu đường tỉnh d) Mã hiệu đường huyện"
+      },
+      {
+       "clause_number": "50.7",
+       "text": "Biểu tượng khu công nghiệp, dịch vụ công cộng và giải trí Các biểu tượng khu công nghiệp, dịch vụ công cộng và giải trí được sử dụng để trình bày nội dung của một số biển chỉ dẫn nhằm mục đích đưa thông tin ngắn gọn, dễ hiểu đến người tham gia giao thông. a) Trạm cảnh sát giao thông b) Sân bay c) Bến xe khách d) Nhà ga e) Bến tàu thuỷ f) Khu công nghiệp g) Đập thuỷ điện h) Điện thoại công cộng i) Trạm sửa chữa k) Trạm xăng dầu l) Ăn uống m) Nhà vệ sinh n) Bệnh viện, cấp cứu o) Nhà nghỉ p) Chỗ cho người khuyết tật q) Nơi cung cấp thông tin r) Nơi rửa xe s) Sân gôn t) Rừng sinh thái Về nguyên tắc, các biểu tượng khu công nghiệp, dịch vụ công cộng và giải trí được thể hiện trên nền màu trắng, hình vẽ màu đen và đường viền màu đen (Hình 5). Tuy nhiên, màu sắc của một số biểu tượng phải tuân thủ theo quy định tại Công ước Viên (Viena) về báo hiệu đường bộ. Kích thước của các biểu tượng này xem chi tiết tại Phụ lục P (mục P.8) và Phụ lục P (mục P.13) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "50.8",
+       "text": "Số hiệu và tên biển chỉ dẫn TT Số hiệu Tên biển chỉ dẫn Biển số IE.450(a,b) Sơ đồ, khoảng cách đến nút giao với đường dẫn vào đường cao tốc Biển số IE. 451(a,b) Lối vào và khoảng cách đến lối vào đường cao tốc Biển số IE.452 Bắt đầu đường cao tốc Biển số IE.453(a,b) Kết thúc đường cao tốc Biển số IE.454 Khoảng cách đến lối ra phía trước Biển số IE.455(a,b) Khoảng cách đến các lối ra tiếp theo Biển số IE.456(a,b,c) Trạm dừng nghỉ và khoảng cách đến trạm dừng nghỉ Biển số IE.457(a,b) Nơi đỗ xe trong trạm dừng nghỉ Biển số IE.458 Khoảng cách đến các trạm dừng nghỉ tiếp theo Biển số IE.459(a,b) Khoảng cách đến khu tham quan, du lịch Biển số IE.460 Cột lý trình kilômét Biển số IE.461(a,b,c,d) Khu dịch vụ công cộng, giải trí Biển số IE.462 Tần số trên sóng radio Biển số IE.463(a,b,c) Trạm kiểm tra tải trọng xe Biển số IE.464(a,b) Địa điểm và phương hướng Biển số IE.465(a,b) Địa điểm và khoảng cách Biển số IE.466 Sơ đồ lối ra một chiều Biển số IE.467(a,b) Nhập làn Biển số IE.468(a,b) Chướng ngại vật phía trước Biển số IE.469 Hướng rẽ Biển số IE.470 Số điện thoại khẩn cấp Biển số IE.471 Giữ khoảng cách lái xe an toàn Biển số IE.472(a,b) Trạm thu phí Biển số IE.473 Giảm tốc độ Biển số IE.474 Lối ra"
+      },
+      {
+       "clause_number": "50.9",
+       "text": "Lắp đặt biển chỉ dẫn Biển chỉ dẫn trên đường cao tốc được lắp trên cột cần vươn, giá long môn, trên cột hoặc vật kiến trúc nhưng đảm bảo an toàn và mỹ quan. 50.9.1. Lắp đặt biển chỉ dẫn trên giá long môn, cột cần vươn: a) Bố trí biển chỉ dẫn trên giá long môn, cột cần vươn để người điều khiển phương tiện có thể dễ dàng nhận thấy biển chỉ dẫn từ xa. Giá long môn, cột cần vươn phải có kết cấu bền vững, có khả năng chịu lực và chịu được cấp gió bão theo vùng do Bộ Tài nguyên- Môi trường công bố. b) Chiều cao tối thiểu từ đáy biển chỉ dẫn đến điểm cao nhất của mặt đường không nhỏ hơn 5,2 m. Chân giá long môn, cột cần vươn cách mép ngoài lề đường tối thiểu là 0,5 m (Hình 6). 50.9.2. Lắp đặt biển chỉ dẫn bên lề đường cao tốc: Vị trí lắp đặt biển chỉ dẫn bên lề đường cao tốc tuân thủ theo quy định tại Điều 20 của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 51,
+     "article_title": "Các loại biển chỉ dẫn trên đường cao tốc",
+     "chapter_number": 9,
+     "chapter_title": "BIỂN CHỈ DẪN TRÊN ĐƯỜNG CAO TỐC",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "51.1",
+       "text": "Sơ đồ, khoảng cách đến nút giao với đường dẫn vào đường cao tốc 51.1.1. Biển số IE.450a chỉ dẫn khoảng cách đến nút giao với đường dẫn vào đường cao tốc (Hình 7a), dùng để báo trước khoảng cách sắp đến nút giao với đường dẫn vào đường cao tốc, với khoảng cách ghi trên biển quy về bội số của 100 m. Tùy theo mạng lưới đường kết nối, có thể đặt biển IE.450a tại khu vực các nút giao trong phạm vi bán kính 5km (trường hợp đặc biệt đặt xa hơn tại các đầu mối giao thông lớn) để báo trước từ xa cho người tham gia giao thông biết hướng lên đường cao tốc. 51.1.2. Biển số IE.450b chỉ dẫn sơ đồ đến đường dẫn vào đường cao tốc (Hình 7b). Biển này đặt cách nút giao với đường dẫn vào đường cao tốc tối thiểu bằng tầm nhìn một chiều của cấp đường trên đường xe đang chạy theo quy định tại Bảng 6. a) Biển số IE.450a b) Biển số IE.450b đường dẫn vào đường cao tốc Tốc độ thiết kế trên đường nhánh, km/h Tầm nhìn, m"
+      },
+      {
+       "clause_number": "51.2",
+       "text": "Lối vào và khoảng cách đến lối vào đường cao tốc 51.2.1. Biển số IE.451a chỉ dẫn khoảng cách đến lối vào đường cao tốc, được đặt trên đường dẫn vào đường cao tốc (Hình 8a); dùng để báo trước khoảng cách đến lối vào đường cao tốc; tùy theo chiều dài của đường dẫn vào đường cao tốc mà xác định vị trí đặt biển đến lối vào đường cao tốc cho phù hợp. 51.2.2. Biển số IE.451b chỉ dẫn lối vào đường cao tốc (Hình 8b). Biển này đặt ở vị trí cuối đường dẫn vào đường cao tốc. a) Biển số IE.451a b) Biển số IE.451b"
+      },
+      {
+       "clause_number": "51.3",
+       "text": "Bắt đầu đường cao tốc Biển số IE.452 chỉ dẫn bắt đầu đường cao tốc (Hình 9a). Biển này được thể hiện trên nền xanh lá cây, chữ màu trắng, bao gồm các thông tin về tên và ký hiệu đường cao tốc, giá trị hạn chế tốc độ tối đa và tốc độ tối thiểu. Trong trường hợp phân làn đường có tốc độ khác nhau thì hàng dưới của biển có đặt các tốc độ tương ứng (Hình 9b)."
+      },
+      {
+       "clause_number": "51.4",
+       "text": "Kết thúc đường cao tốc 51.4.1. Biển số IE.453a chỉ dẫn khoảng cách đến điểm kết thúc đường cao tốc (Hình 10a) và Biển số IE.453b chỉ dẫn điểm kết thúc đường cao tốc (Hình 10b). Kích thước Biển số IE.453 được quy định chi tiết trong Phụ lục P (mục P.4) của Quy chuẩn này. a) Biển số IE.453a b) Biển số IE.453b 51.4.2. Biển số IE.453c \"Hết đường cao tốc\" Để chỉ dẫn hết đường cao tốc, đặt biển số IE.453c \"Hết đường cao tốc\" (Hình 10b). c) Biển số I.453c"
+      },
+      {
+       "clause_number": "51.5",
+       "text": "Khoảng cách đến lối ra phía trước Biển số IE.454 chỉ dẫn khoảng cách đến lối ra phía trước (Hình 11). Tùy thuộc vào quy mô nút giao mà bố trí hai biển cách 1,0 km và 2,0 km trước nút giao hay chỉ sử dụng một biển với khoảng cách đặt trước nút giao 1,0 km. Giá trị khoảng cách ghi trên biển chỉ lấy số nguyên không lấy số lẻ. Kích thước biển chỉ dẫn khoảng cách đến lối ra phía trước được quy định chi tiết trong Phụ lục P (mục P.5) của Quy chuẩn này. Tại lối ra, đặt Biển số IE.464b tại dải phân ngã ba của nhánh rẽ."
+      },
+      {
+       "clause_number": "51.6",
+       "text": "Khoảng cách đến các lối ra tiếp theo Biển số IE.455 chỉ dẫn khoảng cách đến các lối ra tiếp theo (Hình 12) để báo trước khi qua khu vực phía trước có nhiều nút giao. Thông thường, biển chỉ dẫn khoảng cách đến các lối ra tiếp theo chỉ thể hiện cho hai hoặc ba nút giao liên tiếp trên đường cao tốc. Biển được lắp đặt ở phía trước nút giao bên lề đường để chỉ khoảng cách đến các lối ra tiếp theo. Kích thước biển chỉ dẫn khoảng cách đến các lối ra tiếp theo được quy định chi tiết trong Phụ lục P (mục P.6) của Quy chuẩn này. a) Biển chỉ dẫn có hai lối ra tiếp theo b) Biển chỉ dẫn có ba lối ra tiếp theo"
+      },
+      {
+       "clause_number": "51.7",
+       "text": "Trạm dừng nghỉ 51.7.1. Biển số IE.456 chỉ dẫn khoảng cách và hướng rẽ đến trạm dừng nghỉ, được đặt bên lề đường cao tốc. Biển chỉ dẫn đến trạm dừng nghỉ bố trí ba hoặc bốn dịch vụ cơ bản, trong đó có ba dịch vụ chính sau: xăng dầu – ăn uống – nơi cung cấp thông tin. Dịch vụ thứ tư được lựa chọn trong số dịch vụ có trong trạm dừng nghỉ, chẳng hạn như: điện thoại; nhà nghỉ; trạm sửa chữa; cấp cứu; bãi đỗ xe tải; dịch vụ cho người tàn tật … Các loại dịch vụ trong trạm dừng nghỉ được biểu hiện dưới dạng hình vẽ, biểu tượng đơn giản, dễ hiểu. Kích thước biểu tượng dịch vụ được quy định chi tiết trong Phụ lục P (mục P.13) của Quy chuẩn này. 51.7.2. Biển số IE.456a thông báo khoảng cách đến trạm dừng nghỉ (Hình 13); Biển số IE.456b chỉ dẫn hướng rẽ vào trạm dừng nghỉ, đặt cách nút giao vào trạm dừng nghỉ khoảng 150 m (Hình 14); Biển số IE.456c chỉ dẫn lối vào trạm dừng nghỉ, đặt ngay trước lối vào trạm dừng nghỉ (Hình 15)."
+      },
+      {
+       "clause_number": "51.8",
+       "text": "Nơi đỗ xe trong trạm dừng nghỉ Thông thường, Biển số IE.457a chỉ dẫn khoảng cách đến nơi đỗ xe trong trạm dừng nghỉ (Hình 16) được lắp đặt cùng với biển chỉ dẫn đến trạm dừng nghỉ. Biển số IE.457b chỉ dẫn hướng rẽ đến vị trí bãi đỗ xe trong trạm dừng nghỉ. Kích thước chi tiết biển chỉ dẫn nơi đỗ xe trong trạm dừng nghỉ được quy định trong Phụ lục P (mục P.9) của Quy chuẩn này. Biển có ba dịch vụ Biển có bốn dịch vụ Biển có ba dịch vụ Biển có bốn dịch vụ Biển có ba dịch vụ Biển có bốn dịch vụ a) Biển số IE.457a b) Biển số IE.457b"
+      },
+      {
+       "clause_number": "51.9",
+       "text": "Khoảng cách đến các trạm dừng nghỉ tiếp theo Biển số IE.458 chỉ dẫn khoảng cách đến các trạm dừng nghỉ tiếp theo. Biển này được đặt tại vị trí ngay sau khi ra khỏi trạm dừng nghỉ, bên lề đường (Hình 17). Chi tiết biển chỉ dẫn khoảng cách đến trạm dừng nghỉ tiếp theo được quy định trong Phụ lục P (mục P.10) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "51.10",
+       "text": "Khu tham quan, du lịch 51.10.1. Biển số IE.459 chỉ dẫn đến khu tham quan, du lịch được đặt ở bên lề đường (Hình 18). Biển này chỉ dẫn khoảng cách và hướng đến khu du lịch, khu danh lam thắng cảnh. Kích thước chi tiết biển chỉ dẫn khu tham quan, du lịch được quy định trong Phụ lục P (mục P.11) của Quy chuẩn này. 51.10.2. Biển số IE.459a thông báo khoảng cách đến khu tham quan, du lịch; Biển số IE.459b chỉ dẫn hướng rẽ vào khu tham quan, du lịch, đặt cách nút giao vào khu tham quan, du lịch khoảng 150 m. a) Biển số IE.459a b) Biển số IE.459b"
+      },
+      {
+       "clause_number": "51.11",
+       "text": "Cột kilômét Biển số IE.460 chỉ dẫn cột kilômét trên đường cao tốc đặt tại lề đường (tương ứng với cột kilômét dạng tấm hình chữ nhật đặt ở lề đường quy định tại Điều 66 của Quy chuẩn này), bao gồm chữ Km và lý trình ghi dưới dạng chữ số được trình bày theo chiều dọc, có viền màu trắng trên nền màu xanh lá cây (Hình 19). Biển chỉ dẫn cột lý trình kilômét được đặt cách mép lề đường 0,5 m. Chi tiết biển chỉ dẫn cột kilômét được quy định trong Phụ lục I của Quy chuẩn này. a) Biển số IE.460a b) Biển số IE.460b c) Biển số IE.460c"
+      },
+      {
+       "clause_number": "51.12",
+       "text": "Khu dịch vụ công cộng, giải trí Biển số IE.461 chỉ dẫn khoảng cách và hướng đến khu dịch vụ công cộng, giải trí. Biển này được thể hiện trên nền màu xanh lá cây, chữ màu trắng kết hợp với các biểu tượng dịch vụ tương ứng (Hình 20). Các biển này chỉ được sử dụng khi có yêu cầu (định hướng cho người điều khiển phương tiện giao thông tới các nơi có phục vụ công cộng như sân bay, ga tàu hoả, bến xe khách, bến cảng, bến tàu thuỷ, v.v… hay đến nơi có dịch vụ giải trí như sân gôn, khu câu cá, bãi tắm biển, khu rừng sinh thái. Biển này được lắp đặt bên lề đường, gần khu vực nút giao rẽ vào nơi cung cấp dịch vụ. Chi tiết biển chỉ dẫn đến khu dịch vụ công cộng, giải trí được quy định trong Phụ lục P (mục P.12) của Quy chuẩn này. a) Biển số IE.461a chỉ dẫn khoảng cách b) Biển số IE.461b chỉ dẫn hướng rẽ c) Biển số IE.461c chỉ dẫn hướng rẽ vào khu dịch vụ công cộng d) Biển số IE.461d chỉ dẫn hướng rẽ vào khu giải trí"
+      },
+      {
+       "clause_number": "51.13",
+       "text": "Tần số trên sóng radio Biển số IE.462 chỉ dẫn tần số trên sóng radio được sử dụng ở những khu vực thời tiết hay thay đổi ảnh hưởng tới lưu thông của các phương tiện hoặc khu vực có điều kiện đi lại đặc biệt hoặc những vị trí cần thiết khác trên đường cao tốc (Hình 21). Biển chỉ dẫn thể hiện tần số sóng radio để phát thông tin thời tiết và các thông tin tiện ích liên quan đến giao thông trên đường cao tốc. Chi tiết biển chỉ dẫn thông tin trên sóng radio được quy định trong Phụ lục P (mục P.14) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "51.14",
+       "text": "Trạm kiểm tra tải trọng xe Biển số IE.463 chỉ dẫn đến trạm kiểm tra tải trọng xe (Hình 22), bao gồm: biển số IE.463a chỉ dẫn khoảng cách đến trạm kiểm tra tải trọng xe; Biển số IE.463b chỉ dẫn hướng rẽ vào nơi đặt trạm kiểm tra tải trọng xe; biển số IE.463c chỉ dẫn lối vào trạm kiểm tra tải trọng xe. Biển số IE.463c chỉ lối vào trạm kiểm tra tải trọng xe được đặt ở nút giao giữa đường cao tốc và đường vào trạm kiểm tra tải trọng xe. Chi tiết biển chỉ dẫn đến trạm kiểm tra tải trọng xe được quy định trong Phụ lục P (mục P.15) của Quy chuẩn này. a) Biển số IE.463a b) Biển số IE.463b c) Biển số IE.463c"
+      },
+      {
+       "clause_number": "51.15",
+       "text": "Địa điểm và phương hướng Biển số IE.464 chỉ dẫn địa điểm và phương hướng dùng để chỉ dẫn địa danh nơi đến và mũi trên cho một làn xe chạy cụ thể, bao gồm tên địa danh nơi đến và mũi tên chỉ xuống làn xe chạy (Hình 23). Các mũi tên sử dụng trong biển này bao gồm: 1) mũi tên phân làn có dạng mũi tên thẳng đứng hướng xuống dưới; 2) mũi tên chỉ hướng có dạng xiên lên trên để chỉ làn xe có hiệu lực đến một địa điểm nào đó. Biển chỉ dẫn địa điểm và phương hướng được bố trí trên giá long môn trước khu vực lối ra. Biển số IE.464b đặt tại dải phân ngã ba của nhánh rẽ hoặc ở vị trí gần nút giao phía lưng đường cong trên đường ra khỏi đường cao tốc. Chi tiết biển chỉ dẫn địa điểm và phương hướng được quy định trong Phụ lục P (mục P.16) của Quy chuẩn này. a) Biển số IE.464a chỉ dẫn lối ra một chiều b) Biển số IE.464b chỉ dẫn hướng ra"
+      },
+      {
+       "clause_number": "51.16",
+       "text": "Địa điểm và khoảng cách Biển số IE.465 chỉ dẫn địa điểm và khoảng cách, bao gồm hai hoặc ba dòng mang tên của đích đến và khoảng cách tới đích đó tính bằng kilômét (Hình 24). Dòng thứ nhất (dòng trên cùng) xác định vị trí nút giao đến địa danh gần nhất. Dòng thứ hai (nếu có) xác định khoảng cách đến khu du lịch giải trí hoặc đầu mối giao thông lớn. Dòng thứ ba (dòng cuối cùng) chỉ dẫn khoảng cách đến thành phố lớn (cấp cao nhất) mà tuyến đường đi qua. Biển này được đặt ở bên lề đường ngay khi vào đường cao tốc và sẽ được lặp lại với khoảng cách lớn hơn 10 km. Chi tiết biển chỉ dẫn địa điểm và khoảng cách được quy định trong Phụ lục P (mục P.17) của Quy chuẩn này. a) Biển chỉ dẫn hai địa điểm b) Biển chỉ dẫn ba địa điểm"
+      },
+      {
+       "clause_number": "51.17",
+       "text": "Sơ đồ lối ra một chiều Biển số IE.466 chỉ dẫn sơ đồ lối ra một chiều tại tất cả các nút giao trên đường cao tốc, được bố trí ở trên giá long môn (Hình 25). Chi tiết biển chỉ dẫn sơ đồ lối ra một chiều được quy định trong Phụ lục P (mục P.18) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "51.18",
+       "text": "Nhập làn Biển số IE.467a chỉ dẫn vị trí nhập làn xe tại các vị trí nút giao thông có lưu lượng xe lớn. Để chỉ dẫn cho người điều kiển phương tiện giao thông biết trước sắp đến vị trí nhập làn xe (Biển số IE.467b). Biển được đặt bên lề đường gần vị trí nút giao. Chi tiết biển chỉ dẫn nhập làn được quy định trong Phụ lục P (mục P.19) của Quy chuẩn này. Trong trường hợp không lắp đặt biển IE.467 thì sử dụng các biển cảnh báo W.207g và W.238. a) Biển số IE.467a b) Biển số IE.467b"
+      },
+      {
+       "clause_number": "51.19",
+       "text": "Chướng ngại vật phía trước Biển số IE.468 chỉ dẫn chướng ngại vật phía trước để báo cảnh báo phía trước có sự cản trở lưu thông bình thường (nằm bên trong phần xe chạy hay ngay sát phần đường xe chạy) và chỉ dẫn hướng đi qua đó cần đặt biển. Biển số IE.468a chỉ dẫn đi theo hướng bên trái; Biển số IE.468b chỉ dẫn đi được cả hai hướng; Biển số IE.468c chỉ dẫn đi theo hướng bên phải (Hình 27). Biển chỉ dẫn chướng ngại vật phía trước gồm các đường xiên màu đen được bố trí trên nền màu vàng huỳnh quang. Chi tiết biển chỉ dẫn chướng ngại vật phía trước được quy định trong Phụ lục P (mục P.20) của Quy chuẩn này. a) Biển số IE.468a b) Biển số IE.468b c) Biển số IE.468c"
+      },
+      {
+       "clause_number": "51.20",
+       "text": "Tiêu phản quảng Biển số IE.469 (tiêu phản quang) chỉ dẫn hướng rẽ để nhắc người điều khiển phương tiện chuẩn bị đổi hướng đi khi sắp vào đường cong nguy hiểm, có bán kính cong nhỏ (Hình 28). Biển được đặt ở phía lưng đường cong, cách mép lề đường 0,5 m hoặc đặt trên dải phân cách giữa đối với đường có hai chiều xe chạy riêng biệt. Chi tiết biển chỉ dẫn hướng rẽ được quy định trong Phụ lục P (mục P.21) của Quy chuẩn này. Khoảng cách lắp đặt Biển số 469 phụ thuộc vào bán kính cong và tốc độ lưu thông trên nhánh rẽ ra khỏi đường cao tốc, được quy định trong Bảng 7. a) Hướng rẽ phải b) Hướng rẽ trái Tốc độ (km/h) Bán kính cong (m) Khoảng cách biển (m) < 30 < 60"
+      },
+      {
+       "clause_number": "51.21",
+       "text": "Số điện thoại khẩn cấp Biển số IE.470 sử dụng chữ màu trắng trên nền màu xanh lá cây, cung cấp số điện thoại khẩn cấp cho người điều khiện phương tiện giao thông trong trường hợp khẩn cấp, xảy ra sự cố, tai nạn trên đường cao tốc (Hình 29). Biển này được lắp đặt bên lề đường. Chi tiết biển chỉ dẫn số điện thoại khẩn cấp được quy định trong Phụ lục P (mục P.22) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "51.22",
+       "text": "Giữ khoảng cách lái xe an toàn Biển số IE.471 sử dụng chữ màu đen trên nền màu vàng huỳnh quang có viền màu đen (Hình 30). Biển này thông báo cho người điều khiển phương tiện biết để giữ khoảng cách lái xe an toàn khi lưu thông trên đường cao tốc. Quy định chi tiết biển chỉ dẫn giữ khoảng cách lái xe an toàn được trình bày trong Phụ lục P (mục P.23) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "51.23",
+       "text": "Trạm thu phí Biển số IE.472 sử dụng chữ màu trắng trên nền màu xanh lá cây, được đặt cách trạm thu phí với một khoảng cách phù hợp nhằm thông báo cho người điều khiển phương tiện biết trước chuẩn bị đến trạm thu phí (Hình 31). Biển này được lắp đặt bên lề đường hoặc trên giá kiểu khung. Chi tiết biển chỉ dẫn trạm thu phí và các biển chỉ dẫn khác liên quan đến trạm thu phí được quy định trong Phụ lục P (mục P.24) của Quy chuẩn này. a) Biển số IE.472a b) Biển số IE.472b"
+      },
+      {
+       "clause_number": "51.24",
+       "text": "Giảm tốc độ Biển số IE.473 cảnh báo cho người điều khiển phương tiện chú ý lái xe và giảm tốc độ tại khu vực có nguy cơ mất an toàn giao thông (Hình 32). Biển này sử dụng chữ màu đen trên nền màu vàng huỳnh quang, được đặt tại các vị trí cần thiết phải giảm tốc độ, như vào khu vực đường cong nguy hiểm hoặc khu vực sắp đến trạm thu phí, trạm kiểm tra tải trọng xe, trạm dừng nghỉ, khu vực hay có sương mù, …. Thông thường, biển này được lắp đặt bên lề đường ở vị trí dễ quan sát hoặc trên giá kiểu khung. Chi tiết biển chỉ dẫn giảm tốc độ được quy định tại Phụ lục P (mục P.25) của Quy chuẩn này."
+      },
+      {
+       "clause_number": "51.25",
+       "text": "Lối ra đường cao tốc Biển số IE.474 sử dụng chữ màu trắng trên nền màu xanh lá cây, chỉ dẫn lối ra đường cao tốc, được đặt bên lề đường hoặc trên giá kiểu khung tại vị trí trước lối ra đường cao tốc (Hình 33). Chi tiết biển chỉ dẫn lối ra đường cao tốc được quy định trong Phụ lục P (mục P.26) của Quy chuẩn này."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 10,
+   "chapter_title": "VẠCH KẺ ĐƯỜNG",
+   "articles": [
+    {
+     "article_number": 52,
+     "article_title": "Quy định chung đối với vạch kẻ đường",
+     "chapter_number": 10,
+     "chapter_title": "VẠCH KẺ ĐƯỜNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "52.1",
+       "text": "Vạch kẻ đường là một dạng báo hiệu để hướng dẫn, điều khiển giao thông nhằm nâng cao an toàn và khả năng thông xe."
+      },
+      {
+       "clause_number": "52.2",
+       "text": "Vạch kẻ đường có thể dùng độc lập và có thể kết hợp với các loại biển báo hiệu đường bộ hoặc đèn tín hiệu chỉ huy giao thông."
+      },
+      {
+       "clause_number": "52.3",
+       "text": "Vạch kẻ đường bao gồm các loại vạch, chữ viết, hình vẽ ở trên mặt đường xe chạy, trên thành vỉa hè, trên các công trình giao thông và một số bộ phận khác của đường để quy định trật tự giao thông, khổ giới hạn của các công trình giao thông, chỉ hướng đi quy định của làn đường xe chạy."
+      },
+      {
+       "clause_number": "52.4",
+       "text": "Vạch kẻ đường phải bảo đảm cho xe chạy trên đường êm thuận, đảm bảo độ bám giữa lốp xe và mặt đường, không bị trơn trượt, không cao quá mặt đường 6 mm."
+      },
+      {
+       "clause_number": "52.5",
+       "text": "Khi sử dụng, lựa chọn vạch kẻ đường phải đảm bảo hợp lý về tổ chức giao thông đối với từng tuyến đường và căn cứ vào chiều rộng mặt đường phần xe chạy, tốc độ xe chạy, lưu lượng, phương tiện và người đi bộ tham gia giao thông để quyết định."
+      },
+      {
+       "clause_number": "52.6",
+       "text": "Đối với đường cao tốc, đường có tốc độ thiết kế ≥ 60 km/h và các đường có tốc độ V85 từ 80 km/h trở lên, vạch kẻ đường phải có vật liệu phản quang. Các loại đường khác, căn cứ theo khả năng tài chính và yêu cầu khác mà có thể sử dụng vật liệu phản quang."
+      }
+     ]
+    },
+    {
+     "article_number": 53,
+     "article_title": "Phân loại vạch kẻ đường",
+     "chapter_number": 10,
+     "chapter_title": "VẠCH KẺ ĐƯỜNG",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "53.1",
+       "text": "Dựa vào vị trí sử dụng, vạch kẻ đường được chia thành hai loại: vạch trên mặt bằng (bao gồm vạch trên mặt đường: vạch dọc đường, ngang đường và những loại vạch khác) và vạch đứng. 53.1.1. Vạch trên mặt bằng dùng để quy định các phần đường khác nhau trên mặt bằng có màu trắng trừ một số vạch quy định ở Phụ lục G có màu vàng. Trong một số trường hợp có thể sử dụng các màu sắc khác để nâng mức độ cảnh báo giao thông trên mặt đường. 53.1.2. Vạch đứng kẻ trên thành vỉa hè, các công trình giao thông và một số bộ phận khác của đường. Loại vạch này kết hợp giữa vạch vàng và vạch đen hoặc vạch trắng và vạch đỏ."
+      },
+      {
+       "clause_number": "53.2",
+       "text": "Dựa vào phương pháp kẻ, vạch kẻ đường được chia thành ba loại như sau: 53.2.1. Vạch dọc đường là vạch kẻ dọc theo hướng xe chạy trên đường; 53.2.2. Vạch ngang đường là vạch kẻ có hướng cắt ngang đường hoặc hình thành một góc chéo với hướng xe chạy; 53.2.3. Các loại vạch khác là các loại ký hiệu chữ hoặc hình thức khác."
+      },
+      {
+       "clause_number": "53.3",
+       "text": "Dựa vào chức năng, ý nghĩa sử dụng, vạch kẻ đường gồm: vạch hiệu lệnh, vạch cảnh báo, vạch chỉ dẫn, vạch giảm tốc độ."
+      },
+      {
+       "clause_number": "53.4",
+       "text": "Dựa vào hình dáng, kiểu, vạch kẻ đường được chia thành hai loại sau: 53.4.1. Vạch trên mặt đường, trên thành vỉa hè (bó vỉa) hoặc ở ranh giới phân cách làn xe, gồm vạch kẻ liền và vạch kẻ đứt khúc; 53.4.2. Ký hiệu chữ và ký hiệu hình gồm chữ cái, chữ số hoặc hình vẽ trên mặt đường."
+      }
+     ]
+    },
+    {
+     "article_number": 54,
+     "article_title": "Ý nghĩa sử dụng và kích thước của các vạch kẻ đường",
+     "chapter_number": 10,
+     "chapter_title": "VẠCH KẺ ĐƯỜNG",
+     "intro": "Ý nghĩa sử dụng và kích thước của các vạch kẻ đường phổ biến, được quy định ở Phụ lục G.",
+     "clauses": []
+    },
+    {
+     "article_number": 55,
+     "article_title": "Hiệu lực của vạch kẻ đường",
+     "chapter_number": 10,
+     "chapter_title": "VẠCH KẺ ĐƯỜNG",
+     "intro": "Vạch kẻ đường khi sử dụng độc lập thì người tham gia giao thông phải tuân theo ý nghĩa của vạch kẻ đường. Vạch kẻ đường khi sử dụng kết hợp với đèn tín hiệu, biển báo hiệu thì người tham gia giao thông phải tuân theo ý nghĩa, hiệu lệnh của cả vạch kẻ đường và đèn tín hiệu, biển báo hiệu theo thứ tự quy định tại Điều 4 của Quy chuẩn này.",
+     "clauses": []
+    }
+   ]
+  },
+  {
+   "chapter_number": 11,
+   "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+   "articles": [
+    {
+     "article_number": 56,
+     "article_title": "Tác dụng của cọc tiêu hoặc tường bảo vệ",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "Cọc tiêu hoặc tường bảo vệ đặt ở lề của các các đoạn đường nguy hiểm có tác dụng hướng dẫn cho người tham gia giao thông biết phạm vi phần đường an toàn và hướng đi của tuyến đường. Tường bảo vệ còn có tác dụng hạn chế các phương tiện tham gia giao thông khỏi văng ra khỏi phần đường xe chạy. Tường bảo vệ đồng thời cần có tác dụng dẫn hướng cho lái xe vào ban đêm bằng vạch sơn đứng hoặc tiêu phản quang gắn trên đó.",
+     "clauses": []
+    },
+    {
+     "article_number": 57,
+     "article_title": "Hình dạng và kích thước cọc tiêu",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "Cọc tiêu có tiết diện là hình vuông, kích thước cạnh tối thiểu 12 cm hoặc hình tròn có tiết diện tối thiểu tương đương; chiều cao cọc tiêu tính từ vai đường đến đỉnh cọc là 70 cm; ở những đoạn đường cong, có thể trồng cọc tiêu thay đổi chiều cao cọc, cao dần từ 40 cm tại tiếp đầu, tiếp cuối đến 70 cm tại phân giác. Phần cọc trên mặt đất được sơn trắng, đoạn 10 cm ở đầu trên cùng có màu đỏ và bằng chất liệu phản quang hoặc phát quang. Trong một số trường hợp có thể sử dụng các cọc tiêu với màu sắc khác nhưng trên trên cọc tiêu được gắn các tiêu phản quang theo các quy định tại Điều 61.",
+     "clauses": []
+    },
+    {
+     "article_number": 58,
+     "article_title": "Các trường hợp cắm cọc tiêu",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "58.1",
+       "text": "Những trường hợp cắm cọc tiêu: 58.1.1. Phía lưng các đường cong nằm từ tiếp đầu đến tiếp cuối. Trong trường hợp có đường cong chuyển tiếp thì bố trí cọc tiêu từ điểm nối đầu đến điểm nối cuối; 58.1.2. Các đoạn nền đường bị thắt hẹp; 58.1.3. Các đoạn đường có taluy âm cao từ 2 m trở lên; 58.1.4. Các đoạn đường men theo sông, suối, đầm, hồ, ao; 58.1.5. Các đoạn đường bộ giao nhau với đường sắt cùng mức; 58.1.6. Dọc hai bên những đoạn đường bị ngập nước thường xuyên hoặc chỉ ngập theo mùa và hai bên thân đường ngầm, đường tràn; 58.1.7. Các đoạn đường qua bãi cát, đồng lầy, đồi cỏ mà khó phân biệt mặt đường phần xe chạy với dải đất hai bên đường."
+      },
+      {
+       "clause_number": "58.2",
+       "text": "Không cần bố trí cọc tiêu trong trường hợp phần đường xe chạy đã được phân biệt rõ bởi bó vỉa, vỉa hè hoặc các kết cấu liền kề hoặc khi đã sử dụng tiêu phản quang dạng mũi tên tại các đường cong."
+      }
+     ]
+    },
+    {
+     "article_number": 59,
+     "article_title": "Kỹ thuật cắm cọc tiêu",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "59.1",
+       "text": "Đường mới xây dựng hoặc nâng cấp cải tạo, cọc tiêu cắm sát vai đường và mép trong của cọc cách đều mép phần đường xe chạy tối thiểu 0,5 m, lượn đều theo mép phần xe chạy trừ trường hợp bị vướng chướng ngại vật."
+      },
+      {
+       "clause_number": "59.2",
+       "text": "Đường đang sử dụng, lề đường không đủ rộng thì cọc tiêu cắm sát vai đường."
+      },
+      {
+       "clause_number": "59.3",
+       "text": "Nếu đường đã có hàng cây xanh trồng ở trên vai đường hoặc lề đường, cho phép cọc tiêu cắm ở sát mép hàng cây nhưng bảo đảm quan sát thấy rõ hàng cọc nhưng không được lấn vào phía tim đường làm thu hẹp phạm vi sử dụng của đường."
+      },
+      {
+       "clause_number": "59.4",
+       "text": "Nếu ở vị trí đã có tường bảo vệ hoặc rào chắn cao trên 0,40 m thì không phải cắm cọc tiêu."
+      },
+      {
+       "clause_number": "59.5",
+       "text": "Lề đường ở trong hàng cọc tiêu phải bằng phẳng chắc chắn, không gây nguy hiểm cho xe khi đi ra sát hàng cọc tiêu và không có vật chướng ngại che khuất hàng cọc tiêu."
+      },
+      {
+       "clause_number": "59.6",
+       "text": "Đối với đường đang sử dụng, nếu nền và mái đường không bảo đảm được nguyên tắc nêu ở khoản 59.1 Điều này thì tạm thời cho phép cắm cọc tiêu lấn vào trong lề đường đến phạm vi an toàn."
+      },
+      {
+       "clause_number": "59.7",
+       "text": "Cọc tiêu phải cắm thẳng hàng trên đường thẳng và lượn cong dần trong đường cong, với khoảng cách giữa các cọc như sau: 59.7.1. Khoảng cách (S) giữa hai cọc tiêu trên đường thẳng thông thường là S = 10 m với các đường ô tô thông thường và 30 m với đường cao tốc; 59.7.2. Khoảng cách giữa hai cọc tiêu trên đường cong nằm: a) Nếu đường cong có bán kính R = 10 m đến 30 m thì khoảng cách giữa hai cọc tiêu S = 3 m; b) Nếu đường cong có bán kính R: 30 m < R  100 m thì khoảng cách giữa hai cọc tiêu S = 5 m; c) Nếu đường cong có bán kính R > 100 m thì S = 10 m; d) Khoảng cách giữa hai cọc tiêu ở tiếp đầu (hoặc nối đầu) và tiếp cuối (hoặc nối cuối) có thể bố trí xa hơn 3 m so với khoảng cách của hai cọc tiêu trong phạm vi đường cong. 59.7.3. Khoảng cách giữa hai cọc tiêu trên đoạn đường dốc: a) Nếu đường có độ dốc  3 %, khoảng cách giữa hai cọc tiêu là 5 m; b) Nếu đường có độ dốc < 3 %, khoảng cách giữa hai cọc tiêu là 10 m (không áp dụng đối với đầu cầu và đầu cống); c) Khoảng cách giữa hai cọc tiêu trên đoạn đường dốc nơi có đường cong nằm thì lấy theo quy định tại điểm 59.7.2 khoản 59.7 Điều này. Khi hết phạm vi đường cong nằm, khoảng cách của các cọc tiêu lấy theo tiết a và tiết b điểm này. 59.7.4. Mỗi hàng cọc tiêu cắm ít nhất là 6 cọc."
+      }
+     ]
+    },
+    {
+     "article_number": 60,
+     "article_title": "Hàng cây thay thế cọc tiêu",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "Trên những đoạn đường nếu hàng cây có đủ điều kiện như sau thì được phép sử dụng thay thế cọc tiêu:",
+     "clauses": [
+      {
+       "clause_number": "60.1",
+       "text": "Khoảng cách giữa hai cây khoảng 10 m và tương đối bằng nhau (đường kính 0,15 m trở lên);"
+      },
+      {
+       "clause_number": "60.2",
+       "text": "Hàng cây trồng ở lề đường hoặc mái taluy nền đường; lượn đều theo mép phần đường xe chạy;"
+      },
+      {
+       "clause_number": "60.3",
+       "text": "Thân cây được thường xuyên quét vôi trắng từ độ cao trên vai đường 1,5 m trở xuống."
+      }
+     ]
+    },
+    {
+     "article_number": 61,
+     "article_title": "Tiêu phản quang",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "61.1",
+       "text": "Quy định chung đối với tiêu phản quang 61.1.1. Tiêu phản quang là thiết bị dẫn hướng được gắn các công cụ phản quang để dẫn hướng xe chạy vào ban đêm hoặc trong điều kiện sương mù, điều kiện hạn chế tầm nhìn. Tiêu phản quang được bố trí tại các nơi mà tuyến đường có thể gây ngộ nhận hoặc lúng túng về hướng đường. 61.1.2. Tiêu phản quang phải gắn công cụ phản quang cho phép nhìn rõ vào buổi tối dưới ánh đèn pha ôtô đạt tiêu chuẩn trong điều kiện thời tiết bình thường ở cự ly 300m. 61.1.3. Công cụ phản quang có thể là các tấm nhựa phản quang, các khối kim loại gắn phản quang, màng phản quang dán trên các miếng kim loại v.v... Công cụ phản quang có thể có dạng hình tròn, hình chữ nhật, hình tam giác hoặc hình đa giác được gắn lên các lan can phòng hộ, tường bảo vệ hoặc gắn xuống mặt đường. Công cụ phản quang cũng bao gồm các vật liệu phản quang dạng dải quấn quanh các cọc tiêu phản quang. 61.1.4. Tiêu phản quang màu vàng được sử dụng ở các dải phân cách giữa, tại bên đường các đường một chiều hay bên phải của đường hai chiều. Tiêu phản quang màu đỏ được sử dụng cho hướng ngược chiều (bên trái) theo chiều đi của đường hai chiều (để cảnh báo người lái đi nhầm đường) và sử dụng cho các đường lánh nạn. 61.1.5. Tiêu phản quang bao gồm: tiêu phản quang bố trí bên đường hoặc trên dải phân cách, tiêu phản quang dạng mũi tên và đinh phản quang (còn gọi là cóc phản quang) bố trí trên mặt đường."
+      },
+      {
+       "clause_number": "61.2",
+       "text": "Tiêu phản quang bố trí bên đường hoặc trên dải phân cách 61.2.1. Phạm vi áp dụng tiêu phản quang bố trí bên đường hoặc trên dải phân cách: a) Trên các đường cao tốc: + Bố trí dọc hai bên đường. Khi đó, nếu lan can phòng hộ cách mép phần đường xe chạy dưới 2,4 m, gắn tiêu phản quang lên lan can phòng hộ. Các trường hợp khác có thể bố trí tiêu phản quang dạng cột đặt bên đường; + Bố trí ít nhất một bên trên các nhánh nối của các nút giao khác mức liên thông. b) Trên các đường khác: nên sử dụng tiêu phản quang tại vị trí các đoạn đường bị thu hẹp phần đường xe chạy mà không có lan can phòng hộ, các đoạn đường đèo dốc quanh co hạn chế tầm nhìn, trong phạm vi đường lánh nạn, nơi đường bộ giao nhau với đường sắt. Nơi đường thường xuyên có sương mù cần bố trí tiêu phản quang trên các vật thể cứng liền kề phần xe chạy như các đầu đảo giao thông, bó vỉa v.v... khi khó nhận biết các vật thể này về ban đêm. 61.2.2. Không cần sử dụng tiêu phản quang bố trí bên đường và trên dải phân cách trong các trường hợp sau: a) Trên mặt đường đã được gắn đinh phản quang liên tục; b) Đã sử dụng tiêu phản quang dạng mũi tên trong các đường cong; c) Tại những nơi có đèn đường chiếu sáng liên tục về ban đêm; d) Làn đường mở rộng dần theo chiều xe chạy. 61.2.3. Vị trí và khoảng cách tiêu phản quang bố trí bên đường và trên dải phân cách như sau: a) Tiêu phản quang đặt cách mép phần xe chạy phía ngoài cùng từ 0,6 m - 2,4 m và cách đều mép mặt đường, lượn cong đều theo mép phần đường xe chạy; b) Trên đường thẳng, khoảng cách giữa tiêu phản quang không nhỏ hơn 10 m và không quá 100 m; c) Trong phạm vi đường cong nằm, khoảng cách nhỏ nhất giữa các tiêu phản quang là 6 m và tối đa là 100 m phụ thuộc vào bán kính đường cong; d) Phần đường thẳng tiếp giáp với điểm bắt đầu hoặc kết thúc của đường cong bố trí 3 tiêu. Tiêu đầu tiên cách điểm bắt đầu hoặc kết thúc của đường cong là 1S; tiêu thứ hai cách tiêu thứ nhất là 3S, và tiêu thứ 3 cách tiêu thứ 2 là 6S nhưng cũng không cách xa quá 100 m (S là khoảng cách giữa các tiêu bố trí trong đường cong)."
+      },
+      {
+       "clause_number": "61.3",
+       "text": "Tiêu phản quang dạng mũi tên 61.3.1. Tiêu phản quang dạng mũi tên bao gồm một biển vẽ dạng mũi tên chỉ hướng màu đen trên nền vàng gắn trên đỉnh các cột (xem Hình 34a). Tiêu phản quang dạng mũi tên chỉ hướng ngược chiều (bên trái) màu trắng trên nền đỏ thường sử dụng cho đường 2 chiều không có dải phân cách giữa (Hình 34b) 61.3.2. Kích thước tiêu phản quang dạng mũi tên được quy định như sau: Kích thước (mm) A B C D E F Đường có tốc độ thiết kế < 60 km/h Đường có tốc độ thiết kế 60 - 80 km/h Đường có tốc độ thiết kế > 80 km/h * Trong trường hợp cần thiết ở các đoạn đường đèo dốc, sương mù có thể tăng kích thước lên 1 cấp nâng cao ATGT. 61.3.3. Tiêu phản quang dạng mũi tên được sử dụng trong phạm vi đường cong nằm trong các trường hợp sau: a) Trên các đường cao tốc tại các đường cong có bán kính bằng bán kính tối thiểu nhỏ nhất theo cấp đường; b) Trên các nhánh rẽ trái gián tiếp của các nút giao khác mức liên thông; c) Trên các đoạn đường cong hạn chế tầm nhìn hoặc các đường cong được đánh giá là điểm đen, điểm tiềm ẩn về tai nạn giao thông; các đường cong được gắn biển số W.201 \"Chỗ ngoặt nguy hiểm\" có lưng hướng ra phía vực sâu mà không có tường bảo vệ hoặc lan can phòng hộ; các đường cong dạng con rắn. 61.3.4. Tiêu phản quang dạng mũi tên được bố trí ở phía lưng của đường cong nằm, bắt đầu từ điểm bắt đầu cho đến điểm kết thúc đoạn cong. Khoảng cách giữa các tiêu phản quang dạng mũi tên không nhỏ hơn 12 m và không lớn hơn 60 m."
+      },
+      {
+       "clause_number": "61.4",
+       "text": "Đinh phản quang 61.4.1. Đinh phản quang theo phương dọc đường được bố trí như sau: a) Trên các đường cao tốc: + Bố trí trên các vạch sơn kênh hóa dòng xe tại đầu các mũi đảo tách dòng và nhập dòng. Trong trường hợp này, cần sử dụng đinh phản quang trong phạm vi từ mũi đảo thực (đảo cứng) cho đến mũi hết mũi đảo bằng vạch sơn với cự ly giữa các đinh phản quang tối đa là 6 m. + Có thể bố trí đinh phản quang trên các vạch sơn phân chia giữa phần xe chạy chính và làn dừng xe khẩn cấp. b) Với đường nhiều hơn 2 làn xe mỗi hướng không có dải phân cách cố định, có thể bố trí một hàng đinh phản quang tại tim đường nằm giữa vạch sơn phân chia hai chiều xe chạy hoặc phân làn đường, mép đường. c) Đối với đường có 2 làn xe, cần xem xét bố trí đinh phản quang tại tim đường kết hợp với vạch sơn phân chia chiều đường xe chạy, đặc biệt đối với tuyến đường tại khu vực miền núi, đường đèo dốc quanh co, nhiều sương mù, tầm nhìn hạn chế. Trong trường hợp cần thiết, có thế gắn đinh phản quang tại dọc theo mép đường xe chạy. 61.4.2. Có thể sử dụng đinh phản quang màu vàng gắn theo phương ngang đường tại vị trí mặt đường bị thấp xuống hoặc vồng lên đột ngột theo phương ngang đường và trên vạch dừng xe nơi phần đường người đi bộ cắt qua không có tín hiệu đèn điều khiển. 61.4.3. Đinh phản quang không được nhô cao khỏi mặt đường quá 2,5 cm."
+      }
+     ]
+    },
+    {
+     "article_number": 62,
+     "article_title": "Tường bảo vệ",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "62.1",
+       "text": "Có thể xây tường bảo vệ để thay thế cọc tiêu. Tường bảo vệ thay thế cọc tiêu được gắn tiêu phản quang hoặc được sơn phản quang theo các quy định về bố trí tiêu phản quang và vạch kẻ đường (vạch đứng) quy định trong Quy chuẩn này;"
+      },
+      {
+       "clause_number": "62.2",
+       "text": "Tường bảo về dày tối thiểu từ 0,2m - 0,3m, cao trên vai đường tối thiểu 0,5m."
+      }
+     ]
+    },
+    {
+     "article_number": 63,
+     "article_title": "Hàng rào chắn cố định",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "63.1",
+       "text": "Hàng rào chắn cố định đặt ở những vị trí nền đường bị thắt hẹp, ở đầu cầu, đầu cống hoặc ở đầu những đoạn đường cấm, đường cụt, không cho xe, người qua lại."
+      },
+      {
+       "clause_number": "63.2",
+       "text": "Đường hai đầu cầu nơi bề rộng cầu hẹp hơn bề rộng nền đường thì sử dụng hàng rào có lan can phòng hộ; lan can lúc này được sơn hoặc gắn tiêu phản quang có tác dụng dẫn hướng như cọc tiêu."
+      },
+      {
+       "clause_number": "63.3",
+       "text": "Hai đầu cống nơi chiều dài cống hẹp hơn bề rộng nền đường thì sử dụng hàng rào có lan can phòng hộ hoặc xây tường bảo vệ. Tường hoặc lan can được sơn hoặc gắn tiêu phản quang có tác dụng như cọc tiêu."
+      },
+      {
+       "clause_number": "63.4",
+       "text": "Trên các bộ phận của hàng rào chắn (cột, thanh ngang) gắn tiêu phản quang hoặc được sơn phản quang theo các quy định về bố trí tiêu phản quang và vạch kẻ đường (vạch đứng) quy định trong Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 64,
+     "article_title": "Hàng rào chắn di động",
+     "chapter_number": 11,
+     "chapter_title": "CỌC TIÊU, TIÊU PHẢN QUANG, TƯỜNG BẢO VỆ VÀ HÀNG RÀO CHẮN",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "64.1",
+       "text": "Hàng rào chắn di động là những hàng rào chắn có thể di động theo yêu cầu hoặc đóng mở được."
+      },
+      {
+       "clause_number": "64.2",
+       "text": "Hàng rào chắn di động đặt ở những vị trí cần điều khiển sự đi lại và kiểm soát giao thông."
+      },
+      {
+       "clause_number": "64.3",
+       "text": "Chiều cao hàng rào chắn di động là 0,85 m, chiều dài là suốt phần đường cấm."
+      },
+      {
+       "clause_number": "64.4",
+       "text": "Trên các bộ phận của hàng rào chắn (cột, thanh ngang) được gắn tiêu phản quang hoặc được sơn phản quang theo các quy định về bố trí tiêu phản quang và vạch kẻ đường (vạch đứng) quy định trong Quy chuẩn này."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 12,
+   "chapter_title": "CỘT KILÔMÉT, CỌC H",
+   "articles": [
+    {
+     "article_number": 65,
+     "article_title": "Tác dụng của cột kilômét",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "Cột kilômét có tác dụng xác định lý trình để phục vụ yêu cầu quản lý đường và kết hợp chỉ dẫn cho những người tham gia giao thông biết khoảng cách trên hướng đi.",
+     "clauses": []
+    },
+    {
+     "article_number": 66,
+     "article_title": "Phân loại cột kilômét",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "66.1",
+       "text": "Có 3 loại cột kilômét được sử dụng gồm: 66.1.1. Cột kilômét dạng cột thấp (Hình I.1 - Phụ lục I); 66.1.2. Cột kilômét dạng cột cao (Hình I.2 - Phụ lục I); 66.1.3. Cột kilômét dạng tấm hình chữ nhật (Hình I.3 - Phụ lục I)."
+      },
+      {
+       "clause_number": "66.2",
+       "text": "Đối với đường hai làn xe không có dải phân cách giữa, sử dụng một cột kilômét dạng cột thấp đặt ở lề đường hoặc sử dụng một cột kilômét dạng cột cao đặt phía ngoài lan can phòng hộ. Cột kilômét được đặt về phía tay phải theo hướng đi từ điểm đầu (điểm gốc đường) đến điểm cuối tuyến đường. Trong trường hợp khó khăn có thể đặt cột kilômét về phía tay trái."
+      },
+      {
+       "clause_number": "66.3",
+       "text": "Đối với đường ôtô thông thường có nhiều hơn hai làn xe không có dải phân cách giữa thì sử dụng hai cột kilômét dạng cột thấp ở hai bên lề đường. Trong trường hợp có lan can phòng hộ thì sử dụng cột kilômét dạng cột cao đặt phía bên ngoài của lan can phòng hộ."
+      },
+      {
+       "clause_number": "66.4",
+       "text": "Đối với đường ôtô thông thường có dải phân cách giữa có bề rộng ≤ 4,0 m thì sử dụng một cột kilômét dạng cột cao đặt ở giữa dải phân cách. Trường hợp bề rộng dải phân cách giữa hẹp, không đặt được cột kilômét dạng cột cao thì sử dụng một cột dạng tấm hình chữ nhật (nền trắng, chữ đen) đặt ở dải phân cách giữa và một cột kilômét dạng cột cao đặt ở hai bên lề đường phía bên phải chiều xe chạy."
+      },
+      {
+       "clause_number": "66.5",
+       "text": "Đối với đường ôtô thông thường có dải phân cách giữa có bề rộng > 4,0 m thì sử dụng hai cột kilômét dạng cột cao đặt ở hai mép dải phân cách phía bên trái chiều xe chạy."
+      },
+      {
+       "clause_number": "66.6",
+       "text": "Đối với đường ôtô cao tốc có dải phân cách giữa có bề rộng ≤ 4,0 m thì sử dụng một cột kilômét dạng cột cao đặt ở giữa dải phân cách và hai cột dạng tấm hình chữ nhật đặt ở hai bên lề đường."
+      },
+      {
+       "clause_number": "66.7",
+       "text": "Đối với đường ôtô cao tốc có dải phân cách giữa có bề rộng > 4,0 m thì sử dụng hai cột kilômét dạng cột cao đặt ở hai mép dải phân cách và hai cột dạng tấm hình chữ nhật đặt ở hai bên lề đường."
+      }
+     ]
+    },
+    {
+     "article_number": 67,
+     "article_title": "Quy cách cột kilômét",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "67.1",
+       "text": "Hình dạng, màu sắc kích thước và chữ viết trên cột kilômét quy định ở Phụ lục I."
+      },
+      {
+       "clause_number": "67.2",
+       "text": "Đối với đường có tốc độ thiết kế ≥ 60 km/h, mặt cột kilômét có phản quang để được nhìn rõ về ban đêm. Khuyến khích sử dụng mặt cột kilômét phản quang đối với các đường khác."
+      },
+      {
+       "clause_number": "67.3",
+       "text": "Đối với cột kilômét dạng cột cao đặt ở giữa dải phân cách, mép thấp nhất của cột đến mặt đường tối thiểu là 1.200 mm; mép ngoài cột cách mép phần xe chạy tối thiểu 500 mm."
+      },
+      {
+       "clause_number": "67.4",
+       "text": "Đối với cột kilômét dạng tấm hình chữ nhật đặt ở lề đường hoặc dải phân cách giữa chiều cao mép biển thấp nhất so với mép mặt đường tối thiểu là 1.200 mm. Biển đặt cách mép phần xe chạy tối thiểu là 0,5 m theo chiều ngang."
+      }
+     ]
+    },
+    {
+     "article_number": 68,
+     "article_title": "Vị trí đặt cột kilômét theo chiều cắt ngang đường",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "Đối với cột kilômét dạng cột thấp và dạng cột cao, vị trí đặt cột kilômét theo hướng cắt ngang đường theo quy định như vị trí chôn cọc tiêu quy định ở khoản 59.1 và khoản 59.2 Điều 59. Nếu đường qua khu đông dân cư đã có hè đường cao hơn phần xe chạy thì cột kilômét đặt trên hè đường cách mép phần xe chạy tối thiểu 0,75 m (tính đến tim cột).",
+     "clauses": []
+    },
+    {
+     "article_number": 69,
+     "article_title": "Vị trí đặt cột kilômét theo chiều dọc đường",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "69.1",
+       "text": "Vị trí đặt cột kilômét theo chiều dọc đường là khoảng cách chẵn 1.000 m của tim đường bắt đầu từ điểm gốc đường. Điểm gốc đường gọi là \"km 0\"."
+      },
+      {
+       "clause_number": "69.2",
+       "text": "Vị trí điểm gốc đường và điều chỉnh cục bộ hướng tuyến của một tuyến đường, chiều dài cục bộ do cấp có thẩm quyền quản lý hệ thống đường đó ra quyết định."
+      },
+      {
+       "clause_number": "69.3",
+       "text": "Khi thay đổi điểm gốc đường và điều chỉnh cục bộ hướng tuyến theo quyết định của cấp có thẩm quyền quy định ở khoản 69.2 Điều này mới đặt lại hệ thống cột kilômét. Nhà thầu bảo trì không được tự ý thay đổi vị trí cột kilômét."
+      },
+      {
+       "clause_number": "69.4",
+       "text": "Khi không thể đặt cột kilômét chính xác tại lý trình yêu cầu do vướng chướng ngại vật thì cho phép dịch chuyển cột trong cự ly 50 m theo phương dọc đường."
+      }
+     ]
+    },
+    {
+     "article_number": 70,
+     "article_title": "Tên địa danh và khoảng cách ghi trên cột kilômét",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "70.1",
+       "text": "Tên địa danh chỉ dẫn trên cột kilômét được ghi trên các cột kilômét dạng cột thấp và cột kilômét dạng cột cao theo quy định ở Phụ lục I của Quy chuẩn này."
+      },
+      {
+       "clause_number": "70.2",
+       "text": "Khoảng cách ghi kèm theo tên địa danh là chiều dài từ cột kilômét đến vị trí trung tâm địa danh mang tên địa phương đó, lấy số chẵn đến km."
+      }
+     ]
+    },
+    {
+     "article_number": 71,
+     "article_title": "Phạm vi áp dụng cột kilômét",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "Cột kilômét quy định như trên chỉ áp dụng trên các hệ thống quốc lộ, đường tỉnh, đường huyện và đường chuyên dùng, không áp dụng với hệ thống đường đô thị và hệ thống đường xã.",
+     "clauses": []
+    },
+    {
+     "article_number": 72,
+     "article_title": "Cọc H (Cọc 100 m)",
+     "chapter_number": 12,
+     "chapter_title": "CỘT KILÔMÉT, CỌC H",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "72.1",
+       "text": "Cọc H được sử dụng trên các tuyến đường bộ là các cọc lý trình 100 m được trồng trong phạm vi giữa hai cột kilômét liền kề. Cứ cách 100 m từ cột kilômét trước đến cột kilômét sau trồng một cọc H. Trên chiều dài 1 km có 9 cọc H lần lượt là H1, H2 đến H9. Kỹ thuật chôn cọc H tương tự như cọc mốc lộ giới hoặc dạng tấm gắn lên trên dải phân cách hay hộ lan."
+      },
+      {
+       "clause_number": "72.2",
+       "text": "Trường hợp tại vị trí cần cắm cọc H đã có hộ lan, tường bảo vệ hoặc các vật cứng cố định thì có thể viết hoặc gắn thông tin cọc H trực tiếp lên các kết cấu nói trên hoặc sử dụng dạng tấm gắn trên các kết cấu đó. Thông tin cần thể hiện trên cọc H xem Phụ lục I của Quy chuẩn này."
+      },
+      {
+       "clause_number": "72.3",
+       "text": "Kích thước, hình dáng, màu sắc quy định tại Phụ lục I của Quy chuẩn này."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 13,
+   "chapter_title": "MỐC LỘ GIỚI",
+   "articles": [
+    {
+     "article_number": 73,
+     "article_title": "Tác dụng của cọc mốc lộ giới",
+     "chapter_number": 13,
+     "chapter_title": "MỐC LỘ GIỚI",
+     "intro": "Cọc mốc lộ giới là một loại báo hiệu đường bộ dùng để xác định giới hạn bề rộng đất dành cho đường bộ (gồm đất của đường bộ và hành lang an toàn đường bộ) theo quy định của Luật Giao thông đường bộ.",
+     "clauses": []
+    },
+    {
+     "article_number": 74,
+     "article_title": "Cấu tạo cọc mốc",
+     "chapter_number": 13,
+     "chapter_title": "MỐC LỘ GIỚI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "74.1",
+       "text": "Cọc mốc được đúc bằng bê tông không có cốt thép với kích thước (20 cm x 20 cm x 100 cm). Phần đầu cọc mỗi cạnh vát 10°, phần chôn xuống đất dài 50 cm, có bê tông chèn chân cọc. Trong trường hợp đặc biệt có thiết kế riêng nhưng phải đảm bảo bề rộng để viết chữ."
+      },
+      {
+       "clause_number": "74.2",
+       "text": "Mặt trước cọc (phía quay ra đường) ghi chữ \"MỐC LỘ GIỚI\", chữ chìm, nét chữ màu đỏ cao 6 cm, rộng 1 cm, sâu vào trong bê tông 3 mm - 5 mm;"
+      },
+      {
+       "clause_number": "74.3",
+       "text": "Cọc được sơn màu trắng. Phần trên cùng cao 10 cm (từ đỉnh cột trở xuống) sơn màu đỏ;"
+      },
+      {
+       "clause_number": "74.4",
+       "text": "Chi tiết quy định tại Phụ lục I của Quy chuẩn này."
+      }
+     ]
+    },
+    {
+     "article_number": 75,
+     "article_title": "Quy định cắm cọc mốc lộ giới",
+     "chapter_number": 13,
+     "chapter_title": "MỐC LỘ GIỚI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "75.1",
+       "text": "Đường qua khu đông dân cư, thị xã, làng, bản: bình quân cứ 100 m cắm một cột về mỗi bên đường."
+      },
+      {
+       "clause_number": "75.2",
+       "text": "Đường qua khu vực đồng ruộng, đồi thấp, ngoài khu đông dân cư, tùy theo địa hình cụ thể mà cự ly các cột thay đổi từ 200 m đến 500 m."
+      },
+      {
+       "clause_number": "75.3",
+       "text": "Ở vùng núi cao chỉ cắm đại diện ở một số vị trí sao cho đủ để giúp cho quản lý hành lang an toàn đường bộ."
+      }
+     ]
+    },
+    {
+     "article_number": 76,
+     "article_title": "Các quy định khác",
+     "chapter_number": 13,
+     "chapter_title": "MỐC LỘ GIỚI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "76.1",
+       "text": "Các đơn vị quản lý đường có trách nhiệm cắm mốc lộ giới và bàn giao cho UBND cấp xã sở tại quản lý theo quy định. Đối với các dự án xây dựng mới, chủ đầu tư chỉ đạo đơn vị thi công cắm đầy đủ mốc lộ giới và lập thành hồ sơ, sau khi hoàn thành công trình phải bàn giao hồ sơ hoàn công trong đó có hồ sơ mốc lộ giới xác định hành lang an toàn đường bộ cho đơn vị quản lý đường bộ và UBND cấp xã sở tại quản lý theo quy định;"
+      },
+      {
+       "clause_number": "76.2",
+       "text": "Mốc lộ giới trên các tuyến đường phải được thể hiện, lập trên bình đồ duỗi thẳng với tỷ lệ 1/10.000."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 14,
+   "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+   "articles": [
+    {
+     "article_number": 77,
+     "article_title": "Phân loại cấm đi lại",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "Có ba loại cấm đi lại trên đường như sau:",
+     "clauses": [
+      {
+       "clause_number": "77.1",
+       "text": "Cấm riêng từng loại phương tiện;"
+      },
+      {
+       "clause_number": "77.2",
+       "text": "Cấm riêng từng chiều đi;"
+      },
+      {
+       "clause_number": "77.3",
+       "text": "Cấm toàn bộ sự đi lại, trong đó nguyên nhân dẫn đến phải cấm cũng được chia ra: 77.3.1. Cấm đi lại vì những lý do đường, cầu bị tắc; 77.3.2. Cấm đi lại vì những lý do đặc biệt khác."
+      }
+     ]
+    },
+    {
+     "article_number": 78,
+     "article_title": "Cấm riêng từng loại phương tiện",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "78.1",
+       "text": "Nếu cần cấm đi lại của riêng từng loại phương tiện hoặc một số loại phương tiện nhất định, đặt các biển báo cấm quy định từ B.3 đến B.20 Phụ lục B của Quy chuẩn này (từ biển số P.103 đến biển số P.120, trừ biển số P.112 dùng để cấm người đi bộ)."
+      },
+      {
+       "clause_number": "78.2",
+       "text": "Vị trí đặt biển báo cấm theo quy định ở Điều 30."
+      }
+     ]
+    },
+    {
+     "article_number": 79,
+     "article_title": "Cấm riêng từng chiều đi",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "79.1",
+       "text": "Nếu cấm phương tiện đi lại trên một chiều, đặt biển báo cấm số P.102 \"Cấm đi ngược chiều\" theo quy định ở Mục B.2 Phụ lục B, chiều đi ngược lại đặt biển chỉ dẫn số I.407a \"Đường một chiều\" quy định ở Mục E.7 Phụ lục E của Quy chuẩn này hoặc đặt biển R.302a, hay R.302b tại các đầu dải phân cách."
+      },
+      {
+       "clause_number": "79.2",
+       "text": "Vị trí đặt biển báo cấm theo quy định ở Điều 30."
+      }
+     ]
+    },
+    {
+     "article_number": 80,
+     "article_title": "Cấm toàn bộ sự đi lại",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "80.1",
+       "text": "Cấm đi lại do sự cố cầu, đường: 80.1.1. Trên những đoạn đường bị sự cố, các loại phương tiện và người đi bộ không thể đi lại được đặt rào chắn và đặt biển số P.101 \"Đường cấm\" như quy định ở Mục B.1 Phụ lục B của Quy chuẩn này. 80.1.2. Vị trí rào chắn đặt ở vị trí có đường tránh, đường phân luồng cho các loại phương tiện đi lại. Kèm theo rào chắn và biển số P.101, khi cần thiết đặt biển chỉ hướng đi cho các loại phương tiện (biển số I.416, I.417 (a,b,c) quy định ở Mục E.16, và E.17 Phụ lục E của Quy chuẩn này. 80.1.3. Nếu trên hướng đường từ vị trí phân luồng đến vị trí bị tắc vẫn cho phương tiện đi lại thì không đặt rào chắn mà đặt biển như sau: a) Trên đường chính, trước vị trí phân luồng 100 m, đặt biển chỉ dẫn hướng đi phù hợp cho các loại phương tiện (biển số I.416, I.417 (a,b,c)); b) Sau biển chỉ hướng đi 30 m, đặt biển chỉ dẫn \"Đường cụt\" (biển số I.405c) như quy định ở Mục E.5 Phụ lục E của Quy chuẩn này; c) Trên hướng đường bị tắc, sau vị trí phân luồng cứ khoảng 300 m đến 500 m lại đặt biển chỉ dẫn \"Đường cụt\" (biển số I.405c) nhắc lại; d) Đến giáp vị trí đường tắc, không cho phương tiện đi tiếp được nữa thì đặt rào chắn và biển số P.101 \"Đường cấm\" như quy định ở Mục B.1 Phụ lục B của Quy chuẩn này. 80.1.4. Nếu đường bị tắc không có hướng phân luồng, phương tiện phải chờ đợi một thời gian rồi mới tiếp tục được đi thì đặt hàng rào chắn và đặt biển số P.101 \"Đường cấm\" như quy định ở Mục B.1 Phụ lục B của Quy chuẩn này. 80.1.5. Vị trí đặt rào chắn cấm đường phải lựa chọn vị trí phương tiện có thể quay đầu được hoặc gần vị trí có dân cư để thuận tiện cho phương tiện chờ đợi đồng thời đặt bảng thông báo về tình hình giao thông và ngày, giờ phương tiện có thể tiếp tục đi lại."
+      },
+      {
+       "clause_number": "80.2",
+       "text": "Cấm đi lại vì những lý do khác: 80.2.1. Nếu vì những lý do đặc biệt phải cấm đi lại trong thời gian dài thì phải đặt rào chắn và đặt biển số P.101 như quy định ở Mục B.1 Phụ lục B của Quy chuẩn này. 80.2.2 Nếu cấm đi lại chỉ thi hành đột xuất trong thời gian ngắn thì ngoài việc đặt rào chắn và biển báo đường cấm, khi cần thiết có thể bố trí người thường trực chỉ huy phương tiện trong suốt thời gian cấm."
+      }
+     ]
+    },
+    {
+     "article_number": 81,
+     "article_title": "Tổ chức trạm điều khiển giao thông",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "81.1",
+       "text": "Trường hợp cấm đi lại xảy ra đột ngột hoặc việc tổ chức phân luồng trên địa bàn phức tạp về giao thông thì ngoài hệ thống báo hiệu như quy định từ Điều 77 đến Điều 80 của Quy chuẩn này cần thiết tổ chức các trạm điều khiển giao thông."
+      },
+      {
+       "clause_number": "81.2",
+       "text": "Trạm điều khiển giao thông, khi cần thiết, bố trí người thường trực làm việc liên tục suốt ngày đêm để điều hành giao thông."
+      },
+      {
+       "clause_number": "81.3",
+       "text": "Phải trang bị tại trạm đủ rào chắn, biển báo, đèn, cờ để điều khiển sự đi lại."
+      },
+      {
+       "clause_number": "81.4",
+       "text": "Nếu phải lập trạm điều khiển giao thông vì lý do đường, cầu bị hư hỏng thì cơ quan quản lý đường có trách nhiệm tổ chức trạm."
+      },
+      {
+       "clause_number": "81.5",
+       "text": "Nếu phải lập trạm điều khiển giao thông do các công việc xây dựng, sửa chữa cầu đường hoặc các công trình khác có ảnh hưởng đến sự đi lại thì các đơn vị thầu xây lắp phải chịu kinh phí để cơ quan quản lý đường bộ tổ chức trạm."
+      },
+      {
+       "clause_number": "81.6",
+       "text": "Nếu phải tổ chức trạm trong một thời gian ngắn vì các lý do khác ngoài các lý do nêu ở khoản 81.4 và khoản 81.5 Điều này thì tuỳ tính chất công việc do cơ quan công an chịu trách nhiệm hoặc cơ quan công an chủ trì phối hợp với cơ quan quản lý đường bộ tổ chức thực hiện."
+      },
+      {
+       "clause_number": "81.7",
+       "text": "Trước khi tổ chức trạm theo quy định ở khoản 81.6 Điều này, cơ quan công an lấy ý kiến với cơ quan quản lý đường bộ để được phối hợp, hỗ trợ."
+      }
+     ]
+    },
+    {
+     "article_number": 82,
+     "article_title": "Báo hiệu cấm đường trong những trường hợp khẩn cấp",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "Trong những trường hợp khẩn cấp phải cấm đường nhưng chưa kịp bố trí hệ thống báo hiệu theo quy định thì những tín hiệu sau đây có giá trị ngăn cấm đường: một cây chắn ngang đường, đồng thời có cờ đỏ hoặc vải đỏ thì treo ở giữa cây chắn, ban đêm dùng đèn đỏ thay cờ. Cần thiết có người gác hướng dẫn giao thông đứng ở vị trí giữa đường, hai tay giơ ngang vai làm lệnh, mặt hướng về phía xe chạy đến.",
+     "clauses": []
+    },
+    {
+     "article_number": 83,
+     "article_title": "Báo hiệu cấm từng phần mặt đường, lề đường, vỉa hè",
+     "chapter_number": 14,
+     "chapter_title": "BÁO HIỆU CẤM ĐI LẠI",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "83.1",
+       "text": "Trong trường hợp từng bộ phận, từng phần của con đường như vỉa hè, lề đường, đường người đi trên cầu, một phần hoặc toàn bộ làn đường bị hư hỏng hoặc đang sửa chữa thì phải đặt rào chắn xung quanh những bộ phận hoặc phần công trình đó để người và phương tiện không đi vào khu vực đó gây nguy hiểm."
+      },
+      {
+       "clause_number": "83.2",
+       "text": "Rào chắn phải chắc chắn."
+      },
+      {
+       "clause_number": "83.3",
+       "text": "Ở giữa rào chắn phải đặt biển số P.101 \"Đường cấm\" hoặc biển báo phù hợp khác. Nếu là công trường đang thi công thì đặt biển số P.101 hoặc biển báo phù hợp khác kèm theo biển số W.227 \"Công trường\". Khi cần thiết có thể bố trí kèm theo các thiết bị cảnh báo khác để thông tin cho người tham gia giao thông biết."
+      },
+      {
+       "clause_number": "83.4",
+       "text": "Hàng rào chắn của các công trường thi công thường xuyên di động có thể làm theo kiểu mang đi mang lại được. Chiều cao cột rào chắn trong trường hợp này chỉ cần cao hơn mặt đất 0,6 m đến 1,2 m (hàng rào chắn có thể là từng đoạn rào bằng sắt sơn trắng đỏ, chân có bánh xe hoặc chóp nón bằng nhựa hay bằng cao su...)."
+      },
+      {
+       "clause_number": "83.5",
+       "text": "Nếu chiều ngang phạm vi cấm đường chiếm hoàn toàn một làn đường trên những đường có hai làn đường, tạm thời hai chiều xe đi và về phải đi chung nhau một làn còn lại thì ngoài những báo hiệu phải đặt như quy định ở khoản 83.3 Điều này, cần phải có các biện pháp cảnh báo từ xa."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chapter_number": 15,
+   "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+   "articles": [
+    {
+     "article_number": 84,
+     "article_title": "Gương cầu lồi",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "84.1",
+       "text": "Gương cầu lồi có tác dụng cải thiện tầm nhìn cho người tham gia giao thông ở các vị trí đường cong bán kính nhỏ, tầm nhìn bị che khuất. Qua gương cầu lồi người điều khiển phương tiện có thể quan sát được từ xa phương tiện chạy ngược chiều để điều chỉnh tốc độ cho phù hợp."
+      },
+      {
+       "clause_number": "84.2",
+       "text": "Vị trí đặt gương cầu lồi 84.2.1. Gương cầu lồi sử dụng ở các vị trí đường cong bán kính nhỏ, bị che khuất tầm nhìn được đặt chủ yếu ở các đường cong ôm núi có tầm nhìn hạn chế. 84.2.2. Vị trí gương cầu lồi đặt ở sát vai nền đường phía lưng, trên đường phân giác của góc đỉnh đường cong và mép dưới gương cao hơn cao độ vai đường là 1,2 m."
+      }
+     ]
+    },
+    {
+     "article_number": 85,
+     "article_title": "Dải phân cách",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "85.1",
+       "text": "Dải phân cách là bộ phận của đường mà xe không chạy trên đó được dùng để phân chia hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ hoặc của nhiều loại xe khác nhau trên cùng một chiều xe chạy."
+      },
+      {
+       "clause_number": "85.2",
+       "text": "Khi dải phân cách đặt ở khoảng giữa đường và sử dụng để phân chia giữa hai chiều xe chạy thì gọi là dải phân cách giữa; khi dải phân cách sử dụng để phân chia phần đường chính và phần đường bên hoặc phân chia giữa phần đường xe cơ giới và xe thô sơ hoặc của nhiều loại phương tiện khác nhau trên cùng một chiều giao thông thì gọi là dải phân cách bên."
+      },
+      {
+       "clause_number": "85.3",
+       "text": "Dải phân cách có hai loại là dải phân cách cố định và dải phân cách di động. 85.3.1. Dải phân cách cố định là dải phân cách có vị trí cố định trên phần đường xe chạy. Dải phân cách cố định gồm các loại cơ bản sau: a) Dải phân cách dạng bó vỉa bên trong đổ đất trồng cây (đối với dải phân cách rộng), có thể sử dụng kết hợp lan can phòng hộ nửa cứng hoặc mềm; b) Dải phân cách có dạng một dải đất xen kẹp giữa các phần xe chạy, có dạng lõm xuống hoặc tận dụng điều kiện địa hình tự nhiên, có thể sử dụng kết hợp lan can phòng hộ nửa cứng hoặc mềm; c) Dải phân cách sử dụng lan can phòng hộ cứng xây cố định trên mặt đường có chiều cao trong khoảng 0,3 m - 0,8 m, tối đa là 1,27 m nếu có nhu cầu chắn sáng, độ rộng tùy theo mặt đường rộng hẹp để thiết kế và được gắn tiêu phản quang hoặc được sơn phản quang theo các quy định về bố trí tiêu phản quang và vạch kẻ đường (vạch đứng) quy định trong Quy chuẩn này. 85.3.2. Dải phân cách di động là các dải phân cách có thể di chuyển theo bề rộng trên mặt đường được tạo bởi các cột (cục) bê tông, nhựa composite bên trong có thể đổ cát hoặc nước cao từ 0,3 m - 0,8 m xếp liền nhau hoặc có các ống thép 40 - 50 xuyên qua tạo thành hệ thống lan can trên mặt đường."
+      },
+      {
+       "clause_number": "85.4",
+       "text": "Điều kiện đặt dải phân cách cố định và di động: 85.4.1. Dải phân cách cố định nên sử dụng khi đường có từ 4 làn xe trở lên để phân làn đường đi theo hai hướng riêng biệt. 85.4.2. Dải phân cách di động nên dùng ở những nơi mặt đường chỉ đủ 2 hay 3 làn xe, cần chia tạm thời hai chiều hoặc hai làn xe riêng biệt."
+      }
+     ]
+    },
+    {
+     "article_number": 86,
+     "article_title": "Lan can phòng hộ",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "Có ba loại lan can phòng hộ, gồm lan can phòng hộ cứng, nửa cứng và lan can phòng hộ mềm.",
+     "clauses": [
+      {
+       "clause_number": "86.1",
+       "text": "Lan can phòng hộ cứng là loại phòng hộ bằng bê tông cốt thép hoặc kết cấu có độ cứng tương tự nhằm giảm thiểu,ngăn ngừa các xe đâm xuyên qua chiều đường ngược lại gây nguy hiểm. Loại này được áp dụng ở các đường có tốc độ cao, dải phân cách cố định bề rộng hẹp, đường có nhiều xe tải và xe buýt."
+      },
+      {
+       "clause_number": "86.2",
+       "text": "Lan can phòng hộ dạng nửa cứng là loại phòng hộ bằng tôn lượn sóng gồm một hoặc hai hàng, ba hàng được lắp đặt song song với mặt đường bằng cột gắn xuống đường; mép trên của tôn sóng phải cao hơn đỉnh cột. Hoặc có thể có các dạng hộ lan con xoay, tường lốp... mục tiêu giảm chấn khi va chạm."
+      },
+      {
+       "clause_number": "86.3",
+       "text": "Lan can phòng hộ mềm là loại phòng hộ dạng dây cáp treo và được căng trước lên các hệ đầu cột gắn xuống đường. PHẦN 3: QUY ĐỊNH VỀ QUẢN LÝ"
+      }
+     ]
+    },
+    {
+     "article_number": 87,
+     "article_title": "Nguyên tắc quản lý",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "87.1",
+       "text": "Các tuyến đường bộ khi đưa vào khai thác phải bố trí, lắp đặt đầy đủ báo hiệu theo quy định của Quy chuẩn này;"
+      },
+      {
+       "clause_number": "87.2",
+       "text": "Lộ trình thay thế, điều chỉnh đối với báo hiệu đường bộ: 87.2.1. Báo hiệu đường bộ thay thế, bổ sung mới phải tuân thủ theo quy định của Quy chuẩn này. 87.2.2. Biển báo có nội dung và ý nghĩa sai khác, không đúng với Quy chuẩn này phải được thay thế, điều chỉnh ngay. 87.2.3. Báo hiệu đường bộ có biểu tượng, ký hiệu, kích thước, màu sắc, đường viền chưa hoàn toàn phù hợp với Quy chuẩn này nhưng không gây hiểu nhầm, hiểu sai khác về ý nghĩa sử dụng so với quy định tại Quy chuẩn này thì vẫn có hiệu lực thi hành và sẽ được thay thế dần, hoàn thành trước ngày 20/8/2025."
+      },
+      {
+       "clause_number": "87.3",
+       "text": "Đối với dự án công trình đường bộ, nếu hệ thống báo hiệu đường bộ chưa thi công thì phải điều chỉnh theo Quy chuẩn này; Hệ thống báo hiệu đường bộ là hạng mục công trình phải hoàn thành trước khi bàn giao đưa vào khai thác, sử dụng."
+      },
+      {
+       "clause_number": "87.4",
+       "text": "Ngoài báo hiệu đường bộ quy định trong Quy chuẩn này, trường hợp cần thiết, Tổng cục Đường bộ Việt Nam căn cứ vào thực tế, đề xuất báo cáo Bộ Giao thông vận tải xem xét, quyết định."
+      }
+     ]
+    },
+    {
+     "article_number": 88,
+     "article_title": "Trách nhiệm và quyền hạn của cơ quan quản lý đường bộ",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "88.1",
+       "text": "Các cơ quan quản lý đường bộ có trách nhiệm bảo đảm cho hệ thống báo hiệu trên đường được đầy đủ, thống nhất và rõ ràng theo quy định tại Quy chuẩn này."
+      },
+      {
+       "clause_number": "88.2",
+       "text": "Tổ chức, cá nhân trực tiếp thực hiện công tác quản lý bảo trì trong phạm vi của mình, kịp thời phát hiện hư hỏng, mất mát và ngăn chặn, xử lý các xâm hại hệ thống báo hiệu, báo cáo về cơ quan quản lý đường bộ."
+      }
+     ]
+    },
+    {
+     "article_number": 89,
+     "article_title": "Trách nhiệm của người sử dụng đường bộ",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "89.1",
+       "text": "Người sử dụng đường bộ, khi tham gia giao thông phải chấp hành Quy chuẩn này."
+      },
+      {
+       "clause_number": "89.2",
+       "text": "Không được tự ý di chuyển, chiếm đoạt, làm hư hỏng hoặc làm thay đổi hiệu lực và tác dụng của những báo hiệu đặt trên đường;"
+      },
+      {
+       "clause_number": "89.3",
+       "text": "Có trách nhiệm phát hiện, kiến nghị đến cơ quan quản lý đường bộ các hư hỏng, mất mát, không phù hợp của hệ thống báo hiệu đường bộ."
+      },
+      {
+       "clause_number": "89.4",
+       "text": "Chịu trách nhiệm bồi thường các thiệt hại do làm hư hỏng, mất mát; bị xử lý theo quy định của pháp luật nếu làm thay đổi tác dụng hiệu lực báo hiệu đường bộ. PHẦN 4: TỔ CHỨC THỰC HIỆN"
+      }
+     ]
+    },
+    {
+     "article_number": 90,
+     "article_title": "Tổ chức thực hiện",
+     "chapter_number": 15,
+     "chapter_title": "GƯƠNG CẦU LỒI, DẢI PHÂN CÁCH VÀ LAN CAN PHÒNG HỘ",
+     "intro": "",
+     "clauses": [
+      {
+       "clause_number": "90.1",
+       "text": "Tổng cục Đường bộ Việt Nam có trách nhiệm hướng dẫn, kiểm tra việc thực hiện Quy chuẩn này trên toàn mạng lưới đường bộ; triển khai thực hiện trên hệ thống Quốc lộ; xây dựng các bộ định hình, hướng dẫn việc thiết kế và lắp đặt hệ thống báo hiệu đường bộ, bảo đảm tính thống nhất, đồng bộ theo Quy chuẩn này."
+      },
+      {
+       "clause_number": "90.2",
+       "text": "Sở Giao thông vận tải có trách nhiệm triển khai thực hiện Quy chuẩn này trên hệ thống Đường tỉnh, Đường huyện, Đường xã, Đường đô thị và Đường chuyên dùng trong phạm vi địa giới hành chính."
+      },
+      {
+       "clause_number": "90.3",
+       "text": "Vụ Khoa học công nghệ chủ trì, phối hợp với Tổng cục Đường bộ Việt Nam và các cơ quan có liên quan tổ chức kiểm tra việc thực hiện Quy chuẩn này."
+      },
+      {
+       "clause_number": "90.4",
+       "text": "Trong quá trình thực hiện quy chuẩn, nếu có khó khăn, vướng mắc, báo cáo Bộ Giao thông vận tải xem xét, hướng dẫn hoặc sửa đổi, bổ sung cho phù hợp."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "appendices": [
+  {
+   "letter": "A",
+   "title": "Đèn tín hiệu"
+  },
+  {
+   "letter": "B",
+   "title": "Ý nghĩa - Sử dụng biển báo cấm"
+  },
+  {
+   "letter": "C",
+   "title": "Ý nghĩa - Sử dụng biển báo nguy hiểm và cảnh báo"
+  },
+  {
+   "letter": "D",
+   "title": "Ý nghĩa - Sử dụng biển hiệu lệnh"
+  },
+  {
+   "letter": "E",
+   "title": "Ý nghĩa - Sử dụng biển chỉ dẫn"
+  },
+  {
+   "letter": "F",
+   "title": "Ý nghĩa - Sử dụng các biển phụ"
+  },
+  {
+   "letter": "G",
+   "title": "Ý nghĩa - Sử dụng vạch kẻ đường"
+  }
+ ]
+}

@@ -1,0 +1,213 @@
+/**
+ * tokens.css — Nguồn sự thật duy nhất cho mọi quyết định thị giác của LexTraffic AI.
+ *
+ * Ngôn ngữ thiết kế: neo-grotesque product.
+ * Giấy nguội chroma-0, mực gần đen, MỘT màu nhấn cobalt, đường kẻ 1px là công cụ
+ * phân tách chính. Chữ Geist cho giao diện, Geist Mono cho mọi trích dẫn pháp lý
+ * và mọi con số — vì bản thân văn bản luật đã là thứ được đánh số và neo theo căn cứ.
+ *
+ * Không có giá trị màu hoặc số đo cứng nào được phép nằm ngoài tệp này.
+ */
+
+:root {
+  /* ===================================================================
+   * 1. THANG TRUNG TÍNH (Neutral ramp — ám lạnh rất nhẹ, chroma ~0.004)
+   * =================================================================== */
+  --gray-50:  #f8f8f9;
+  --gray-100: #f2f2f4;
+  --gray-150: #ebebee;
+  --gray-200: #e3e3e7;
+  --gray-300: #d6d6db;
+  --gray-400: #b8b8c0;
+  --gray-500: #8c8c96;
+  --gray-600: #6b6b75;
+  --gray-700: #4d4d56;
+  --gray-800: #2c2c33;
+  --gray-900: #18181d;
+  --gray-950: #0d0d11;
+
+  /* ===================================================================
+   * 2. BỀ MẶT & MỰC (Surfaces & Inks)
+   * =================================================================== */
+  --surface-page:    #fdfdfe;   /* Khung nội dung chính, vùng đọc */
+  --surface-raised:  #f8f8fa;   /* Sidebar, thanh công cụ, hàng chẵn của bảng */
+  --surface-sunken:  #f1f1f4;   /* Ô nhập liệu, khối mã lệnh, vùng lõm */
+  --surface-overlay: #fdfdfe;   /* Dropdown, modal, command palette */
+  --surface-inverse: var(--gray-950);
+
+  /* Bốn bậc mực. Ba bậc đầu đều đạt WCAG AA cho chữ thường trên nền giấy;
+   * --ink-ghost KHÔNG đạt và chỉ được dùng cho thứ trang trí (viền icon, dấu
+   * phân cách, trạng thái vô hiệu) — không bao giờ cho chữ mang thông tin. */
+  --ink-strong:  var(--gray-950);  /* Tiêu đề, số liệu trọng yếu — 17.9:1 */
+  --ink-base:    var(--gray-700);  /* Văn bản thường, thân điều luật — 8.3:1 */
+  --ink-muted:   #5c5c66;          /* Nhãn phụ, mô tả — 6.5:1 */
+  --ink-faint:   #6e6e78;          /* Metadata, placeholder — 4.7:1 kể cả trên surface-raised */
+  --ink-ghost:   var(--gray-400);  /* Chỉ trang trí — 2.2:1, không dùng cho chữ */
+  --ink-inverse: #fafafc;
+
+  /* ===================================================================
+   * 3. ĐƯỜNG KẺ (Hairlines — chiến lược phân tách DUY NHẤT của hệ này)
+   * =================================================================== */
+  --line-subtle: var(--gray-150);  /* Kẻ trong panel, giữa hàng */
+  --line-base:   var(--gray-200);  /* Ranh giới thẻ, viền control */
+  --line-strong: var(--gray-400);  /* Viền control khi hover, nhấn mạnh */
+
+  /* ===================================================================
+   * 4. MÀU NHẤN DUY NHẤT (Cobalt — 5.0:1 trên giấy, cả hai chiều)
+   * =================================================================== */
+  --accent:       #0068e0;
+  --accent-hover: #0055ba;
+  --accent-soft:  #eef4fe;   /* Nền mục đang chọn */
+  --accent-line:  #b9d5fb;   /* Viền của vùng accent-soft */
+  --accent-ink:   #0a4ba3;   /* Chữ trên nền accent-soft (7.6:1) */
+
+  /* ===================================================================
+   * 5. MÀU NGỮ NGHĨA (CHỈ dùng cho dữ liệu pháp lý, không làm nền mảng lớn)
+   * =================================================================== */
+  --data-fine:     #9a5b06;   /* Mức phạt tiền */
+  --data-fine-bg:  #fdf7ec;
+  --data-fine-line:#f0dcbb;
+
+  --data-severe:   #b81238;   /* Tước bằng, tịch thu, hành vi nghiêm cấm */
+  --data-severe-bg:#fdf2f4;
+  --data-severe-line:#f4ced7;
+
+  --data-safe:     #046c50;   /* Hợp lệ, đã xác minh, sẵn sàng */
+  --data-safe-bg:  #f0faf6;
+  --data-safe-line:#c3e8d9;
+
+  /* ===================================================================
+   * 6. KHOẢNG CÁCH (Thang 4px, 8 bậc — không có giá trị nào ngoài thang)
+   * =================================================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* ===================================================================
+   * 7. CHỮ (2 họ, thang cố định rem tỉ lệ ~1.15 cho product register)
+   * =================================================================== */
+  --font-ui:   'Geist', ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --text-2xs:  0.6875rem;  /* 11px — nhãn viết hoa siêu nhỏ, badge */
+  --text-xs:   0.75rem;    /* 12px — metadata, căn cứ pháp lý, chú giải */
+  --text-sm:   0.8125rem;  /* 13px — nhãn control, nút, hàng bảng */
+  --text-base: 0.875rem;   /* 14px — nền tảng giao diện */
+  --text-read: 0.9375rem;  /* 15px — thân điều luật & câu trả lời của Agent */
+  --text-md:   1.0625rem;  /* 17px — tiêu đề thẻ, tiêu đề khu vực */
+  --text-lg:   1.3125rem;  /* 21px — tiêu đề trang */
+  --text-xl:   1.75rem;    /* 28px — số liệu lớn */
+  --text-2xl:  2.25rem;    /* 36px — tiêu đề trạng thái rỗng */
+
+  --leading-tight: 1.2;
+  --leading-base:  1.5;
+  --leading-legal: 1.7;
+
+  --tracking-tight: -0.018em;  /* Tiêu đề lớn */
+  --tracking-label:  0.06em;   /* Nhãn viết hoa 11px */
+
+  /* ===================================================================
+   * 8. BO GÓC (Một hệ duy nhất: control 6 → panel 8 → overlay 12)
+   * =================================================================== */
+  --radius-control: 6px;
+  --radius-panel:   8px;
+  --radius-overlay: 12px;
+  --radius-full:    999px;
+
+  /* ===================================================================
+   * 9. ĐỘ NỔI (CHỈ dành cho lớp nổi thật sự — không dùng trên thẻ tĩnh)
+   * =================================================================== */
+  --elevation-overlay:
+    0 1px 2px -1px rgb(13 13 17 / 0.08),
+    0 4px 12px -2px rgb(13 13 17 / 0.08),
+    0 12px 28px -8px rgb(13 13 17 / 0.10);
+  --elevation-modal:
+    0 2px 4px -2px rgb(13 13 17 / 0.10),
+    0 12px 32px -8px rgb(13 13 17 / 0.14),
+    0 32px 64px -16px rgb(13 13 17 / 0.16);
+
+  /* ===================================================================
+   * 10. CHUYỂN ĐỘNG & TIÊU ĐIỂM
+   * =================================================================== */
+  --motion-fast: 120ms;   /* Phản hồi tức thì: nhấn, bật/tắt */
+  --motion-base: 180ms;   /* Đổi trạng thái: hover, mở menu */
+  --motion-slow: 240ms;   /* Đổi bố cục: accordion, drawer */
+  --motion-ease: cubic-bezier(0.25, 1, 0.5, 1);   /* ease-out-quart */
+
+  --focus-ring: 0 0 0 2px var(--surface-page), 0 0 0 4px var(--accent);
+
+  /* ===================================================================
+   * 11. KÍCH THƯỚC KHUNG & CONTROL
+   * =================================================================== */
+  --sidebar-width:     236px;
+  --sidebar-collapsed: 56px;
+  --topbar-height:     52px;
+  --control-height:    32px;   /* Chiều cao chuẩn của nút, ô nhập, select */
+  --control-height-sm: 26px;
+  --control-height-xs: 22px;   /* Nút phụ siêu nhỏ (icon sao chép trong dòng) */
+
+  --content-max: 1120px;   /* Bề rộng tối đa khu vực tra cứu */
+  --thread-max:  768px;    /* Cột hội thoại — giữ measure ~70ch */
+  --reading-max: 720px;    /* Cột đọc văn bản luật */
+
+  /* ===================================================================
+   * 12. ALIAS TƯƠNG THÍCH NGƯỢC
+   * Giữ cho các quy tắc CSS và JS viết theo tên cũ vẫn trỏ đúng token.
+   * =================================================================== */
+  --color-surface:        var(--surface-page);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --surface-base:         var(--surface-page);
+
+  --color-ink:            var(--ink-strong);
+  --color-ink-muted:      var(--ink-muted);
+  --color-ink-faint:      var(--ink-faint);
+  --color-white:          var(--ink-inverse);
+
+  --color-accent:         var(--accent);
+  --color-accent-hover:   var(--accent-hover);
+  --color-accent-subtle:  var(--accent-soft);
+  --accent-subtle:        var(--accent-soft);
+
+  --border-subtle:        var(--line-subtle);
+  --border-strong:        var(--line-base);
+
+  --color-emerald:        var(--data-safe);
+  --color-rose:           var(--data-severe);
+  --color-amber:          var(--data-fine);
+
+  --font-xs:              var(--text-xs);
+  --font-sm:              var(--text-sm);
+  --font-base:            var(--text-base);
+  --font-md:              var(--text-md);
+  --font-lg:              var(--text-lg);
+  --font-xl:              var(--text-xl);
+  --font-2xl:             var(--text-2xl);
+
+  --font-normal:          400;
+  --font-medium:          500;
+  --font-semibold:        600;
+  --font-bold:            700;
+
+  --line-tight:           var(--leading-tight);
+  --line-normal:          var(--leading-base);
+  --line-relaxed:         var(--leading-base);
+  --leading-normal:       var(--leading-base);
+
+  --radius-xs:            4px;
+  --radius-sm:            var(--radius-control);
+  --radius-md:            var(--radius-panel);
+  --radius-lg:            var(--radius-overlay);
+  --radius-container:     var(--radius-panel);
+
+  --shadow-sm:            var(--elevation-overlay);
+  --shadow-md:            var(--elevation-modal);
+
+  --ease-default:         var(--motion-ease);
+  --max-content-width:    var(--content-max);
+}

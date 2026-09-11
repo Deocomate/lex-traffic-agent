@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "document": "Thông tư 31/2019/TT-BGTVT",
+    "title": "Quy định về tốc độ và khoảng cách an toàn của xe cơ giới, xe máy chuyên dùng",
+    "effective_date": "15/10/2019"
+  },
+  "urban_area": {
+    "description": "Tốc độ tối đa cho phép trong khu vực đông dân cư (Điều 6)",
+    "divided_road_or_multi_lane": {
+      "road_type": "Đường đôi hoặc đường một chiều có từ 2 làn xe cơ giới trở lên",
+      "max_speed_kmh": 60,
+      "applicable_vehicles": [
+        "Xe ô tô con",
+        "Xe ô tô chở người",
+        "Xe ô tô tải",
+        "Xe mô tô (xe máy)",
+        "Các loại xe cơ giới khác (trừ xe máy chuyên dùng, xe gắn máy)"
+      ]
+    },
+    "undivided_road_or_single_lane": {
+      "road_type": "Đường hai chiều hoặc đường một chiều có 1 làn xe cơ giới",
+      "max_speed_kmh": 50,
+      "applicable_vehicles": [
+        "Xe ô tô con",
+        "Xe ô tô chở người",
+        "Xe ô tô tải",
+        "Xe mô tô (xe máy)",
+        "Các loại xe cơ giới khác (trừ xe máy chuyên dùng, xe gắn máy)"
+      ]
+    },
+    "special_vehicles": {
+      "road_type": "Mọi loại đường trong và ngoài khu vực đông dân cư",
+      "max_speed_kmh": 40,
+      "applicable_vehicles": [
+        "Xe máy chuyên dùng",
+        "Xe gắn máy (kể cả xe máy điện)",
+        "Các loại xe tương tự"
+      ],
+      "article_ref": "Điều 8 Thông tư 31/2019/TT-BGTVT"
+    }
+  },
+  "non_urban_area": {
+    "description": "Tốc độ tối đa cho phép ngoài khu vực đông dân cư (Điều 7)",
+    "divided_road": {
+      "road_type": "Đường đôi hoặc đường một chiều có từ 2 làn xe cơ giới trở lên",
+      "speeds": [
+        {
+          "vehicles": "Xe ô tô con, ô tô chở người đến 30 chỗ (trừ xe buýt), ô tô tải đến 3,5 tấn",
+          "max_speed_kmh": 90
+        },
+        {
+          "vehicles": "Xe ô tô chở người trên 30 chỗ (trừ xe buýt), ô tô tải trên 3,5 tấn (trừ ô tô xi téc)",
+          "max_speed_kmh": 80
+        },
+        {
+          "vehicles": "Ô tô buýt, ô tô đầu kéo kéo sơ mi rơ moóc, xe mô tô, ô tô chuyên dùng (trừ ô tô trộn vữa, bê tông)",
+          "max_speed_kmh": 70
+        },
+        {
+          "vehicles": "Ô tô kéo rơ moóc, ô tô kéo xe khác, ô tô trộn vữa, trộn bê tông, ô tô xi téc",
+          "max_speed_kmh": 60
+        }
+      ]
+    },
+    "undivided_road": {
+      "road_type": "Đường hai chiều hoặc đường một chiều có 1 làn xe cơ giới",
+      "speeds": [
+        {
+          "vehicles": "Xe ô tô con, ô tô chở người đến 30 chỗ (trừ xe buýt), ô tô tải đến 3,5 tấn",
+          "max_speed_kmh": 80
+        },
+        {
+          "vehicles": "Xe ô tô chở người trên 30 chỗ (trừ xe buýt), ô tô tải trên 3,5 tấn (trừ ô tô xi téc)",
+          "max_speed_kmh": 70
+        },
+        {
+          "vehicles": "Ô tô buýt, ô tô đầu kéo kéo sơ mi rơ moóc, xe mô tô, ô tô chuyên dùng (trừ ô tô trộn vữa, bê tông)",
+          "max_speed_kmh": 60
+        },
+        {
+          "vehicles": "Ô tô kéo rơ moóc, ô tô kéo xe khác, ô tô trộn vữa, trộn bê tông, ô tô xi téc",
+          "max_speed_kmh": 50
+        }
+      ]
+    }
+  },
+  "expressway": {
+    "description": "Tốc độ trên đường cao tốc (Điều 9)",
+    "max_speed_kmh": 120,
+    "rule": "Tốc độ tối đa không vượt quá 120 km/h, tuân thủ biển báo hiệu đường bộ và thiết kế cao tốc."
+  },
+  "safe_distances": {
+    "description": "Khoảng cách an toàn tối thiểu giữa hai xe (Điều 11)",
+    "table": [
+      {
+        "speed_range": "v = 60 km/h",
+        "min_distance_m": 35
+      },
+      {
+        "speed_range": "60 km/h < v ≤ 80 km/h",
+        "min_distance_m": 55
+      },
+      {
+        "speed_range": "80 km/h < v ≤ 100 km/h",
+        "min_distance_m": 70
+      },
+      {
+        "speed_range": "100 km/h < v ≤ 120 km/h",
+        "min_distance_m": 100
+      }
+    ],
+    "low_speed_rule": "Khi điều khiển xe chạy với tốc độ dưới 60 km/h, người lái xe phải chủ động giữ khoảng cách an toàn phù hợp với xe chạy liền trước xe của mình.",
+    "bad_weather_rule": "Khi trời mưa, có sương mù, mặt đường trơn trượt, đường có địa hình quanh co, đèo dốc, tầm nhìn hạn chế, người lái xe phải điều chỉnh khoảng cách an toàn thích hợp lớn hơn trị số ghi trên biển báo hoặc trị số tối thiểu quy định."
+  }
+}

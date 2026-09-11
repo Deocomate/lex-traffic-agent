@@ -1,0 +1,15 @@
+95
+
+e) Các hành vi vi phạm quy định về kích thước thùng xe, khoang chở hành lý (hầm xe), lắp thêm hoặc tháo bớt ghế, giường nằm trên xe ô tô quy định tại Điều 13 (điểm d khoản 3, điểm b khoản 4) và các hành vi vi phạm tương ứng quy định tại Điều 32 (điểm d khoản 11, điểm h khoản 14), trong trường hợp chủ phương tiện là người trực tiếp điều khiển phương tiện thì bị xử phạt theo quy định tại các điểm, khoản tương ứng của Điều 32 của Nghị định này;
+
+g) Các hành vi vi phạm quy định về lắp, sử dụng thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe trên xe ô tô quy định tại Điều 20 (điểm l khoản 5, điểm đ khoản 6), Điều 21 (điểm b khoản 3, điểm c khoản 5), Điều 27 (điểm c khoản 1, điểm a khoản 3) và các hành vi vi phạm tương ứng quy định tại Điều 26 (điểm c, điểm g khoản 7), trong trường hợp cá nhân kinh doanh vận tải là người trực tiếp điều khiển phương tiện thì bị xử phạt theo quy định tại các điểm, khoản tương ứng của Điều 26 của Nghị định này;
+
+h) Các hành vi vi phạm quy định về lắp, sử dụng thiết bị giám sát hành trình, thiết bị ghi nhận hình ảnh người lái xe trên xe ô tô quy định tại Điều 29 (khoản 1, khoản 3), Điều 30 (khoản 1, khoản 2) và các hành vi vi phạm tương ứng quy định tại Điều 32 (điểm m, điểm n khoản 7), trong trường hợp chủ phương tiện là người trực tiếp điều khiển phương tiện thì bị xử phạt theo quy định tại các điểm, khoản tương ứng của Điều 32 của Nghị định này;
+
+i) Các hành vi vi phạm quy định về dây đai an toàn, hướng dẫn cho hành khách về an toàn giao thông, thoát hiểm khi xảy ra sự cố trên xe quy định tại Điều 20 (điểm h, điểm i khoản 3) và các hành vi vi phạm tương ứng quy định tại Điều 26 (điểm c khoản 2, điểm đ khoản 4) trong trường hợp cá nhân kinh doanh vận tải là người trực tiếp điều khiển phương tiện thì bị xử phạt theo quy định tại các điểm, khoản tương ứng của Điều 26 của Nghị định này;
+
+k) Các hành vi vi phạm quy định về đón, trả khách; nhận, trả hàng quy định tại Điều 20 (khoản 8), Điều 21 (khoản 9) và các hành vi vi phạm tương ứng quy định tại Điều 26 (điểm c khoản 8), trong trường hợp cá nhân kinh doanh vận tải là người trực tiếp điều khiển phương tiện thì bị xử phạt theo quy định tại điểm c khoản 8 Điều 26 của Nghị định này;
+
+l) Các hành vi vi phạm quy định về dụng cụ, thiết bị chuyên dùng để cứu hộ, hỗ trợ cứu hộ giao thông đường bộ quy định tại Điều 29 (khoản 2) và hành vi vi phạm tương ứng quy định tại Điều 32 (điểm o khoản 7), trong trường hợp chủ phương tiện là người trực tiếp điều khiển phương tiện thì bị xử phạt theo quy định tại điểm o khoản 7 Điều 32 của Nghị định này;
+
+m) Các hành vi vi phạm quy định về thiết bị ghi nhận hình ảnh trẻ em mầm non, học sinh và thiết bị có chức năng cảnh báo, chống bỏ quên trẻ em trên xe quy định tại Điều 27 (điểm b khoản 3) và hành vi vi phạm tương ứng quy định tại Điều 26 (điểm b khoản 6), trong trường hợp cá nhân kinh doanh vận tải là người trực

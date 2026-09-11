@@ -1,0 +1,29 @@
+<!-- ---- Hỏi đáp AI (Chat Agentic) ---- -->
+<section class="view active" id="view-chat">
+  <div id="thread" class="thread">
+    <div id="empty-state" class="empty-state">
+      <h2>Tra cứu luật &amp; mức phạt chính xác</h2>
+      <p>AI Agent tự động tra cứu phối hợp 6 văn bản: Luật 36/2024, Luật 35/2024, Nghị định 168/2024, Thông tư 31, Thông tư 73 và QCVN 41.</p>
+      <div class="suggestions">
+        <button class="suggestion-card" type="button">Ô tô có nồng độ cồn bị phạt bao nhiêu tiền và trừ mấy điểm?</button>
+        <button class="suggestion-card" type="button">Bằng lái hạng C1 được lái những loại xe nào theo luật mới?</button>
+        <button class="suggestion-card" type="button">Hệ thống 12 điểm bằng lái trừ thế nào và làm sao để phục hồi?</button>
+        <button class="suggestion-card" type="button">Tốc độ tối đa của xe máy trong khu đông dân cư là bao nhiêu?</button>
+        <button class="suggestion-card" type="button">Trường hợp nào CSGT được quyền dừng xe kiểm soát giấy tờ?</button>
+        <button class="suggestion-card" type="button">Lỗi đè vạch liền khác lỗi đi sai làn đường thế nào?</button>
+      </div>
+    </div>
+  </div>
+  <div class="composer-wrap">
+    <form id="composer" class="composer">
+      <textarea id="input" rows="1" placeholder="Hỏi về luật, mức phạt, biển báo…" autocomplete="off"></textarea>
+      <button id="btn-send" class="btn-send" type="submit" aria-label="Gửi câu hỏi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+          <path d="m22 2-7 20-4-9-9-4Z"/>
+          <path d="M22 2 11 13"/>
+        </svg>
+      </button>
+    </form>
+    <p class="disclaimer">Căn cứ: Luật số 36/2024/QH15, Luật 35/2024, Nghị định 168/2024/NĐ-CP (hiệu lực 01/01/2025). Thông tin mang tính tra cứu hỗ trợ.</p>
+  </div>
+</section>

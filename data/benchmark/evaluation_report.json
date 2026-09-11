@@ -1,0 +1,222 @@
+{
+  "dataset": "qa_testset_v2.json",
+  "total_evaluated": 10,
+  "elapsed_seconds": 0.17,
+  "metrics": {
+    "hit_rate_at_1": 70.0,
+    "hit_rate_at_3": 80.0,
+    "hit_rate_at_5": 90.0,
+    "mrr": 0.7583,
+    "ndcg_at_5": 0.7931
+  },
+  "doc_breakdown": {
+    "01_luat_36_2024_qh15": {
+      "questions": 10,
+      "hit_at_1": 70.0,
+      "hit_at_3": 80.0,
+      "mrr": 0.7583
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "qa_001",
+      "category": "Hiệu lực văn bản",
+      "question": "Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15 có hiệu lực thi hành từ ngày nào và có điều khoản nào có hiệu lực muộn hơn không?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_89",
+      "target_article_number": 89,
+      "retrieved_parents": [
+        "01_luat_36_dieu_88",
+        "02_luat_35_dieu_85",
+        "01_luat_36_dieu_89",
+        "01_luat_36_dieu_86",
+        "01_luat_36_dieu_07"
+      ],
+      "is_hit_1": false,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 0.3333333333333333,
+      "ndcg_at_5": 0.5
+    },
+    {
+      "id": "qa_002",
+      "category": "Hành vi bị nghiêm cấm",
+      "question": "Quy định về nồng độ cồn đối với người điều khiển phương tiện tham gia giao thông trong Luật mới 2024 như thế nào?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_09",
+      "target_article_number": 9,
+      "retrieved_parents": [
+        "01_luat_36_dieu_09",
+        "03_nd168_Điểm_a_Khoản_11_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_4_Điều_9_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_56"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    {
+      "id": "qa_003",
+      "category": "Hành vi bị nghiêm cấm",
+      "question": "Hành vi bấm còi, rú ga liên tục trong đô thị và khu đông dân cư bị xử lý như thế nào theo Luật 2024?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_09",
+      "target_article_number": 9,
+      "retrieved_parents": [
+        "01_luat_36_dieu_21",
+        "03_nd168_Điểm_b_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_3_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_09",
+        "03_nd168_Điểm_k_Khoản_9_Điều_7_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "is_hit_1": false,
+      "is_hit_3": false,
+      "is_hit_5": true,
+      "reciprocal_rank": 0.25,
+      "ndcg_at_5": 0.43067655807339306
+    },
+    {
+      "id": "qa_004",
+      "category": "Quy tắc vượt xe",
+      "question": "Người lái xe chỉ được phép vượt xe khác khi đáp ứng những điều kiện an toàn nào?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_14",
+      "target_article_number": 14,
+      "retrieved_parents": [
+        "01_luat_36_dieu_14",
+        "03_nd168_Điểm_d_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_56",
+        "03_nd168_Điểm_a_Khoản_5_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_72"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    {
+      "id": "qa_005",
+      "category": "Chuyển hướng xe",
+      "question": "Khi muốn chuyển hướng (rẽ trái, rẽ phải), người lái xe phải thực hiện những thao tác gì?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_15",
+      "target_article_number": 15,
+      "retrieved_parents": [
+        "01_luat_36_dieu_15",
+        "03_nd168_Điểm_a_Khoản_3_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_k_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_d_Khoản_4_Điều_8_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    {
+      "id": "qa_006",
+      "category": "Lùi xe",
+      "question": "Luật giao thông cấm lùi xe ở những vị trí và cung đường nào?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_17",
+      "target_article_number": 17,
+      "retrieved_parents": [
+        "01_luat_36_dieu_16",
+        "03_nd168_Điểm_e_Khoản_4_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_e_Khoản_4_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "01_luat_36_dieu_18",
+        "06_qcvn41_P_124B"
+      ],
+      "is_hit_1": false,
+      "is_hit_3": false,
+      "is_hit_5": false,
+      "reciprocal_rank": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    {
+      "id": "qa_007",
+      "category": "Đèn chiếu sáng",
+      "question": "Khung giờ bắt buộc bật đèn chiếu sáng phía trước và các trường hợp thời tiết đặc biệt?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_20",
+      "target_article_number": 20,
+      "retrieved_parents": [
+        "01_luat_36_dieu_20",
+        "03_nd168_Điểm_g_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_g_Khoản_1_Điều_7_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_3_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_n_Khoản_3_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    {
+      "id": "qa_008",
+      "category": "Tín hiệu đèn giao thông",
+      "question": "Ý nghĩa hiệu lệnh của đèn tín hiệu giao thông (Xanh, Vàng, Đỏ) được quy định như thế nào?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_11",
+      "target_article_number": 11,
+      "retrieved_parents": [
+        "01_luat_36_dieu_11",
+        "02_luat_35_dieu_23",
+        "03_nd168_Điểm_b_Khoản_9_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_b_Khoản_1_Điều_11_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_đ_Khoản_2_Điều_9_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    {
+      "id": "qa_009",
+      "category": "Thứ tự xe ưu tiên",
+      "question": "Thứ tự quyền ưu tiên của các loại xe khi cùng đến nơi giao nhau?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_27",
+      "target_article_number": 27,
+      "retrieved_parents": [
+        "01_luat_36_dieu_27",
+        "01_luat_36_dieu_22",
+        "03_nd168_Điểm_b_Khoản_6_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_g_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_2_Điều_6_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    {
+      "id": "qa_010",
+      "category": "Giao thông đường cao tốc",
+      "question": "Xe gặp sự cố trên đường cao tốc phải xử lý dừng đỗ như thế nào để đảm bảo an toàn?",
+      "target_doc_id": "01_luat_36_2024_qh15",
+      "target_parent_id": "01_luat_36_dieu_25",
+      "target_article_number": 25,
+      "retrieved_parents": [
+        "01_luat_36_dieu_25",
+        "03_nd168_Điểm_b_Khoản_6_Điều_8_Nghị_định_168/2024/NĐ-CP",
+        "03_nd168_Điểm_c_Khoản_7_Điều_6_Nghị_định_168/2024/NĐ-CP",
+        "02_luat_35_dieu_51",
+        "03_nd168_Điểm_c_Khoản_5_Điều_8_Nghị_định_168/2024/NĐ-CP"
+      ],
+      "is_hit_1": true,
+      "is_hit_3": true,
+      "is_hit_5": true,
+      "reciprocal_rank": 1.0,
+      "ndcg_at_5": 1.0
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "baseline_name": "baseline-graph-phase8-260911",
+  "created_at": "2026-09-11 04:00:00",
+  "description": "Bao cao nghiem thu Phase 8 tren harness LangGraph moi, do tren TOAN BO 95 cau cua qa_testset_v2 (nguoi dung duyet 2026-09-11). Cache ngu nghia da xoa truoc khi chay nen moi cau di duong lanh.",
+  "system_info": {
+    "python": "3.12.10",
+    "os": "Windows",
+    "llm_model": "deepseek/deepseek-v4-flash",
+    "fallback_llm_model": "openai/gpt-oss-20b",
+    "router_llm_model": "mistralai/ministral-8b-2512",
+    "rerank_llm_model": "mistralai/ministral-8b-2512",
+    "embedding": "google/gemini-embedding-2 (3072 dims)",
+    "langgraph": "1.2.11",
+    "langgraph_checkpoint_sqlite": "3.1.1"
+  },
+  "metrics": {
+    "hit_rate_at_1": 72.15,
+    "hit_rate_at_3": 83.54,
+    "hit_rate_at_5": 84.81,
+    "mrr": 0.7774,
+    "ndcg_at_5": 0.7955,
+    "citation_accuracy_pct": 63.29,
+    "ungrounded_figures_rate_pct": 1.05,
+    "out_of_scope_refusal_pct": 87.5,
+    "cancelled_answer_rate_pct": 8.42,
+    "latency_p50_ms": 30941.81,
+    "latency_p90_ms": 84794.5,
+    "latency_p95_ms": 107189.44,
+    "cost_per_query_usd": 0.00167
+  },
+  "observability": {
+    "note": "So lieu theo node gom TAT CA cac luot chay trong ngay 2026-09-11, khong chi rieng luot nghiem thu.",
+    "structured_tier_distribution": {
+      "1": 443
+    },
+    "model_distribution": {
+      "deepseek/deepseek-v4-flash": 250,
+      "mistralai/ministral-8b-2512": 212,
+      "openai/gpt-oss-20b": 10
+    },
+    "node_latency_ms": {
+      "build_sources": {
+        "count": 259,
+        "p50_ms": 0.25,
+        "p95_ms": 0.59
+      },
+      "cancel": {
+        "count": 17,
+        "p50_ms": 0.08,
+        "p95_ms": 0.1
+      },
+      "compact": {
+        "count": 259,
+        "p50_ms": 2.05,
+        "p95_ms": 3.22
+      },
+      "memory": {
+        "count": 259,
+        "p50_ms": 0.06,
+        "p95_ms": 0.08
+      },
+      "normalize": {
+        "count": 259,
+        "p50_ms": 0.09,
+        "p95_ms": 0.13
+      },
+      "repair": {
+        "count": 29,
+        "p50_ms": 22971.72,
+        "p95_ms": 70647.06
+      },
+      "rerank": {
+        "count": 259,
+        "p50_ms": 7622.77,
+        "p95_ms": 17698.05
+      },
+      "retrieve_law": {
+        "count": 259,
+        "p50_ms": 1028.92,
+        "p95_ms": 1473.97
+      },
+      "retrieve_penalty": {
+        "count": 118,
+        "p50_ms": 2186.31,
+        "p95_ms": 3265.62
+      },
+      "retrieve_sign": {
+        "count": 26,
+        "p50_ms": 1.49,
+        "p95_ms": 2.43
+      },
+      "retrieve_speed": {
+        "count": 20,
+        "p50_ms": 0.12,
+        "p95_ms": 0.19
+      },
+      "route": {
+        "count": 259,
+        "p50_ms": 0.19,
+        "p95_ms": 0.25
+      },
+      "synthesize": {
+        "count": 259,
+        "p50_ms": 13821.95,
+        "p95_ms": 70866.09
+      },
+      "verify": {
+        "count": 288,
+        "p50_ms": 8.68,
+        "p95_ms": 15.72
+      }
+    },
+    "fallback_rate": 0.0,
+    "error_events": 10
+  },
+  "gate_result": {
+    "latency_p50": "PASSED (30941.8ms <= 31350.0ms = baseline legacy +10%)",
+    "citation_accuracy_pct": "FAILED (63.29% < 95.0%)",
+    "ungrounded_figures_rate_pct": "FAILED (1.05% != 0.0%)",
+    "out_of_scope_refusal_pct": "FAILED (87.50% < 90.0%)",
+    "cancelled_answer_rate_pct": "FAILED (8.42% > 0.00% cua baseline legacy)",
+    "overall": "FAILED — xem plans/reports de biet nguyen nhan va viec con lai"
+  },
+  "known_issues": [
+    "Do chinh xac trich dan 63.29% (muc tieu 95%): phan lon do truy xuat chon sai Dieu, khong phai do prompt. Sua prompt da nang tu 48% len 63%; phan con lai phai sua o tang truy xuat.",
+    "MRR 0.7774 < muc tieu 0.80. Van ban yeu nhat la NĐ 168/2024 (Hit@1 56.2%).",
+    "Chi so chat luong dao dong giua cac lan chay do LLM khong tat dinh: ti le tu choi do duoc 93.75% tren tap 16 cau lac de nhung 87.50% trong luot nghiem thu 95 cau; ti le so lieu khong can cu 0.00% roi 1.05%.",
+    "221 lenh goi khong duoc provider bao gia -> chi phi ghi nhan la can duoi."
+  ]
+}

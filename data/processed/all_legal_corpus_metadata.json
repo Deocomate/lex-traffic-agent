@@ -1,0 +1,13 @@
+{
+  "total_chunks": 1308,
+  "documents_count": 6,
+  "distribution": {
+    "01_luat_36_2024_qh15": 89,
+    "02_luat_35_2024_qh15": 86,
+    "03_nghi_dinh_168_2024_nd_cp": 634,
+    "04_thong_tu_31_2019_tt_bgtvt": 13,
+    "05_thong_tu_73_2024_tt_bca": 33,
+    "06_qcvn_41_2019_bgtvt": 453
+  },
+  "master_file": "all_legal_chunks.jsonl"
+}

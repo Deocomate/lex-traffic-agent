@@ -1,0 +1,34 @@
+<!-- ---- Bảng Tra Cứu Mức Phạt Nghị Định 168/2024/NĐ-CP ---- -->
+<section class="view" id="view-penalty" hidden>
+  <div class="scroll-pane">
+    <div class="filter-panel">
+      <div class="filter-row">
+        <div class="field-wrap search-flex">
+          <input type="search" id="penalty-search" class="field" placeholder="Lọc theo hành vi vi phạm (ví dụ: nồng độ cồn, quá tốc độ, đèn đỏ, ngược chiều...)" />
+        </div>
+        <div class="field-wrap vehicle-flex">
+          <div id="penalty-vehicle" class="select" data-select></div>
+        </div>
+      </div>
+      <div class="quick-tags" id="penalty-quick-tags">
+        <span class="quick-label">Phổ biến:</span>
+        <button class="tag-chip" data-q="nồng độ cồn" type="button">Nồng độ cồn</button>
+        <button class="tag-chip" data-q="tốc độ" type="button">Quá tốc độ</button>
+        <button class="tag-chip" data-q="đèn đỏ" type="button">Vượt đèn đỏ</button>
+        <button class="tag-chip" data-q="điện thoại" type="button">Dùng điện thoại</button>
+        <button class="tag-chip" data-q="ngược chiều" type="button">Đi ngược chiều</button>
+        <button class="tag-chip" data-q="mũ bảo hiểm" type="button">Mũ bảo hiểm</button>
+        <button class="tag-chip" data-q="vạch kẻ" type="button">Đè vạch</button>
+      </div>
+    </div>
+    <div class="penalty-stats-bar" id="penalty-stats-bar">
+      <span>Đang hiển thị <strong>0</strong> hành vi vi phạm bóc tách từ Nghị định 168/2024/NĐ-CP</span>
+    </div>
+    <!-- Hàng tiêu đề cột: nhờ nó cột chế tài bên phải mới đọc được mà không cần nhắc lại chữ "Phạt tiền" ở từng dòng -->
+    <div class="penalty-head-row" aria-hidden="true">
+      <span>Hành vi vi phạm</span>
+      <span>Mức phạt &amp; điểm trừ</span>
+    </div>
+    <div id="penalty-list" class="penalty-grid"></div>
+  </div>
+</section>

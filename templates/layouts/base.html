@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}LexTraffic AI — Nền Tảng Pháp Lý & Tiện Ích Giao Thông Thông Minh{% endblock %}</title>
+  <meta name="description" content="Trợ lý AI tra cứu Luật Giao thông đường bộ 2024, Nghị định 168/2024, Biển báo QCVN 41, Tốc độ Thông tư 31 và hệ thống 12 điểm bằng lái." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Design System Layers: Tokens -> Base -> Components -> Shell -> Chat -> Lookup -->
+  <link rel="stylesheet" href="/static/css/tokens.css?v={{ app_version }}" />
+  <link rel="stylesheet" href="/static/css/base.css?v={{ app_version }}" />
+  <link rel="stylesheet" href="/static/css/components.css?v={{ app_version }}" />
+  <link rel="stylesheet" href="/static/css/shell.css?v={{ app_version }}" />
+  <link rel="stylesheet" href="/static/css/chat.css?v={{ app_version }}" />
+  <link rel="stylesheet" href="/static/css/lookup.css?v={{ app_version }}" />
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <!-- Trợ năng bàn phím: Skip-link -->
+  <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
+  <div class="layout">
+    <!-- Sidebar thanh bên -->
+    {% include "partials/sidebar.html" %}
+
+    <!-- Khung nội dung chính -->
+    <div class="main" id="main-content">
+      {% include "partials/topbar.html" %}
+
+      <!-- Các Views chức năng -->
+      {% block content %}
+      {% include "views/chat.html" %}
+      {% include "views/law.html" %}
+      {% include "views/penalties.html" %}
+      {% include "views/utilities.html" %}
+      {% include "views/pdf.html" %}
+      {% include "views/system.html" %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <!-- Modal & Palette wrappers -->
+  {% include "partials/modals.html" %}
+  {% include "partials/palette.html" %}
+
+  <script type="module" src="/static/js/app.js?v={{ app_version }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-09-10 23:26:16",
+  "total_tests": 5,
+  "passed_tests": 4,
+  "pass_rate": "80.0%",
+  "results": [
+    {
+      "test_id": "TC1_TRAFFIC_SIGN",
+      "title": "Tra cứu Biển báo giao thông P.106a (QCVN 41:2019)",
+      "query": "Biển P.106a là biển gì, có ý nghĩa như thế nào?",
+      "passed": true,
+      "checks": {
+        "keywords": true,
+        "image_rendered": true,
+        "document_cited": true,
+        "no_verification_errors": true
+      },
+      "elapsed_seconds": 24.07,
+      "tool_calls_count": 2,
+      "sources_count": 2,
+      "answer_preview": "### Biển P.106a – Cấm xe ôtô tải\n\n![Biển P.106a: Cấm xe ôtô tải](/data/images/qcvn_41/bien_bao_cam/P_106a_1.png)\n\n**Ý nghĩa sử dụng (theo QCVN 41:2019/BGTVT):**\n\n- Biển P.106a là biển báo cấm, dùng để báo đường cấm các loại **xe ôtô tải** (trừ các xe được ưu tiên theo quy định).\n- Biển có hiệu lực c"
+    },
+    {
+      "test_id": "TC2_SPEED_LIMIT",
+      "title": "Tra cứu Tốc độ xe máy trong khu đông dân cư (Thông tư 31/2019)",
+      "query": "Tốc độ tối đa của xe máy trong khu vực đông dân cư là bao nhiêu km/h?",
+      "passed": true,
+      "checks": {
+        "keywords": true,
+        "image_rendered": true,
+        "document_cited": true,
+        "no_verification_errors": true
+      },
+      "elapsed_seconds": 42.37,
+      "tool_calls_count": 2,
+      "sources_count": 7,
+      "answer_preview": "Tốc độ tối đa của xe máy trong khu vực đông dân cư phụ thuộc vào loại xe cụ thể. Cụ thể:\n\n### Đối với xe mô tô (xe máy thông thường trên 50cc)\n\nTheo quy định, xe mô tô thuộc nhóm \"xe cơ giới\" nên được áp dụng tốc độ tối đa sau:\n\n| Loại đường | Tốc độ tối đa |\n| :--- | :---: |\n| Đường đôi hoặc đường "
+    },
+    {
+      "test_id": "TC3_CSGT_VNEID",
+      "title": "Thẩm quyền CSGT dừng xe & Kiểm tra giấy tờ qua VNeID (Thông tư 73/2024 & Luật 36/2024)",
+      "query": "Cảnh sát giao thông được dừng xe trong những trường hợp nào? Kiểm tra giấy tờ qua VNeID có được chấp nhận không?",
+      "passed": false,
+      "checks": {
+        "keywords": false,
+        "image_rendered": true,
+        "document_cited": true,
+        "no_verification_errors": true
+      },
+      "elapsed_seconds": 36.0,
+      "tool_calls_count": 2,
+      "sources_count": 11,
+      "answer_preview": ""
+    },
+    {
+      "test_id": "TC4_PENALTY_ALCOHOL",
+      "title": "Mức phạt nồng độ cồn ô tô (Nghị định 168/2024)",
+      "query": "Uống rượu lái xe ô tô bị phạt bao nhiêu tiền?",
+      "passed": true,
+      "checks": {
+        "keywords": true,
+        "image_rendered": true,
+        "document_cited": true,
+        "no_verification_errors": true
+      },
+      "elapsed_seconds": 244.17,
+      "tool_calls_count": 2,
+      "sources_count": 7,
+      "answer_preview": "Chào bạn, dưới đây là mức phạt chi tiết và đầy đủ nhất đối với hành vi điều khiển ô tô mà trong máu hoặc hơi thở có nồng độ cồn (uống rượu bia) theo quy định tại Nghị định 168/2024/NĐ-CP. Mức phạt được chia làm 03 khung tùy theo mức độ nồng độ cồn trong máu hoặc hơi thở.\n\n### Mức phạt cụ thể đối với"
+    },
+    {
+      "test_id": "TC5_LICENSE_C1",
+      "title": "Phân hạng GPLX C1 & Độ tuổi dự sát hạch (Luật 36/2024)",
+      "query": "Bằng lái xe C1 được điều khiển xe gì, bao nhiêu tuổi được thi?",
+      "passed": true,
+      "checks": {
+        "keywords": true,
+        "image_rendered": true,
+        "document_cited": true,
+        "no_verification_errors": true
+      },
+      "elapsed_seconds": 31.51,
+      "tool_calls_count": 2,
+      "sources_count": 11,
+      "answer_preview": "### Bằng lái xe hạng C1 được điều khiển những loại xe nào?\n\nTheo **Điều 57 Luật Trật tự, an toàn giao thông đường bộ 2024 (Luật 36/2024/QH15)**, giấy phép lái xe hạng C1 cấp cho người lái các loại xe sau:\n\n- **Ô tô tải và ô tô chuyên dùng** có khối lượng toàn bộ theo thiết kế **trên 3.500 kg đến 7.5"
+    }
+  ]
+}

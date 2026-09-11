@@ -1,0 +1,65 @@
+<!-- ---- Tra cứu 6 Bộ Luật & Văn Bản Quy Phạm Pháp Luật ---- -->
+<section class="view" id="view-law" hidden>
+  <!-- Document Selector: Thanh chuyển đổi 6 văn bản pháp luật từ context Jinja2 -->
+  <div class="doc-selector-bar">
+    <div class="doc-selector-tabs tabs" id="doc-tabs" role="tablist" aria-label="Danh sách văn bản pháp luật">
+      {% for doc in documents %}
+      <button class="doc-tab tabs__item{% if loop.first %} active{% endif %}" data-doc="{{ doc.id }}" type="button" role="tab" aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
+        <span class="doc-tab-title">{{ doc.code or doc.short_title }}</span>
+        <span class="badge badge--neutral badge--xs">{{ doc.loaded_articles or doc.total_articles }} Điều</span>
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Document Meta Banner: 1 dòng tinh gọn -->
+  <div class="doc-banner" id="doc-banner">
+    <div class="doc-banner-main">
+      <div class="doc-banner-info">
+        <h2 class="doc-banner-title" id="doc-banner-title">Luật Trật tự, an toàn giao thông đường bộ 2024</h2>
+        <div class="doc-banner-meta" id="doc-banner-meta">
+          <span>Số hiệu: <strong>36/2024/QH15</strong></span>
+          <span>·</span>
+          <span>Ban hành: <strong>Quốc hội khóa XV</strong></span>
+          <span>·</span>
+          <span>Hiệu lực: <strong class="badge badge--emerald badge--xs">01/01/2025</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="doc-banner-actions">
+      <button class="btn btn--secondary btn--sm" id="btn-open-pdf-current" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+        </svg>
+        Xem PDF gốc
+      </button>
+    </div>
+  </div>
+
+  <!-- Bố cục 2 cột (Split layout) -->
+  <div class="split">
+    <div class="split-left">
+      <div class="search-box-wrap">
+        <input type="search" id="law-search" class="field" placeholder="Tìm trong văn bản này…" />
+        <span class="search-hint" id="search-hint">Đang hiển thị mục lục văn bản</span>
+      </div>
+      <div class="tree" id="law-tree">
+        <div class="tree-loading">Đang tải mục lục...</div>
+      </div>
+    </div>
+    <div class="split-right" id="law-reader">
+      <div class="placeholder">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+            <path d="M6 6h10"/>
+            <path d="M6 10h10"/>
+          </svg>
+        </div>
+        <h3>Chọn một Điều luật ở danh sách bên trái để đọc toàn văn</h3>
+        <p>Văn bản được phân cấp chuẩn theo Điều, Khoản, Điểm với thông tin chế tài, mức phạt tiền và điểm trừ được in đậm nổi bật.</p>
+      </div>
+    </div>
+  </div>
+</section>

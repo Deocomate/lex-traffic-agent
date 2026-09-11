@@ -1,0 +1,240 @@
+<!-- ---- Kho Tiện Ích Giao Thông Chuẩn (Traffic Utilities Hub) ---- -->
+<section class="view" id="view-utilities" hidden>
+  <!-- Thanh điều hướng 5 phân hệ tiện ích gắn liền rìa trên (docked top bar) -->
+  <div class="util-nav-bar">
+    <div class="util-nav-tabs tabs" id="util-nav-tabs" role="tablist" aria-label="Danh mục tiện ích">
+      <button class="util-tab tabs__item active" data-sub="signs" type="button" role="tab" aria-selected="true">
+        <span class="util-tab-text">Biển Báo Giao Thông</span>
+        <span class="badge badge--neutral badge--xs">363 Biển</span>
+      </button>
+      <button class="util-tab tabs__item" data-sub="markings" type="button" role="tab" aria-selected="false">
+        <span class="util-tab-text">Vạch Kẻ Đường</span>
+        <span class="badge badge--neutral badge--xs">43 Vạch</span>
+      </button>
+      <button class="util-tab tabs__item" data-sub="speed" type="button" role="tab" aria-selected="false">
+        <span class="util-tab-text">Tốc Độ &amp; Khoảng Cách</span>
+        <span class="badge badge--neutral badge--xs">TT 31</span>
+      </button>
+      <button class="util-tab tabs__item" data-sub="points" type="button" role="tab" aria-selected="false">
+        <span class="util-tab-text">12 Điểm Bằng Lái</span>
+        <span class="badge badge--neutral badge--xs">Mới 2025</span>
+      </button>
+      <button class="util-tab tabs__item" data-sub="police" type="button" role="tab" aria-selected="false">
+        <span class="util-tab-text">Tuần Tra CSGT &amp; VNeID</span>
+        <span class="badge badge--neutral badge--xs">TT 73</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="scroll-pane">
+    <!-- Sub-view 1: Kho Biển Báo Giao Thông (363 Biển) -->
+    <div class="util-subview active" id="subview-signs">
+      <div class="util-panel">
+        <div class="util-panel-head">
+          <div>
+            <h3>Tra cứu 363 Biển Báo Đường Bộ Chuẩn QCVN 41:2019/BGTVT</h3>
+            <p class="text-muted">Kèm ảnh minh họa thực tế trích xuất từ quy chuẩn quốc gia, ý nghĩa sử dụng và mức xử phạt liên quan.</p>
+          </div>
+          <div class="signs-filter-group">
+            <input type="search" id="signs-search" class="field" placeholder="Gõ mã biển (P.106a, W.201...) hoặc tên biển (cấm quay đầu, đường cong...)" />
+          </div>
+        </div>
+
+        <div class="signs-group-pills" id="signs-group-pills">
+          <button class="pill active" data-group="" type="button">Tất cả (363)</button>
+          <button class="pill" data-group="Biển báo cấm" type="button">Biển cấm</button>
+          <button class="pill" data-group="Biển báo nguy hiểm và cảnh báo" type="button">Nguy hiểm &amp; Cảnh báo</button>
+          <button class="pill" data-group="Biển hiệu lệnh" type="button">Hiệu lệnh</button>
+          <button class="pill" data-group="Biển chỉ dẫn" type="button">Chỉ dẫn</button>
+          <button class="pill" data-group="Biển phụ" type="button">Biển phụ</button>
+        </div>
+
+        <div class="signs-count-label" id="signs-count-label">Đang tải danh mục biển báo...</div>
+        <div class="signs-grid" id="signs-grid"></div>
+      </div>
+    </div>
+
+    <!-- Sub-view 2: Vạch Kẻ Đường & Phân Biệt Lỗi (43 Vạch) -->
+    <div class="util-subview" id="subview-markings">
+      <div class="util-panel">
+        <div class="util-panel-head">
+          <div>
+            <h3>Hệ Thống 43 Vạch Kẻ Đường &amp; Cẩm Nang Tránh Phạt Nhầm</h3>
+            <p class="text-muted">Quy chuẩn kỹ thuật quốc gia QCVN 41:2019/BGTVT (Phụ lục G).</p>
+          </div>
+          <div class="markings-search-wrap">
+            <input type="search" id="markings-search" class="field" placeholder="Tìm vạch (Vạch 1.1, vạch mắt võng, vạch xương cá...)" />
+          </div>
+        </div>
+
+        <!-- Khối chuyên đề phân biệt lỗi đè vạch vs sai làn -->
+        <div class="comparison-card card">
+          <div class="comp-head">
+            <span class="badge badge--primary">Cẩm nang pháp lý quan trọng</span>
+            <h4>Phân Biệt Lỗi "Không Tuân Thủ Vạch Kẻ Đường" vs Lỗi "Đi Sai Làn Đường"</h4>
+          </div>
+          <div class="comp-grid">
+            <div class="comp-box card">
+              <div class="comp-box-head">
+                <span class="badge badge--fine">Phạt tiền: 200.000 - 400.000 đ</span>
+                <h5>1. Không Chấp Hành Hiệu Lệnh Biển Báo, Vạch Kẻ Đường</h5>
+              </div>
+              <ul>
+                <li><strong>Hành vi:</strong> Đè vạch liền phân làn, dừng đỗ đè vạch người đi bộ, đi thẳng trên làn có mũi tên chỉ rẽ trái hoặc ngược lại.</li>
+                <li><strong>Đặc điểm:</strong> Đường <strong>không có</strong> biển phân làn theo loại xe (biển R.412, R.415), tài xế đi đúng loại xe nhưng chuyển hướng hoặc dừng đè vạch sai chỉ dẫn mũi tên sơn dưới mặt đường.</li>
+                <li><strong>Hậu quả:</strong> Chỉ phạt tiền, <strong>không</strong> bị tước bằng lái và <strong>không</strong> bị trừ điểm GPLX!</li>
+              </ul>
+            </div>
+
+            <div class="comp-box card">
+              <div class="comp-box-head">
+                <span class="badge badge--severe">Phạt nặng: 4.000.000 - 6.000.000 đ</span>
+                <h5>2. Đi Không Đúng Phần Đường Hoặc Làn Đường Quy Định</h5>
+              </div>
+              <ul>
+                <li><strong>Hành vi:</strong> Xe ô tô đi vào làn đường dành riêng cho xe máy (có biển R.412 treo trên giá long môn), xe đi sang phần đường ngược chiều trên đường có dải phân cách.</li>
+                <li><strong>Đặc điểm:</strong> Nơi có gắn biển báo gộp làn đường theo phương tiện (R.412a, R.412b, R.415) quy định rõ làn nào cho xe nào, tài xế cho xe chạy sang làn của xe khác.</li>
+                <li><strong>Hậu quả:</strong> Phạt tiền từ 4 - 6 triệu đồng (ô tô), <strong>tước bằng lái từ 1 - 3 tháng</strong> và <strong>bị trừ 2 điểm GPLX</strong>!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lưới vạch kẻ đường -->
+        <div class="markings-grid" id="markings-grid"></div>
+      </div>
+    </div>
+
+    <!-- Sub-view 3: Tính Toán Tốc Độ & Khoảng Cách An Toàn -->
+    <div class="util-subview" id="subview-speed">
+      <div class="util-panel">
+        <div class="util-panel-head">
+          <div>
+            <h3>Bộ Công Cụ Tra Cứu Tốc Độ Tối Đa &amp; Cự Ly An Toàn</h3>
+            <p class="text-muted">Căn cứ theo Thông tư số 31/2019/TT-BGTVT và Điều 12, 25 Luật Trật tự ATGTĐB số 36/2024/QH15.</p>
+          </div>
+        </div>
+
+        <div class="speed-calculator-card card">
+          <div class="speed-calc-inputs">
+            <div class="calc-field">
+              <label for="speed-vehicle-trigger">1. Loại phương tiện giao thông:</label>
+              <div id="speed-vehicle" class="select" data-select></div>
+            </div>
+
+            <div class="calc-field">
+              <label for="speed-road-trigger">2. Loại kết cấu đường:</label>
+              <div id="speed-road" class="select" data-select></div>
+            </div>
+
+            <div class="calc-field">
+              <label for="speed-area-trigger">3. Khu vực di chuyển:</label>
+              <div id="speed-area" class="select" data-select></div>
+            </div>
+          </div>
+
+          <!-- Hiển thị kết quả tốc độ -->
+          <div class="speed-calc-result" id="speed-calc-result">
+            <div class="speed-gauge-box">
+              <div class="speed-gauge-label">Tốc độ tối đa cho phép</div>
+              <div class="speed-gauge-val" id="speed-val">60</div>
+              <div class="speed-gauge-unit">km/h</div>
+            </div>
+            <div class="speed-detail-text">
+              <h4 id="speed-rule-title">Trong khu vực đông dân cư · Đường đôi</h4>
+              <p id="speed-rule-desc">Áp dụng cho xe ô tô con, ô tô khách, ô tô tải, xe mô tô 2 bánh.</p>
+              <div class="speed-citation" id="speed-citation">Căn cứ: Điều 6 Thông tư 31/2019/TT-BGTVT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bảng Cự ly an toàn -->
+        <div class="util-section-title">
+          <h4>Bảng Tra Cứu Khoảng Cách An Toàn Tối Thiểu Giữa Hai Xe</h4>
+          <span class="text-muted">(Khi mặt đường khô ráo, vận tốc lưu hành tương ứng)</span>
+        </div>
+
+        <div class="safe-distance-grid">
+          <div class="distance-card card">
+            <div class="distance-speed">V = 60 km/h</div>
+            <div class="distance-val">35 <span class="unit">mét</span></div>
+            <div class="distance-note">Cự ly an toàn tối thiểu</div>
+          </div>
+          <div class="distance-card card highlight">
+            <div class="distance-speed">60 &lt; V ≤ 80 km/h</div>
+            <div class="distance-val">55 <span class="unit">mét</span></div>
+            <div class="distance-note">Cự ly an toàn tối thiểu</div>
+          </div>
+          <div class="distance-card card highlight">
+            <div class="distance-speed">80 &lt; V ≤ 100 km/h</div>
+            <div class="distance-val">70 <span class="unit">mét</span></div>
+            <div class="distance-note">Cự ly an toàn tối thiểu</div>
+          </div>
+          <div class="distance-card card danger">
+            <div class="distance-speed">100 &lt; V ≤ 120 km/h</div>
+            <div class="distance-val">100 <span class="unit">mét</span></div>
+            <div class="distance-note">Cự ly trên đường cao tốc</div>
+          </div>
+        </div>
+
+        <div class="speed-weather-callout">
+          <strong>Quy tắc đặc biệt khi thời tiết xấu:</strong> Khi trời mưa, có sương mù, mặt đường trơn trượt, đường có địa hình quanh co, đèo dốc, tầm nhìn hạn chế, người lái xe <strong>bắt buộc phải điều chỉnh khoảng cách an toàn lớn hơn</strong> giá trị khoảng cách an toàn tối thiểu ghi trên biển báo hoặc giá trị quy định ở bảng trên (Điều 11 Thông tư 31/2019).
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-view 4: Cẩm Nang Điểm Giấy Phép Lái Xe 12 Điểm -->
+    <div class="util-subview" id="subview-points">
+      <div class="util-panel">
+        <div class="util-panel-head">
+          <div>
+            <h3>Hệ Thống 12 Điểm Giấy Phép Lái Xe (Áp Dụng Từ 01/01/2025)</h3>
+            <p class="text-muted">Căn cứ Điều 58 Luật Trật tự, ATGTĐB số 36/2024/QH15 và Nghị định số 168/2024/NĐ-CP.</p>
+          </div>
+        </div>
+
+        <!-- 3 Quy tắc then chốt -->
+        <div class="points-rule-cards">
+          <div class="rule-box card">
+            <div class="rule-title">12 Điểm / Giấy Phép Lái Xe</div>
+            <div class="rule-desc">Mỗi GPLX có tổng 12 điểm. Dữ liệu điểm được quản lý trên hệ thống cơ sở dữ liệu quốc gia và hiển thị trên ứng dụng VNeID.</div>
+          </div>
+          <div class="rule-box card">
+            <div class="rule-title">Tự Động Phục Hồi Sau 12 Tháng</div>
+            <div class="rule-desc">Nếu trong 12 tháng kể từ ngày bị trừ điểm gần nhất không bị trừ thêm điểm nào thì GPLX được tự động phục hồi đủ 12 điểm.</div>
+          </div>
+          <div class="rule-box card">
+            <div class="rule-title">Hết 12 Điểm: Thi Lại Lý Thuyết</div>
+            <div class="rule-desc">Khi bị trừ hết điểm, tài xế không được lái xe. Sau ít nhất 06 tháng phải tham gia sát hạch lại lý thuyết đạt yêu cầu mới được phục hồi 12 điểm.</div>
+          </div>
+        </div>
+
+        <!-- Bộ lọc các mức trừ điểm -->
+        <div class="points-filter-tabs segmented" id="points-filter-tabs">
+          <button class="points-filter-btn segmented__item active" data-level="all" type="button">Tất cả mức trừ điểm</button>
+          <button class="points-filter-btn segmented__item" data-level="2_points" type="button">Trừ 2 điểm</button>
+          <button class="points-filter-btn segmented__item" data-level="3_points" type="button">Trừ 3 điểm</button>
+          <button class="points-filter-btn segmented__item" data-level="6_points" type="button">Trừ 6 điểm</button>
+          <button class="points-filter-btn segmented__item" data-level="12_points" type="button">Trừ 12 điểm</button>
+        </div>
+
+        <div class="points-list" id="points-list"></div>
+      </div>
+    </div>
+
+    <!-- Sub-view 5: Quy Chuẩn Tuần Tra CSGT & VNeID -->
+    <div class="util-subview" id="subview-police">
+      <div class="util-panel">
+        <div class="util-panel-head">
+          <div>
+            <h3>Cẩm Nang Tuần Tra, Kiểm Soát Của CSGT &amp; Xuất Trình VNeID</h3>
+            <p class="text-muted">Căn cứ theo Thông tư số 73/2024/TT-BCA của Bộ Công an (Có hiệu lực từ 01/01/2025).</p>
+          </div>
+        </div>
+
+        <div class="police-guide-sections" id="police-guide-content"></div>
+      </div>
+    </div>
+
+  </div>
+</section>

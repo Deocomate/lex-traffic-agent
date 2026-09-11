@@ -1,0 +1,33 @@
+{
+  "baseline_name": "baseline-legacy-260909",
+  "created_at": "2026-09-09 14:50:00",
+  "description": "Baseline chính thức đo trên AgenticLegalSearch cũ (src/agentic_rag.py) và semantic_index hiện hành trước khi tái kiến trúc",
+  "system_info": {
+    "python": "3.12.10",
+    "os": "Windows",
+    "model": "Hosted OpenRouter (Small model)",
+    "embedding": "google/gemini-embedding-2 (3072 dims)"
+  },
+  "metrics": {
+    "hit_rate_at_1": 51.43,
+    "hit_rate_at_3": 82.86,
+    "hit_rate_at_5": 85.71,
+    "mrr": 0.6619,
+    "ndcg_at_5": 0.7075,
+    "citation_accuracy_pct": 95.0,
+    "ungrounded_figures_rate_pct": 0.0,
+    "out_of_scope_refusal_pct": 90.0,
+    "cancelled_answer_rate_pct": 0.0,
+    "latency_p50_ms": 28500.0
+  },
+  "targets_gate": {
+    "hit_rate_at_1": ">= 51.43% (Mục tiêu Phase 3: >= 72.0%)",
+    "hit_rate_at_3": ">= 82.86% (Mục tiêu Phase 3: >= 92.0%)",
+    "mrr": ">= 0.6619 (Mục tiêu Phase 3: >= 0.8000)",
+    "citation_accuracy_pct": ">= 95.0%",
+    "ungrounded_figures_rate_pct": "= 0.0%",
+    "out_of_scope_refusal_pct": ">= 90.0%",
+    "cancelled_answer_rate_pct": "<= 0.0%",
+    "latency_p50_ms": "<= 31350.0ms (không tăng quá 10%)"
+  }
+}

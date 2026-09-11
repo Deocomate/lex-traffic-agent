@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-09-09 16:50:10",
+  "adapter": "graph",
+  "dataset": "qa_testset_v2.json",
+  "total_questions": 3,
+  "elapsed_seconds": 154.08,
+  "metrics": {
+    "citation_accuracy_pct": 66.67,
+    "ungrounded_figures_rate_pct": 33.33,
+    "out_of_scope_refusal_pct": 100.0,
+    "cancelled_answer_rate_pct": 0.0,
+    "latency_p50_ms": 50136.51,
+    "latency_p90_ms": 66249.81,
+    "latency_p95_ms": 68263.97,
+    "latency_mean_ms": 51350.54,
+    "estimated_cost_usd_total": 0.007754,
+    "estimated_cost_usd_per_query": 0.002585,
+    "total_tokens_in": 39815,
+    "total_tokens_out": 2970
+  },
+  "latency_details": {
+    "count": 3,
+    "mean_ms": 51350.54,
+    "p50_ms": 50136.51,
+    "p90_ms": 66249.81,
+    "p95_ms": 68263.97,
+    "min_ms": 33636.97,
+    "max_ms": 70278.14
+  },
+  "detailed_results": [
+    {
+      "id": "qa_001",
+      "category": "Hiệu lực văn bản",
+      "question": "Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15 có hiệu lực thi hành từ ngày nào và có điều khoản nào có hiệu lực muộn hơn không?",
+      "is_out_of_scope": false,
+      "expected_citation": "Điều 89",
+      "citation_ok": true,
+      "has_ungrounded_figures": false,
+      "ungrounded_details": [],
+      "refusal_ok": null,
+      "has_verification_issue": false,
+      "verification_issues": [],
+      "latency_ms": 33636.97,
+      "tokens_in": 12195,
+      "tokens_out": 840,
+      "sources_count": 6,
+      "answer_preview": "### Thời điểm có hiệu lực thi hành\n\n**Luật Trật tự, an toàn giao thông đường bộ 2024 (Luật số 36/2024/QH15) có hiệu lực ..."
+    },
+    {
+      "id": "qa_002",
+      "category": "Hành vi bị nghiêm cấm",
+      "question": "Quy định về nồng độ cồn đối với người điều khiển phương tiện tham gia giao thông trong Luật mới 2024 như thế nào?",
+      "is_out_of_scope": false,
+      "expected_citation": "Điều 9",
+      "citation_ok": true,
+      "has_ungrounded_figures": true,
+      "ungrounded_details": [
+        "12 điểm bị trừ"
+      ],
+      "refusal_ok": null,
+      "has_verification_issue": false,
+      "verification_issues": [],
+      "latency_ms": 50136.51,
+      "tokens_in": 17203,
+      "tokens_out": 921,
+      "sources_count": 11,
+      "answer_preview": "### Quy định cốt lõi: Nồng độ cồn bằng 0\n\nTheo **Điều 9 Luật Trật tự, an toàn giao thông đường bộ 2024 (Luật 36/2024/QH1..."
+    },
+    {
+      "id": "qa_003",
+      "category": "Hành vi bị nghiêm cấm",
+      "question": "Hành vi bấm còi, rú ga liên tục trong đô thị và khu đông dân cư bị xử lý như thế nào theo Luật 2024?",
+      "is_out_of_scope": false,
+      "expected_citation": "Điều 9",
+      "citation_ok": false,
+      "has_ungrounded_figures": false,
+      "ungrounded_details": [],
+      "refusal_ok": null,
+      "has_verification_issue": false,
+      "verification_issues": [],
+      "latency_ms": 70278.14,
+      "tokens_in": 10417,
+      "tokens_out": 1209,
+      "sources_count": 9,
+      "answer_preview": "Hành vi bấm còi, rú ga liên tục trong đô thị và khu đông dân cư là hành vi **bị nghiêm cấm** theo Điều 9 Luật Trật tự, a..."
+    }
+  ]
+}
