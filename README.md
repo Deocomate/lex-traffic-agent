@@ -264,11 +264,13 @@ Inter + Plus Jakarta Sans (tiêu đề) + JetBrains Mono (mã).
 
 Lịch sử hội thoại nằm ở **checkpointer SQLite phía máy chủ**, khoá theo `thread_id`, nên nó sống
 qua F5 trình duyệt. Bỏ trống `thread_id` thì máy chủ tự sinh và trả về trong sự kiện `done`;
-client gửi lại giá trị đó ở các lượt sau. Lịch sử được cắt theo **ngân sách token**
-(`HISTORY_TOKEN_BUDGET`) chứ không theo số tin nhắn, phần bị cắt được tóm tắt lại thay vì mất hẳn.
+client gửi lại giá trị đó ở các lượt sau. Toàn bộ lịch sử được LangGraph checkpointer giữ nguyên
+vẹn theo `thread_id`; cơ chế cắt theo ngân sách token (`HISTORY_TOKEN_BUDGET`) thuộc node `memory`
+đã bị gỡ bỏ cùng pipeline waterfall cũ.
 
 Câu trả lời **đã qua kiểm chứng** được cache theo khoá tổ hợp `(intents, vehicles, doc_scope,
-vân tay chỉ mục)`, rồi mới so cosine ở ngưỡng `SEMANTIC_CACHE_THRESHOLD`. Khoá tổ hợp là phần
+vân tay chỉ mục)`, rồi mới so cosine ở ngưỡng `cache_similarity` khai báo trong `policy` của
+`domains/<id>/domain.yaml` (`0.97` cho `vietnam_traffic`). Khoá tổ hợp là phần
 quan trọng nhất: "ô tô vượt đèn đỏ" và "xe máy vượt đèn đỏ" có cosine rất cao nhưng mức phạt khác
 hẳn, nên riêng độ tương đồng vector là không đủ an toàn ở miền này. Câu có `issues` hoặc
 `needs_search` không bao giờ được ghi cache. Dựng lại chỉ mục làm đổi vân tay và toàn bộ cache tự
@@ -288,10 +290,10 @@ qua — không commit.
 > `GET /api/trace/summary` chỉ trả số liệu tổng hợp, không bao giờ trả nội dung câu hỏi. Bật
 > `LANGSMITH_TRACING=true` thì câu hỏi và câu trả lời **rời khỏi máy này**, gửi tới LangSmith Cloud.
 
-> **Yêu cầu về model:** `ROUTER_LLM_MODEL`/`RERANK_LLM_MODEL` chỉ cần trả JSON có cấu trúc (tầng
-> structured output 4 bậc tự xử lý model function-calling yếu — chi tiết ở
-> [`docs/architecture.md`](docs/architecture.md#5-tầng-structured-output-4-bậc)). `LLM_MODEL`
-> (vai trò `synthesize`/`repair`) không cần function calling — node `synthesize` không bind tool.
+> **Yêu cầu về model:** `LLM_MODEL` **bắt buộc hỗ trợ Function Calling** — node `agent`
+> (`src/graph/agent_node.py`) bind trực tiếp bộ công cụ tra cứu (`TrafficLawTools`) vào model qua
+> cơ chế Function Calling chuẩn của LangChain, không còn router/rerank LLM riêng. `FALLBACK_LLM_MODEL`
+> cũng cần hỗ trợ Function Calling vì thay thế `LLM_MODEL` ở cùng vai trò khi lỗi/quá tải.
 > Đổi `EMBEDDING_MODEL` thì phải chạy lại `python scripts/ingest/build_semantic_index.py` để dựng lại
 > vector cho khớp số chiều.
 
