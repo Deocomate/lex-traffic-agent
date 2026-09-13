@@ -19,21 +19,13 @@ logger = logging.getLogger(__name__)
 # Cấu hình vai trò mô hình: (biến môi trường, temperature, max_tokens, mức reasoning)
 #
 # `max_tokens` của OpenRouter tính CẢ reasoning token lẫn token nội dung. Model reasoning "nghĩ"
-# quá dài là chạm trần trước khi kịp viết ra nội dung — và hậu quả khác nhau theo vai trò:
+# quá dài là chạm trần trước khi kịp viết ra nội dung, và câu trả lời bị cắt cụt hoặc rỗng hẳn.
+# Đo trên bộ trace 25 câu: 2 lệnh gọi `deepseek` dừng đúng ở 4.000 token và cho ra câu trả lời
+# rỗng — chính là 2/25 câu bị huỷ (8%).
 #
-#   - `router`/`rerank` (bắt buộc trả JSON đúng schema): chạm trần giữa chừng thì chưa sinh nổi
-#     ký tự JSON nào, OpenAI SDK ném `LengthFinishReasonError`, tầng 1 (`json_schema`) hỏng và
-#     phải chạy lại bằng `function_calling`. Đo trên bộ trace 43 lượt: 11 lượt (25,6%) hỏng đúng
-#     kiểu đó, mỗi lượt đốt trọn 4.000 token, đẩy p95 của `rerank` lên 139 giây.
-#   - `synthesize`/`repair` (viết câu trả lời cho người dùng): chạm trần thì câu trả lời bị cắt
-#     cụt hoặc rỗng hẳn. Đo trên bộ trace 25 câu: 2 lệnh gọi `deepseek` dừng đúng ở 4.000 token
-#     và cho ra câu trả lời rỗng — chính là 2/25 câu bị huỷ (8%).
-#
-# Vì vậy: ghìm reasoning ở mức "low" cho MỌI vai trò, và cho `synthesize`/`repair` hạn mức token
-# rộng hơn hẳn vì chúng phải viết văn bản dài chứ không chỉ trả một object JSON ngắn.
+# Vì vậy: ghìm reasoning ở mức "low", và cấp hạn mức token rộng vì cả hai vai trò đều phải viết
+# văn bản dài cho người dùng đọc.
 MODEL_ROLES: Dict[str, tuple[str, float, int, str]] = {
-    "router": ("ROUTER_LLM_MODEL", 0.0, 1500, "low"),
-    "rerank": ("RERANK_LLM_MODEL", 0.0, 3000, "low"),
     "synthesize": ("LLM_MODEL", 0.0, 8000, "low"),
     "repair": ("LLM_MODEL", 0.0, 8000, "low"),
 }
@@ -289,16 +281,6 @@ def get_model_tracker(model: Any) -> Optional[ModelFallbackTracker]:
         if isinstance(cb, ModelFallbackTracker):
             return cb
     return None
-
-
-def get_rerank_llm(**kwargs: Any) -> BaseChatModel:
-    """Lấy mô hình ChatOpenAI cho vai trò Rerank."""
-    return get_chat_model(purpose="rerank", **kwargs)
-
-
-def get_router_llm(**kwargs: Any) -> BaseChatModel:
-    """Lấy mô hình ChatOpenAI cho vai trò Router."""
-    return get_chat_model(purpose="router", **kwargs)
 
 
 def get_synthesize_llm(**kwargs: Any) -> BaseChatModel:

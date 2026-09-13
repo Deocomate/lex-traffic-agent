@@ -1,0 +1,26 @@
+{
+  "default_percentile": null,
+  "out_of_scope_ratio": 1.0,
+  "branches": {
+    "penalty_keyword": {
+      "reference": 27.567008,
+      "percentile": 5.0,
+      "source": "corpus_statistics",
+      "median": 71.855703,
+      "p25": 52.831445,
+      "p5": 27.567008,
+      "samples": 399
+    },
+    "sparse": {
+      "reference": 41.650326,
+      "source": "labelled_examples",
+      "median": 38.111862,
+      "p25": 25.276648,
+      "p5": 13.196509,
+      "samples": 397,
+      "recall": 1.0,
+      "false_positive": 0.2025,
+      "youden_j": 0.7975
+    }
+  }
+}

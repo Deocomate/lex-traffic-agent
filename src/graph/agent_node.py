@@ -1,7 +1,15 @@
 """
 Node Suy luận Trung tâm của Agent (Agent Node) trong LangGraph.
-Sử dụng mô hình chính (LLM_MODEL) gắn trực tiếp 7 công cụ tra cứu.
-Agent tự chủ suy luận, quyết định gọi công cụ hoặc tổng hợp câu trả lời cuối cùng.
+
+Mô hình chính được gắn bộ công cụ do Domain Pack khai báo và tự quyết định: gọi công cụ nào,
+với tham số gì, bao nhiêu vòng, và khi nào đã đủ dữ liệu để trả lời. Node này không biết trước
+công cụ nào tồn tại — đổi miền là đổi cả bộ công cụ mà không sửa dòng code nào ở đây.
+
+Ngân sách lượt được NÓI THẲNG cho Agent thay vì cắt câm. Bản trước chỉ có `agent_router` lặng
+lẽ chuyển sang `verify` khi chạm `MAX_TURNS`: nếu lượt cuối Agent vẫn phát tool call thì câu
+trả lời rỗng, `verify` bắt lỗi "câu trả lời trống" rồi phải chạy thêm một vòng `repair` — tốn
+một lệnh gọi mô hình chỉ để sửa hậu quả của việc không báo trước. Biết còn mấy lượt thì Agent
+tự cân đối được: tra tiếp hay chốt lại với dữ liệu đang có.
 """
 
 import json
@@ -12,14 +20,42 @@ from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, System
 
 from src.graph.events import emit
 from src.graph.state import LegalAgentState
-from src.graph.synthesize import clean_text_output, polish_answer
+from src.graph.answer_text import clean_text_output, polish_answer
 from src.llm.provider import get_model_tracker, get_synthesize_llm
-from src.prompts.system_vi import get_system_prompt_vi
-from src.tools.law_search_tools import TOOLS_SCHEMA
+from src.domain.registry import get_active_domain
+from src.prompts.system_vi import get_system_prompt
 
 logger = logging.getLogger(__name__)
 
+# Trần mặc định của số vòng suy luận, dùng khi không đọc được Domain Pack. Đây là lưới an toàn
+# chống lặp vô hạn, KHÔNG phải nút điều chỉnh chất lượng: Agent được cho biết còn bao nhiêu lượt
+# và tự quyết định dừng sớm hơn.
 MAX_TURNS = 4
+
+
+def max_turns() -> int:
+    """Trần số vòng tra cứu, do miền khai báo (`policy.max_tool_turns`)."""
+    try:
+        return get_active_domain().policy.max_tool_turns
+    except Exception:
+        return MAX_TURNS
+
+
+def _turn_budget_notice(turn: int) -> str:
+    """Nhắc Agent còn bao nhiêu lượt tra cứu, để nó tự cân đối thay vì bị cắt giữa chừng."""
+    remaining = max_turns() - turn
+    if remaining <= 0:
+        return (
+            "\n\nNGÂN SÁCH TRA CỨU: đây là lượt CUỐI CÙNG. Không gọi thêm công cụ nào nữa. "
+            "Hãy trả lời ngay bằng dữ liệu đã thu thập được. Nếu dữ liệu chưa đủ để kết luận, "
+            "hãy nói thẳng là chưa tra cứu được và nêu rõ còn thiếu thông tin gì — tuyệt đối "
+            "không suy đoán số liệu."
+        )
+    return (
+        f"\n\nNGÂN SÁCH TRA CỨU: bạn còn {remaining} lượt gọi công cụ sau lượt này. "
+        "Hãy tự cân đối: nếu đã đủ căn cứ thì trả lời luôn, nếu còn thiếu thì gọi công cụ cho "
+        "đúng chỗ thiếu."
+    )
 
 
 def agent_node(state: LegalAgentState) -> Dict[str, Any]:
@@ -34,15 +70,16 @@ def agent_node(state: LegalAgentState) -> Dict[str, Any]:
     if turn == 1:
         emit("start", "🧠 Đang phân tích câu hỏi và lập kế hoạch tra cứu...")
 
-    emit("turn_start", f"🔄 [Lượt {turn}/{MAX_TURNS}] Đang suy luận và xử lý dữ liệu...", turn=turn)
+    emit("turn_start", f"🔄 [Lượt {turn}/{max_turns()}] Đang suy luận và xử lý dữ liệu...", turn=turn)
 
     base_model = get_synthesize_llm()
     tracker = get_model_tracker(base_model)
     model_used = tracker.active_model if tracker and tracker.active_model else "deepseek/deepseek-v4-flash"
 
-    model_with_tools = base_model.bind_tools(TOOLS_SCHEMA)
+    # Bộ công cụ do Domain Pack khai báo — engine không biết trước công cụ nào tồn tại.
+    model_with_tools = base_model.bind_tools(get_active_domain().tools_schema)
 
-    system_prompt = get_system_prompt_vi()
+    system_prompt = get_system_prompt() + _turn_budget_notice(turn)
     prompt_messages: List[BaseMessage] = [SystemMessage(content=system_prompt)]
     for msg in messages:
         if not isinstance(msg, SystemMessage):
@@ -111,14 +148,20 @@ def agent_node(state: LegalAgentState) -> Dict[str, Any]:
 
 
 def agent_router(state: LegalAgentState) -> Literal["tools", "verify"]:
-    """Định tuyến sau node agent: Nếu có tool call và chưa quá giới hạn -> gọi tools, ngược lại -> kiểm chứng."""
+    """
+    Định tuyến sau node agent: còn tool call và còn ngân sách thì chạy công cụ, ngược lại sang
+    kiểm chứng.
+
+    Trần số vòng ở đây là lưới an toàn cuối. Đường đi thông thường là Agent tự dừng gọi
+    công cụ khi thấy đủ dữ liệu, vì nó đã được cho biết còn bao nhiêu lượt.
+    """
     messages = state.get("messages", [])
     turn = state.get("turn_count", 0)
 
     if messages:
         last_msg = messages[-1]
         tool_calls = getattr(last_msg, "tool_calls", None) or []
-        if tool_calls and turn < MAX_TURNS:
+        if tool_calls and turn < max_turns():
             return "tools"
 
     return "verify"

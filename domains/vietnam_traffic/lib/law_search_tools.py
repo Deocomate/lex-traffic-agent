@@ -16,23 +16,19 @@ import re
 from typing import List, Dict, Any, Optional
 import numpy as np
 
-from src.tools.penalty_lookup import PenaltyLookup
-from src.tools.tool_contract import (
+from domains.vietnam_traffic.lib.penalty_lookup import PenaltyLookup
+from domains.vietnam_traffic.lib.tool_contract import (
     AGENT_ONLY_TAG,
     NO_ARTICLE_MATCH_HEADER,
     NO_KEYWORD_MATCH_HEADER,
 )
+from src.paths import project_root
 
 if sys.platform == 'win32':
     try:
         sys.stdout.reconfigure(encoding='utf-8')
     except Exception:
         pass
-
-# Ngưỡng lọc độ liên quan của tìm kiếm ngữ nghĩa (thang 0-100)
-# Hiệu chuẩn trên 95 câu benchmark và câu hỏi thực tế (câu ngoài ngành < 58.0%, câu trong ngành >= 60.0%)
-RELEVANCE_FLOOR = float(os.getenv("HYBRID_RELEVANCE_FLOOR", "60.0"))
-RELEVANCE_WEAK = float(os.getenv("HYBRID_RELEVANCE_FLOOR", "60.0"))
 
 PARENT_CONTENT_LIMIT = 3500
 
@@ -42,7 +38,7 @@ DEFAULT_SEARCH_DOCS = "all"
 
 class TrafficLawTools:
     def __init__(self):
-        self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.base_dir = project_root()
         self.processed_dir = os.path.join(self.base_dir, "data", "processed")
 
         self.structured_json_path = os.path.join(self.processed_dir, "law_36_2024_structured.json")
@@ -404,6 +400,10 @@ class TrafficLawTools:
         - Thông tư 73/2024 (Tuần tra CSGT, dừng xe, VNeID)
         - QCVN 41:2019 (Biển báo, vạch kẻ đường kèm ảnh)
         - Nghị định 168/2024 (Chế tài mức phạt)
+
+        Kết quả LUÔN kèm dòng độ tin cậy ở đầu. Tầng truy xuất không tự ý trả rỗng khi thấy
+        điểm thấp nữa — nó báo tín hiệu và để Agent quyết định tra lại, mở rộng phạm vi, hay
+        nói thẳng là kho tài liệu không bao phủ câu hỏi.
         """
         if not question:
             return "Không có nội dung để tìm kiếm."
@@ -417,38 +417,34 @@ class TrafficLawTools:
 
         try:
             scope = None if doc_scope == "all" else [doc_scope]
-            fetch_k = min(max(top_k * 2, 6), 12)
-            results = retriever.retrieve_articles(question, doc_ids=scope, top_k=fetch_k)
-
-            # Xếp hạng lại danh sách ứng viên bằng mô hình nhỏ qua rerank.py
-            from src.retrieval.rerank import get_reranker
-            reranker = get_reranker()
-            results = reranker.rerank(question, results, top_k=top_k)
+            kept, confidence, scope_signal = retriever.retrieve_articles_with_confidence(
+                question, doc_ids=scope, top_k=top_k
+            )
         except Exception as e:
             return (
                 f"[Chú ý: Lỗi truy xuất ({e}), chuyển sang tìm kiếm từ khóa]\n"
                 + self.keyword_search(question)
             )
 
-
-        kept = [r for r in results if r["score"] >= RELEVANCE_FLOOR]
         if not kept:
-            best = max((r["score"] for r in results), default=0)
             return (
                 f"{NO_ARTICLE_MATCH_HEADER} '{question}' ===\n"
                 f"{AGENT_ONLY_TAG}\n"
-                f"Độ liên quan cao nhất chỉ đạt {best}%, dưới ngưỡng tin cậy. Câu hỏi nhiều khả năng nằm ngoài "
-                "phạm vi pháp luật giao thông đường bộ Việt Nam. Hãy thông báo rõ ràng là chưa tìm thấy quy định liên quan."
+                "Chỉ mục không trả về ứng viên nào. Hãy thử lại bằng thuật ngữ pháp lý khác, "
+                "hoặc nói rõ với người dùng là chưa tìm thấy quy định liên quan."
             )
 
-        output = [f"=== KẾT QUẢ TRA CỨU NGỮ NGHĨA CHO: '{question}' ==="]
+        output = [f"=== KẾT QUẢ TRA CỨU NGỮ NGHĨA CHO: '{question}' ===", confidence.header_vi()]
+        scope_header = scope_signal.header_vi()
+        if scope_header:
+            output.append(scope_header)
         for rank, r in enumerate(kept):
             doc_name = r.get("doc_name", "")
             header = r.get("article_header", "")
             score = r.get("score", 0)
             img_path = r.get("image_path")
 
-            head_str = f"\n📖 [{doc_name}] {header} — độ liên quan {score}%"
+            head_str = f"\n📖 [{doc_name}] {header} — độ liên quan tương đối {score}%"
             if img_path:
                 clean_img = img_path if img_path.startswith("/") else f"/{img_path}"
                 head_str += f"\n  📷 Ảnh minh họa: ![{header}]({clean_img})"
@@ -514,127 +510,12 @@ class TrafficLawTools:
 
 
 # SCHEMA FUNCTION CALLING DÀNH CHO AI AGENT
-TOOLS_SCHEMA = [
-    {
-        "type": "function",
-        "function": {
-            "name": "penalty_lookup",
-            "description": "Tra cứu mức phạt tiền (VNĐ), số điểm giấy phép lái xe bị trừ và hình thức xử phạt bổ sung trên toàn văn Nghị định 168/2024/NĐ-CP (634 hành vi vi phạm, hiệu lực 01/01/2025). Dùng cho mọi câu hỏi về chế tài: nồng độ cồn, vượt đèn đỏ, quá tốc độ, mũ bảo hiểm, điện thoại, chở quá số người, đi ngược chiều, vỉa hè, cao tốc...",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "violation_keyword": {
-                        "type": "string",
-                        "description": "Tên hành vi vi phạm hoặc từ khóa kèm loại xe (ví dụ: 'nồng độ cồn ô tô', 'uống bia lái xe máy', 'vượt đèn đỏ ô tô', 'chạy quá tốc độ ô tô', 'không đội mũ bảo hiểm')"
-                    }
-                },
-                "required": ["violation_keyword"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "traffic_sign_lookup",
-            "description": "Tra cứu biển báo giao thông hoặc vạch kẻ đường theo Quy chuẩn QCVN 41:2019/BGTVT. Cung cấp tên biển, nhóm biển (cấm, hiệu lệnh, nguy hiểm, chỉ dẫn, phụ, vạch kẻ đường), ý nghĩa sử dụng và HÌNH ẢNH MINH HỌA MARKDOWN để người dùng xem trực quan. Dùng khi hỏi: 'biển P.106a', 'biển cấm xe tải', 'biển W.201', 'vạch 1.1', 'biển này có ý nghĩa gì'...",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "sign_code_or_name": {
-                        "type": "string",
-                        "description": "Mã biển báo (P.106a, W.201, R.403a, Vạch 1.1...) hoặc tên biển ('cấm rẽ trái', 'cấm xe tải', 'hết hạn chế tốc độ')"
-                    }
-                },
-                "required": ["sign_code_or_name"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "speed_limit_lookup",
-            "description": "Tra cứu quy định về tốc độ tối đa cho phép (km/h) và khoảng cách an toàn (mét) của xe ô tô, xe máy, xe tải theo Thông tư 31/2019/TT-BGTVT. Phân biệt rõ: trong khu vực đông dân cư vs ngoài khu vực đông dân cư, đường đôi vs đường hai chiều, đường cao tốc.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {
-                        "type": "string",
-                        "description": "Nội dung câu hỏi về tốc độ hoặc khoảng cách an toàn (ví dụ: 'tốc độ xe máy trong khu đông dân cư', 'khoảng cách an toàn chạy 80km/h', 'tốc độ xe ô tô ngoài đô thị')"
-                    }
-                },
-                "required": ["query"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "keyword_search",
-            "description": "Tìm kiếm chính xác các Điều luật trong Luật Giao thông 2024 chứa từ khóa, tên hạng bằng lái xe (A1, C1, B, C, D), số tuổi (16 tuổi, 18 tuổi), con số (50cc, 12 điểm), hoặc thuật ngữ pháp lý.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "keywords": {
-                        "type": "string",
-                        "description": "Từ khóa hoặc cụm từ cần tìm (ví dụ: 'hạng C1', 'nồng độ cồn', 'xe 50cc', '12 điểm bằng lái', 'trẻ em ngồi ghế trước')"
-                    }
-                },
-                "required": ["keywords"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "semantic_search",
-            "description": "Tìm kiếm ngữ nghĩa sâu (Dense Vector Search 3072 chiều) trên toàn bộ 6 văn bản: Luật 36/2024 (quy tắc, GPLX), Luật 35/2024 (đường bộ, cao tốc, vận tải), Thông tư 31/2019 (tốc độ), Thông tư 73/2024 (tuần tra CSGT, quyền dừng xe, giấy tờ VNeID), QCVN 41:2019 (báo hiệu, biển báo). Dùng khi câu hỏi mô tả tình huống đời thường hoặc hỏi về quyền hạn CSGT.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "question": {
-                        "type": "string",
-                        "description": "Mô tả tình huống hoặc câu hỏi đầy đủ bằng tiếng Việt (ví dụ: 'CSGT được dừng xe trong những trường hợp nào', 'kiểm tra giấy tờ qua VNeID có được không', 'chở con nhỏ ngồi trước xe máy')"
-                    },
-                    "doc_scope": {
-                        "type": "string",
-                        "enum": ["all", "luat", "nghi_dinh", "thong_tu", "quy_chuan"],
-                        "description": "Phạm vi văn bản cần tìm (mặc định 'all' để tìm trong toàn bộ kho luật)"
-                    }
-                },
-                "required": ["question"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "get_article",
-            "description": "Lấy toàn văn một Điều luật cụ thể theo số hiệu Điều và mã văn bản.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "article_number": {
-                        "type": "integer",
-                        "description": "Số hiệu của Điều luật cần tra cứu (ví dụ: 9, 10, 31, 56, 57, 58, 89)"
-                    },
-                    "doc_id": {
-                        "type": "string",
-                        "description": "Mã văn bản (mặc định '01_luat_36_2024_qh15', hoặc '02_luat_35_2024_qh15', '04_thong_tu_31_2019_tt_bgtvt', '05_thong_tu_73_2024_tt_bca')"
-                    }
-                },
-                "required": ["article_number"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "list_chapters",
-            "description": "Xem danh mục 9 Chương của Luật 36/2024/QH15 để định hướng khu vực cần tra cứu.",
-            "parameters": {
-                "type": "object",
-                "properties": {}
-            }
-        }
-    }
-]
+
+
+# TOOLS_SCHEMA KHÔNG còn ở đây.
+#
+# Khai báo công cụ (tên, mô tả, JSON Schema tham số) đã chuyển sang `domains/vietnam_traffic/
+# domain.yaml`, và hàm thực thi sang `domains/vietnam_traffic/tools.py`. Nhờ vậy engine không
+# giữ danh sách công cụ cố định nào: đổi miền là đổi cả bộ công cụ mà không sửa mã engine.
+#
+# Lớp `TrafficLawTools` ở trên vẫn là nơi chứa dữ liệu và nghiệp vụ tra cứu của miền giao thông.

@@ -1,23 +1,23 @@
 """
-Node kiểm chứng tất định và node huỷ câu trả lời (Phase 5).
+Node kiểm chứng tất định và node huỷ câu trả lời.
 
-Đây là lý do duy nhất khiến model nhỏ không bịa được mức phạt, nên node ở đây KHÔNG
-chứa logic kiểm chứng riêng: nó chỉ gom nguồn đối chiếu rồi gọi thẳng vào các hàm thuần
-của `src/answer_guard.py` — bộ hàm đã được chứng minh đúng trên dữ liệu thật.
+Đây là lý do duy nhất khiến mô hình nhỏ không bịa được số liệu, nên node ở đây KHÔNG chứa
+logic kiểm chứng riêng: nó chỉ gom nguồn đối chiếu rồi gọi thẳng vào các hàm thuần của
+`src/answer_guard.py`.
 
-Điểm then chốt: đối chiếu với `raw_tool_output` NGUYÊN VĂN, không bao giờ với
-`packed_context`. Node `compact` cắt bằng chứng để vừa ngân sách token của model; đem
-bản đã cắt đi kiểm chứng sẽ sinh ra hàng loạt "số liệu không có căn cứ" giả.
+Điểm then chốt: đối chiếu với `raw_tool_output` NGUYÊN VĂN, không bao giờ với bản đã cắt gọn
+cho vừa ngân sách token — làm vậy sẽ sinh ra hàng loạt "số liệu không có căn cứ" giả.
+
+Lớp số liệu cần kiểm và dấu hiệu trích dẫn do Domain Pack khai báo (`guard.yaml`); node này
+không biết gì về tiền phạt hay Điều/Khoản.
 """
 
-import re
 from typing import Any, Dict, List
 
 from langchain_core.messages import AIMessage
 
 from src.answer_guard import (
     build_unknown_answer,
-    find_invalid_citations,
     find_ungrounded_figures,
     is_uncertain_answer,
 )
@@ -37,13 +37,15 @@ EMPTY_ANSWER_ISSUE = "câu trả lời trống — mô hình không sinh đượ
 # nhân phổ biến nhất khiến citation accuracy E2E thấp: nội dung đúng nhưng không có căn cứ.
 MISSING_CITATION_ISSUE = "câu trả lời không nêu rõ Điều/Khoản hoặc văn bản pháp lý cụ thể đã dùng"
 
-# Bất kỳ dấu hiệu nào cho thấy câu trả lời CÓ trích dẫn cụ thể (Điều/Khoản của Luật, hoặc tên
-# Nghị định/Thông tư/QCVN/biển báo). Nếu không có dấu hiệu nào trong khi dữ liệu tra cứu có,
-# câu trả lời coi như né tránh trích dẫn.
-_CITATION_MARKER = re.compile(
-    r'Điều\s*\d|Khoản\s*\d|Biển\s*[A-Za-zĐ0-9]|Nghị\s*định|Thông\s*tư|QCVN',
-    re.IGNORECASE,
-)
+def _citation_marker():
+    """
+    Dấu hiệu cho thấy câu trả lời CÓ nêu trích dẫn cụ thể, do Domain Pack khai báo
+    (`guard.citation_marker`). Miền giao thông nhận biết Điều/Khoản/Nghị định/Thông tư/QCVN;
+    một miền khác sẽ có cách đánh số căn cứ hoàn toàn khác.
+    """
+    from src.domain.registry import get_active_domain
+
+    return get_active_domain().citation_marker
 
 
 def find_missing_citation(answer: str, verified_sources: List[str]) -> List[str]:
@@ -58,11 +60,15 @@ def find_missing_citation(answer: str, verified_sources: List[str]) -> List[str]
         return []
     if is_uncertain_answer(answer):
         return []
-    if _CITATION_MARKER.search(answer):
+    marker = _citation_marker()
+    if marker is None:
+        # Miền không khai báo cách nhận biết trích dẫn -> không có cơ sở để trách mô hình.
+        return []
+    if marker.search(answer):
         return []
 
     grounded_text = "\n".join(s for s in verified_sources if s)
-    if not _CITATION_MARKER.search(grounded_text):
+    if not marker.search(grounded_text):
         return []
 
     return [MISSING_CITATION_ISSUE]
@@ -102,19 +108,33 @@ def verify_answer(answer: str, verified_sources: List[str]) -> List[str]:
     if not answer or not answer.strip():
         return [EMPTY_ANSWER_ISSUE]
 
-    from src.graph.retrieve import get_traffic_law_tools
-
-    tools = get_traffic_law_tools()
     return (
         find_ungrounded_figures(answer, verified_sources)
-        + find_invalid_citations(
-            answer,
-            verified_sources,
-            tools.articles_by_num,
-            tools.road_law_articles,
-        )
+        + _find_invalid_citations(answer, verified_sources)
         + find_missing_citation(answer, verified_sources)
     )
+
+
+def _find_invalid_citations(answer: str, verified_sources: List[str]) -> List[str]:
+    """
+    Trích dẫn sai, kiểm bằng hàm do miền cung cấp (`guard.citation_validator`).
+
+    Miền không khai báo thì bỏ qua lớp này thay vì làm hỏng cả lượt: kiểm số liệu và kiểm câu
+    trả lời trống vẫn chạy, nên vẫn còn lưới an toàn.
+    """
+    from src.domain.registry import get_active_domain
+
+    try:
+        validator = get_active_domain().citation_validator
+    except Exception:
+        return []
+    if validator is None:
+        return []
+
+    try:
+        return validator(answer=answer, verified_sources=verified_sources) or []
+    except Exception:
+        return []
 
 
 def verify_node(state: LegalAgentState) -> Dict[str, Any]:

@@ -1,3 +1,6 @@
+# Domain Pack: khai báo miền (kho tài liệu, persona, từ điển, quy tắc kiểm chứng) dạng YAML
+PyYAML>=6.0
+
 # Lõi AI Agent & RAG
 openai>=1.40.0
 python-dotenv>=1.0.0
@@ -24,3 +27,8 @@ langgraph-checkpoint-sqlite>=3.1,<4
 aiosqlite>=0.20.0
 rank-bm25>=0.2.2
 
+
+# --- Chỉ cần khi số hoá lại PDF gốc (scripts/ingest/*) ---
+# Năm script xử lý PDF cần PyMuPDF; ứng dụng và bộ eval KHÔNG cần.
+# Cài riêng khi muốn dựng lại corpus từ nguồn:  pip install PyMuPDF
+# PyMuPDF>=1.24.0

@@ -1,0 +1,44 @@
+# Quy tắc kiểm chứng tất định của miền.
+#
+# Lớp số liệu: mọi con số thuộc các lớp này mà câu trả lời nêu ra đều PHẢI xuất hiện nguyên văn
+# trong dữ liệu tra cứu, nếu không câu trả lời bị huỷ. Đây là lý do chính khiến mô hình nhỏ
+# không bịa được mức phạt.
+#
+# `kind` là cơ chế trích xuất do engine cung cấp (xem src/guard_figures.py) — miền chỉ chọn
+# cơ chế và tham số, không tự viết lại cách bóc số.
+
+figure_classes:
+  - id: money
+    kind: money
+    label: tiền phạt
+    # Dưới 50.000đ gần như chắc chắn là con số khác (mg cồn, cc, km/h) chứ không phải tiền phạt.
+    min_value: 50000
+
+  - id: months
+    kind: contextual_count
+    label: tháng tước GPLX
+    unit: tháng
+    context: tước|tạm giữ|thu hồi|giấy phép lái xe|gplx|bằng lái
+    min_value: 0
+
+  - id: points
+    kind: pattern_count
+    label: điểm bị trừ
+    # Bắt cả "trừ 2 điểm", "trừ hết 12 điểm", "bị trừ điểm giấy phép lái xe 04 điểm"
+    # lẫn nhãn kết quả "Trừ điểm giấy phép lái xe: 4 điểm".
+    pattern: trừ[^.\n]{0,45}?(\d{1,2})\s*điểm
+    min_value: 0
+
+# Dấu hiệu cho thấy câu trả lời CÓ nêu trích dẫn cụ thể. Thiếu hoàn toàn các dấu hiệu này trong
+# khi dữ liệu tra cứu có sẵn căn cứ = câu trả lời né tránh trích dẫn.
+citation_marker: Điều\s*\d|Khoản\s*\d|Biển\s*[A-Za-zĐ0-9]|Nghị\s*định|Thông\s*tư|QCVN
+
+# Xác minh trích dẫn Điều/Khoản/Điểm có thật trong kho văn bản hay không.
+# Engine không làm được việc này cho mọi miền vì mỗi lĩnh vực đánh số căn cứ một kiểu.
+citation_validator: domains.vietnam_traffic.guard:validate_citations
+
+# Chuỗi mà công cụ phát ra khi không tra được gì. Engine dùng để nhận ra lượt trắng tay.
+no_data_markers:
+- '=== KHÔNG CÓ DỮ LIỆU MỨC PHẠT CHO:'
+- '=== KHÔNG TÌM THẤY ĐIỀU KHOẢN LIÊN QUAN TỚI:'
+- '=== KHÔNG TÌM THẤY ĐIỀU LUẬT KHỚP TỪ KHÓA:'

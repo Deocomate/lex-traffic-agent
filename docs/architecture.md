@@ -9,6 +9,9 @@ Hệ thống cho phép mô hình ngôn ngữ lớn (LLM) chủ động suy luậ
 ## 1. Triết lý kiến trúc: Agentic ReAct kết hợp Lớp Kiểm Chứng Tất Định
 
 ### 1.1 Vấn đề của mô hình cũ (Waterfall Pipeline)
+
+> Toàn bộ mã nguồn của pipeline này **đã được gỡ khỏi repo** (~1.350 dòng). Phần dưới giữ lại để giải thích vì sao kiến trúc hiện tại được chọn.
+
 Trong kiến trúc cũ, luồng xử lý bị cố định theo dạng tuyến tính:
 `START -> normalize -> memory -> route -> fanout -> rerank -> compact -> synthesize -> verify -> repair -> END`.
 Mô hình này bộc lộ các nhược điểm chí tử:
@@ -76,7 +79,15 @@ flowchart TD
 
 ## 4. Kho Công Cụ Tra Cứu Pháp Luật (TrafficLawTools)
 
-Tọa lạc tại `src/tools/law_search_tools.py`, các công cụ này được thiết kế theo đúng chuẩn JSON Schema cho Agent Function Calling:
+Bộ công cụ **do Domain Pack khai báo**, không còn là hằng số của engine:
+
+- Khai báo (tên, mô tả, JSON Schema tham số): `domains/vietnam_traffic/domain.yaml`
+- Hàm thực thi: `domains/vietnam_traffic/tools.py`
+- Nghiệp vụ tra cứu: `domains/vietnam_traffic/lib/law_search_tools.py`
+
+`src/graph/retrieve.py` chỉ tra tên công cụ trong pack rồi gọi — nó không biết trước công cụ nào tồn tại. Đổi miền là đổi cả bộ công cụ mà không sửa mã engine. Xem `docs/domain-pack.md`.
+
+Các công cụ của miền giao thông:
 
 ### 4.1 `keyword_search(query: str, doc_scope: str = "all")`
 - **Chức năng**: Tra cứu nhanh các điều khoản trong 6 văn bản pháp luật giao thông bằng phương pháp tìm kiếm lai (BM25 + Dense Vector + RRF).
@@ -137,36 +148,57 @@ Giao tiếp thời gian thực giữa backend và frontend (`static/js/agent-tra
 
 ## 7. Cấu Hình Biến Môi Trường (.env)
 
-Hệ thống sử dụng tệp `.env` tinh gọn chuẩn hóa:
+`.env` chỉ còn **cấu hình triển khai**: khoá API, chọn mô hình, chọn miền, đường dẫn lưu trữ. Không còn tham số nào điều chỉnh chất lượng truy xuất.
 
-```ini
-# OpenRouter API & LLM điều phối
-OPENROUTER_API_KEY=sk-or-v1-...
+```dotenv
+OPENROUTER_API_KEY=...            # bắt buộc
 LLM_MODEL=deepseek/deepseek-v4-flash
 FALLBACK_LLM_MODEL=openai/gpt-oss-20b
-
-# Cấu hình sinh văn bản
-TEMPERATURE=0.0
-MAX_TOKENS=1000
-
-# Chỉ mục Vector Embedding & Tìm kiếm lai
 EMBEDDING_MODEL=google/gemini-embedding-2
-HYBRID_RELEVANCE_FLOOR=60.0
-RRF_K=30
-RRF_WEIGHT_DENSE=0.6
-RRF_WEIGHT_SPARSE=0.4
 
-# Bộ nhớ & Cache ngữ nghĩa
+ACTIVE_DOMAIN=vietnam_traffic     # chọn Domain Pack trong domains/
+
 ENABLE_SEMANTIC_CACHE=true
-SEMANTIC_CACHE_THRESHOLD=0.97
-CACHE_TTL_DAYS=30
-HISTORY_TOKEN_BUDGET=2000
-
-# Quan trắc cục bộ
 TRACE_DIR=data/runtime/traces
 TRACE_RETENTION_DAYS=14
 LANGSMITH_TRACING=false
 ```
+
+### 7.1 Vì sao không còn tham số hiệu chuẩn
+
+15 biến đã được gỡ bỏ. Ba nhóm, ba lý do khác nhau:
+
+| Biến cũ | Lý do gỡ |
+|---|---|
+| `RRF_K=30`, `RRF_WEIGHT_DENSE=0.6`, `RRF_WEIGHT_SPARSE=0.4` | RRF chuẩn (Cormack et al. 2009) chỉ đọc **thứ hạng** nên vốn miễn nhiễm với chênh lệch thang điểm giữa hai nhánh. Gắn trọng số quét tay vào chính là phá bỏ tính chất đó và buộc hiệu chuẩn lại mỗi khi đổi dữ liệu. Nay dùng RRF không trọng số, `k=60` là hằng số làm mượt của bài báo gốc nằm trong mã. |
+| `HYBRID_RELEVANCE_FLOOR=60.0`, `SEMANTIC_FLOOR=0.58/0.62`, `SCORE_FLOOR=12.0`, `COVERAGE_FLOOR=0.40`, `RERANK_MARGIN`, `ENABLE_RERANK` | Ngưỡng tuyệt đối chỉ đúng với đúng corpus và đúng embedding model đã quét. Thay bằng: (a) cắt theo **vách rơi** trong phân bố điểm của chính lượt truy vấn — bất biến với thang điểm; (b) mốc phạm vi **đo từ corpus** bằng `scripts/ingest/calibrate_scope.py`. |
+| `SEMANTIC_CACHE_THRESHOLD`, `CACHE_TTL_DAYS` | Là quyết định **rủi ro của miền**, chuyển vào `policy` trong `domains/<id>/domain.yaml`. Miền pháp lý đòi 0.97; miền hỏi đáp nội bộ nới hơn được. |
+| `ROUTER_LLM_MODEL`, `RERANK_LLM_MODEL`, `HISTORY_TOKEN_BUDGET`, `CONTEXT_TOKEN_BUDGET` | Thuộc các node đã bị gỡ bỏ (router LLM, rerank, memory, compact). |
+| `TEMPERATURE`, `MAX_TOKENS` | **Chưa từng được mã nguồn đọc.** `MODEL_ROLES` trong `src/llm/provider.py` đặt giá trị riêng cho từng vai trò. |
+
+### 7.2 Hai tín hiệu Agent nhận thay cho ngưỡng lọc
+
+Tầng truy xuất không còn âm thầm trả rỗng khi thấy điểm thấp. Nó luôn trả kết quả kèm tín hiệu để Agent tự quyết định:
+
+```
+[ĐỘ TIN CẬY TRUY XUẤT: MẠNH — nhóm kết quả đầu tách hẳn khỏi phần còn lại | vách rơi 61% ...]
+[PHẠM VI: ⚠️ câu hỏi nhiều khả năng NẰM NGOÀI kho tài liệu — điểm khớp tốt nhất chỉ đạt 30% mốc tham chiếu]
+```
+
+Hai tín hiệu trả lời hai câu hỏi **khác nhau**, và đó là lý do phải có cả hai:
+
+- **Độ tin cậy** (`src/retrieval/fusion.py`) đo *tương đối*: trong số ứng viên lấy về, có kết quả nào nổi bật hẳn không. Quyết định giữ lại bao nhiêu kết quả.
+- **Phạm vi** (`src/retrieval/scope.py`) đo *tuyệt đối*: điểm khớp tốt nhất có đạt mức mà kho tài liệu thường đạt được không. Đây là thứ thay thế `SEMANTIC_FLOOR`.
+
+Đo thực tế cho thấy vì sao không thể gộp làm một: câu *"hôm nay trời mưa có nên mang ô không"* vẫn cho vách rơi 55% (độ tin cậy MẠNH) vì BM25 tìm được đúng một đoạn trùng chữ ngẫu nhiên nổi bật hẳn lên. Tách biệt cao, mà hoàn toàn lạc đề.
+
+Mốc tham chiếu phạm vi được **đo**, không gõ tay:
+
+```bash
+python scripts/ingest/calibrate_scope.py --labels data/benchmark/qa_testset_v2.json
+```
+
+Có ví dụ gán nhãn thì mốc được khớp để tối đa hoá (bắt đúng lạc đề − báo nhầm câu hợp lệ); không có thì lấy phân vị của phân bố điểm trên truy vấn giả sinh từ chính corpus. Kết quả trên miền giao thông: **bắt 16/16 câu lạc đề, báo nhầm 20%** — và là cảnh báo gắn kèm kết quả cho Agent đọc, không phải bộ lọc chặn như ngưỡng cũ.
 
 ---
 

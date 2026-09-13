@@ -24,13 +24,38 @@ import threading
 from typing import Any, Dict, List, Optional
 
 import numpy as np
-
-from src.graph.state import RouteDecision
+from pydantic import BaseModel, Field
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_THRESHOLD = float(os.getenv("SEMANTIC_CACHE_THRESHOLD", "0.97"))
-DEFAULT_TTL_DAYS = int(os.getenv("CACHE_TTL_DAYS", "30"))
+
+class CacheSignals(BaseModel):
+    """
+    Tín hiệu tất định dùng để dựng khoá cache ngữ nghĩa.
+
+    Trước đây đây là `RouteDecision` trong state của đồ thị, phục vụ một node router LLM đã bị
+    gỡ bỏ. Giờ nó chỉ còn đúng một vai trò — thành phần của khoá cache — nên nó sống ở đây,
+    cạnh chỗ dùng, thay vì trong state.
+    """
+
+    intents: List[str] = Field(default_factory=list)
+    vehicles: List[str] = Field(default_factory=list)
+    doc_scope: str = "all"
+
+# Dung sai trúng cache và thời hạn sống là quyết định RỦI RO của từng miền, không phải tham số
+# vận hành: miền pháp lý đòi rất chặt (0.97) vì trả nhầm một câu hỏi "tương tự" có thể cho ra
+# mức phạt của loại xe khác; một miền hỏi đáp nội bộ nới hơn được. Vì vậy chúng nằm trong
+# `policy` của Domain Pack chứ không phải trong .env.
+FALLBACK_THRESHOLD = 0.97
+FALLBACK_TTL_DAYS = 30
+
+
+def _policy():
+    """Chính sách cache của miền đang hoạt động."""
+    from src.domain.registry import get_active_domain
+
+    return get_active_domain().policy
 
 
 def is_semantic_cache_enabled() -> bool:
@@ -38,9 +63,9 @@ def is_semantic_cache_enabled() -> bool:
     return os.getenv("ENABLE_SEMANTIC_CACHE", "true").strip().lower() not in ("false", "0", "no")
 
 
-def build_cache_key(route: RouteDecision, index_fingerprint: str) -> str:
+def build_cache_key(route: CacheSignals, index_fingerprint: str) -> str:
     """
-    Dựng khoá tổ hợp từ quyết định định tuyến và vân tay chỉ mục.
+    Dựng khoá tổ hợp từ tín hiệu tất định của câu hỏi và vân tay chỉ mục.
 
     `intents` và `vehicles` đến từ tập hợp (set) nên thứ tự không ổn định giữa hai lần chạy —
     phải sắp xếp trước khi băm, nếu không cùng một câu hỏi sẽ sinh hai khoá khác nhau và cache
@@ -82,13 +107,22 @@ class SemanticAnswerCache:
         ttl_days: Optional[int] = None,
     ):
         if not db_path:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
             db_path = os.getenv("ANSWER_CACHE_DB_PATH") or os.path.join(
                 base_dir, "data", "runtime", "answer_cache.sqlite"
             )
         self.db_path = db_path
-        self.threshold = DEFAULT_THRESHOLD if threshold is None else threshold
-        self.ttl_days = DEFAULT_TTL_DAYS if ttl_days is None else ttl_days
+        if threshold is None or ttl_days is None:
+            try:
+                policy = _policy()
+                default_threshold, default_ttl = policy.cache_similarity, policy.cache_ttl_days
+            except Exception:
+                default_threshold, default_ttl = FALLBACK_THRESHOLD, FALLBACK_TTL_DAYS
+            threshold = default_threshold if threshold is None else threshold
+            ttl_days = default_ttl if ttl_days is None else ttl_days
+
+        self.threshold = threshold
+        self.ttl_days = ttl_days
         self._local = threading.local()
         self._init_db()
 

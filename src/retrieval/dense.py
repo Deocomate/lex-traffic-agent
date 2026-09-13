@@ -17,6 +17,7 @@ from openai import OpenAI
 
 from src.retrieval.cache import QueryVectorCache
 from src.semantic_index import SemanticIndex
+from src.paths import project_root
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +36,7 @@ class CachedSemanticIndex(SemanticIndex):
         cache: Optional[QueryVectorCache] = None,
     ):
         if not base_dir:
-            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            base_dir = project_root()
         super().__init__(base_dir, embedding_model=embedding_model, client=client)
         self.cache = cache or QueryVectorCache()
 

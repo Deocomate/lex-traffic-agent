@@ -62,7 +62,7 @@ def launch_web(open_browser=True, custom_port=None, reload=False):
         threading.Timer(1.5, lambda: webbrowser.open(url)).start()
 
     try:
-        uvicorn.run("src.api_server:app", host="127.0.0.1", port=port, log_level="warning", reload=reload)
+        uvicorn.run("app.server:app", host="127.0.0.1", port=port, log_level="warning", reload=reload)
     except KeyboardInterrupt:
         print("\n🛑 Đã dừng máy chủ web.")
 
@@ -79,8 +79,6 @@ def launch_cli_chat():
 def launch_eval():
     """Khởi động Benchmark Evaluation mới"""
     eval_script = os.path.join(BASE_DIR, "scripts", "eval", "retrieval_eval.py")
-    if not os.path.exists(eval_script):
-        eval_script = os.path.join(BASE_DIR, "scripts", "evaluate_rag.py")
     if not os.path.exists(eval_script):
         print(f"❌ Không tìm thấy script: {eval_script}")
         return

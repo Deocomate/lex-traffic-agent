@@ -14,9 +14,8 @@ import threading
 from typing import Any, AsyncGenerator, Callable, Dict, Generator, List, Optional
 
 from src.graph.events import set_event_callback
-from src.graph.retrieve import get_traffic_law_tools
+from src.domain.registry import get_active_domain
 from src.graph.turn import format_history_messages, new_thread_id, run_turn
-from src.tools.law_search_tools import TOOLS_SCHEMA, TrafficLawTools
 
 # Giữ tên cũ cho client nội bộ đã import; phần thân đã dời sang src/graph/turn.py.
 _format_history_messages = format_history_messages
@@ -171,8 +170,8 @@ class LegalAgent:
     def __init__(self, llm_model: Optional[str] = None):
         self.llm_model = llm_model or os.getenv("LLM_MODEL", "deepseek/deepseek-chat")
         self.fallback_llm_model = os.getenv("FALLBACK_LLM_MODEL", "deepseek/deepseek-chat")
-        self.tools_handler: TrafficLawTools = get_traffic_law_tools()
-        self.tools_schema = TOOLS_SCHEMA
+        # Bộ công cụ đến từ Domain Pack đang hoạt động, không còn là hằng số của miền giao thông.
+        self.tools_schema = get_active_domain().tools_schema
 
     def stream_agent(
         self,

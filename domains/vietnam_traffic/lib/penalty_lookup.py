@@ -2,7 +2,7 @@
 CÔNG CỤ TRA CỨU MỨC PHẠT THEO NGHỊ ĐỊNH 168/2024/NĐ-CP
 
 Nguồn dữ liệu: data/processed/penalty_chunks.jsonl — 634 hành vi vi phạm bóc tách từ toàn văn
-Nghị định (sinh bởi scripts/prepare_penalties.py). Mỗi bản ghi giữ nguyên văn mô tả hành vi,
+Nghị định (sinh bởi scripts/ingest/prepare_penalties.py). Mỗi bản ghi giữ nguyên văn mô tả hành vi,
 khung tiền phạt, hình thức xử phạt bổ sung, số điểm GPLX bị trừ và trích dẫn Điểm/Khoản/Điều.
 
 Trước đây phần này là một bảng 10 mục viết tay trong mã nguồn: số tiền đã lạc hậu theo
@@ -15,7 +15,7 @@ import os
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-from src.tools.tool_contract import (
+from domains.vietnam_traffic.lib.tool_contract import (
     AGENT_ONLY_TAG,
     FIGURE_LOCK_NOTE,
     NO_PENALTY_DATA_HEADER,
@@ -29,26 +29,24 @@ MAX_PENALTY_RESULTS = 5
 # doc_id của corpus Nghị định trong chỉ mục ngữ nghĩa hợp nhất
 DECREE_DOC_ID = "nghi_dinh_168"
 
-# Ngưỡng cosine tối thiểu của tầng ngữ nghĩa, đo trên chính corpus này (12 truy vấn đối chứng):
-# câu hỏi đúng phạm vi đạt 0.651-0.746, câu lạc đề chỉ 0.518-0.579. Chọn 0.62 nằm giữa hai dải.
-SEMANTIC_FLOOR = 0.62
+# Nhánh hiệu chuẩn phạm vi riêng cho bộ chấm điểm từ khoá của Nghị định. Mốc so sánh được ĐO
+# từ chính corpus bằng scripts/ingest/calibrate_scope.py, không gõ tay: trước đây là
+# `SCORE_FLOOR = 12.0` và `SEMANTIC_FLOOR = 0.62`, hai con số chỉ đúng với đúng corpus này.
+SCOPE_BRANCH = "penalty_keyword"
 
-# Điểm tối thiểu để coi là có khớp. Dưới ngưỡng này trả về "không có dữ liệu" thay vì đưa ra
-# một hành vi gần đúng — đó chính là cách hệ thống cũ tạo ra mức phạt sai.
-SCORE_FLOOR = 12.0
-
-# Tỷ lệ trọng số IDF của câu hỏi phải khớp được. Câu lạc đề chỉ trùng vài từ phổ thông
-# ('trên', 'đường') sẽ có coverage rất thấp và bị loại trước khi tính điểm.
+# Tỷ lệ trọng số IDF của câu hỏi phải khớp được. Đây là bộ lọc CẤU TRÚC chứ không phải ngưỡng
+# chất lượng: dưới 40% trọng số khớp nghĩa là phần lớn từ mang thông tin của câu hỏi không hề
+# xuất hiện trong hành vi — câu lạc đề chỉ trùng vài từ phổ thông ('trên', 'đường').
 COVERAGE_FLOOR = 0.40
 
+from src.retrieval.fusion import select_by_separation
+from src.retrieval.scope import get_scope_reference
 from src.retrieval.vi_text import (
-    COLLOQUIAL_ALIASES,
-    VEHICLE_QUERY_HINTS,
-    STOPWORDS,
-    tokens,
     bigrams,
     expand_query,
-    preferred_vehicles,
+    preferred_entities,
+    stopwords,
+    tokens,
 )
 
 
@@ -129,7 +127,7 @@ class PenaltyLookup:
     _expand_query = staticmethod(expand_query)
     _tokens = staticmethod(tokens)
     _bigrams = staticmethod(bigrams)
-    _preferred_vehicles = staticmethod(preferred_vehicles)
+    _preferred_vehicles = staticmethod(preferred_entities)
 
 
     # ------------------------------------------------------------------
@@ -197,25 +195,29 @@ class PenaltyLookup:
         return [e["chunk"] for e in ordered[:limit]]
 
     def _search_by_meaning(self, query: str, limit: int) -> List[Dict[str, Any]]:
-        """Tra theo vector trên riêng corpus Nghị định, có ngưỡng tương đồng để chặn câu lạc đề"""
+        """
+        Tra theo vector trên riêng corpus Nghị định.
+
+        Không còn ngưỡng cosine tuyệt đối ở đây: việc chặn câu lạc đề đã chuyển sang mốc tham
+        chiếu đo từ corpus trong `_search_by_keyword`.
+        """
         index = self._get_semantic()
         if index is None or not query:
             return []
         try:
-            hits = index.search_chunks(query, doc_ids=(DECREE_DOC_ID,), top_k=limit,
-                                       floor=SEMANTIC_FLOOR)
+            hits = index.search_chunks(query, doc_ids=(DECREE_DOC_ID,), top_k=limit)
         except Exception:
             return []
 
         by_citation = {c["citation"]: c for c in self.chunks}
         return [by_citation[h["citation"]] for h in hits if h.get("citation") in by_citation]
 
-    def _search_by_keyword(self, query: str, limit: int = MAX_PENALTY_RESULTS) -> List[Dict[str, Any]]:
+    def score_by_keyword(self, query: str) -> List[Tuple[float, Dict[str, Any]]]:
         """
-        Chấm điểm từng hành vi trong Nghị định theo mức trùng khớp với câu hỏi.
+        Chấm điểm mọi hành vi trong Nghị định theo mức trùng khớp với câu hỏi, KHÔNG cắt ngưỡng.
 
-        Trọng số: cụm nguyên văn > số token trùng > khớp loại phương tiện. Không nêu rõ loại xe
-        thì giữ mỗi nhóm phương tiện một kết quả tốt nhất để người dùng tự đối chiếu.
+        Tách riêng khỏi `_search_by_keyword` để `scripts/ingest/calibrate_scope.py` dùng lại
+        được: hiệu chuẩn cần chính phân bố điểm thô mà tra cứu sẽ nhìn thấy.
         """
         if not query or not self.chunks:
             return []
@@ -261,11 +263,33 @@ class PenaltyLookup:
             if preferred:
                 score += 8.0 if chunk["vehicle"] in preferred else -4.0
 
-            if score >= SCORE_FLOOR:
-                scored.append((score, chunk))
+            scored.append((score, chunk))
 
         scored.sort(key=lambda x: (-x[0], x[1]["article_number"], x[1]["clause_number"]))
+        return scored
 
+    def _search_by_keyword(self, query: str, limit: int = MAX_PENALTY_RESULTS) -> List[Dict[str, Any]]:
+        """
+        Tra theo từ khoá: chấm điểm, đối chiếu mốc phạm vi đo từ corpus, rồi cắt theo vách rơi.
+
+        Hai tầng bảo vệ thay cho `SCORE_FLOOR = 12.0`:
+        1. Điểm cao nhất phải đạt mốc tham chiếu của corpus, nếu không coi như không tra được —
+           giữ nguyên tính chất quan trọng nhất của bản cũ: THÀ KHÔNG CÓ DỮ LIỆU còn hơn đưa ra
+           một hành vi gần đúng, vì một mức phạt sai nguy hiểm hơn hẳn câu "chưa tra được".
+        2. Phần đuôi bị cắt theo phân bố điểm của chính lượt truy vấn (`select_by_separation`).
+        """
+        scored = self.score_by_keyword(query)
+        if not scored:
+            return []
+
+        scope = get_scope_reference(self.base_dir).assess(scored[0][0], SCOPE_BRANCH)
+        if scope.calibrated and not scope.in_scope:
+            return []
+
+        keep, _confidence = select_by_separation([s for s, _c in scored], max_k=limit)
+        scored = scored[:keep]
+
+        preferred = self._preferred_vehicles(query)
         if preferred:
             return [c for _s, c in scored[:limit]]
 
@@ -331,7 +355,7 @@ class PenaltyLookup:
             return (
                 f"{NO_PENALTY_DATA_HEADER} '{query}' ===\n"
                 "Chưa nạp được dữ liệu Nghị định 168/2024/NĐ-CP. "
-                "Chạy: python scripts/prepare_penalties.py để tạo data/processed/penalty_chunks.jsonl.\n\n"
+                "Chạy: python scripts/ingest/prepare_penalties.py để tạo data/processed/penalty_chunks.jsonl.\n\n"
                 f"{AGENT_ONLY_TAG}\nKhông được nêu bất kỳ mức phạt nào khi chưa có dữ liệu."
             )
         return self.format_results(query, self.search(query))

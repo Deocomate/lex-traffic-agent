@@ -47,54 +47,67 @@ Trước khi đồ thị chạy, `src/graph/turn.py` tra **cache ngữ nghĩa** 
 
 ## 📂 2. Cấu trúc Thư mục Dự án
 
+Ba lớp, phụ thuộc một chiều — `src/` (engine) không biết gì về giao thông đường bộ:
+
 ```
-ai-giaothong/
-├── .env                                          # API Key & cấu hình model
-├── .env.example                                  # File mẫu hướng dẫn cấu hình
-├── requirements.txt                              # Thư viện cần cài
+app/  ──>  domains/<miền>/  ──>  src/
+   └──────────────────────────────^
+```
+
+```
+lex-traffic-agent/
+├── src/                             ENGINE — không chứa tri thức miền nào
+│   ├── domain/                      Nạp Domain Pack: schema.py, pack.py, registry.py
+│   ├── graph/                       StateGraph: build, turn, agent_node, retrieve, verify, repair...
+│   ├── retrieval/                   dense, sparse (BM25), fusion (RRF + chọn theo vách rơi),
+│   │                                scope (phán đoán phạm vi), hybrid, cache, vi_text
+│   ├── llm/                         provider.py (model theo vai trò + fallback), structured.py
+│   ├── cache/                       semantic_cache.py, fingerprint.py
+│   ├── observability/               tracer.py (JSONL), langsmith.py, pricing.py
+│   ├── answer_guard.py              Kiểm chứng số liệu & dựng câu từ chối an toàn
+│   ├── guard_figures.py             Cơ chế bóc số liệu (tiền tiếng Việt, số theo ngữ cảnh)
+│   ├── paths.py                     Một nguồn sự thật cho thư mục gốc dự án
+│   ├── semantic_index.py            Chỉ mục vector
+│   └── agent.py                     Façade: stream_agent() / astream_agent() / run_agent()
+│
+├── domains/                         CÁC MIỀN — toàn bộ phần "biết về lĩnh vực"
+│   └── vietnam_traffic/
+│       ├── domain.yaml              Kho tài liệu, bộ công cụ, policy
+│       ├── lexicon.yaml             Từ lóng, nhóm phương tiện, regex nhận diện ý định
+│       ├── guard.yaml               Lớp số liệu cần kiểm chứng, dấu hiệu trích dẫn
+│       ├── prompts/system.md        Persona & tri thức 6 văn bản pháp luật
+│       ├── tools.py                 Hàm thực thi 7 công cụ
+│       ├── evidence.py              Dựng bằng chứng có cấu trúc cho khối nguồn
+│       ├── presentation.py          Câu chữ mô tả tiến trình tra cứu
+│       ├── guard.py                 Kiểm chứng trích dẫn Điều/Khoản/Điểm
+│       ├── corpus.py                Tra cấu trúc kho văn bản
+│       └── lib/                     Nghiệp vụ: law_search_tools, penalty_lookup, document_provider
+│
+├── app/server.py                    ỨNG DỤNG — FastAPI: SSE /api/ask + API tra cứu
+├── templates/ · static/             Giao diện web (Jinja2 + JS xử lý 14 sự kiện SSE)
+│
 ├── data/
-│   ├── raw_data/                                 # PDF gốc của cả 6 văn bản
-│   ├── processed/                                # Dữ liệu đã bóc tách + chỉ mục (không re-embed)
-│   │   ├── 01_luat_36_..._structured.json        # Cây 9 Chương / 89 Điều
-│   │   ├── 02_luat_35_..._structured.json        # Cây 6 Chương / 86 Điều
-│   │   ├── 03_nghi_dinh_168_..._structured.json  # Cây 4 Chương / 55 Điều, 634 hành vi phạt
-│   │   ├── 04_thong_tu_31_..._structured.json    # Ma trận tốc độ & cự ly an toàn
-│   │   ├── 05_thong_tu_73_..._structured.json    # Quy chuẩn tuần tra CSGT
-│   │   ├── 06_qcvn_41_..._structured.json        # 453 biển báo & vạch kẻ đường
-│   │   ├── all_legal_chunks.jsonl                # 1.308 mục gộp cả 6 văn bản
-│   │   ├── semantic_chunks.json                  # 2.114 chunk con cho BM25 + dense
-│   │   ├── semantic_index.npz                    # Vector 3072 chiều (giữ nguyên, không re-embed)
-│   │   ├── semantic_parents.json                 # Toàn văn Điều/biển báo cha
-│   │   ├── bm25_index.pkl                        # Chỉ mục BM25 đã dựng (tự tái tạo nếu thiếu)
-│   │   └── markdown/                             # Markdown theo từng chương
-│   ├── benchmark/                                # qa_testset_v2.json (95 câu) & báo cáo eval
-│   └── runtime/                                  # checkpoints, trace JSONL, cache — .gitignore, KHÔNG commit
+│   ├── raw_data/                    PDF gốc của 6 văn bản
+│   ├── processed/                   Dữ liệu đã bóc tách + chỉ mục
+│   │   ├── semantic_chunks.json     2.114 chunk con cho BM25 + dense
+│   │   ├── semantic_index.npz       Vector 3072 chiều
+│   │   ├── semantic_parents.json    Toàn văn Điều/biển báo cha
+│   │   ├── bm25_index.pkl           Chỉ mục BM25
+│   │   └── scope_reference.json     Mốc phạm vi ĐO từ corpus (thay SEMANTIC_FLOOR gõ tay)
+│   ├── benchmark/                   qa_testset_v2.json (95 câu) & báo cáo eval
+│   └── runtime/                     checkpoint, trace, cache — .gitignore, KHÔNG commit
+│
 ├── scripts/
-│   ├── chat.py                                   # CLI streaming qua src.agent
-│   ├── prepare_data.py / prepare_road_law.py / prepare_penalties.py
-│   │                                              # / prepare_tt31.py / prepare_tt73.py / prepare_traffic_signs.py
-│   │                                              # Pipeline bóc tách từng văn bản gốc
-│   ├── build_semantic_index.py                   # Dựng chỉ mục vector hợp nhất
-│   ├── build_bm25_index.py                       # Dựng chỉ mục BM25
-│   ├── cache_admin.py                            # Thống kê/dọn cache ngữ nghĩa và thread hội thoại
-│   ├── verify_agentic_rag.py                     # 5 kịch bản vàng E2E qua src.agent
-│   └── eval/                                     # Bộ eval + cổng chặn hồi quy (mục 5 bên dưới)
-├── src/
-│   ├── agent.py                                  # Façade: stream_agent()/astream_agent()/run_agent()
-│   ├── answer_guard.py                           # Hàm thuần kiểm chứng số liệu/trích dẫn (không đổi)
-│   ├── api_server.py                             # FastAPI: SSE /api/ask + các API tra cứu tĩnh
-│   ├── semantic_index.py                         # Chỉ mục vector gốc (được bọc lại ở src/retrieval/dense.py)
-│   ├── graph/                                    # StateGraph: build.py, turn.py, state.py, các node
-│   ├── llm/                                      # provider.py (model theo vai trò + fallback),
-│   │                                              # structured.py (structured output 4 bậc)
-│   ├── retrieval/                                # dense.py, sparse.py (BM25), hybrid.py (RRF), rerank.py
-│   ├── observability/                            # tracer.py (JSONL), langsmith.py (tuỳ chọn), pricing.py
-│   ├── cache/                                    # semantic_cache.py, fingerprint.py
-│   └── tools/                                    # Lớp truy cập dữ liệu (giữ nguyên, bọc thành Retriever/@tool)
-├── static/js/                                    # agent-trace.js, chat.js — xử lý 14 sự kiện SSE
-├── templates/                                    # Jinja2 templates cho giao diện web
-├── tests/                                        # pytest: graph, retrieval, memory, cache, tracer...
-├── main.py                                       # Trình khởi chạy trung tâm (--web / --chat / --eval)
+│   ├── chat.py                      CLI streaming
+│   ├── cache_admin.py               Thống kê/dọn cache và thread hội thoại
+│   ├── ingest/                      Dựng lại corpus & chỉ mục từ nguồn gốc
+│   │   └── calibrate_scope.py       Đo mốc tham chiếu phạm vi từ corpus
+│   └── eval/                        Bộ eval + cổng chặn hồi quy
+│       └── offline_retrieval_eval.py  Đo truy xuất tất định, KHÔNG cần API key
+│
+├── tests/                           pytest, gồm test_domain_pack.py chạy trên một miền khác hẳn
+├── docs/domain-pack.md              Hướng dẫn tạo miền mới
+├── main.py                          Trình khởi chạy (--web / --chat / --eval)
 └── README.md
 ```
 
@@ -110,35 +123,40 @@ Sao chép `.env.example` thành `.env` và điền `OPENROUTER_API_KEY`. Dữ li
 trong `data/processed/`; chỉ chạy lại các script `prepare_*.py` / `build_*_index.py` khi cần dựng
 mới từ PDF gốc.
 
-### Biến môi trường chính (`.env`, mẫu đầy đủ ở `.env.example`)
+### Biến môi trường (`.env`, mẫu đầy đủ ở `.env.example`)
+
+`.env` chỉ còn **cấu hình triển khai**. Mọi tham số điều chỉnh chất lượng truy xuất đã được gỡ bỏ — xem mục 7 của `docs/architecture.md` để biết chúng được thay bằng gì.
 
 | Biến | Vai trò | Mặc định |
 |---|---|---|
 | `OPENROUTER_API_KEY` | Khoá API OpenRouter (bắt buộc) | — |
-| `LLM_MODEL` | Model cho `synthesize`/`repair` (bắt buộc hỗ trợ đủ ngữ cảnh; đây là model viết câu trả lời) | `deepseek/deepseek-v4-flash` |
+| `LLM_MODEL` | Model chạy vòng ReAct và viết câu trả lời. **Bắt buộc hỗ trợ Function Calling** | `deepseek/deepseek-v4-flash` |
 | `FALLBACK_LLM_MODEL` | Model dự phòng khi `LLM_MODEL` lỗi/quá tải | `openai/gpt-oss-20b` |
-| `ROUTER_LLM_MODEL` | Model cho `route` (định tuyến ý định). **Nên dùng model KHÔNG reasoning** — xem ghi chú dưới bảng | `mistralai/ministral-8b-2512` |
-| `RERANK_LLM_MODEL` | Model cho `rerank` (xếp hạng lại tài liệu). **Nên dùng model KHÔNG reasoning** | `mistralai/ministral-8b-2512` |
-| `EMBEDDING_MODEL` | Model embedding, phải khớp số chiều với `semantic_index.npz` | `google/gemini-embedding-2` |
-| `ENABLE_RERANK`, `RERANK_MARGIN` | Bật/tắt và ngưỡng bỏ qua LLM rerank | `true`, `0.15` |
-| `RRF_K`, `RRF_WEIGHT_DENSE`, `RRF_WEIGHT_SPARSE` | Tham số hợp nhất RRF (đã hiệu chuẩn trên benchmark 79 câu) | `30`, `0.6`, `0.4` |
-| `HYBRID_RELEVANCE_FLOOR`, `SEMANTIC_FLOOR` | Ngưỡng sàn loại câu hỏi ngoài phạm vi | `25.0`, `0.58` |
-| `HISTORY_TOKEN_BUDGET` | Ngân sách token lịch sử hội thoại trước khi nén | `2000` |
-| `ENABLE_SEMANTIC_CACHE`, `SEMANTIC_CACHE_THRESHOLD`, `CACHE_TTL_DAYS` | Cache câu trả lời đã kiểm chứng | `true`, `0.97`, `30` |
-| `CHECKPOINT_DB_PATH` | Đường dẫn SQLite checkpointer (bộ nhớ đa lượt) | `data/runtime/checkpoints.sqlite` |
-| `TRACE_DIR` | Thư mục ghi trace JSONL cục bộ — **chứa toàn văn câu hỏi người dùng, không commit** | `data/runtime/traces` |
+| `EMBEDDING_MODEL` | Model nhúng, phải khớp số chiều với `semantic_index.npz` | `google/gemini-embedding-2` |
+| `ACTIVE_DOMAIN` | Domain Pack đang dùng (tên thư mục trong `domains/`) | `vietnam_traffic` |
+| `ENABLE_SEMANTIC_CACHE` | Bật cache câu trả lời đã kiểm chứng. Ngưỡng & TTL nằm trong `policy` của pack | `true` |
+| `CHECKPOINT_DB_PATH`, `ANSWER_CACHE_DB_PATH` | Đường dẫn SQLite; để trống dùng `data/runtime/` | — |
+| `TRACE_DIR` | Thư mục trace JSONL — **chứa toàn văn câu hỏi người dùng, không commit** | `data/runtime/traces` |
 | `TRACE_RETENTION_DAYS` | Số ngày giữ tệp trace trước khi tự dọn | `14` |
 | `LANGSMITH_TRACING` | Bật LangSmith Cloud — **khi bật, câu hỏi và câu trả lời rời khỏi máy này** | `false` |
-| `LANGSMITH_API_KEY`, `LANGSMITH_PROJECT` | Cấu hình LangSmith (chỉ cần khi `LANGSMITH_TRACING=true`) | — |
+| `LANGSMITH_API_KEY`, `LANGSMITH_PROJECT` | Chỉ cần khi `LANGSMITH_TRACING=true` | — |
 
-> **Vì sao `route` và `rerank` nên dùng model không reasoning.** `max_tokens` của OpenRouter tính
-> **cả reasoning token**. Hai vai trò này bắt buộc trả JSON đúng schema; model reasoning nghĩ quá
-> dài sẽ chạm trần trước khi kịp sinh ký tự JSON nào, và `structured_call` phải tụt xuống các tầng
-> dự phòng. Đo thực tế: với model reasoning, 25.6% lệnh gọi `rerank` hỏng tầng 1 và p95 lên tới
-> 139 giây; đổi sang `ministral-8b` (không reasoning) còn **912ms** và **0%** hỏng.
-> Mã nguồn đã tự ghìm `reasoning.effort="low"` cho mọi vai trò (`src/llm/provider.py`), nhưng lưu ý
-> **không** dùng `reasoning.enabled=false`: một số model (ví dụ `openai/gpt-oss-20b`) trả lỗi 400
-> *"Reasoning is mandatory for this endpoint"* và làm hỏng toàn bộ 4 tầng structured output.
+> **Ghi chú về reasoning token.** `max_tokens` của OpenRouter tính **cả reasoning token**. Model
+> nghĩ quá dài sẽ chạm trần trước khi kịp viết xong câu trả lời — đo trên bộ trace 25 câu: 2 lệnh
+> gọi dừng đúng ở 4.000 token và cho ra câu trả lời rỗng. Mã nguồn tự ghìm `reasoning.effort="low"`
+> cho mọi vai trò (`src/llm/provider.py`); **không** dùng `reasoning.enabled=false` vì một số model
+> (ví dụ `openai/gpt-oss-20b`) trả lỗi 400 *"Reasoning is mandatory for this endpoint"*.
+
+### Dùng cho lĩnh vực khác
+
+Engine không biết gì về giao thông. Tạo trợ lý cho quy chế nội bộ, hướng dẫn y khoa hay tài liệu nhân sự = viết một Domain Pack mới, không sửa code:
+
+```bash
+cp -r domains/vietnam_traffic domains/<miền_mới>   # rồi thay nội dung khai báo
+echo "ACTIVE_DOMAIN=<miền_mới>" >> .env
+```
+
+Chi tiết ở **`docs/domain-pack.md`**.
 
 ### Cách 1: Menu khởi chạy trung tâm (khuyên dùng)
 ```powershell
@@ -274,7 +292,7 @@ qua — không commit.
 > structured output 4 bậc tự xử lý model function-calling yếu — chi tiết ở
 > [`docs/architecture.md`](docs/architecture.md#5-tầng-structured-output-4-bậc)). `LLM_MODEL`
 > (vai trò `synthesize`/`repair`) không cần function calling — node `synthesize` không bind tool.
-> Đổi `EMBEDDING_MODEL` thì phải chạy lại `python scripts/build_semantic_index.py` để dựng lại
+> Đổi `EMBEDDING_MODEL` thì phải chạy lại `python scripts/ingest/build_semantic_index.py` để dựng lại
 > vector cho khớp số chiều.
 
 ---
