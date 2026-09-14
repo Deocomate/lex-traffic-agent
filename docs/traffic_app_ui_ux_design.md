@@ -2,7 +2,7 @@
 > **TÀI LIỆU ĐÃ HẾT HIỆU LỰC (DEPRECATED)**  
 > Tài liệu này phản ánh đặc tả thiết kế cũ trước tháng 09/2026 (sidebar navy đặc, 3 họ font chữ, cỡ chữ 13.5px).  
 > Toàn bộ giao diện LexTraffic AI hiện tại đã được chuyển đổi sang Hệ thiết kế Tối giản (Minimal Design System) thuần tokens CSS.  
-> **Nguồn chuẩn hiện tại:** Vui lòng tham khảo tài liệu chính thức tại [`docs/design-system.md`](file:///c:/Users/minhlong/Desktop/evo/ai-giaothong/docs/design-system.md).
+> **Nguồn chuẩn hiện tại:** Vui lòng tham khảo tài liệu chính thức tại [`docs/design-system.md`](design-system.md).
 
 # 📘 LexTraffic AI — Desktop UX/UI Design Specification (1440px Widescreen)
 
@@ -24,7 +24,7 @@ LexTraffic AI communicates **credibility, judicial precision, and executive calm
 │ Deep Navy (#1E293B)  │ Emerald (#10B981)    │ Amber Orange (#F59E0B)        │
 │ Primary Authority    │ Safe Compliance      │ Penalties, Fines & Points     │
 ├──────────────────────┼──────────────────────┼───────────────────────────────┤
-│ Canvas (#F8FAFC)     │ Surface (#FFFFFF)    │ Borders (#E2E8F0 / #CBD5E1)   │
+│ Canvas (#F8FAFC)     │ Surface (#FFFFFF)    │ Borders (#E2E8F0 / #CBD5E1) │
 │ Off-White Background │ Pure White Cards     │ Crisp 1px Structural Lines    │
 └──────────────────────┴──────────────────────┴───────────────────────────────┘
 ```

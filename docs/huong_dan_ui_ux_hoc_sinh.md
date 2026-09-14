@@ -1,7 +1,7 @@
 > [!NOTE]
 > **LƯU Ý LỊCH SỬ THIẾT KẾ (HISTORICAL REFERENCE)**  
 > Tài liệu này được biên soạn cho mục đích giảng dạy và phản ánh bảng màu, giao diện trước tháng 09/2026. Mặc dù vẫn giữ nguyên toàn bộ giá trị sư phạm về tư duy UX/UI cho học sinh, bảng màu và mã nguồn giao diện thực tế hiện tại của LexTraffic AI đã được nâng cấp lên Hệ thiết kế Tối giản (Minimal Design System) thuần tokens CSS.  
-> **Nguồn chuẩn kỹ thuật hiện tại:** Vui lòng tham khảo [`docs/design-system.md`](file:///c:/Users/minhlong/Desktop/evo/ai-giaothong/docs/design-system.md).
+> **Nguồn chuẩn kỹ thuật hiện tại:** Vui lòng tham khảo [`docs/design-system.md`](design-system.md).
 
 # 🎨 CẨM NANG THIẾT KẾ UI/UX DÀNH CHO HỌC SINH
 ## Dự án: Trợ Lý AI Tra Cứu Luật Trật Tự, An Toàn Giao Thông 2024

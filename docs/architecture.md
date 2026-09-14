@@ -87,27 +87,29 @@ Bộ công cụ **do Domain Pack khai báo**, không còn là hằng số của 
 
 `src/graph/retrieve.py` chỉ tra tên công cụ trong pack rồi gọi — nó không biết trước công cụ nào tồn tại. Đổi miền là đổi cả bộ công cụ mà không sửa mã engine. Xem `docs/domain-pack.md`.
 
-Các công cụ của miền giao thông:
+Các công cụ của miền giao thông (khai báo tại `domains/vietnam_traffic/domain.yaml`):
 
-### 4.1 `keyword_search(query: str, doc_scope: str = "all")`
-- **Chức năng**: Tra cứu nhanh các điều khoản trong 6 văn bản pháp luật giao thông bằng phương pháp tìm kiếm lai (BM25 + Dense Vector + RRF).
-- **Điểm ưu việt mới**: 
-  - Cơ chế nhận diện cụm từ định danh đặc thù ("hạng DE", "đèn đỏ", "nồng độ cồn").
-  - Trích xuất thông minh ưu tiên dòng chứa chính xác từ khóa thay vì cắt ngang ở đầu điều luật.
-  - Tự động bỏ qua các stopword chung chung ("hạng", "xe", "quy định") khi xếp hạng snippet.
+### 4.1 `penalty_lookup(violation_keyword: str)`
+- **Chức năng**: Tra cứu 634 hành vi vi phạm, khung tiền phạt, hình thức phạt bổ sung, trừ điểm GPLX trên toàn văn Nghị định 168/2024/NĐ-CP (hiệu lực 01/01/2025). Dùng cho mọi câu hỏi về chế tài: nồng độ cồn, đèn đỏ, tốc độ, mũ bảo hiểm, vỉa hè...
 
-### 4.2 `get_article(article_number: int, law_id: str = "01_luat_36_2024_qh15")`
-- **Chức năng**: Lấy toàn văn toàn bộ một Điều luật cụ thể mà không qua bất kỳ khâu rút gọn hay tóm tắt nào.
+### 4.2 `traffic_sign_lookup(sign_code_or_name: str)`
+- **Chức năng**: Tra cứu mã hiệu, tên gọi, nhóm biển, quy chuẩn và hình ảnh minh họa Markdown của 453 biển báo giao thông và vạch kẻ đường theo QCVN 41:2019/BGTVT.
+
+### 4.3 `speed_limit_lookup(query: str)`
+- **Chức năng**: Tra cứu ma trận tốc độ tối đa cho phép (km/h) và khoảng cách an toàn tối thiểu (mét) theo Thông tư 31/2019/TT-BGTVT (trong/ngoài khu đông dân cư, đường đôi/hai chiều, cao tốc).
+
+### 4.4 `keyword_search(keywords: str)`
+- **Chức năng**: Tra cứu nhanh các điều khoản trong văn bản luật chứa từ khóa chính xác, tên hạng GPLX (A1, C1, B, DE...), số tuổi, con số cụ thể hoặc thuật ngữ pháp lý.
+
+### 4.5 `semantic_search(question: str, doc_scope: str = "all")`
+- **Chức năng**: Tìm kiếm ngữ nghĩa sâu (Dense Vector Search 3072 chiều) trên toàn bộ 6 văn bản (Luật 36, Luật 35, NĐ 168, TT 31, TT 73, QCVN 41). Dùng khi câu hỏi mô tả tình huống đời thường hoặc hỏi về quyền hạn tuần tra CSGT.
+
+### 4.6 `get_article(article_number: int, doc_id: str = "01_luat_36_2024_qh15")`
+- **Chức năng**: Lấy toàn văn một Điều luật cụ thể theo số hiệu và mã văn bản mà không qua bất kỳ khâu rút gọn hay tóm tắt nào.
 - **Vai trò trong ReAct**: Cho phép Agent khi phát hiện nghi vấn (ví dụ tìm thấy Điều 57 liên quan đến phân hạng bằng lái) có thể chủ động gọi `get_article(57)` để đọc trọn vẹn tất cả các điểm a tới p và phân tích chi tiết.
 
-### 4.3 `penalty_lookup(violation_keyword: str, vehicle_type: str = "all")`
-- **Chức năng**: Tra cứu 634 hành vi vi phạm và mức phạt tiền, hình thức phạt bổ sung, trừ điểm GPLX quy định tại Nghị định 168/2024/NĐ-CP.
-
-### 4.4 `traffic_sign_lookup(sign_code: str)`
-- **Chức năng**: Tra cứu mã hiệu, tên gọi, quy chuẩn và hình ảnh minh họa của 453 biển báo giao thông và vạch kẻ đường theo QCVN 41:2019/BGTVT.
-
-### 4.5 `speed_limit_lookup(road_type: str, vehicle_type: str)`
-- **Chức năng**: Tra cứu ma trận tốc độ tối đa cho phép và khoảng cách an toàn tối thiểu theo Thông tư 31/2019/TT-BGTVT.
+### 4.7 `list_chapters()`
+- **Chức năng**: Xem danh mục 9 Chương của Luật 36/2024/QH15 để định hướng phân vùng tra cứu khi câu hỏi có phạm vi rộng.
 
 ---
 
@@ -133,16 +135,19 @@ Giao tiếp thời gian thực giữa backend và frontend (`static/js/agent-tra
 | `start` | `agent_node` | Khởi tạo phiên làm việc mới |
 | `turn_start` | `agent_node` / `repair_node` | Bắt đầu một vòng suy luận ReAct (`turn=1..4`) |
 | `tool_call` | `tools_node` | Hiển thị thẻ công cụ Agent đang gọi (tên tool, tham số) |
-| `tool_result` | `tools_node` | Hiển thị kết quả tóm tắt từ công cụ |
+| `tool_result` | `tools_node` / `turn.py` (cache) | Hiển thị kết quả tóm tắt từ công cụ hoặc thông báo trúng cache |
+| `model_fallback` | `provider.py` | Thông báo tự động chuyển sang mô hình dự phòng khi model chính quá tải/lỗi |
 | `synthesizing` | `agent_node` | Bắt đầu giai đoạn tổng hợp lời giải đáp |
-| `token` | `agent_node` | Stream từng ký tự văn bản trực tiếp ra màn hình |
+| `token` | `agent_node` / `turn.py` (cache) | Stream từng ký tự văn bản trực tiếp ra màn hình (`phase="answer"`) |
 | `verifying` | `verify_node` | Trạng thái đang rà soát căn cứ pháp lý |
-| `verified` | `verify_node` | Xác nhận câu trả lời đã đối chiếu chính xác với văn bản gốc |
-| `warning` | `cancel_node` | Cảnh báo câu trả lời có điểm nghi vấn / không đủ căn cứ |
-| `answer_commit` | `agent_node` | Chốt nội dung câu trả lời cuối cùng |
+| `verified` | `verify_node` / `turn.py` (cache) | Xác nhận câu trả lời đã đối chiếu chính xác với văn bản gốc |
+| `warning` | `cancel_node` | Cảnh báo câu trả lời có điểm nghi vấn / không đủ căn cứ, kích hoạt Safe Fallback |
+| `answer_commit` | `agent_node` / `turn.py` (cache) | Chốt nội dung câu trả lời cuối cùng |
 | `sources` | `build_sources_node` | Danh sách tài liệu tham chiếu (Điều luật, Nghị định, Biển báo) |
-| `done` | `build_sources_node` | Hoàn tất phiên tra cứu, đóng stream |
-| `error` | Bất kỳ node nào | Thông báo lỗi hệ thống hoặc ngoại lệ kết nối |
+| `done` | `build_sources_node` | Hoàn tất phiên tra cứu, gửi kèm `thread_id` và đóng stream |
+| `error` | Bất kỳ node nào / `agent.py` | Thông báo lỗi hệ thống hoặc ngoại lệ kết nối |
+
+> **Lưu ý:** Sự kiện `answer_reset` đã ngừng phát theo thiết kế mới (nâng bản nháp từ khối suy nghĩ trực tiếp qua `answer_commit`).
 
 ---
 
@@ -204,10 +209,33 @@ Có ví dụ gán nhãn thì mốc được khớp để tối đa hoá (bắt �
 
 ## 8. Kiểm Thử & Đảm Bảo Chất Lượng
 
-Dự án áp dụng bộ kiểm thử tinh gọn tốc độ cao (Smoke Test Suite) tại [`tests/test_smoke.py`](file:///c:/Users/minhlong/Desktop/evo/ai-giaothong/tests/test_smoke.py):
+Dự án áp dụng bộ kiểm thử tinh gọn tốc độ cao (Smoke Test Suite) tại [`tests/test_smoke.py`](../tests/test_smoke.py):
 - **Thời gian chạy**: ~5 giây.
 - **Độ bao phủ**: Kiểm tra tra cứu từ khóa hạng DE, mức phạt đèn đỏ NĐ 168, đọc toàn văn Điều 57, biên dịch LangGraph StateGraph và tính sẵn sàng của Web API.
 - **Lệnh chạy**:
   ```powershell
   pytest tests/
   ```
+
+---
+
+## 9. Trạng Thái Đo Lường & Đánh Giá Baseline
+
+Trạng thái đo lường trên bộ benchmark đầy đủ 95 câu (`data/benchmark/qa_testset_v2.json`), phủ cả 6 văn bản pháp luật giao thông. Nguồn đối soát: `data/benchmark/final_evaluation_report.json` và `scripts/eval/baselines/baseline-graph-phase8-260911.json`.
+
+| Chỉ số | Trước (harness ReAct cũ) | Sau (StateGraph, 95 câu) | Mục tiêu Phase 8 | Đánh giá |
+|---|---|---|---|---|
+| **Hit@1 truy xuất** | 51.4% (35 câu) | **72.15%** (79/95 câu) | >= 72% | ✅ Đạt |
+| **Hit@3 truy xuất** | 82.9% | **83.54%** | >= 92% | ❌ Chưa đạt |
+| **MRR truy xuất** | 0.66 | **0.7774** | >= 0.80 | ❌ Cận mục tiêu |
+| **Độ trễ p50** | 28.5s | **30.9s** | không tăng quá 10% | ✅ Đạt (+8.6%) |
+| **Trích dẫn E2E chính xác** | chưa đo | **63.29%** | >= 95% | ❌ Cần cải thiện |
+| **Số liệu không căn cứ** | chưa đo | **1.05%** | 0% | ❌ Sát mục tiêu |
+| **Từ chối câu lạc đề** | chưa đo | **93.75%** (tập lạc đề) / **87.50%** (lượt 95 câu) | >= 90% | ⚠️ Cận mục tiêu |
+| **Tỷ lệ câu bị huỷ (Safe Fallback)** | 0% | **8.42%** | không tăng | ❌ Cần tối ưu |
+| **Chi phí trung bình / câu** | — | **$0.001670** | — | Tiết kiệm |
+| **Quy mô tập Benchmark** | 35 câu (chỉ Luật 36) | **95 câu (phủ cả 6 văn bản)** | >= 80 câu | ✅ Đạt |
+
+### Phân tích nút thắt chất lượng:
+- **Nút thắt nằm ở tầng truy xuất văn bản, không phải do Prompt**: Tỷ lệ trích dẫn đã cải thiện từ 48% lên 63.29% khi siết chặt prompt hệ thống. Phần lỗi còn lại chủ yếu do truy xuất trả sai số Điều, tập trung lớn nhất ở `03_nghi_dinh_168_2024_nd_cp` (Hit@1 đạt 56.2%, MRR 0.5625 do số lượng hành vi vi phạm dày đặc 634 mục).
+- **Cổng đánh giá hồi quy (`scripts/eval/gate.py`)**: Hiện trả exit code 1 (vượt qua cổng độ trễ nhưng cần tiếp tục thu hẹp khoảng cách ở 4 cổng chất lượng trích dẫn). Mọi câu hỏi đánh giá đều được chạy ở chế độ đường lạnh (đã xóa Semantic Cache trước khi chạy).

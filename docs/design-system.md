@@ -369,7 +369,7 @@ quay lại, và đây là lỗi không có thông báo nào báo cho biết.
 hoặc `error`. Nếu luồng SSE đứt mà không có sự kiện kết thúc, spinner sẽ quay
 vĩnh viễn. Hai lớp bảo vệ:
 
-- `api_server.event_stream()` bọc toàn bộ vòng lặp `stream_agent` trong
+- `app/server.py` (hàm `stream_agent_events()`) bọc toàn bộ vòng lặp `astream_agent` trong
   `try/except`; mọi ngoại lệ đều in stack trace ra console **và** phát `error` +
   `done` xuống trình duyệt.
 - `chat.js` gọi `trace.finalize()` sau khi đọc hết luồng, phòng trường hợp kết

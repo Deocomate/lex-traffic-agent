@@ -5,7 +5,7 @@
 
 ## 🌟 1. Kiến trúc: Agentic ReAct Loop kết hợp Lớp Kiểm Chứng Tất Định
 
-Lớp điều phối là một `StateGraph` LangGraph 1.x (`src/graph/build.py`). Mô hình hoạt động theo cơ chế **Agentic ReAct Loop**: LLM trực tiếp nhận câu hỏi của người dùng, chủ động gọi các công cụ tra cứu động nhiều lượt (`keyword_search`, `get_article`, `penalty_lookup`, `traffic_sign_lookup`, `speed_limit_lookup`), xem xét bằng chứng thu được và quyết định tra cứu tiếp hoặc tổng hợp câu trả lời (chi tiết đầy đủ: [`docs/architecture.md`](docs/architecture.md)).
+Lớp điều phối là một `StateGraph` LangGraph 1.x (`src/graph/build.py`). Mô hình hoạt động theo cơ chế **Agentic ReAct Loop**: LLM trực tiếp nhận câu hỏi của người dùng, chủ động gọi các công cụ tra cứu động nhiều lượt (`penalty_lookup`, `traffic_sign_lookup`, `speed_limit_lookup`, `keyword_search`, `semantic_search`, `get_article`, `list_chapters`), xem xét bằng chứng thu được và quyết định tra cứu tiếp hoặc tổng hợp câu trả lời (chi tiết đầy đủ: [`docs/architecture.md`](docs/architecture.md)).
 
 ```
 [Người dùng hỏi]
@@ -225,30 +225,32 @@ pytest tests/ -q
 
 ## 🖥️ 6. Giao diện Web
 
-Một thanh bên duy nhất dẫn tới 5 khu vực. Mỗi khu vực chỉ giữ đúng những nút cần cho việc của nó,
+Một thanh bên duy nhất dẫn tới 6 khu vực chức năng. Mỗi khu vực chỉ giữ đúng những nút cần cho việc của nó,
 và chỉ nạp dữ liệu ở lần mở đầu tiên (PDF 61 MB không tải khi khởi động).
 
-| Khu vực | Nội dung |
-|---|---|
-| 💬 **Hỏi đáp AI** | Chat với Agent, xem tiến trình tra cứu trực tiếp, chip nguồn mở toàn văn điều luật. Phiên trò chuyện lưu ở thanh bên (localStorage) |
-| 📖 **Tra cứu luật** | Cây 9 Chương / 89 Điều, ô tìm từ khóa kèm trích đoạn, khung đọc toàn văn |
-| 💰 **Bảng mức phạt** | 634 hành vi trong Nghị định 168/2024/NĐ-CP: khung tiền phạt, số điểm bị trừ, xử phạt bổ sung, trích dẫn Điểm/Khoản/Điều; lọc theo phương tiện và hành vi |
-| 📄 **Văn bản gốc** | Bản PDF 68 trang của Luật 36/2024/QH15, xem ngay trong trang |
-| ⚙️ **Quản trị hệ thống** | Model đang chạy (`/api/health`), tình trạng từng tệp dữ liệu/chỉ mục, kết quả benchmark gần nhất (`/api/benchmark`) |
+| Khu vực | Route | Nội dung |
+|---|---|---|
+| 💬 **Hỏi đáp AI** | `#/chat` | Chat với Agent, xem tiến trình tra cứu trực tiếp qua ray suy luận, chip nguồn mở toàn văn điều luật. Phiên trò chuyện lưu ở thanh bên (localStorage) |
+| 📖 **Tra cứu luật** | `#/luat` | Xem và đọc toàn văn cả 6 văn bản pháp luật, cây Chương/Điều, ô tìm từ khóa kèm trích đoạn |
+| 💰 **Bảng mức phạt** | `#/muc-phat` | 634 hành vi trong Nghị định 168/2024/NĐ-CP: khung tiền phạt, số điểm bị trừ, xử phạt bổ sung, trích dẫn Điểm/Khoản/Điều; lọc theo phương tiện và hành vi |
+| 🧰 **Kho tiện ích** | `#/tien-ich` | Tiện ích tra cứu chuẩn: 453 biển báo & vạch kẻ đường QCVN 41, ma trận tốc độ TT 31, trừ điểm GPLX, quy chuẩn tuần tra CSGT TT 73 |
+| 📄 **Văn bản gốc** | `#/van-ban` | Trình đọc PDF tích hợp text layer tìm kiếm được của cả 6 văn bản quy phạm pháp luật, xem ngay trong trang |
+| ⚙️ **Quản trị hệ thống** | `#/he-thong` | Model đang chạy (`/api/health`), tình trạng từng tệp dữ liệu/chỉ mục, kết quả benchmark gần nhất (`/api/benchmark`) |
 
 Trong khu vực hỏi đáp: `Enter` gửi, `Shift+Enter` xuống dòng.
 
-**Hệ thiết kế** (chi tiết ở [`docs/design-system.md`](docs/design-system.md)): sidebar navy
-`#0f172a` với logo gradient emerald và thanh nhấn emerald ở mục đang mở; canvas trắng ngà
-`#f8fafc`; thẻ trắng bo 12px đổ bóng nhẹ; màu theo ngữ nghĩa — **amber** cho tiền phạt, **rose**
-cho vi phạm nghiêm trọng, **emerald** cho trạng thái hợp lệ, **blue** cho căn cứ pháp lý. Font
-Inter + Plus Jakarta Sans (tiêu đề) + JetBrains Mono (mã).
+**Hệ thiết kế** (chi tiết ở [`docs/design-system.md`](docs/design-system.md)): phong cách tối giản
+**neo-grotesque product** thuần tokens CSS (100% không inline style), nền giấy nguội chroma-0
+(`--surface-page: #fdfdfe`), sidebar và header nâng nhẹ (`--surface-raised: #f8f8fa`), đường kẻ 1px
+cấu trúc (`--border-subtle: #e5e5eb`), duy nhất MỘT màu nhấn cobalt (`--accent: #1e40af`) và hệ màu
+dữ liệu ngữ nghĩa (**amber** cho tiền phạt, **rose** cho điểm phạt, **emerald** cho căn cứ luật).
+Font Inter + font đơn cách cho căn cứ và số liệu.
 
 ### API
 
 | Endpoint | Mô tả |
 |---|---|
-| `POST /api/ask` | Chạy đồ thị LangGraph (qua `src/agent.py::astream_agent`), trả luồng SSE (14 loại sự kiện, hợp đồng đầy đủ ở [`docs/architecture.md`](docs/architecture.md#13-hợp-đồng-sự-kiện-sse)). Thân yêu cầu nhận `question`, `history`, `thread_id` tuỳ chọn (bỏ trống thì máy chủ tự sinh, trả lại trong `done`). Sự kiện `done` kèm `answer`, `sources`, `verification_issues`, `needs_search`, `search`, `model_used`, `thread_id` |
+| `POST /api/ask` | Chạy đồ thị LangGraph (qua `src/agent.py::astream_agent`), trả luồng SSE (14 loại sự kiện, hợp đồng đầy đủ ở [`docs/architecture.md`](docs/architecture.md#6-hợp-đồng-sự-kiện-sse-server-sent-events)). Thân yêu cầu nhận `question`, `history`, `thread_id` tuỳ chọn (bỏ trống thì máy chủ tự sinh, trả lại trong `done`). Sự kiện `done` kèm `answer`, `sources`, `verification_issues`, `needs_search`, `search`, `model_used`, `thread_id` |
 | `GET /api/documents` | Danh sách cả 6 văn bản pháp luật kèm metadata |
 | `GET /api/documents/{doc_id}/chapters` · `.../articles/{n}` | Mục lục và toàn văn Điều của một văn bản bất kỳ trong 6 văn bản |
 | `GET /api/article/{n}` · `GET /api/chapters` | Tương thích ngược: toàn văn/mục lục Luật 36/2024 |
@@ -302,7 +304,7 @@ qua — không commit.
 ## 📈 7. Trước / Sau tái kiến trúc
 
 Xem trạng thái đo lường đầy đủ, kèm nguồn từng con số, ở
-[`docs/architecture.md` §14](docs/architecture.md#14-trạng-thái-đo-lường-đọc-trước-khi-trích-dẫn-số-liệu-ở-nơi-khác).
+[`docs/architecture.md` §9](docs/architecture.md#9-trạng-thái-đo-lường--đánh-giá-baseline).
 Tóm tắt — **không con số nào dưới đây được trình bày như đã đạt mục tiêu trừ khi ghi rõ**:
 
 | Chỉ số | Trước (harness ReAct cũ) | Sau (StateGraph, 95 câu) | Mục tiêu Phase 8 | |
