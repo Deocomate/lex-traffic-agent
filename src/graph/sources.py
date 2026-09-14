@@ -134,6 +134,16 @@ def _split_sign_header(header: str) -> Tuple[str, str]:
     return (header or "").strip(), ""
 
 
+def _get_document_provider() -> Any:
+    """Nạp lười DocumentProvider nếu miền hiện tại hỗ trợ (không nổ lỗi nếu miền khác)."""
+    try:
+        from domains.vietnam_traffic.lib.document_provider import get_document_provider
+
+        return get_document_provider()
+    except Exception:
+        return None
+
+
 def build_sources_from_evidence(evidence_list: List[Evidence]) -> List[Dict[str, Any]]:
     """
     Dựng danh sách nguồn trích dẫn cho giao diện từ bằng chứng có cấu trúc.
@@ -147,7 +157,7 @@ def build_sources_from_evidence(evidence_list: List[Evidence]) -> List[Dict[str,
     seen_signs: set = set()
     seen_articles: set = set()
 
-    provider = get_document_provider()
+    provider = _get_document_provider()
 
     for ev in evidence_list or []:
         source = ev.get("source", "law")
@@ -194,22 +204,52 @@ def build_sources_from_evidence(evidence_list: List[Evidence]) -> List[Dict[str,
                 continue
             seen_articles.add(key)
 
-            meta = provider.get_document_meta(doc_id) or {}
-            doc_short = meta.get("short_title", "Luật 36/2024")
-            article_header = f"Điều {number}"
+            doc_short = "Luật 36/2024"
+            doc_name = "Luật 36/2024/QH15"
+            doc_code = ""
+
             try:
-                article = provider.get_article(doc_id, number)
-                if article and article.get("article_header"):
-                    article_header = article["article_header"]
+                from src.domain.registry import get_active_domain
+
+                doc_spec = get_active_domain().documents_by_id.get(doc_id)
+                if doc_spec:
+                    doc_short = doc_spec.short_title or doc_short
+                    doc_name = doc_spec.full_title or doc_name
+                    doc_code = doc_spec.code or doc_code
             except Exception:
                 pass
+
+            if provider:
+                try:
+                    meta = provider.get_document_meta(doc_id) or {}
+                    doc_short = meta.get("short_title", doc_short)
+                    doc_name = meta.get("full_title", doc_name)
+                    doc_code = meta.get("code", doc_code)
+                except Exception:
+                    pass
+
+            article_header = f"Điều {number}"
+            if provider:
+                try:
+                    article = provider.get_article(doc_id, number)
+                    if article and article.get("article_header"):
+                        article_header = article["article_header"]
+                except Exception:
+                    pass
+
+            if article_header == f"Điều {number}":
+                ev_header = (ev.get("header") or "").strip()
+                if f"Điều {number}" in ev_header:
+                    clean_header = re.sub(r'^\[[^\]]+\]\s*', '', ev_header).strip()
+                    if clean_header:
+                        article_header = clean_header
 
             law_sources.append({
                 "source_type": "law",
                 "doc_id": doc_id,
-                "doc_name": meta.get("full_title", "Luật 36/2024/QH15"),
+                "doc_name": doc_name,
                 "doc_short": doc_short,
-                "doc_code": meta.get("code", ""),
+                "doc_code": doc_code,
                 "article_number": number,
                 "article_header": article_header,
                 "citation": f"{doc_short} - Điều {number}",

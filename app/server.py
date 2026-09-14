@@ -1,4 +1,4 @@
-"""
+r"""
 Lớp ỨNG DỤNG: máy chủ web của trợ lý giao thông (FastAPI + SSE).
 
 Vì sao nằm ngoài `src/`: đây không phải engine mà là một ứng dụng dựng TRÊN engine, cho đúng
